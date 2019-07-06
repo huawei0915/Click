@@ -93,16 +93,22 @@ footer .container{
 }
 .fa-facebook-f:hover{
     color:#4267b2;
+    cursor: pointer;
+
 }
 .fa-instagram:hover{
     color:#E1306C;
+    cursor: pointer;
 }
 .fa-line:hover{
     color:#00c300;
+    cursor: pointer;
 }
 .fa-twitter:hover{
     color:#1DA1F2;
+    cursor: pointer;
 }
 .fa-linkedin-in:hover{
     color:#0077B5;
+    cursor:pointer;
 }
