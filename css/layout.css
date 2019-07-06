@@ -91,3 +91,18 @@ footer .container{
 .social i{
     padding-right: 33px;
 }
+.fa-facebook-f:hover{
+    color:#4267b2;
+}
+.fa-instagram:hover{
+    color:#E1306C;
+}
+.fa-line:hover{
+    color:#00c300;
+}
+.fa-twitter:hover{
+    color:#1DA1F2;
+}
+.fa-linkedin-in:hover{
+    color:#0077B5;
+}
