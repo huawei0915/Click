@@ -19,9 +19,13 @@ a:hover{
     width: 1140px;
 }
 header{
-    height: 120px;
+    height: 80px;
     background-color: #1C1C1C;
-    padding-top:20px; 
+    /* padding-top:20px;  */
+}
+.logo a img{
+    padding-top: 16px;
+    height: 75px;
 }
 .features{
     display: flex;
@@ -36,15 +40,15 @@ header{
 }
 nav{
     background-color: #444;
-    height: 40px;
-    line-height: 35px; 
+    height: 30px;
+    line-height: 26px; 
 } 
 nav>.container{
     padding: 0;
 }
 nav a{
     color:white;
-    font-size: 20px;
+    font-size: 16px;
 }
 .nav-l a{
     padding-right:20px;
@@ -57,7 +61,7 @@ nav a{
 
 footer{
     width: 100%;
-    height: 120px;
+    height: 80px;
     background-color: #444;
     position: absolute;
     bottom: 0;
@@ -69,28 +73,42 @@ footer .container{
     padding: 0;
 }
 .foot-l>div{
-    font-size: 18px;
+    font-size: 12px;
+    line-height:20px;
     height: 70px;
-    padding-top: 24px;
+    padding-top: 10px;
     color: #8A8A8A;
 }
 .foot-r{
-    padding-top: 12px;
+    padding-top: 10px;
+
 }
 .agent>img:first-child{
     padding: 0;
 }
-.agent img{
+.agent img:nth-child(1){
+    
+    height: 30px;
+}
+.agent img:nth-child(2){
     padding-left: 30px;
+    height: 20px;
+    width: 100px;
+}
+.agent img:nth-child(3){
+    padding-left: 30px;
+    height: 20px;
+    width: 120px;
 }
 
 .social{
     color: #8A8A8A;
-    padding-top: 12px;
+    padding-top: 6px;
 }
 .social i{
     padding-right: 33px;
-    cursor: pointer !important;
+    cursor: pointer ;
+
 }
 .fa-facebook-f:hover{
     color:#4267b2;
