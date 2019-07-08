@@ -1,8 +1,7 @@
-
-    <header>
+<header>
         <div class="container">
             <div class="row justify-content-between align-items-end">
-                <a href=""><img src="img/logo.svg" alt=""></a>
+                <div class="logo"><a href=""><img src="img/logo.svg"alt=""></a></div>
                 <div class="features pb-2">
                     <a href=""><img src="img/icon/會員.svg" alt="" class="px-2"></a>
                     <a href=""><img src="img/icon/購物車.svg" alt="" class="px-2"></a>
@@ -31,13 +30,3 @@
             </div>
         </div>
     </nav>
-
-
-
-
-
-
-
-
-    
-  
