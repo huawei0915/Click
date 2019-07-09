@@ -14,11 +14,11 @@
                     <img src="img/Canon.svg"  alt="">
                 </div>
                 <div class="social">
-                    <i class="fab fa-facebook-f fa-sm"></i>
-                    <i class="fab fa-instagram fa-sm"></i>
-                    <i class="fab fa-line fa-sm"></i>
-                    <i class="fab fa-twitter fa-sm"></i>
-                    <i class="fab fa-linkedin-in fa-sm"></i>
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                    <i class="fab fa-instagram fa-lg"></i>
+                    <i class="fab fa-line fa-lg"></i>
+                    <i class="fab fa-twitter fa-lg"></i>
+                    <i class="fab fa-linkedin-in fa-lg"></i>
                 </div>
             </div>
         </div>

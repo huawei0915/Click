@@ -30,13 +30,71 @@ header{
 .features{
     display: flex;
     flex-direction:row;
+    color: white;
 }
+/* ---------search--------------------- */
+  .box {
+    position: relative;
+    /* width: 20%; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 40px;
+    /* margin-bottom: 30px; */
+  }
+  #mag {
+    width: 16px;
+    height: 16px;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    border: solid 1.5px white;
+    background-color: #1C1C1C;
+    transition: width 1s ease-in-out, border-radius 1.5s ease-in-out;
+  }
+  
+  #mag::placeholder {
+    color: #999;
+  }
+  
+  #mag:hover {
+    width: 50%;
+    height: 25px;
+  }
+  #mag:hover ~ #arm {
+    transition: 1s ease-in-out;
+    height: 0;
+    opacity: 0;
+
+  }
+  #arm {
+    height: 0.5rem;
+    position: absolute;
+    right: 108px;
+    top: 75%;
+    /* z-index: -1; */
+    transform: rotate(135deg);
+    color: white;
+    border: solid 1.5px white;
+  }
+/* ----------------------------------   */
+
+
+
+
+
 .features img{
     filter: white;
+    margin-top:4px ;
+    height: 26px;
 }
+
 .features a:hover img{
-    filter:#FFB11B;
-    transform: scale(1.1);
+    fill: #FFB11B;
+    stroke:#FFB11B;
+    transform: scale(1.2);
 }
 nav{
     background-color: #444;
@@ -50,19 +108,25 @@ nav a{
     color:white;
     font-size: 16px;
 }
+
 .nav-l a{
     padding-right:20px;
+    letter-spacing:1px;
+}
+.nav-l a:nth-child(1){
+    padding-left:10px;
 }
 .nav-r a{
-    padding-left:20px;
+    padding-left:30px;
+    letter-spacing:1px;
 }
 
 
 
 footer{
     width: 100%;
-    height: 80px;
-    background-color: #444;
+    height: 90px;
+    background-color: #1C1C1C;
     position: absolute;
     bottom: 0;
     text-align: left;
@@ -75,15 +139,16 @@ footer .container{
 .foot-l>div{
     font-size: 12px;
     line-height:20px;
-    height: 70px;
-    padding-top: 10px;
-    color: #8A8A8A;
+    height:80px;
+    padding-top: 15px;
+    color: rgb(180, 180, 180);
 }
 .foot-r{
     padding-top: 10px;
 
 }
 .agent>img:first-child{
+    padding-top:5px; 
     padding: 0;
 }
 .agent img:nth-child(1){
@@ -102,7 +167,7 @@ footer .container{
 }
 
 .social{
-    color: #8A8A8A;
+    color: rgb(180, 180, 180);
     padding-top: 6px;
 }
 .social i{
