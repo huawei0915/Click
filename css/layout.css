@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: 'Noto Sans TC', sans-serif;
+    font: 14px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
     font-weight: 100;
 }
 li{
@@ -74,8 +74,8 @@ header{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 108px;
-    top: 75%;
+    right: 100px;
+    top: 72%;
     /* z-index: -1; */
     transform: rotate(135deg);
     color: white;
@@ -118,11 +118,11 @@ nav a{
     /* letter-spacing:1px; */
 }
 .nav-l a:nth-child(1){
-    padding-left:10px;
+    padding-left:15px;
 }
 .nav-r a{
     padding:0 0 0 30px;
-    letter-spacing:1px;
+    /* letter-spacing:1px; */
 }
 
 
