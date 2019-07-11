@@ -3,6 +3,9 @@
     font: 14px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
     font-weight: 100;
 }
+body{
+    background-color: #1C1C1C;
+}
 li{
     list-style-type: none;
 }
