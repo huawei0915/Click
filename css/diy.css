@@ -52,6 +52,86 @@
 .grade li:hover a{
     font-weight: 700;
 }
+/* --------------------------------------- */
+.camera_BP{
+    width: 290px;
+    height: 260px;
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.camera_Intro{
+    width: 140px;
+    height: 180px;
+    background-color: orange;
+    position: absolute;
+    top: 50px;
+    left: 280px;
+}
+.lens_Intro{
+    width: 140px;
+    height: 80px;
+    background-color: orange;
+    position: absolute;
+    top:300px;
+    left:50px;
+}
+.lens_BP{
+    width: 220px;
+    height: 125px;
+    background-color:pink;
+    position: absolute;
+    top: 280px;
+    left: 200px;
+}
+.tools1_BP{
+    width: 120px;
+    height: 140px;
+    background-color:pink;
+    position: absolute;
+    top: 70px;
+    left:430px;
+}
+.tools1_Intro{
+    width: 110px;
+    height: 60px;
+    background-color:orange;
+    position: absolute;
+    top: 90px;
+    left:560px;
+}
+.tools2_BP{
+    width: 120px;
+    height: 140px;
+    background-color:pink;
+    position: absolute;
+    top: 270px;
+    left:430px;
+}
+.tools2_Intro{
+    width: 110px;
+    height: 60px;
+    background-color:orange;
+    position: absolute;
+    top: 290px;
+    left:560px;
+}
+.redo i{
+    color:white;
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    top:20px;
+    left: 660px;
+    filter: drop-shadow(0 1px 2px black) ;
+    transition: .1s;
+}
+.redo:hover i{
+    font-size: 20px;
+}
+
+/* --------------------- */
 .table-r{
     position: absolute;
     width: 300px;
@@ -60,4 +140,64 @@
     border-radius: 10px;
     top: 0;
     right: 0;
+}
+.totalMoney{
+    align-items:flex-end;
+    height: 60px;
+    padding-left: 40px;
+}
+
+.totalMoney input{
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    width: 120px;
+    padding:0 10px 0 0;
+    margin-bottom: .35rem;
+    text-align: right;
+}
+.diyBtn{
+    justify-content: space-evenly;
+    align-items:flex-end;
+    height: 60px;
+}
+.enterCar{
+    color:black;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    border-radius: 5px;
+}
+.payMoney{
+    color:black;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    border-radius: 5px;
+}
+/* ------------------------------------ */
+section.container{
+    width: 840px;
+    color: white;
+    font-size: 1.5rem;
+}
+section .choose{
+    padding-top:25px; 
+    display: flex;
+    justify-content: space-between;
+}
+.step{
+    font-size: 1rem;
+}
+.arrow{
+    width: 100%;
+    height: 20vh;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
 }
