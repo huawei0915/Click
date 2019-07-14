@@ -142,9 +142,11 @@
     right: 0;
 }
 .totalMoney{
+    position: absolute;
     align-items:flex-end;
     height: 60px;
     padding-left: 40px;
+    bottom: 70px;
 }
 
 .totalMoney input{
@@ -159,26 +161,39 @@
     text-align: right;
 }
 .diyBtn{
+    position: absolute;
     justify-content: space-evenly;
     align-items:flex-end;
     height: 60px;
+    bottom: 25px;
+    width: 100%;
+    
 }
 .enterCar{
     color:black;
     font-size: 1rem;
-    padding: 10px;
+    padding:4px 10px;
     border: 1px solid #E1E1E1;
     box-shadow: 0 1px 2px rgba(0,0,0,.5);
     border-radius: 5px;
+    /* margin: 0 10px; */
 }
 .payMoney{
     color:black;
     font-size: 1rem;
-    padding: 10px 18px;
+    padding: 4px 18px;
     border: 1px solid #E1E1E1;
     box-shadow: 0 1px 2px rgba(0,0,0,.5);
     border-radius: 5px;
+    /* margin: 0 10px; */
 }
+.diyBtn a:hover{
+    color:white;
+    background-color: #FFA800;
+    font-weight: 700;
+}
+
+
 /* ------------------------------------ */
 section.container{
     width: 840px;
