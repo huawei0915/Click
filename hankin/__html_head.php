@@ -15,5 +15,4 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="img/icon/logo_s.png"/>    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/hankin.css">
 </head>
