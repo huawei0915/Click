@@ -95,6 +95,9 @@ header{
     margin-top:4px ;
     height: 26px;
 }
+.features .shop{
+    height: 30px;
+}
 
 .features a:hover img{
     fill: #FFB11B;
@@ -146,6 +149,12 @@ nav a{
 }
 
 @media screen and (max-width:577px){
+    .features img{
+        height: 24px;
+    }
+    .features .shop{
+        height: 25px;
+    }
     .logo a img{
         padding-top: 16px;
         height: 60px;
@@ -159,7 +168,7 @@ nav a{
     nav{
         display: none;
     }
- 
+  
 }
 @media screen and (min-width:577px){
     .show_mobile{
