@@ -43,13 +43,13 @@ input {
   word-spacing: 2.5px;
 }
 .forget {
-  font-family: "Kaushan Script";
+  /* font-family: "Kaushan Script"; */
   letter-spacing: 1.5px;
   word-spacing: 2px;
   cursor: pointer;
   font-size: 18px;
   margin: 20px 0 0;
-  color: rgb(0, 0, 255);
+  color: rgb(97, 97, 241);
 }
 button {
   width: 40%;
