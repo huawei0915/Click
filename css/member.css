@@ -6,8 +6,8 @@
   flex-direction: column;
 }
 .form {
-  width: 50%;
-  height: 500px;
+  width: 40%;
+  height: 400px;
   margin: auto;
   position: absolute;
   top: 50%;
@@ -52,7 +52,7 @@ input {
   color: rgb(97, 97, 241);
 }
 button {
-  width: 40%;
+  width: 50%;
   display: block;
   margin: 23px auto 0;
   padding: 17px 20px;
@@ -78,7 +78,8 @@ button {
   transition: 0.3s linear;
 }
 .button-animate:hover::after {
-  animation: buttonanimate 0.3s linear;
+    border-radius: 30px;
+  animation: buttonanimate 0.5s linear;
 }
 @keyframes buttonanimate {
   0% {
@@ -138,7 +139,7 @@ button {
 p {
   font-family: "Kaushan Script";
   letter-spacing: 1px;
-  font-size: 25px;
+  font-size: 20px;
 }
 /*after the translate class added or remove*/
 
@@ -174,3 +175,4 @@ p {
 .form.translate .sign-up {
   transform: translateX(80%);
 }
+@media screen and ()
