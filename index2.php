@@ -1,5 +1,6 @@
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
+
 <div class="container">
     <div>
         <figure>

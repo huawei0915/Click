@@ -8,3 +8,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+       var form = document.querySelector(".form");
+var signIn = document.getElementById("signIn");
+var signUp = document.getElementById("signUp");
+
+signUp.addEventListener("click", function() {
+  form.classList.add("translate");
+});
+signIn.addEventListener("click", function() {
+  form.classList.remove("translate");
+});</script>    
+     
