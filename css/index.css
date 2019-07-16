@@ -1,0 +1,26 @@
+.accordion{
+    height: 250px;
+    /* border:1px solid #ccc; */
+}
+.accordion a{
+    clip-path: polygon(100% 65%, 75% 100%, 100% 100%);
+    cursor: pointer;
+    display: block;
+    background: orange;
+    /* border:1px solid orangered; */
+    /* writing-mode: vertical-rl; */
+    /* text-orientation: upright; */
+}
+.accordion a:hover, .accordion a.active{
+    /* background: orangered; */
+    color:#fff;
+}
+.content{
+    transition: .5s;
+    overflow: hidden;
+    max-width:0;
+}
+.content.active{
+    /* flex:1; */
+    max-width:100%;
+}
