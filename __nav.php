@@ -5,7 +5,7 @@
                 <div class="logo"><a href=""><img src="img/logo.svg"alt=""></a></div>
                 <div class="features pb-2">
                         <form method="post" action="">
-                        <div class="box">
+                        <div class="serbox">
                                
                                 <input id="mag" type="search" placeholder="    Search..." name="search">
                              

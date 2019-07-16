@@ -21,18 +21,24 @@
     <header>
         <div class="container">
             <div class="row justify-content-between align-items-end">
-                <div class="logo"><a href=""><img src="img/logo.svg"alt=""></a></div>
+                <div class="d-flex head_mobile ">
+                <div class="show_mobile mx-2 pt-3"><i class="fas fa-bars fa-2x" style="color: white;">
+                
+                
+                </i></div>    
+                <div class="logo px-2"><a href=""><img src="img/logo.svg"alt=""></a></div>
+                </div>
                 <div class="features pb-2">
                         <form method="post" action="">
-                        <div class="box">
+                            <div class="serbox">
                                
                                 <input id="mag" type="search" placeholder="    Search..." name="search">
                              
                                 <div id="arm"></div>
-                            </form>
+                        </form>
                     <!-- <input type="search" id="searcharea" name="searcharea" class="searcharea" value="搜尋"> -->
                     <!-- <input type="search"><img src="img/icon/放大鏡.svg" alt="" class="px-2" id="search"></a> -->
-                    <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;margin-top: 5px;"></a>
+                    <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2 shop"></a>
                     <a href=""><img src="img/icon/會員.svg" alt="" class="px-2"></a>
                 </div>
             </div>
@@ -43,9 +49,9 @@
             <div class="d-flex justify-content-between">
                 <ul class="d-flex nav-l">
                     <li><a href="" >首頁</a></li>
-                    <li><a href="" >CANON</a></li>
-                    <li><a href="" >NIKON</a></li>
-                    <li><a href="" style="letter-spacing:1px;">LEICA</a></li>
+                    <li><a href="" class="deskshow">CANON</a></li>
+                    <li><a href="" class="deskshow" >NIKON</a></li>
+                    <li><a href="" class="deskshow" style="letter-spacing:1px;">LEICA</a></li>
                     <li><a href="" >產品列表</a></li>
                     <li><a href="" >首選推薦</a></li>
                     <li><a href="" >攝影分享</a></li>
@@ -59,7 +65,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <!-- <div class="container">
             <div class="table-l">
                 
                 <div  class="table">
@@ -135,18 +141,66 @@
         <span><i class="fas fa-chevron-left fa-3x"></i></span>
         <span><i class="fas fa-chevron-right fa-3x"></i></span>
         </div>
-    </section>   
+    </section>    -->
+
+
+    <div class="form">
+        <div class="login left flex-box">
+          <h1>Login</h1>
+          <input type="text" placeholder="Username">
+          <input type="password" placeholder="Password">
+          <div class="forget">Forget password?</div>
+          <button class="button-animate">Login</button>
+        </div>
+        <div class="create-account left flex-box">
+          <h1>Sign up</h1>
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Username">
+          <input type="password" placeholder="Password">
+          <button class="button-animate">Sign up</button>
+        </div>
+        <div class="outer">
+          <div class="inner flex-box">
+            <div class="sign-in overlay-form flex-box">
+              <h1>Welcome back</h1>
+              <p>Hellow its a pleasure to see you again , click below to log in again</p>
+              <button id="signIn">Sign in</button>
+            </div>
+            <div class="sign-up overlay-form flex-box">
+              <h1>Hi there</h1>
+              <p>want to join us ? press the below button to sign up with us</p>
+              <button id="signUp">Sign up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
 
 
     <footer>
         <div class="container">
-            <div class="foot-l">
-                <div>
+            <div class="foot-l show_desk">
+                <div class="txt">
                     Copyright © 2019 Click Inc.<br>
                     110台北市信義區信義路五段7號<br>
                     02-3456-7890
                 </div>
             </div>
+            <div class="foot-l show_mob">
+                    <div class="txt-mob">
+                    <div>
+                        <p>110台北市信義區信義路五段7號</p>  
+                        <p>02-3456-7890</p>
+                    </div>
+                        Copyright © 2019 Click Inc.
+                    </div>
+                </div>
             <div class="foot-r">
                 <div class="agent">
                     <img src="img/Leica.svg"  alt="">
@@ -163,7 +217,7 @@
             </div>
         </div>
     </footer>
-    <!-- Optional JavaScript -->
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -173,6 +227,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+       var form = document.querySelector(".form");
+var signIn = document.getElementById("signIn");
+var signUp = document.getElementById("signUp");
+
+signUp.addEventListener("click", function() {
+  form.classList.add("translate");
+});
+signIn.addEventListener("click", function() {
+  form.classList.remove("translate");
+});</script>    
+     
+
 
 </body>
 
