@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <!-- <header>
+    <header>
         <div class="container">
             <div class="row justify-content-between align-items-end">
                 <div class="d-flex head_mobile ">
@@ -62,7 +62,7 @@
                 </ul>
             </div>
         </div>
-    </nav> -->
+    </nav>
 
     <!-- <div class="container">
             <div class="table-l">
@@ -211,23 +211,49 @@
             </figure>
         </div>
        
-        <!-- <a class="d-block sma s04">
+        <a class="d-block sma s04">
                 <img src="img/dynamic_B.svg" alt="">
             </a>
         <a class="d-block sma s03">
-                <img src="img/portrait_B.svg" alt="">
+                <!-- <img src="img/portrait_B.svg" alt=""> -->
             </a>
         <a class="d-block sma s02">
                 <img src="img/birds_B.svg" alt="">
             </a>
         <a class="d-block sma active s01">
                 <img src="img/night_B.svg" alt="" >
-            </a> -->
-        
-
+            </a>
     </div>
     
     
+<!-- ---------------------------------------------------- -->
+
+<!-- <div class="accordion">
+  <a href="#" class="cell">
+    <div class="img">
+
+    </div>
+    <div class="txt">第一章圖的文字</div>
+  </a>
+  <a href="#" class="cell">
+    <div class="img">
+
+    </div>
+    <div class="txt">第二章圖的文字</div>
+  </a>
+  <a href="#" class="cell">
+    <div class="img">
+
+    </div>
+    <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti earum veritatis repellendus ratione voluptates tempore tempora quas perspiciatis sunt explicabo praesentium consequatur impedit fuga quo similique distinctio esse recusandae. Veritatis.</div>
+  </a>
+  <a href="#" class="cell">
+    <div class="img">
+
+    </div>
+  </a>
+</div> -->
+
 
 
 
@@ -282,16 +308,15 @@
         <script>
                 $("#accordion a").hover(function(){
                 $(".content, a").removeClass("active");
-
                 $(this).addClass("active").next(".content").addClass("active");
-               
-                // $(this).prevAll().addClass("vie");
+                $(this).addClass("active").find(".sma").addClass("active");
+                $(this).prevAll().addClass("vie");
                 
                 });
                 
 
             </script> 
-        <script>
+        <!-- <script>
                 var form = document.querySelector(".form");
                 var signIn = document.getElementById("signIn");
                 var signUp = document.getElementById("signUp");
@@ -303,7 +328,7 @@
                 form.classList.remove("translate");
                 });
         </script>    
-            
+             -->
      
      
      
