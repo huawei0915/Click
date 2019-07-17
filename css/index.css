@@ -28,7 +28,7 @@
     width: 100vw;
     /* background-color: red; */
     margin-top: -16px;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
 }
 .accordion a{
