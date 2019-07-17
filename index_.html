@@ -210,20 +210,20 @@
                 <img src="img/dynamic_B.svg" alt="" class="s44">
             </figure>
         </div>
-        <div class="sma" id="sma">
-        <a class="d-block active s04">
+       
+        <a class="d-block sma s04">
                 <img src="img/dynamic_B.svg" alt="">
             </a>
-        <a class="d-block active s03">
+        <a class="d-block sma s03">
                 <!-- <img src="img/portrait_B.svg" alt=""> -->
             </a>
-        <a class="d-block active s02">
+        <a class="d-block sma s02">
                 <img src="img/birds_B.svg" alt="">
             </a>
-        <a class="d-block active s01">
+        <a class="d-block sma active s01">
                 <img src="img/night_B.svg" alt="" >
             </a>
-        </div>
+        
 
     </div>
     
@@ -281,12 +281,14 @@
         crossorigin="anonymous"></script>
         <script>
                 $("#accordion a").hover(function(){
-                $(".content, a").removeClass("active");
+                $(".content, a, .sma").removeClass("active");
+
                 $(this).addClass("active").next(".content").addClass("active");
+               
                 $(this).prevAll().addClass("vie");
                 
-
                 });
+                
 
             </script> 
         <script>

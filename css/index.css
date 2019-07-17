@@ -67,21 +67,20 @@
     z-index: 45;
 } */
 .s01{
-    clip-path: polygon(20% 0, 0 40%, 0 0);
-    /* background-image: url("../img/night_B.svg"); */
+    clip-path: polygon(20% 0, 0 0, 0 40%);
     z-index: 58;
 }
 .s02{
-    clip-path: polygon(30% 0, 0 60%, 0 0);
+    clip-path: polygon(30% 0, 0 0, 0 60%);
     z-index: 48;
 
 }
 .s03{
-    clip-path: polygon(40% 0, 0 80%, 0 0);
+    clip-path: polygon(40% 0, 0 0, 0 80%);
     z-index: 38;
 }
 .s04{
-    clip-path: polygon(50% 0, 0 100%, 0 0);
+    clip-path: polygon(50% 0, 0 0, 0 100%);
     z-index: 28;
 
 }
@@ -115,3 +114,9 @@ figure img{
     left:0px;
     top:0px;
 } 
+.sma{
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+}
