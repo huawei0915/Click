@@ -14,5 +14,5 @@
         integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="img/icon/logo_s.png"/>    
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?a=<?= uniqid() ?>">
 </head>
