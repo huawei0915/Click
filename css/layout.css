@@ -109,11 +109,11 @@ header{
     right: -20px;
     top:56px;
     background:#1C1C1C;
-    width:50vw;
+    width:150px;
     opacity: 0;
     /* max-height: 0; */
     overflow: hidden;
-    padding:0 20px;
+    padding:0 0 0 30px;
   }
   .menu.active ul{
     opacity: 1;
@@ -128,7 +128,7 @@ header{
     
   }
   .menu ul li a:hover{
-    background: #FFB11B;
+    background: #ccc;
   }
 
   .bar{
@@ -139,16 +139,16 @@ header{
       border-radius: 2px;
   }
   .active .bar1{
-      -webkit-transform: rotate(-45deg) translate(-5px, 4.5px) ;
-      transform: rotate(-45deg) translate(-5px, 4.5px) ;
+      -webkit-transform: rotate(-45deg) translate(-5px, 4.4px) ;
+      transform: rotate(-45deg) translate(-5px, 4.4px) ;
       background: white;
   }
 
   .active .bar2{opacity: 0;}
 
   .active .bar3{
-      -webkit-transform: rotate(45deg) translate(-5px, -4.5px) ;
-      transform: rotate(45deg) translate(-5px, -4.5px) ;
+      -webkit-transform: rotate(45deg) translate(-5px, -4.39px) ;
+      transform: rotate(45deg) translate(-5px, -4.39px) ;
   }
 
 
