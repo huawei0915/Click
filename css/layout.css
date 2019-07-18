@@ -98,7 +98,7 @@ header{
     display: inline-block;
     cursor: pointer;
     position: relative;
-    padding: 4px 0 0 16px;
+    padding: 24px 0 0 16px;
   }
   .menu.active{
     /* background: #fff; */
@@ -132,23 +132,23 @@ header{
   }
 
   .bar{
-      width: 22px;
+      width: 20px;
       height: 2px;
       background: white;
-      margin: 7px 0;
+      margin: 5px 0;
       border-radius: 2px;
   }
   .active .bar1{
-      -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
-      transform: rotate(-45deg) translate(-8px, 6px) ;
+      -webkit-transform: rotate(-45deg) translate(-5px, 4.5px) ;
+      transform: rotate(-45deg) translate(-5px, 4.5px) ;
       background: white;
   }
 
   .active .bar2{opacity: 0;}
 
   .active .bar3{
-      -webkit-transform: rotate(45deg) translate(-8px, -6px) ;
-      transform: rotate(45deg) translate(-8px, -6px) ;
+      -webkit-transform: rotate(45deg) translate(-5px, -4.5px) ;
+      transform: rotate(45deg) translate(-5px, -4.5px) ;
   }
 
 
@@ -216,15 +216,21 @@ nav a{
 }
 
 @media screen and (max-width:577px){
+  
     .features img{
-        height: 24px;
+        margin-top: 25px;
+        height: 20px;
+        padding: 0 8px !important;
     }
     .features .shop{
-        height: 25px;
+        height: 21px;
+    }
+    .features .menu{
+        /* padding-top: 20px; */
     }
     .logo a img{
-        padding-top: 16px;
-        height: 60px;
+        padding: 5px 0;
+        height: 45px;
         /* display: none; */
     }
     #mag , #arm{
@@ -239,6 +245,9 @@ nav a{
     .mobile-style{
         margin: 10px 20px 0;
     }
+    .menu{
+        padding-left:5px;
+    }
     .menu ul li a{
         display: block;
         padding:12px 10px;
@@ -248,7 +257,7 @@ nav a{
       }
     header{
         margin-top: -16px;
-        height: 70px;
+        height: 60px;
     }
     
 }
