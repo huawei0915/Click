@@ -5,7 +5,7 @@
    
 }
 body{
-    background-color: #1C1C1C;
+    /* background-color: #1C1C1C; */
     
 }
 li{
@@ -90,8 +90,71 @@ header{
   }
 /* ----------------------------------   */
 
+  .transition{
+    transition: 0.4s;
+  }
+
+  .menu{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 0 0 16px;
+  }
+  .menu.active{
+    /* background: #fff; */
+    background-color: #1c1c1c;
+  }
+  .menu ul{
+    position: absolute;
+    right: -20px;
+    top:56px;
+    background:#1C1C1C;
+    width:50vw;
+    opacity: 0;
+    /* max-height: 0; */
+    overflow: hidden;
+    padding:0 20px;
+  }
+  .menu.active ul{
+    opacity: 1;
+    min-height: 90vh;
+   
+  }
+  
+  .menu ul li a{
+    display: block;
+    padding:10px 12px;
+    color:white !important;
+    
+  }
+  .menu ul li a:hover{
+    background: #FFB11B;
+  }
+
+  .bar{
+      width: 22px;
+      height: 2px;
+      background: white;
+      margin: 7px 0;
+      border-radius: 2px;
+  }
+  .active .bar1{
+      -webkit-transform: rotate(-45deg) translate(-8px, 6px) ;
+      transform: rotate(-45deg) translate(-8px, 6px) ;
+      background: white;
+  }
+
+  .active .bar2{opacity: 0;}
+
+  .active .bar3{
+      -webkit-transform: rotate(45deg) translate(-8px, -6px) ;
+      transform: rotate(45deg) translate(-8px, -6px) ;
+  }
 
 
+
+
+  /* ---------------------------------------- */
 
 
 .features img{
@@ -162,6 +225,7 @@ nav a{
     .logo a img{
         padding-top: 16px;
         height: 60px;
+        /* display: none; */
     }
     #mag , #arm{
         display: none;
@@ -172,7 +236,21 @@ nav a{
     nav{
         display: none;
     }
-  
+    .mobile-style{
+        margin: 10px 20px 0;
+    }
+    .menu ul li a{
+        display: block;
+        padding:12px 10px;
+        color:white !important;
+        font-size: 16px;
+        
+      }
+    header{
+        margin-top: -16px;
+        height: 70px;
+    }
+    
 }
 @media screen and (min-width:577px){
     .show_mobile{
