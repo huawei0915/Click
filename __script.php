@@ -19,11 +19,25 @@
         signIn.addEventListener("click", function() {
             form.classList.remove("translate");
         });
+//登入切換動畫
     </script>    
             
-     <script>
-        $("#accordion a").click(function(){
-            $(".content, a").removeClass("active");
-            $(this).addClass("active").next(".content").addClass("active");
+      <script>
+   $(".menu").click(function(){
+          $(this).toggleClass('active');
         });
-    </script>
+
+        var lastscrollTop;
+        $(window).scroll(function () {
+            let scrollTop = $(this).scrollTop();
+            let scrollPage = $("body").height();
+            if (scrollTop > lastscrollTop) {
+                $("nav,header").addClass("active");
+            } else {
+                $("nav,header").removeClass("active");
+            }
+            lastscrollTop = scrollTop;
+        });
+//選單出現
+    
+  </script>

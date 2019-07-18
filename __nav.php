@@ -19,7 +19,7 @@
                             <div class="bar bar2 transition"></div>
                             <div class="bar bar3 transition"></div>
                             <ul class="transition">
-                              <li><a class="transition">首頁</a></li>
+                              <li><a class="transition"></a></li>
                               <li><a class="transition">CANON</a></li>
                               <li><a class="transition">NIKON</a></li>
                               <li><a class="transition">LEICA</a></li>
@@ -53,3 +53,4 @@
             </div>
         </div>
     </nav>
+<div style="height: 114px;background:transparent;width: 100vw;"></div>

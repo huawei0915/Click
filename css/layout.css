@@ -5,7 +5,7 @@
    
 }
 body{
-    /* background-color: #1C1C1C; */
+    background-color: #1C1C1C;
     
 }
 li{
@@ -30,7 +30,18 @@ header{
     height: 80px;
     background-color: #1C1C1C;
     /* padding-top:20px;  */
+    position: fixed;
+    transition: .5s;
+    left: 50%;
+    transform: translateX(-50%);
+    /* transform: translateY(0); */
+    /* margin: 0 auto; */
 }
+header.active{
+    /* transform: translateX(-50%); */
+    transform: translate(-50%,-80px);
+}
+
 .logo a img{
     padding-top: 16px;
     height: 75px;
@@ -117,7 +128,7 @@ header{
   }
   .menu.active ul{
     opacity: 1;
-    min-height: 90vh;
+    min-height: calc(100vh - 60px);
    
   }
   
@@ -127,10 +138,6 @@ header{
     color:white !important;
     
   }
-  .menu ul li a:hover{
-    background: #ccc;
-  }
-
   .bar{
       width: 20px;
       height: 2px;
@@ -157,6 +164,9 @@ header{
   /* ---------------------------------------- */
 
 
+
+
+
 .features img{
     filter: white;
     margin-top:4px ;
@@ -172,9 +182,15 @@ header{
     transform: scale(1.2);
 }
 nav{
+    position: fixed;
     background-color: #444;
     height: 34px;
     line-height: 26px; 
+    transition: .5s;
+    width: 100vw;
+    z-index: 999;
+    top:80px;
+    
 } 
 nav>.container{
     padding: 0;
@@ -186,6 +202,15 @@ nav a{
     line-height: 32px;
 }
 
+nav.fixed{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+   }
+nav.active{
+    transform: translateY(-80px);
+}  
 .nav-l a{
     padding-right:15px;
     /* letter-spacing:1px; */
