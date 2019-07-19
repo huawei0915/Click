@@ -77,18 +77,32 @@
         <div class="choose">
             <h4>第一步 : 選擇相機</h4>
             <div class="d-flex step">
-            <a class="px-2"><i class="fas fa-caret-left px-1"></i>上一步</a>
-            <a class="px-2">下一步<i class="fas fa-caret-right px-1"></i></a>
+                <a class="px-2" id="prev" href="#"><i class="fas fa-caret-left px-1"></i>上一步</a>
+                <a class="px-2" id="next" href="#">下一步<i class="fas fa-caret-right px-1"></i></a>
             </div>
         </div>
         <div class="arrow">
         <span><i class="fas fa-chevron-left fa-3x"></i></span>
-        <div class="d-flex justify-content-center thumbnail" id="thumbnail">
+        <div class="d-flex justify-content-center thumbnail thumbnail1 view" id="thumbnail">
             <figure>
                 <img src="./img/1.png" alt="">
             </figure>
             <figure>
                 <img src="./img/1.png" alt="">
+            </figure>
+            <figure>
+                <img src="./img/2.png" alt="">
+            </figure>
+            <figure>
+                <img src="./img/2.png" alt="">
+            </figure>
+        </div>
+        <div class="d-flex justify-content-center thumbnail " id="thumbnail1">
+            <figure>
+                <img src="./img/2.png" alt="">
+            </figure>
+            <figure>
+                <img src="./img/2.png" alt="">
             </figure>
             <figure>
                 <img src="./img/1.png" alt="">
@@ -97,8 +111,20 @@
                 <img src="./img/1.png" alt="">
             </figure>
         </div>
-
-
+        <div class="d-flex justify-content-center thumbnail " id="thumbnail2">
+            <figure>
+                <img src="./img/1.png" alt="">
+            </figure>
+            <figure>
+                <img src="./img/3.png" alt="">
+            </figure>
+            <figure>
+                <img src="./img/1.png" alt="">
+            </figure>
+            <figure>
+                <img src="./img/3.png" alt="">
+            </figure>
+        </div>
 
         <span><i class="fas fa-chevron-right fa-3x"></i></span>
         </div>
@@ -109,11 +135,35 @@
 <script>
             $("#thumbnail figure").click(function(){
                 let img=$(this).find("img").attr("src");
-                // console.log(picture);
                 $("#camera_BP").attr("src",img);
-                // ---------------------
                 $(this).addClass("active").siblings().removeClass("active");
-
             });
+            $("#thumbnail1 figure").click(function(){
+                let img=$(this).find("img").attr("src");
+                $("#lens_BP").attr("src",img);
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+            $("#thumbnail2 figure").click(function(){
+                let img=$(this).find("img").attr("src");
+                $("#tools1_BP").attr("src",img);
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+
+            $(".choose #next").click(function(){
+                let thumThis = $('.thumbnail.view');
+                thumThis.removeClass("view");
+                thumThis.next().eq(0).addClass("view");
+            })
+
+            $(".choose #prev").click(function(){
+                let thumThis = $('.thumbnail.view');
+                thumThis.removeClass("view");
+                thumThis.prev().addClass("view");
+            })
+          
+            
+
+            $("#thumbnail.view").prev().prev().has("#prev").css("display","none");
+            // $("#thumbnail2").prevUntil(".choose>.step").has(".show").next("#next").css("display:none;");
         </script>
 <?php include __DIR__ . '/__html_end.php' ?>

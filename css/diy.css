@@ -206,7 +206,7 @@ section .choose{
     display: flex;
     justify-content: space-between;
 }
-.step{
+section .choose .step{
     font-size: 1rem;
 }
 .arrow{
@@ -215,14 +215,26 @@ section .choose{
     align-items: center;
     display: flex;
     justify-content: space-between;
-
+    position: relative;
+}
+.arrow span{
+    z-index: 5;
 }
 /* --------------------- */
+.thumbnail{
+    background: #1c1c1c;
+}
 .thumbnail figure{
     width: 20%;
     height: 20%;
     border:2px solid transparent;
     margin: 4px;
+    
+}
+.thumbnail.view{
+    position: absolute;
+    display: block;
+    opacity: 1;
 }
 .thumbnail figure img{
     width: 100%;
@@ -232,3 +244,4 @@ section .choose{
 .thumbnail .active{
     border-color: red;
 }
+
