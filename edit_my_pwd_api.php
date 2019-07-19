@@ -16,7 +16,7 @@ if(empty($_POST['sid']) or empty($_POST['password']) or empty($_POST['nickname']
 }
 
 // 判斷密碼正不正確
-$sql = "SELECT * FROM `members` WHERE `sid`=? AND `password`=SHA1(?)";
+$sql = "SELECT * FROM `members` WHERE `password`=SHA1(?) AND `password`=SHA1(?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['sid'],
@@ -31,18 +31,13 @@ if( $stmt->rowCount()<1 ){
     exit;
 }
 
-$sql = "UPDATE `members` SET `nickname`=?,`sex`=?,`birthday`=?,`address`=? WHERE `sid`=?";
+
+$sql = "UPDATE `members` SET `password`=SHA1(?) WHERE `sid`=?";
 
 $stmt = $pdo->prepare($sql);
 
 $stmt->execute([
-    // $_POST['mobile'],
-    // $_POST['address'],
-    // $_POST['birthday'],
-    $_POST['nickname'],
-    $_POST['sex'],
-    $_POST['birthday'],
-    $_POST['address'],
+    $_POST['password'],    
     $_POST['sid'],
 ]);
 
