@@ -10,19 +10,37 @@
     padding-top: 10px;
     font-weight: 300;
 }
-.sw-theme-default > ul.step-anchor > li.done > a{
+button {
+    width: 70%;
+    background: #ccc;
+}
+.sw-theme-dots > ul.step-anchor > li{
+    width: 120px;
+}
+
+.sw-theme-dots > ul.step-anchor > li.done > a{
     color: rgba(255, 255, 255, .5) !important;
 }
-.sw-theme-default > ul.step-anchor > li.done > a p{
+.sw-theme-dots > ul.step-anchor > li.done > a p{
     font-size:14px;
 }
-.sw-theme-default > ul.step-anchor > li.active > a {
+.sw-theme-dots > ul.step-anchor > li.active > a:after {
+    background: #FFA800;
+}
+.sw-theme-dots > ul.step-anchor > li.done > a:after {
+    background:#ccc;
+}
+.sw-theme-dots > ul.step-anchor > li.active > a{
     color:white !important;
 }
-
-
+.sw-theme-dots > ul.step-anchor:before {
+    background-color:transparent;
+}
+.sw-theme-dots > ul.step-anchor > li > a:after {
+    left:44%;
+}
 .messange{
-    min-height: 57vh !important;
+    min-height: 50vh !important;
 }
 .step-2{
     display: flex;
@@ -103,7 +121,7 @@ em{
 }
 .pay-style .visa{
     border:1px solid #ccc;
-    width: 18px;
+    width: 180px;
     border-radius: 10px;
     margin:0 40px 0 0;
 }
