@@ -13,9 +13,9 @@
                             <li><a href="">入門<i class="fas fa-caret-right fa-sm"></i></a></li>
                     </ul>
                     <div class="camera_BP" >
-                    <figure class="text-center">
-                            <img id="camera_BP" src="" alt="">
-                    </figure>
+                        <figure class="text-center">
+                                <img id="camera_BP" src="" alt="">
+                        </figure>
 
                     </div>
                     <div class="camera_Intro" >
@@ -29,29 +29,21 @@
                     </div>
                     <div class="lens_BP" >
 
-                    <figure class="text-center">
-                            <img id="lens_BP" src="" alt="">
-                    </figure>
+                        <figure class="text-center">
+                                <img id="lens_BP" src="" alt="">
+                        </figure>
 
                     </div>
                     <div class="tools1_BP" >
-                    <figure class="text-center">
-                            <img id="tools1_BP" src="" alt="">
-                    </figure>
+                        <figure class="text-center">
+                                <img id="tools1_BP" src="" alt="">
+                        </figure>
 
                     </div>
                     <div class="tools1_Intro">
 
                         
                     </div>
-                    <!-- <div class="tools2_BP">
-
-
-                    </div>
-                    <div class="tools2_Intro">
-
-                        
-                    </div> -->
                     <div class="redo"><i class="fas fa-redo-alt"></i></div>
                     
                 </div>
@@ -163,7 +155,7 @@
           
             
 
-            $("#thumbnail.view").prev().prev().has("#prev").css("display","none");
+            $("#thumbnail.view").prev().prev().prev().has("#prev").css("display","none");
             // $("#thumbnail2").prevUntil(".choose>.step").has(".show").next("#next").css("display:none;");
         </script>
 <?php include __DIR__ . '/__html_end.php' ?>
