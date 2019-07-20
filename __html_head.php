@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
         integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="img/icon/logo_s.png"/>    
+        <link rel="icon" type="image/png" href="img/icon/logo_s.png"/>  
+        <link href="plugin/SmartWizard-master/dist/css/smart_wizard.css" rel="stylesheet" type="text/css" />
+        <link href="plugin/SmartWizard-master/dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/style.css?a=<?= uniqid() ?>">
 </head>
