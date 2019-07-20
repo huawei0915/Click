@@ -1,0 +1,51 @@
+#smartwizard > ul{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #848484;
+    color: white;
+}
+#smartwizard > ul h1{ 
+    margin-right: 50px;
+    padding-top: 10px;
+    font-weight: 300;
+}
+.sw-theme-default > ul.step-anchor > li.done > a{
+    color: rgba(255, 255, 255, .5) !important;
+}
+.sw-theme-default > ul.step-anchor > li.done > a p{
+    font-size:14px;
+}
+.sw-theme-default > ul.step-anchor > li.active > a {
+    color:white !important;
+}
+.step-2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding:20px 100px !important;
+}
+
+.step-2 .wrapper{
+    width: 100%;
+    text-align: center;
+}
+.step-2 .wrapper h2{
+    margin: 35px 0;
+}
+.step-2 .wrapper h4{
+    margin: 15px 0;
+}
+.step-2 .wrapper a{
+    border: 1px solid #707070;
+    padding: 5px 5%;
+    border-radius: 5px;
+    color: #707070;
+    cursor: pointer;
+}
+.step-2 .wrapper a:hover{
+    background-color: #ffa800;
+    color: white;
+    font-weight: 500;
+    border: 1px solid transparent;
+}

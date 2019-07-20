@@ -26,6 +26,11 @@ a:hover{
     width: 1140px;
     padding: 0;
 }
+.container.bg_white{
+    width: 1140px;
+    padding: 0;
+    background-color: #fff;
+}
 header{
     height: 80px;
     background-color: #1C1C1C;
