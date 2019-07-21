@@ -306,10 +306,10 @@
                 }
             }
             // 3. 如果是左右滑動的畫，應為步驟不動，然後更換頁碼
-            function changeItem(item) {
+            function changeItem(index) {
                 // clean
-                $('#step'+  step +'.overflow-wrapper-x').removeClass('show-item1 show-item2 show-item3');
-                $('#step'+ step +'.overflow-wrapper-x').addClass('show-item'+ item );
+                $('#step'+ step +'.overflow-wrapper-x').removeClass('show-item1 show-item2 show-item3');
+                $('#step'+ step +'.overflow-wrapper-x').addClass('show-item'+ index );
             }
             
             $('.table .redo').click(function(){

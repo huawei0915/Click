@@ -300,12 +300,12 @@ section .choose .step{
 
 .overflow-wrapper-y.show-step2 {
     transition: .5s;
-    transform: translateX(0px) translateY(-200px);
+    transform: translateX(0px) translateY(-184px);
 }
 
 .overflow-wrapper-y.show-step3 {
     transition: .5s;
-    transform: translateX(0px) translateY(-400px);
+    transform: translateX(0px) translateY(-368px);
 }
 
 
