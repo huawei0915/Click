@@ -32,13 +32,6 @@
 .messange{
     min-height: 50vh ;
 }
-<<<<<<< Updated upstream
-.step-2{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding:20px 20% !important;
-=======
 
 .step-2,.step-3,.step-4{
     display: none;
@@ -46,7 +39,6 @@
 }
 .step-2 h2{
     margin: 15px 0;
->>>>>>> Stashed changes
 }
 .step-2 .wrapper{
     width: 100%;
