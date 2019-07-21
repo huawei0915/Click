@@ -7,7 +7,7 @@
 <div >
     <ul class="d-flex cart-header">
     <h1>購物車結帳流程</h1>
-        <li><a href="#step-1" onclick="show('step-1');">1. Choose<br /><small>放入購物車</small></a></li>
+        <li><a href="#step-1" onclick="show('step-1');" class="active">1. Choose<br /><small>放入購物車</small></a></li>
         <li><a href="#step-2" onclick="show('step-2');">2. LogIn<br /><small>登入會員</small></a></li>
         <li><a href="#step-3" onclick="show('step-3');">3. Data<br /><small>填寫資料</small></a></li>
         <li><a href="#step-4" onclick="show('step-4');">4. Finished<br /><small>完成結帳</small></a></li>
@@ -94,7 +94,7 @@
             <div class="text-center"><a href="#step-4" onclick="show('step-4');"  class="btn btn-secondary w-25">NEXT</a></div>
 
         </div>
-        <div id="step-4" class="step-2">
+        <div id="step-4" class="step-4">
             <div class="" >
                 <h2>物流方式</h2>
                     <div class="wrapper delivery-main mt-2">
@@ -188,12 +188,11 @@
 <script>
 function show(step) {
     for(var i = 1; i <= 4; i++) {
-        $('.step-'+ i).css('display', 'none');
-
+        $('.step-'+ i).css('display', 'none');    
     }
-    
     $('.'+step).css('display', 'block');
 }
+
 </script>
 
 <?php require __DIR__.'/__html_end.php' ?>

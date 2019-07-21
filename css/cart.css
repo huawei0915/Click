@@ -18,6 +18,9 @@
     line-height: 20px;
     color: #ccc;
 }
+.cart-header li a.active{
+    color:white;
+}
 .cart-header li:after{
     position: absolute;
     content: '';
