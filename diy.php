@@ -214,31 +214,8 @@
         <span  onclick="showRight();" id="right"><i class="fas fa-chevron-right fa-3x"></i></span>
         </div>
     </section>   
-    <!-- <div class="action">
-                    <p onclick="showLeft();">left</p>
-                    <p onclick="showRight();">right</p>
-                    <p onclick="showPrev();">prev</p>
-                    <p onclick="showNext();">next</p>
-                </div>
-            <div class="flow">
-                
-                <div id="step1" class="overflow-wrapper show-item1">
-                    <div class="tab">
-          
-                    </div>
-                </div>
-                <div id="step2" class="overflow-wrapper show-item1">
-                    <div class="tab">
-                    
-                    </div>
-                </div>
-            </div>
-        
-    </div>    -->
 
-
-
-<?php //include __DIR__ . '/__footer.php' ?>
+<?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
 <script>
             $("#step1 figure").click(function(){
