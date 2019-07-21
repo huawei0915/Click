@@ -76,136 +76,138 @@
         <div class="arrow">
         <span onclick="showLeft();" id="left"><i class="fas fa-chevron-left fa-3x"></i></span>
         <div class="flow">
-            <div class=" thumbnail overflow-wrapper show-step1 show-item1" id="step1">
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
+            <div class="overflow-wrapper-y">
+                <div class=" thumbnail overflow-wrapper-x show-step1 show-item1" id="step1">
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                    </div>
                 </div>
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
+                <div class=" thumbnail overflow-wrapper-x " id="step2">
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/3.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/3.png" alt="">
+                        </figure>
+                    </div>
                 </div>
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                </div>
-            </div>
-            <div class=" thumbnail overflow-wrapper " id="step2">
-                <div class="tab">
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                </div>
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                </div>
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/3.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/3.png" alt="">
-                    </figure>
-                </div>
-            </div>
-            <div class=" thumbnail overflow-wrapper " id="step3">
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/3.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/3.png" alt="">
-                    </figure>
-                </div>
-                <div class="tab">
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/2.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                </div>
-                <div class="tab">
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/3.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/1.png" alt="">
-                    </figure>
-                    <figure>
-                        <img src="./img/3.png" alt="">
-                    </figure>
+                <div class=" thumbnail overflow-wrapper-x " id="step3">
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/3.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/3.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/2.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="tab">
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/3.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/1.png" alt="">
+                        </figure>
+                        <figure>
+                            <img src="./img/3.png" alt="">
+                        </figure>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,85 +258,58 @@
             });
           
              // --------- 滑動----------------
-             let index = 1;
-             let step = 1 ; 
+             // 1. 先初始化，應該第一步和第一頁
+            let index = 1;
+            let step = 1 ; 
+
             function showLeft() {
                 if (index - 1 >= 1) {
                     index--;
-                    $('#step1.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step2.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step3.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step1.overflow-wrapper').addClass('show-item'+ index );
-                    $('#step2.overflow-wrapper').addClass('show-item'+ index );
-                    $('#step3.overflow-wrapper').addClass('show-item'+ index );
+                    changeItem(index);
                 }
             }
-
             function showRight() {
                 if (index + 1 <= 3) {
                     index++;
-                    $('#step1.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step2.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step3.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step1.overflow-wrapper').addClass('show-item'+ index );
-                    $('#step2.overflow-wrapper').addClass('show-item'+ index );
-                    $('#step3.overflow-wrapper').addClass('show-item'+ index );
-                   
+                    changeItem(index);                
                 }
             }
-            function showNext(){
-               
+            function showNext() {
                 if (step + 1 <= 3) {
                     step++;      
-                if (step==1){
-                    $('#step1.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step1.overflow-wrapper').removeClass('show-step1 show-step2 show-step3');
-                    $('.choose h4').html('第一步 : 選擇相機');
-                    $('#step1.overflow-wrapper').addClass('show-step'+ step );
-                }
-                if (step==2){
-                    $('#step2.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step2.overflow-wrapper').removeClass('show-step1 show-step2 show-step3');
-                    $('.choose h4').html('第二步 : 選擇鏡頭');
-                    $('#step1.overflow-wrapper').addClass('show-step'+ step );
-                    $('#step2.overflow-wrapper').addClass('show-step'+ step );
-                    $('#step3.overflow-wrapper').addClass('show-step'+ step );
-                }
-                if (step==3){
-                    $('#step3.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                    $('#step3.overflow-wrapper').removeClass('show-step1 show-step2 show-step3');
-                    $('.choose h4').html('第三步 : 選擇配件');
-                    $('#step1.overflow-wrapper').addClass('show-step'+ step );
-                    $('#step2.overflow-wrapper').addClass('show-step'+ step );
-                    $('#step3.overflow-wrapper').addClass('show-step'+ step );
-                }
+                    changeStep(step);
                 }
             }
             function showPrev(){
-                $('#step1.overflow-wrapper,#step2.overflow-wrapper,#step3.overflow-wrapper').removeClass('show-item1 show-item2 show-item3');
-                $('#step1.overflow-wrapper,#step2.overflow-wrapper,#step3.overflow-wrapper').removeClass('show-step1 show-step2 show-step3');
                 if  (step - 1 >= 1) {
                     step--;
-                    
-                if (step==1){
-                    $('.choose h4').html('第一步 : 選擇相機');
-                    $('#step1.overflow-wrapper').addClass('show-step'+ step );
+                    changeStep(step);
                 }
-                if (step==2){
-                    $('.choose h4').html('第二步 : 選擇鏡頭');
-                    
-                    $('#step2.overflow-wrapper').removeClass('show-step'+ step-1 );
-                    $('#step1.overflow-wrapper').addClass('show-step'+ step );
-                    $('#step2.overflow-wrapper').addClass('show-step'+ step );
+            }
+            // 2. 切換步驟的時候，左右滑動應該要恢復至第一頁，
+            function changeStep(step) {
+                $('.overflow-wrapper-y').removeClass('show-step1 show-step2 show-step3');
+                $('.overflow-wrapper-y').addClass('show-step'+ step);
+                index = 1;
+                changeItem(1);
+                switch (step) {
+                    case 1:
+                        $('.choose h4').html('第一步 : 選擇相機');
+                        break;
+                    case 2:
+                        $('.choose h4').html('第二步 : 選擇鏡頭');
+                        break;
+                    case 3:
+                        $('.choose h4').html('第三步 : 選擇配件');
+                        break;
+                    default:
                 }
-                if (step==3){
-                    $('.choose h4').html('第三步 : 選擇配件');
-              
-                    $('#step3.overflow-wrapper').removeClass('show-step'+ step-1 );
-                    $('#step1.overflow-wrapper').addClass('show-step'+ step );
-                    $('#step3.overflow-wrapper').addClass('show-step'+ step );
-                }
-                }
+            }
+            // 3. 如果是左右滑動的畫，應為步驟不動，然後更換頁碼
+            function changeItem(item) {
+                // clean
+                $('#step'+  step +'.overflow-wrapper-x').removeClass('show-item1 show-item2 show-item3');
+                $('#step'+ step +'.overflow-wrapper-x').addClass('show-item'+ item );
             }
             
             $('.table .redo').click(function(){

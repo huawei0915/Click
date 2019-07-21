@@ -256,7 +256,7 @@ section .choose .step{
     overflow: hidden ;
 }
 
-.overflow-wrapper {
+.overflow-wrapper-x {
     float: left;
     width: 300%;
     /* height: 600px; */
@@ -264,35 +264,48 @@ section .choose .step{
     transform: translateX(0px) translateY(0px);
 }
 
-.overflow-wrapper .tab{
+.overflow-wrapper-x .tab{
     float: left;
     padding: 20px ;
     width: 33.333%;
 }
 
-.overflow-wrapper.show-item1 {
+.overflow-wrapper-x.show-item1 {
     transition: .5s;
     transform: translateX(0px) ;
   }
-.overflow-wrapper.show-step1 {
-    transition: .5s;
-    transform: translateY(0px) ;
-  }
-.overflow-wrapper.show-item2 {
+
+.overflow-wrapper-x.show-item2 {
     transition: .5s;
     transform: translateX(-33.333%) ;
   }
-.overflow-wrapper.show-step2 {
-    transition: .5s;
-    transform: translateY(-185px) ;
-  }
-
-.overflow-wrapper.show-item3 {
+.overflow-wrapper-x.show-item3 {
     transition: .5s;
     transform: translateX(-66.666%);
 
   }
-.overflow-wrapper.show-step3 {
+
+.overflow-wrapper-y {
+    float: left;
+    width: 100%;
+    height: 600px;
     transition: .5s;
-    transform: translateY(-360px) ;
-  }
+    transform: translateX(0px) translateY(0px);
+}
+
+.overflow-wrapper-y.show-step1 {
+    transition: .5s;
+    transform: translateX(0px) translateY(0px);
+}
+
+.overflow-wrapper-y.show-step2 {
+    transition: .5s;
+    transform: translateX(0px) translateY(-200px);
+}
+
+.overflow-wrapper-y.show-step3 {
+    transition: .5s;
+    transform: translateX(0px) translateY(-400px);
+}
+
+

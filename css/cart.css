@@ -20,7 +20,9 @@
 }
 .cart-header li a.active{
     color:white;
+    /* color:#ffa800; */
 }
+
 .cart-header li:after{
     position: absolute;
     content: '';
@@ -31,6 +33,8 @@
     top: 20px;
     right: 0;
 }
+
+
 
 .messange{
     min-height: 50vh ;

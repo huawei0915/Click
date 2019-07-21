@@ -7,10 +7,10 @@
 <div >
     <ul class="d-flex cart-header">
     <h1>購物車結帳流程</h1>
-        <li><a href="#step-1" onclick="show('step-1');" class="active">1. Choose<br /><small>放入購物車</small></a></li>
-        <li><a href="#step-2" onclick="show('step-2');">2. LogIn<br /><small>登入會員</small></a></li>
-        <li><a href="#step-3" onclick="show('step-3');">3. Data<br /><small>填寫資料</small></a></li>
-        <li><a href="#step-4" onclick="show('step-4');">4. Finished<br /><small>完成結帳</small></a></li>
+        <li><a href="#step-1" onclick="show('1');" class="active">1. Choose<br /><small>放入購物車</small></a></li>
+        <li><a href="#step-2" onclick="show('2');">2. LogIn<br /><small>登入會員</small></a></li>
+        <li><a href="#step-3" onclick="show('3');">3. Data<br /><small>填寫資料</small></a></li>
+        <li><a href="#step-4" onclick="show('4');">4. Finished<br /><small>完成結帳</small></a></li>
     </ul>
 
     <div class="messange">
@@ -18,7 +18,7 @@
         
             Step Content
 
-            <div class=" text-center"><a href="#step-2" onclick="show('step-2');" class="btn btn-secondary w-25 ">NEXT</a></div>
+            <div class=" text-center"><a href="#step-2" onclick="show('2');" class="btn btn-secondary w-25 ">NEXT</a></div>
         </div>
 
         <div id="step-2" class="step-2">
@@ -28,7 +28,7 @@
                 <h4>會員登入</h4>
                     <div  class=" text-center"><a class="w-50">會員登入</a></div>
                 <h4>非會員登入</h4>
-                    <div  class=" text-center"><a  href="#step-3"  onclick="show('step-3');"  class="w-50">填寫基本資料</a></div>
+                    <div  class=" text-center"><a  href="#step-3"  onclick="show('3');"  class="w-50">填寫基本資料</a></div>
                 </div>
             </div>    
         </div>
@@ -91,7 +91,7 @@
                     </form>   
                 </div> 
             </div>
-            <div class="text-center"><a href="#step-4" onclick="show('step-4');"  class="btn btn-secondary w-25">NEXT</a></div>
+            <div class="text-center"><a href="#step-4" onclick="show('4');"  class="btn btn-secondary w-25">NEXT</a></div>
 
         </div>
         <div id="step-4" class="step-4">
@@ -189,8 +189,15 @@
 function show(step) {
     for(var i = 1; i <= 4; i++) {
         $('.step-'+ i).css('display', 'none');    
+        $('.cart-header li a').removeClass('active');
     }
-    $('.'+step).css('display', 'block');
+
+    $('.step-'+step).css('display', 'block');
+    $('.cart-header li a').eq(step-1).addClass('active');
+    
+    setTimeout(() => {
+        $('html, body').scrollTop(0);  
+    }, 10);
 }
 
 </script>
