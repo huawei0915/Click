@@ -8,9 +8,9 @@
                 <div  class="table">
                     <img src="img/table_bg.jpg" alt="">
                     <ul class="grade">
-                            <li><a href="">專業<i class="fas fa-caret-right fa-sm"></i></a></li>
-                            <li><a href="">進階<i class="fas fa-caret-right fa-sm"></i></a></li>
-                            <li><a href="">入門<i class="fas fa-caret-right fa-sm"></i></a></li>
+                            <li><a id="pro">專業<i class="fas fa-caret-right fa-sm"></i></a></li>
+                            <li><a id="intel">進階<i class="fas fa-caret-right fa-sm"></i></a></li>
+                            <li><a id="start">入門<i class="fas fa-caret-right fa-sm"></i></a></li>
                     </ul>
                     <div class="camera_BP" >
                         <figure class="text-center">
@@ -44,7 +44,7 @@
 
                         
                     </div>
-                    <div class="redo"><i class="fas fa-redo-alt"></i></div>
+                    <div class="redo" ><i class="fas fa-redo-alt"></i></div>
                     
                 </div>
 
@@ -336,6 +336,26 @@
                 }
                 }
             }
-        
+            
+            $('.table .redo').click(function(){
+                    $("#camera_BP").attr("src","");
+                    $("#lens_BP").attr("src","");
+                    $("#tools1_BP").attr("src","");
+                })
+                $('#pro').click(function(){
+                    $("#camera_BP").attr("src","img/2.png");
+                    $("#lens_BP").attr("src","img/3.png");
+                    $("#tools1_BP").attr("src","img/2.png");
+                })
+                $('#intel').click(function(){
+                    $("#camera_BP").attr("src","img/3.png");
+                    $("#lens_BP").attr("src","img/2.png");
+                    $("#tools1_BP").attr("src","img/1.png");
+                })
+                $('#start').click(function(){
+                    $("#camera_BP").attr("src","img/1.png");
+                    $("#lens_BP").attr("src","img/2.png");
+                    $("#tools1_BP").attr("src","img/2.png");
+                })
         </script>
 <?php include __DIR__ . '/__html_end.php' ?>
