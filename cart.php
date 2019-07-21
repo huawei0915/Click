@@ -7,17 +7,10 @@
 <div >
     <ul class="d-flex cart-header">
     <h1>購物車結帳流程</h1>
-<<<<<<< Updated upstream
-        <li><a href="#step-1">1. Choose<br /><small>放入購物車</small></a></li>
-        <li><a href="#step-2">2. LogIn<br /><small>登入會員</small></a></li>
-        <li><a href="#step-3">3. Data<br /><small>填寫資料</small></a></li>
-        <li><a href="#step-4">4. Finished<br /><small>完成結帳</small></a></li>
-=======
         <li><a href="#step-1" onclick="show('step-1');">1. Choose<br /><small>放入購物車</small></a></li>
         <li><a href="#step-2" onclick="show('step-2');">2. LogIn<br /><small>登入會員</small></a></li>
         <li><a href="#step-3" onclick="show('step-3');">3. Data<br /><small>填寫資料</small></a></li>
         <li><a href="#step-4" onclick="show('step-4');">4. Finished<br /><small>完成結帳</small></a></li>
->>>>>>> Stashed changes
     </ul>
 
     <div class="messange">
@@ -30,18 +23,6 @@
 
         <div id="step-2" class="step-2">
             <div class="">
-<<<<<<< Updated upstream
-            <h2>會員流程</h2>
-            <div class="wrapper">
-            <h4>會員登入</h4>
-                <a>會員登入</a>
-            <h4>非會員登入</h4>
-                <a>填寫基本資料</a>
-            </div>
-</div>
-        </div>
-        <div id="step-3" class="step-2">
-=======
                 <h2>會員流程</h2>
                 <div class="wrapper">
                 <h4>會員登入</h4>
@@ -52,7 +33,6 @@
             </div>    
         </div>
         <div id="step-3" class="step-3">
->>>>>>> Stashed changes
             <div class="">
                 <h2 class="">基本資料</h2>
                 <div class="wrapper">
@@ -205,55 +185,6 @@
 
 <?php require __DIR__.'/__footer.php' ?>
 <?php require __DIR__.'/__script.php' ?>
-<<<<<<< Updated upstream
-<script type="text/javascript" src="plugin/arrow/dist/js/jquery.smartWizard.min.js"></script>
-<script type="text/javascript">
-      // Smart Wizard
-      $('#smartwizard').smartWizard({
-            selected: 0,  // Initial selected step, 0 = first step 
-            keyNavigation:true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
-            autoAdjustHeight:true, // Automatically adjust content height
-            cycleSteps: false, // Allows to cycle the navigation of steps
-            backButtonSupport: true, // Enable the back button support
-            useURLhash: true, // Enable selection of the step based on url hash
-            lang: {  // Language variables
-                next: 'Next', 
-                previous: 'Previous'
-            },
-            toolbarSettings: {
-                toolbarPosition: 'bottom', // none, top, bottom, both
-                toolbarButtonPosition: 'right', // left, right
-                showNextButton: true, // show/hide a Next button
-                showPreviousButton: true, // show/hide a Previous button 
-                toolbarExtraButtons: [
-			$('<button></button>').text('Finish')
-					      .addClass('btn btn-warning')
-					      .on('click', function(){ 
-						alert('Finsih button click');                            
-					      }),
-			$('<button></button>').text('Cancel')
-					      .addClass('btn btn-danger')
-					      .on('click', function(){ 
-						alert('Cancel button click');                            
-					      })
-                      ]
-            }, 
-            anchorSettings: {
-                anchorClickable: false, // Enable/Disable anchor navigation //啟用/禁用錨點導航
-                enableAllAnchors: false, // Activates all anchors clickable all times //激活所有可點擊的錨點
-                markDoneStep: true, // add done css //添加完成的css
-                enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation //啟用/禁用完成步驟導航
-            },            
-            contentURL: null, // content url, Enables Ajax content loading. can set as data data-content-url on anchor // content url，啟用Ajax內容加載。可以在錨點上設置為data data-content-url
-            disabledSteps: [],    // Array Steps disabled //陣列步驟已禁用
-            errorSteps: [],    // Highlight step with errors //突出顯示有錯誤的步驟
-            theme: 'dots',
-            transitionEffect: 'fade', // Effect on navigation, none/slide/fade  //導航效果，無/滑動/淡入淡出
-            transitionSpeed: '400'
-      });
-      
-  
-=======
 <script>
 function show(step) {
     for(var i = 1; i <= 4; i++) {
@@ -263,7 +194,6 @@ function show(step) {
     
     $('.'+step).css('display', 'block');
 }
->>>>>>> Stashed changes
 </script>
 
 <?php require __DIR__.'/__html_end.php' ?>
