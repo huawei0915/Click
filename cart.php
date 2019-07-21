@@ -4,22 +4,33 @@
 <?php require __DIR__.'/__nav.php' ?>
 
 <div class="container" style="background-color:white;">
-<div id="smartwizard">
-    
-    <ul>
+<div >
+    <ul class="d-flex cart-header">
     <h1>購物車結帳流程</h1>
+<<<<<<< Updated upstream
         <li><a href="#step-1">1. Choose<br /><small>放入購物車</small></a></li>
         <li><a href="#step-2">2. LogIn<br /><small>登入會員</small></a></li>
         <li><a href="#step-3">3. Data<br /><small>填寫資料</small></a></li>
         <li><a href="#step-4">4. Finished<br /><small>完成結帳</small></a></li>
+=======
+        <li><a href="#step-1" onclick="show('step-1');">1. Choose<br /><small>放入購物車</small></a></li>
+        <li><a href="#step-2" onclick="show('step-2');">2. LogIn<br /><small>登入會員</small></a></li>
+        <li><a href="#step-3" onclick="show('step-3');">3. Data<br /><small>填寫資料</small></a></li>
+        <li><a href="#step-4" onclick="show('step-4');">4. Finished<br /><small>完成結帳</small></a></li>
+>>>>>>> Stashed changes
     </ul>
 
     <div class="messange">
-        <div id="step-1" class="">
+        <div id="step-1" class="step-1">
+        
             Step Content
+
+            <div class=" text-center"><a href="#step-2" onclick="show('step-2');" class="btn btn-secondary w-25 ">NEXT</a></div>
         </div>
+
         <div id="step-2" class="step-2">
             <div class="">
+<<<<<<< Updated upstream
             <h2>會員流程</h2>
             <div class="wrapper">
             <h4>會員登入</h4>
@@ -30,8 +41,20 @@
 </div>
         </div>
         <div id="step-3" class="step-2">
+=======
+                <h2>會員流程</h2>
+                <div class="wrapper">
+                <h4>會員登入</h4>
+                    <div  class=" text-center"><a class="w-50">會員登入</a></div>
+                <h4>非會員登入</h4>
+                    <div  class=" text-center"><a  href="#step-3"  onclick="show('step-3');"  class="w-50">填寫基本資料</a></div>
+                </div>
+            </div>    
+        </div>
+        <div id="step-3" class="step-3">
+>>>>>>> Stashed changes
             <div class="">
-                <h2>基本資料</h2>
+                <h2 class="">基本資料</h2>
                 <div class="wrapper">
                     <form class="text-right"　>
                         <div class="form-group row ">
@@ -87,7 +110,9 @@
                         </div>
                     </form>   
                 </div> 
-                </div>
+            </div>
+            <div class="text-center"><a href="#step-4" onclick="show('step-4');"  class="btn btn-secondary w-25">NEXT</a></div>
+
         </div>
         <div id="step-4" class="step-2">
             <div class="" >
@@ -124,7 +149,7 @@
                             </div>
                         </div>
                     <div class="wrapper delivery-main"><em>* (宅配需選擇配送時段)</em></div>
-                <div class="my-2">
+                <div class="my-4">
                 <h2>付款方式</h2>
                     <div class="pay-style d-flex ">
                         <div>
@@ -144,7 +169,7 @@
                         </a>
                         </div>
                     </div>
-                    <div class="my-2">
+                    <div class="my-4 ">
                         <h3>發票類型</h3>
                         <div class="mt-2 pay-style">
                             <div class="custom-control custom-radio custom-control-inline radio-text">
@@ -169,7 +194,9 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-end mt-4"><a href="" class="btn btn-secondary mx-2 px-4">繼續購物</a><a href="" class="btn btn-danger mx-2 px-4">結   帳</a></div>
         </div>
+        
     </div>
 </div>
 </div>
@@ -178,6 +205,7 @@
 
 <?php require __DIR__.'/__footer.php' ?>
 <?php require __DIR__.'/__script.php' ?>
+<<<<<<< Updated upstream
 <script type="text/javascript" src="plugin/arrow/dist/js/jquery.smartWizard.min.js"></script>
 <script type="text/javascript">
       // Smart Wizard
@@ -225,6 +253,17 @@
       });
       
   
+=======
+<script>
+function show(step) {
+    for(var i = 1; i <= 4; i++) {
+        $('.step-'+ i).css('display', 'none');
+
+    }
+    
+    $('.'+step).css('display', 'block');
+}
+>>>>>>> Stashed changes
 </script>
 
 <?php require __DIR__.'/__html_end.php' ?>

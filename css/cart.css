@@ -1,61 +1,58 @@
-#smartwizard > ul{
-    text-align: center;
-    display: flex;
-    justify-content: center;
+.cart-header{
     background-color: #848484;
-    color: white;
 }
-#smartwizard > ul h1{ 
+.cart-header h1{
+    padding: 20px ;
     margin-right: 50px;
-    padding-top: 10px;
-    font-weight: 300;
+    color: #fff;
 }
-button {
-    width: 70%;
-    background: #ccc;
+.cart-header li{
+    padding-top: 25px;
+    position: relative;
+    text-align: center;
 }
-.sw-theme-dots > ul.step-anchor > li{
-    width: 120px;
+.cart-header li a{
+    padding:0 40px ;
+    /* width: 100%; */
+    font-size: 1.25rem;
+    line-height: 20px;
+    color: #ccc;
+}
+.cart-header li:after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 50px;
+    background-color: #fff;
+    color: #fff;
+    top: 20px;
+    right: 0;
 }
 
-.sw-theme-dots > ul.step-anchor > li.done > a{
-    color: rgba(255, 255, 255, .5) !important;
-}
-.sw-theme-dots > ul.step-anchor > li.done > a p{
-    font-size:14px;
-}
-.sw-theme-dots > ul.step-anchor > li.active > a:after {
-    background: #FFA800;
-}
-.sw-theme-dots > ul.step-anchor > li.done > a:after {
-    background:#ccc;
-}
-.sw-theme-dots > ul.step-anchor > li.active > a{
-    color:white !important;
-}
-.sw-theme-dots > ul.step-anchor:before {
-    background-color:transparent;
-}
-.sw-theme-dots > ul.step-anchor > li > a:after {
-    left:44%;
-}
 .messange{
-    min-height: 50vh !important;
+    min-height: 50vh ;
 }
+<<<<<<< Updated upstream
 .step-2{
     display: flex;
     justify-content: center;
     text-align: center;
     padding:20px 20% !important;
-}
+=======
 
+.step-2,.step-3,.step-4{
+    display: none;
+    padding:20px 20% ;
+}
+.step-2 h2{
+    margin: 15px 0;
+>>>>>>> Stashed changes
+}
 .step-2 .wrapper{
     width: 100%;
     text-align: center;
 }
-.step-2 .wrapper h2{
-    margin: 35px 0;
-}
+
 .step-2 .wrapper h4{
     margin: 15px 0;
 }
@@ -65,6 +62,8 @@ button {
     border-radius: 5px;
     color: #707070;
     cursor: pointer;
+    margin: 0 auto;
+
 }
 .step-2 .wrapper a:hover{
     background-color: #ffa800;
@@ -77,7 +76,7 @@ button {
     margin-top: 0;
 }
 .radio-text label{
-    font-size: 1.5rem !important;
+    font-size: 1.5rem ;
 }
 
 em{
@@ -92,7 +91,7 @@ em{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    padding-left: 10% !important;
+    padding-left: 10% ;
 }
 .p-time{
     display: flex;
@@ -100,8 +99,8 @@ em{
     
 }
 .p-time .p-time-title{
-    margin-right: 50px !important;
-    font-size: 1.5rem !important;
+    margin-right: 50px ;
+    font-size: 1.5rem ;
     width: 25%;
     text-align: left;
 }
@@ -117,7 +116,7 @@ em{
     margin-top: 1rem;
 }
 .pay-style{
-    padding-left: 10% !important;
+    padding-left: 10% ;
 }
 .pay-style .visa{
     border:1px solid #ccc;
