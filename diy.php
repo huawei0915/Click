@@ -1,4 +1,19 @@
 <?php include __DIR__ . '/__html_head.php' ?>
+<style>
+html,body{
+    background-color: #1C1C1C;
+    height: auto;
+}
+footer{
+    width: 100%;
+    height: 130px;
+    background-color: #444;
+    position:absolute;
+    bottom: 0;
+    text-align: left;
+}
+
+</style>
 <?php include __DIR__ . '/__nav.php' ?>
 
 
