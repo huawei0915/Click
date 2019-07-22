@@ -185,6 +185,7 @@
 
 <?php require __DIR__.'/__footer.php' ?>
 <?php require __DIR__.'/__script.php' ?>
+<<<<<<< Updated upstream
 <script>
 function show(step) {
     for(var i = 1; i <= 4; i++) {
@@ -200,6 +201,51 @@ function show(step) {
     }, 10);
 }
 
+=======
+<script type="text/javascript" src="plugin/arrow/dist/js/jquery.smartWizard.min.js"></script>
+<script type="text/javascript">
+      // Smart Wizard
+      $('#smartwizard').smartWizard({
+            selected: 0,  // Initial selected step, 0 = first step 
+            keyNavigation:true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
+            autoAdjustHeight:true, // Automatically adjust content height
+            cycleSteps: false, // Allows to cycle the navigation of steps
+            backButtonSupport: true, // Enable the back button support
+            useURLhash: true, // Enable selection of the step based on url hash
+            lang: {  // Language variables
+                next: 'Next', 
+                previous: 'Previous'
+            },
+            toolbarSettings: {
+                toolbarPosition: 'bottom', // none, top, bottom, both
+                toolbarButtonPosition: 'right', // left, right
+                showNextButton: true, // show/hide a Next button
+                showPreviousButton: true, // show/hide a Previous button 
+                toolbarExtraButtons: [
+			$('<button></button>').text('Finish').addClass('btn btn-warning').on('click', function(){ 
+						alert('Finsih button click');                            
+					      }),
+			$('<button></button>').text('Cancel').addClass('btn btn-danger').on('click', function(){ 
+						alert('Cancel button click');                            
+					      })
+                      ]
+            }, 
+            anchorSettings: {
+                anchorClickable: false, // Enable/Disable anchor navigation //啟用/禁用錨點導航
+                enableAllAnchors: false, // Activates all anchors clickable all times //激活所有可點擊的錨點
+                markDoneStep: true, // add done css //添加完成的css
+                enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation //啟用/禁用完成步驟導航
+            },            
+            contentURL: null, // content url, Enables Ajax content loading. can set as data data-content-url on anchor // content url，啟用Ajax內容加載。可以在錨點上設置為data data-content-url
+            disabledSteps: [],    // Array Steps disabled //陣列步驟已禁用
+            errorSteps: [],    // Highlight step with errors //突出顯示有錯誤的步驟
+            theme: 'dots',
+            transitionEffect: 'fade', // Effect on navigation, none/slide/fade  //導航效果，無/滑動/淡入淡出
+            transitionSpeed: '400'
+      });
+      
+  
+>>>>>>> Stashed changes
 </script>
 
 <?php require __DIR__.'/__html_end.php' ?>

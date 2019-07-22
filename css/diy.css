@@ -207,6 +207,7 @@ section .choose{
     padding-top:25px; 
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 section .choose .step{
     font-size: 1rem;
@@ -222,6 +223,15 @@ section .choose .step{
 .arrow span{
     z-index: 5;
 }
+/* .choose h4{
+    position: absolute;
+}
+h4.view{
+    position: absolute;
+    display: block;
+    opacity: 1;
+} */
+
 /* --------------------- */
 .thumbnail{
     /* background: #1c1c1c; */
