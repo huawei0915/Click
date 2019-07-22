@@ -20,26 +20,35 @@
 <body>
     <header>
         <div class="container">
-            <div class="row justify-content-between align-items-end">
-                <div class="d-flex head_mobile ">
-                <div class="show_mobile mx-2 pt-3"><i class="fas fa-bars fa-2x" style="color: white;">
-                
-                
-                </i></div>    
-                <div class="logo px-2"><a href=""><img src="img/logo.svg"alt=""></a></div>
+            <div class="row justify-content-between align-items-end  mobile-style">
+                <div class="d-flex head_mobile">
+                    
+                    <div class="logo px-2"><a href=""><img src="img/logo.svg"alt=""></a></div>
                 </div>
                 <div class="features pb-2">
                         <form method="post" action="">
-                            <div class="serbox">
-                               
-                                <input id="mag" type="search" placeholder="    Search..." name="search">
-                             
+                            <div class="serbox">   
+                                <input id="mag" type="search" placeholder="    Search..." name="search">   
                                 <div id="arm"></div>
                         </form>
-                    <!-- <input type="search" id="searcharea" name="searcharea" class="searcharea" value="搜尋"> -->
-                    <!-- <input type="search"><img src="img/icon/放大鏡.svg" alt="" class="px-2" id="search"></a> -->
                     <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2 shop"></a>
                     <a href=""><img src="img/icon/會員.svg" alt="" class="px-2"></a>
+                    <div class="menu transition show_mobile " >
+                            <div class="bar bar1 transition"></div>
+                            <div class="bar bar2 transition"></div>
+                            <div class="bar bar3 transition"></div>
+                            <ul class="transition">
+                              <li><a class="transition"></a></li>
+                              <li><a class="transition">CANON</a></li>
+                              <li><a class="transition">NIKON</a></li>
+                              <li><a class="transition">LEICA</a></li>
+                              <li><a class="transition">產品列表</a></li>
+                              <li><a class="transition">首選推薦</a></li>
+                              <li><a class="transition">攝影分享</a></li>
+                              <li><a class="transition">關於我們</a></li>
+                              <li><a class="transition">客服支援</a></li>
+                            </ul>
+                          </div>
                 </div>
             </div>
         </div>
@@ -59,11 +68,12 @@
                 <ul class="d-flex nav-r">
                     <li><a href="">關於我們</a></li>
                     <li><a href="">客服支援</a></li>
-                    <!-- <li><a href="">FAQ</a></li> -->
                 </ul>
             </div>
         </div>
     </nav>
+
+<div style="height: 114px;background:transparent;width: 100vw;"></div>
 
     <!-- <div class="container">
             <div class="table-l">
@@ -144,7 +154,7 @@
     </section>    -->
 
 
-    <div class="form">
+    <!-- <div class="form">
         <div class="login left flex-box">
           <h1>Login</h1>
           <input type="text" placeholder="Username">
@@ -173,7 +183,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 
@@ -227,7 +237,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script>
+    <!-- <script>
        var form = document.querySelector(".form");
 var signIn = document.getElementById("signIn");
 var signUp = document.getElementById("signUp");
@@ -237,9 +247,28 @@ signUp.addEventListener("click", function() {
 });
 signIn.addEventListener("click", function() {
   form.classList.remove("translate");
-});</script>    
-     
+});</script>     -->
+<script>
+        $(".menu").click(function(){
+          $(this).toggleClass('active');
+        });
 
+        var lastscrollTop;
+        $(window).scroll(function () {
+            let scrollTop = $(this).scrollTop();
+            let scrollPage = $("body").height();
+            if (scrollTop > lastscrollTop) {
+                $("nav,header").addClass("active");
+            } else {
+                $("nav,header").removeClass("active");
+            }
+            lastscrollTop = scrollTop;
+        });
+
+
+            
+        
+      </script>
 
 </body>
 
