@@ -1,13 +1,12 @@
 /* ---------background--------- */
 .bg_mber{
     width: 100%;
-    height: calc (100% - 70px);
+    /* min-height: calc (100% - 70px); */
     background: white;
 }
 /* ---------left area--------- */
 .left_sec{
     width: 270px;
-    height: 470px;
 }
 .circle_sec{
     margin: 0 auto;
@@ -21,10 +20,11 @@
     border: 1px solid rgb(155, 155, 155);
     border-radius: 50%;
     background-size: cover;
+    margin-bottom: 15px;
 }
 .cirle_edit{
     width: 100%;
-    padding-top: 25%;
+    margin-top: 25%;
 }
 .cirle_edit li{
     margin: 0 5%;
@@ -36,11 +36,11 @@
     font-size: 1rem;
 }
 .left_list{
-    padding-top: 20px;
-    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 .drop_menu{
-    padding-left:50px; 
+    margin-left:20%; 
 }
 .left_list ul li, i{
     padding: 10px;
@@ -48,12 +48,10 @@
 }
 /* ---------right area--------- */
 .right_sec{
-    width: 80%;
-    margin: 0 auto;
+    width: 65%;
     text-align: center;
-    padding-left: 280px;
-    position: relative;
-    top: -398px;
+    margin-top: 69px;
+    margin-left: 45px;
 }
 .row_p{
     width: 100%;
@@ -98,19 +96,30 @@
 }
 .product_price{
     background: lightgrey;
-    width: 150px;
+    width: 120px;
     height: 30px;
     position: absolute;
-    left: 440px;
-    top: 150px;
+    right: 25px;
+    bottom: 43px;
 }
 .product_pay{
     background: #ffb11b;
-    width: 100px;
-    height: 30px;
-    border-radius:3%;
-    line-height: 30px;
+    width: 150px;
+    height: 35px;
+    border-radius:5px;
+    line-height: 35px;
     position: absolute;
-    right: 2%;
+    right: 25px;
+    bottom: 5px;
 }
+.right_sec .box_buy .product_delete{
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    width: 30px;
+}
+.right_sec .box_buy .del{
+    color:red;
+}
+
     

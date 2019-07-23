@@ -2,9 +2,11 @@
     box-sizing: border-box;
     font: 16px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
     font-weight: 100;
+   
 }
-body{
+html,body{
     background-color: #1C1C1C;
+    height: calc(100% - 123px);
 }
 li{
     list-style-type: none;
@@ -23,12 +25,31 @@ a:hover{
 .container{
     width: 1140px;
     padding: 0;
+    height: auto; 
+    min-height: 100%;
+}
+.container.bg_white{
+    width: 1140px;
+    padding: 0;
+    background-color: #fff;
 }
 header{
     height: 80px;
     background-color: #1C1C1C;
     /* padding-top:20px;  */
+    position: fixed;
+    transition: .5s;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    /* transform: translateY(0); */
+    /* margin: 0 auto; */
 }
+header.active{
+    /* transform: translateX(-50%); */
+    transform: translate(-50%,-80px);
+}
+
 .logo a img{
     padding-top: 16px;
     height: 75px;
@@ -39,7 +60,7 @@ header{
     color: white;
 }
 /* ---------search--------------------- */
-  .box {
+  .serbox {
     position: relative;
     /* width: 20%; */
     display: flex;
@@ -58,6 +79,7 @@ header{
     color: white;
     border: solid 2px white;
     background-color: #1C1C1C;
+    margin-top: 2px;
     transition: width 1s ease-in-out, border-radius 1.5s ease-in-out;
   }
   
@@ -66,8 +88,8 @@ header{
   }
   
   #mag:hover {
-    width: 50%;
-    height: 25px;
+    width: 160px;
+    height: 28px;
   }
   #mag:hover ~ #arm {
     transition: 1s ease-in-out;
@@ -78,7 +100,7 @@ header{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 100px;
+    right: 105px;
     top: 72%;
     /* z-index: -1; */
     transform: rotate(135deg);
@@ -86,6 +108,68 @@ header{
     border: solid 2px white;
   }
 /* ----------------------------------   */
+
+  .transition{
+    transition: 0.4s;
+  }
+
+  .menu{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 24px 0 0 16px;
+  }
+  .menu.active{
+    /* background: #fff; */
+    background-color: #1c1c1c;
+  }
+  .menu ul{
+    position: absolute;
+    right: -20px;
+    top:56px;
+    background:#1C1C1C;
+    width:150px;
+    opacity: 0;
+    /* max-height: 0; */
+    overflow: hidden;
+    padding:0 0 0 30px;
+  }
+  .menu.active ul{
+    opacity: 1;
+    min-height: calc(100vh - 60px);
+   
+  }
+  
+  .menu ul li a{
+    display: block;
+    padding:10px 12px;
+    color:white !important;
+    
+  }
+  .bar{
+      width: 20px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      border-radius: 2px;
+  }
+  .active .bar1{
+      -webkit-transform: rotate(-45deg) translate(-5px, 4.4px) ;
+      transform: rotate(-45deg) translate(-5px, 4.4px) ;
+      background: white;
+  }
+
+  .active .bar2{opacity: 0;}
+
+  .active .bar3{
+      -webkit-transform: rotate(45deg) translate(-5px, -4.39px) ;
+      transform: rotate(45deg) translate(-5px, -4.39px) ;
+  }
+
+
+
+
+  /* ---------------------------------------- */
 
 
 
@@ -96,6 +180,9 @@ header{
     margin-top:4px ;
     height: 26px;
 }
+.features .shop{
+    height: 30px;
+}
 
 .features a:hover img{
     fill: #FFB11B;
@@ -103,9 +190,15 @@ header{
     transform: scale(1.2);
 }
 nav{
+    position: fixed;
     background-color: #444;
     height: 34px;
     line-height: 26px; 
+    transition: .5s;
+    width: 100vw;
+    z-index: 999;
+    top:80px;
+    
 } 
 nav>.container{
     padding: 0;
@@ -117,6 +210,15 @@ nav a{
     line-height: 32px;
 }
 
+nav.fixed{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+   }
+nav.active{
+    transform: translateY(-80px);
+}  
 .nav-l a{
     padding-right:15px;
     /* letter-spacing:1px; */
@@ -128,6 +230,87 @@ nav a{
     padding:0 0 0 30px;
     /* letter-spacing:1px; */
 }
+.head_mobile{
+    align-items: center;
+}
+
+@media screen and (max-width:992px){
+    .deskshow{
+        display: none;
+    }
+    .nav-l a{
+        padding-right:10px;
+        /* letter-spacing:1px; */
+    }
+    .nav-r a{
+        padding:0 0 0 20px;
+        /* letter-spacing:1px; */
+    }
+}
+
+@media screen and (max-width:577px){
+  
+    .features img{
+        margin-top: 25px;
+        height: 20px;
+        padding: 0 8px !important;
+    }
+    .features .shop{
+        height: 21px;
+    }
+    .features .menu{
+        /* padding-top: 20px; */
+    }
+    .logo a img{
+        padding: 5px 0;
+        height: 45px;
+        /* display: none; */
+    }
+    #mag , #arm{
+        display: none;
+    }
+    .container{
+        width: 100vw;
+    }
+    nav{
+        display: none;
+    }
+    .mobile-style{
+        margin: 10px 20px 0;
+    }
+    .menu{
+        padding-left:5px;
+    }
+    .menu ul li a{
+        display: block;
+        padding:12px 10px;
+        color:white !important;
+        font-size: 16px;
+        
+      }
+    header{
+        margin-top: -16px;
+        height: 60px;
+    }
+    
+}
+@media screen and (min-width:577px){
+    .show_mobile{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,7 +318,7 @@ footer{
     width: 100%;
     height: 130px;
     background-color: #444;
-    position: absolute;
+    position: relative;
     bottom: 0;
     text-align: left;
 }
@@ -144,7 +327,7 @@ footer .container{
     justify-content: space-between;
     padding: 0;
 }
-.foot-l>div{
+.foot-l .txt{
     font-size: 12px;
     line-height:20px;
     height:80px;
@@ -197,4 +380,51 @@ footer .container{
 }
 .fa-linkedin-in:hover{
     color:#0077B5;
+}
+@media screen and (min-width:577px){
+    .show_mob{
+        display: none;
+    }
+}
+@media screen and (max-width:577px){
+    footer{
+        width: 100%;
+        height: 130px;
+        text-align: center;
+    }
+    footer .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .show_desk{
+        display: none;
+    }
+    .foot-l .txt{
+        font-size: 12px;
+        line-height:20px;
+        height:10px;
+        padding-top: 10 px;
+        /* color:#8a8a8a; */
+    }
+    
+    .txt-mob{
+        font-size: 8px ;
+        /* line-height:20px; */
+        height:10px;
+        padding-top: 10px;
+        color:#8a8a8a;
+    }
+    .txt-mob>div{
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 8px ;
+    }
+    .txt-mob p{
+        font-size: 8px ;
+        margin: 0;
+    }
+    .foot-r{
+        padding-top: 10px;
+        order:-1;
+    }
 }
