@@ -16,7 +16,7 @@ footer{
 </style>
 <?php include __DIR__ . '/__nav.php' ?>
 
-
+<div class="diy_show_desktop">
 <div class="container">
             <div class="table-l">
                 
@@ -37,16 +37,17 @@ footer{
 
 
                     </div>
-                    <div class="lens_Intro">
-
-
-
-                    </div>
+                  
                     <div class="lens_BP" >
 
                         <figure class="text-center">
                                 <img id="lens_BP" src="" alt="">
                         </figure>
+
+                    </div>
+                    <div class="lens_Intro">
+
+
 
                     </div>
                     <div class="tools1_BP" >
@@ -229,6 +230,65 @@ footer{
         <span  onclick="showRight();" id="right"><i class="fas fa-chevron-right fa-3x"></i></span>
         </div>
     </section>   
+</div>
+
+
+
+    <!-- --------------phone-------------- -->
+
+
+<div class="diy_show_mobile">
+    <div class="container">
+        <div class="">
+            <h2>首選推薦</h2>
+            <ul class="d-flex grade_m">
+                <li class="d-flex flex-column align-items-center"><a href="" id="start_m">入門</a><i class="fas fa-caret-down"></i></li>
+                <li class="d-flex flex-column align-items-center"><a href="" id="intel-m">進階</a><i class="fas fa-caret-down"></i></li>
+                <li class="d-flex flex-column align-items-center"><a href="" id="pro_m">專業</a><i class="fas fa-caret-down"></i></li>
+            </ul>
+            <div class="dropdown text-center">
+                <button class="btn btn-secondary dropdown-toggle" type="input"  data-toggle="dropdown" aria-haspopup="true">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <div class="dropdown text-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <div class="dropdown text-center">
+                <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <div class="d-flex">
+                <h5>總金額 : NT $ </h5>
+                <input type="text" readonly value="150000">
+
+            </div>
+            <button type="button" class="btn btn-warning">放入購物車</button>
+            <button type="button" class="btn btn-primary">立即結帳</button>
+        </div>
+            
+    </div>
+</div>
+
+
 
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
@@ -309,17 +369,17 @@ footer{
                     $("#lens_BP").attr("src","");
                     $("#tools1_BP").attr("src","");
                 })
-                $('#pro').click(function(){
+                $('#pro,#pro_m').click(function(){
                     $("#camera_BP").attr("src","img/2.png");
                     $("#lens_BP").attr("src","img/3.png");
                     $("#tools1_BP").attr("src","img/2.png");
                 })
-                $('#intel').click(function(){
+                $('#intel,#intel_m').click(function(){
                     $("#camera_BP").attr("src","img/3.png");
                     $("#lens_BP").attr("src","img/2.png");
                     $("#tools1_BP").attr("src","img/1.png");
                 })
-                $('#start').click(function(){
+                $('#start,#start_m').click(function(){
                     $("#camera_BP").attr("src","img/1.png");
                     $("#lens_BP").attr("src","img/2.png");
                     $("#tools1_BP").attr("src","img/2.png");
