@@ -30,7 +30,7 @@
 }
 .grade li a{
     font-size: 24px;
-    color: white;
+    color: white !important;
     display: block;
     position: absolute;
     left: -72px;
@@ -38,6 +38,8 @@
     width: 150px;
     height: 32px;
     letter-spacing: 18px;
+    cursor: pointer;
+    
 }
 .grade li a i{
     margin-left: -8px;
@@ -56,7 +58,8 @@
 .camera_BP{
     width: 290px;
     height: 260px;
-    background-color: pink;
+    padding: 30px;
+    /* background-color: pink; */
     position: absolute;
     top: 0;
     left: 0;
@@ -204,8 +207,9 @@ section .choose{
     padding-top:25px; 
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
-.step{
+section .choose .step{
     font-size: 1rem;
 }
 .arrow{
@@ -214,5 +218,104 @@ section .choose{
     align-items: center;
     display: flex;
     justify-content: space-between;
-
+    position: relative;
 }
+.arrow span{
+    z-index: 5;
+}
+/* .choose h4{
+    position: absolute;
+}
+h4.view{
+    position: absolute;
+    display: block;
+    opacity: 1;
+} */
+
+/* --------------------- */
+.thumbnail{
+    /* background: #1c1c1c; */
+}
+.thumbnail figure{
+    width: 20%;
+    height: 20%;
+    border:2px solid transparent;
+    margin: 4px 18px;
+    float: left;
+}
+/* .thumbnail.view{
+    position: absolute;
+    display: block;
+    opacity: 1;
+} */
+.thumbnail figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.thumbnail .active{
+    border-color: red;
+}
+
+/* -------------------------------- */
+
+
+.flow {
+    width: 100%;
+    height: 200px;
+    overflow: hidden ;
+}
+
+.overflow-wrapper-x {
+    float: left;
+    width: 300%;
+    /* height: 600px; */
+    transition: .5s;
+    transform: translateX(0px) translateY(0px);
+}
+
+.overflow-wrapper-x .tab{
+    float: left;
+    padding: 20px ;
+    width: 33.333%;
+}
+
+.overflow-wrapper-x.show-item1 {
+    transition: .5s;
+    transform: translateX(0px) ;
+  }
+
+.overflow-wrapper-x.show-item2 {
+    transition: .5s;
+    transform: translateX(-33.333%) ;
+  }
+.overflow-wrapper-x.show-item3 {
+    transition: .5s;
+    transform: translateX(-66.666%);
+
+  }
+
+.overflow-wrapper-y {
+    float: left;
+    width: 100%;
+    height: 600px;
+    transition: .5s;
+    transform: translateX(0px) translateY(0px);
+}
+
+.overflow-wrapper-y.show-step1 {
+    transition: .5s;
+    transform: translateX(0px) translateY(0px);
+}
+
+.overflow-wrapper-y.show-step2 {
+    transition: .5s;
+    transform: translateX(0px) translateY(-184px);
+}
+
+.overflow-wrapper-y.show-step3 {
+    transition: .5s;
+    transform: translateX(0px) translateY(-368px);
+}
+
+
