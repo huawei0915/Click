@@ -23,7 +23,7 @@
     /* color:#ffa800; */
 }
 
-.cart-header li:after{
+.cart-header li:not(.last)::after{
     position: absolute;
     content: '';
     width: 1px;

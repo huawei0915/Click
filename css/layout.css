@@ -129,14 +129,18 @@ header.active{
     top:56px;
     background:#1C1C1C;
     width:150px;
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
     /* max-height: 0; */
     overflow: hidden;
     padding:0 0 0 30px;
+    transition: .5s;
   }
   .menu.active ul{
     opacity: 1;
-    min-height: calc(100vh - 60px);
+    display: block;
+    /* min-height: 100vh; */
+    height: auto;
    
   }
   
@@ -399,6 +403,7 @@ footer .container{
     .show_desk{
         display: none;
     }
+    
     .foot-l .txt{
         font-size: 12px;
         line-height:20px;
@@ -411,7 +416,8 @@ footer .container{
         font-size: 8px ;
         /* line-height:20px; */
         height:10px;
-        padding-top: 10px;
+        /* padding-top: 10px; */
+        margin-top: -40px;
         color:#8a8a8a;
     }
     .txt-mob>div{

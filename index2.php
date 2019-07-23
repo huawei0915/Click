@@ -4,7 +4,7 @@
 <div class="container">
     <div>
         <figure>
-            <img src="img/table_bg.svg" alt="" class="table">
+            <!-- <img src="img/table_bg.svg" alt="" class="table"> -->
         </figure>
         <div>
             <div>

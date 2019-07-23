@@ -10,7 +10,7 @@
         <li><a href="#step-1" onclick="show('1');" class="active">1. Choose<br /><small>放入購物車</small></a></li>
         <li><a href="#step-2" onclick="show('2');">2. LogIn<br /><small>登入會員</small></a></li>
         <li><a href="#step-3" onclick="show('3');">3. Data<br /><small>填寫資料</small></a></li>
-        <li><a href="#step-4" onclick="show('4');">4. Finished<br /><small>完成結帳</small></a></li>
+        <li class="last"><a href="#step-4" onclick="show('4');">4. Finished<br /><small>完成結帳</small></a></li>
     </ul>
 
     <div class="messange">
