@@ -53,4 +53,4 @@
             </div>
         </div>
     </nav>
-<div style="height: 115px;background:transparent;width: 90vw;"></div>
+<div class="space" ></div>

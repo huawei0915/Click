@@ -71,11 +71,11 @@ footer{
 
                     <div class="d-flex totalMoney">
                         <h5>總金額 : NT $ </h5>
-                        <input type="text" readonly value="150000">
+                        <input type="number" readonly value="150000">
                     </div>
                         <div class="d-flex diyBtn">
-                        <a href="" class="enterCar">放入購物車</a>
-                        <a href="" class="payMoney">立即結帳</a>
+                        <button type="button" class="enterCar">放入購物車</button>
+                        <button type="button" class="payMoney">立即結帳</button>
                         </div>    
                     </div>
                 </div>
@@ -240,49 +240,41 @@ footer{
 <div class="diy_show_mobile">
     <div class="container">
         <div class="">
-            <h2>首選推薦</h2>
+            <h2 class="pt-3 ml-3">首選推薦</h2>
             <ul class="d-flex grade_m">
                 <li class="d-flex flex-column align-items-center"><a href="" id="start_m">入門</a><i class="fas fa-caret-down"></i></li>
                 <li class="d-flex flex-column align-items-center"><a href="" id="intel-m">進階</a><i class="fas fa-caret-down"></i></li>
                 <li class="d-flex flex-column align-items-center"><a href="" id="pro_m">專業</a><i class="fas fa-caret-down"></i></li>
             </ul>
-            <div class="dropdown text-center">
-                <button class="btn btn-secondary dropdown-toggle" type="input"  data-toggle="dropdown" aria-haspopup="true">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <div class="choose_m">
+            <div class="choose_camera_m">
+                <ul>
+                    <li><span></span>選擇相機<i class="fas fa-chevron-down"></i></li>
+                    <li><a href=""></a></li>
+                </ul>   
             </div>
-            <div class="dropdown text-center">
-                <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <div class="choose_lens_m">
+                <ul>
+                    <li><span></span>選擇鏡頭<i class="fas fa-chevron-down"></i></li>
+                    <li><a href=""></a></li>
+                </ul>  
             </div>
-            <div class="dropdown text-center">
-                <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true">
-                    Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <div class="choose_tools_m">
+                <ul>
+                    <li><span></span>選擇配件<i class="fas fa-chevron-down"></i></li>
+                    <li><a href=""></a></li>
+                </ul> 
+            </div>
             </div>
             <div class="d-flex">
-                <h5>總金額 : NT $ </h5>
-                <input type="text" readonly value="150000">
+                <h5 class="pt-3 ml-5">總金額 : NT $ </h5>
+                <input type="number"  readonly value="150000">
 
             </div>
-            <button type="button" class="btn btn-warning">放入購物車</button>
-            <button type="button" class="btn btn-primary">立即結帳</button>
+            <div class="text-center">
+            <button class="enterCar_m">放入購物車</button>
+            <button class="payMoney_m">立即結帳</button>
+            </div>
         </div>
             
     </div>

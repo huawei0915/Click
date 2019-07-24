@@ -237,7 +237,11 @@ nav.active{
 .head_mobile{
     align-items: center;
 }
-
+.space{
+    height: 115px;
+    background:transparent;
+    width: 90vw;
+}
 @media screen and (max-width:992px){
     .deskshow{
         display: none;
@@ -252,7 +256,7 @@ nav.active{
     }
 }
 
-@media screen and (max-width:577px){
+@media screen and (max-width:578px){
   
     .features img{
         margin-top: 25px;
@@ -274,7 +278,7 @@ nav.active{
         display: none;
     }
     .container{
-        width: 100vw;
+        width: 90vw;
     }
     nav{
         display: none;
@@ -296,9 +300,12 @@ nav.active{
         margin-top: -16px;
         height: 60px;
     }
+    .space{
+        height: 60px;
+    }
     
 }
-@media screen and (min-width:577px){
+@media screen and (min-width:578px){
     .show_mobile{
         display: none;
     }
@@ -385,12 +392,12 @@ footer .container{
 .fa-linkedin-in:hover{
     color:#0077B5;
 }
-@media screen and (min-width:577px){
+@media screen and (min-width:578px){
     .show_mob{
         display: none;
     }
 }
-@media screen and (max-width:577px){
+@media screen and (max-width:578px){
     footer{
         width: 100%;
         height: 130px;
@@ -399,6 +406,7 @@ footer .container{
     footer .container{
         display: flex;
         flex-direction: column;
+        text-align: center;
     }
     .show_desk{
         display: none;
@@ -419,6 +427,7 @@ footer .container{
         /* padding-top: 10px; */
         margin-top: -40px;
         color:#8a8a8a;
+        text-align: center;
     }
     .txt-mob>div{
         display: flex;
