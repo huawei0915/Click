@@ -51,7 +51,7 @@ input {
   margin: 20px 0 0;
   color: rgb(97, 97, 241);
 }
-button {
+.mem_btn {
   width: 50%;
   display: block;
   margin: 23px auto 0;
