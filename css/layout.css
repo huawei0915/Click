@@ -269,10 +269,15 @@ nav.active{
     .features .menu{
         /* padding-top: 20px; */
     }
-    .logo a img{
+    .show_destop a img{
+        /* padding: 5px 0;
+        height: 45px; */
+        display: none;
+    }
+    .show_mobile a img{
         padding: 5px 0;
+        margin-left: -20px;
         height: 45px;
-        /* display: none; */
     }
     #mag , #arm{
         display: none;

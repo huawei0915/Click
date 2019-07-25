@@ -4,8 +4,11 @@
             <div class="row justify-content-between align-items-end  mobile-style">
                 <div class="d-flex head_mobile">
                     
-                    <div class="logo px-2"><a href=""><img src="img/logo.svg"alt=""></a></div>
+                    <div class="logo px-2 show_destop"><a href=""><img src="img/logo.svg"alt=""></a></div>
+                    <div class="logo px-2 show_mobile "><a href=""><img src="img/logo_m.svg"alt=""></a></div>
                 </div>
+
+
                 <div class="features pb-2">
                         <form method="post" action="">
                             <div class="serbox">   
