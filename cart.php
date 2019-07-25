@@ -1,4 +1,31 @@
-<?php require __DIR__. '/__db_connect.php' ?>
+<?php require __DIR__. '/__db_connect.php' ;
+
+
+    // if(! empty($_SESSION['cart'])){
+    //     $keys = array_keys($_SESSION['cart']);
+
+    //     $sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s)",
+    //         implode(',', $keys));
+    //     $stmt = $pdo->query($sql);
+    //     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    //     $dict = array();
+    //     foreach($rows as $r){
+    //         $dict[$r['sid']] = $r;
+    //     }
+//    header('Content-Type: text/plain');
+//    print_r($dict);
+//    print_r($keys);
+//    exit;
+    // } else {
+    //     header('Location: product-list.php'); //頁面跳轉 產品清單
+    //     exit;
+    // }
+
+
+
+
+?>
 
 <?php require __DIR__.'/__html_head.php' ?>
 <?php require __DIR__.'/__nav.php' ?>
@@ -23,11 +50,12 @@
 
         <div id="step-2" class="step-2">
             <div class="">
-                <h2>會員流程</h2>
-                <div class="wrapper">
-                <h4>會員登入</h4>
+                <h2>會員專區</h2>
+                <div class="wrapper pb-5 member_box">
+                <!-- <h4>會員登入</h4> -->
                     <div  class=" text-center"><a class="w-50">會員登入</a></div>
-                <h4>非會員登入</h4>
+                    <!-- <em href=""><em>忘記密碼?</em></a> -->
+                <!-- <h4>非會員登入</h4> -->
                     <div  class=" text-center"><a  href="#step-3"  onclick="show('3');"  class="w-50">填寫基本資料</a></div>
                 </div>
             </div>    

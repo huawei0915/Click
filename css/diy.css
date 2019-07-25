@@ -402,11 +402,11 @@ section .choose .step{
 
 .overflow-wrapper-x.show-item2 {
     transition: .5s;
-    transform: translateX(-33.333%) ;
+    transform: translateX(-780px) ;
   }
 .overflow-wrapper-x.show-item3 {
     transition: .5s;
-    transform: translateX(-66.666%);
+    transform: translateX(-1560px);
 
   }
 

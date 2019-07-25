@@ -51,17 +51,21 @@
     width: 100%;
     text-align: center;
 }
-
-.step-2 .wrapper h4{
-    margin: 15px 0;
+.step-2 .member_box{
+    border-radius: 25px;
+    height: 275px;
+    border:2px solid #1c1c1c;
 }
+/* .step-2 .wrapper h4{
+    margin: 15px 0;
+} */
 .step-2 .wrapper a{
     border: 1px solid #707070;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     color: #707070;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 60px auto;
 
 }
 .step-2 .wrapper a:hover{

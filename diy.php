@@ -1,3 +1,26 @@
+<?php require __DIR__. '/__db_connect.php' ;
+
+// $page_name='diy';
+
+// $c_sql="SELECT * FORM `categories` WHERE `parent_sid`=0";
+// $cates=$pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+// $where ="WHERE 1";
+
+// if(!empty($cate)){
+//     $where .="AND `category_sid`=$cate";
+// }
+
+// $t_sql="SELECT COUNT(1) FROM `products` $where";
+// $totalRows=$pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+
+// $p_sql=sprintf("SELECT * FROM `products` $where LIMIT %s ,%s ", ($page-1)*$per_page,$per_page);
+// $stmt=$pdo->query($p_sql);
+
+// $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
 <?php include __DIR__ . '/__html_head.php' ?>
 <style>
 
@@ -273,27 +296,56 @@
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
 <script>
+
+    
+    
+    
+    
+    // console.log($("#camera_BP").offset().left);
+    // console.log($("#camera_BP").offset().top);
             $("#step1 figure").click(function(){
+                let smallPicLeft=this.offsetLeft;
+                let smallPicTop=this.offsetTop;
+
+                let cameraLeft=$("#camera_BP").offset().left;
+                let cameraTop=$("#camera_BP").offset().top;
+
                 let img=$(this).find("img").attr("src");
                 $("#camera_BP").attr("src",img);
                 $(this).addClass("active").siblings().removeClass("active");
+                
+                console.log(smallPicLeft);
+                console.log(smallPicTop);
+                console.log(cameraLeft);
+                console.log(cameraTop);
             });
+            
             $("#step2 figure").click(function(){
+                let smallPicLeft=this.offsetLeft;
+                let smallPicTop=this.offsetTop;
                 let img=$(this).find("img").attr("src");
                 $("#lens_BP").attr("src",img);
                 $(this).addClass("active").siblings().removeClass("active");
+
+                console.log(smallPicLeft);
+                console.log(smallPicTop);
             });
             $("#step3 figure").click(function(){
+                let smallPicLeft=this.offsetLeft;
+                let smallPicTop=this.offsetTop;
                 let img=$(this).find("img").attr("src");
                 $("#tools1_BP").attr("src",img);
                 $(this).addClass("active").siblings().removeClass("active");
+
+                console.log(smallPicLeft);
+                console.log(smallPicTop);
             });
           
              // --------- 滑動----------------
              // 1. 先初始化，應該第一步和第一頁
             let index = 1;
             let step = 1 ; 
-
+        
             function showLeft() {
                 if (index - 1 >= 1) {
                     index--;
@@ -343,6 +395,7 @@
                 $('#step'+ step +'.overflow-wrapper-x').removeClass('show-item1 show-item2 show-item3');
                 $('#step'+ step +'.overflow-wrapper-x').addClass('show-item'+ index );
             }
+
             
             $('.table .redo').click(function(){
                     $("#camera_BP").attr("src","");
