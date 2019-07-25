@@ -1,17 +1,5 @@
 <?php include __DIR__ . '/__html_head.php' ?>
 <style>
-html,body{
-    background-color: #1C1C1C;
-    height: auto;
-}
-footer{
-    width: 100%;
-    height: 130px;
-    background-color: #444;
-    position:absolute;
-    bottom: 0;
-    text-align: left;
-}
 
 </style>
 <?php include __DIR__ . '/__nav.php' ?>
@@ -71,7 +59,7 @@ footer{
 
                     <div class="d-flex totalMoney">
                         <h5>總金額 : NT $ </h5>
-                        <input type="number" readonly value="150000">
+                        <input type="text" readonly value="150000">
                     </div>
                         <div class="d-flex diyBtn">
                         <button type="button" class="enterCar">放入購物車</button>
@@ -268,7 +256,7 @@ footer{
             </div>
             <div class="d-flex">
                 <h5 class="pt-3 ml-5">總金額 : NT $ </h5>
-                <input type="number"  readonly value="150000">
+                <input type="text"  readonly value="150000">
 
             </div>
             <div class="text-center">

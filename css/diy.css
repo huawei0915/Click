@@ -182,10 +182,10 @@
     
     /* min-height: calc(100vh - 130px); */
 }
-.diy_show_mobile .container{
+/* .diy_show_mobile .container{
     background:#F1F1F1;
     min-height: calc(100vh - 130px);
-}
+} */
 .diy_show_mobile .container h2{
     padding-top: 24px;
 
