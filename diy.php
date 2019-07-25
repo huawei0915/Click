@@ -96,7 +96,7 @@
         <div class="choose">
             <h4>第一步 : 選擇相機</h4>
             <div class="d-flex step">
-                <span class="px-2" id="prev" onclick="showPrev();"><i class="fas fa-caret-left px-1"></i>上一步</span>
+                <span class="px-2 display" id="prev" onclick="showPrev();"><i class="fas fa-caret-left px-1"></i>上一步</span>
                 <span class="px-2" id="next" onclick="showNext();">下一步<i class="fas fa-caret-right px-1"></i></span>
             </div>
         </div>
@@ -360,6 +360,7 @@
             }
             function showNext() {
                 if (step + 1 <= 3) {
+                    
                     step++;      
                     changeStep(step);
                 }
@@ -379,12 +380,18 @@
                 switch (step) {
                     case 1:
                         $('.choose h4').html('第一步 : 選擇相機');
+                        $("#prev").addClass("display");
+                        $("#next").removeClass("display");
                         break;
                     case 2:
                         $('.choose h4').html('第二步 : 選擇鏡頭');
+                        $("#prev").removeClass("display");
+                        $("#next").removeClass("display");
                         break;
                     case 3:
                         $('.choose h4').html('第三步 : 選擇配件');
+                        $("#prev").removeClass("display");
+                        $("#next").addClass("display");
                         break;
                     default:
                 }

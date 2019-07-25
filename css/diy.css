@@ -334,8 +334,16 @@ section .choose{
     justify-content: space-between;
     position: relative;
 }
+
+section .choose .display{
+    /* display: none; */
+    opacity: 0;
+}
+
+
 section .choose .step{
     font-size: 1rem;
+    cursor: pointer;
 }
 .arrow{
     width: 100%;
@@ -369,11 +377,10 @@ section .choose .step{
     object-fit: cover;
 }
 .thumbnail .active{
-    border-color: red;
+    /* border-color: red; */
 }
 
 /* -------------------------------- */
-
 
 .flow {
     width: 100%;
