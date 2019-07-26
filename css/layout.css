@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font: 16px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
+    font: 20px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
     font-weight: 100;
    
 }
@@ -49,7 +49,15 @@ header.active{
     /* transform: translateX(-50%); */
     transform: translate(-50%,-80px);
 }
-
+.header.fixed{
+    position: fixed;
+    top:0;
+   width: 100%;
+   left: 0;
+   }
+.index_nav.fixed .right-top{
+    right:0;
+}
 .logo a img{
     padding-top: 16px;
     height: 75px;
@@ -78,7 +86,7 @@ header.active{
     border-radius: 20px;
     color: white;
     border: solid 2px white;
-    background-color: #1C1C1C;
+    background-color: transparent;
     margin-top: 2px;
     transition: width 1s ease-in-out, border-radius 1.5s ease-in-out;
   }
@@ -100,11 +108,12 @@ header.active{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 105px;
-    top: 72%;
+    right: 122px;
+    top: 71%;
     /* z-index: -1; */
     transform: rotate(135deg);
     color: white;
+    background: #fff;
     border: solid 2px white;
   }
 /* ----------------------------------   */

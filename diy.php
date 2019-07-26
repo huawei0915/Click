@@ -31,14 +31,14 @@
 <div class="container">
             <div class="table-l">
                 
-                <div  class="table">
+                <div  class="table" id="table">
                     <img src="img/table_bg.jpg" alt="">
                     <ul class="grade">
                             <li><a id="pro">專業<i class="fas fa-caret-right fa-sm"></i></a></li>
                             <li><a id="intel">進階<i class="fas fa-caret-right fa-sm"></i></a></li>
                             <li><a id="start">入門<i class="fas fa-caret-right fa-sm"></i></a></li>
                     </ul>
-                    <div class="camera_BP" >
+                    <div class="camera_BP" id="camera_BP_box">
                         <figure class="text-center">
                                 <img id="camera_BP" src="" alt="">
                         </figure>
@@ -105,7 +105,7 @@
         <div class="flow">
             <div class="overflow-wrapper-y">
                 <div class=" thumbnail overflow-wrapper-x show-step1 show-item1" id="step1">
-                    <div class="tab">
+                <div class="tab">
                         <figure>
                             <img src="./img/1.png" alt="">
                         </figure>
@@ -295,32 +295,44 @@
 
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script>
+            let table=$("#table").offset().left;
+            let camera_BP=$("#camera_BP").offset().left;
+            console.log(table);
+                console.log(camera_BP);
+            $("#step1 figure").on('click', function () {
+                let itemX=$(this).offset().left-table;
+                let itemY=$(this).offset().top;
+                console.log(itemX);
+                console.log(itemY);
+                // $("#camera_BP_box")
+                //     .css({
+                //     left: itemX,
+                //     top: itemY,
+                //     width: 200,
+                //     opacity: 1
+                //     })
+                //     .find("img").attr("src", img)
+                
+                
+                // TweenMax.to("#camera_BP_box", 0.8, {left:table-camera_BP, top: 10, width: 20});
+                // TweenMax.to("#camera_BP_box", .3, {
+                //     css:{
+                //     opacity: 0
+                //     }, delay:0.5})
 
-    
-    
-    
-    
-    // console.log($("#camera_BP").offset().left);
-    // console.log($("#camera_BP").offset().top);
-            $("#step1 figure").click(function(){
-                let smallPicLeft=this.offsetLeft;
-                let smallPicTop=this.offsetTop;
 
-                let cameraLeft=$("#camera_BP").offset().left;
-                let cameraTop=$("#camera_BP").offset().top;
 
+                    // ------------------
                 let img=$(this).find("img").attr("src");
                 $("#camera_BP").attr("src",img);
-                $(this).addClass("active").siblings().removeClass("active");
+                $(this).siblings();
                 
-                console.log(smallPicLeft);
-                console.log(smallPicTop);
-                console.log(cameraLeft);
-                console.log(cameraTop);
+
             });
             
-            $("#step2 figure").click(function(){
+            $("#step2 figure").on('click', function () {
                 let smallPicLeft=this.offsetLeft;
                 let smallPicTop=this.offsetTop;
                 let img=$(this).find("img").attr("src");
@@ -330,7 +342,7 @@
                 console.log(smallPicLeft);
                 console.log(smallPicTop);
             });
-            $("#step3 figure").click(function(){
+            $("#step3 figure").on('click', function () {
                 let smallPicLeft=this.offsetLeft;
                 let smallPicTop=this.offsetTop;
                 let img=$(this).find("img").attr("src");
@@ -424,5 +436,7 @@
                     $("#lens_BP").attr("src","img/2.png");
                     $("#tools1_BP").attr("src","img/2.png");
                 })
+
+                console.log($('#step1 .tab').length);
         </script>
 <?php include __DIR__ . '/__html_end.php' ?>
