@@ -137,10 +137,25 @@
 </div>
 <div class="four_bg">
     <div class="container">
-        <img src="img/日月潭-朝霧馬頭.jpg" alt="">
-        <img src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
-        <img src="img/小鬚鳳頭樹燕.jpg" alt="">
-        <img src="img/螢火蟲微光.jpg" alt="">
+        <div>
+            <img src="img/日月潭-朝霧馬頭.jpg" alt="">
+            <p>日月潭<br>
+                朝霧馬頭</p>
+        </div>
+        <div>
+            <img src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
+            <p>極北冬雪幻境<br>
+                 羅浮敦群島</p>
+        </div>
+        <div>
+            <img src="img/小鬚鳳頭樹燕.jpg" alt="">
+            <p>小鬚鳳頭樹燕</p>
+        </div>
+        <div>
+            <img src="img/螢火蟲微光.jpg" alt="">
+            <p>螢火蟲微光</p>
+        </div>
+        
     </div>
 </div>
 <div class="botton_bg">

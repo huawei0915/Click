@@ -86,6 +86,7 @@
 .small-pic figure img{
     width: 100%;
     height: 100%;
+    cursor: pointer;
 }
 .small-pic figure:hover {
     filter: blur(0);
@@ -245,11 +246,40 @@ main .main_bg .corner .diy_map img:nth-child(3){
     align-items: center;
     display: flex;
 }
-.four_bg img{
+.four_bg .container div{
+    position: relative;
     width: 25%;
     height: 25%;
+    transition: .5s;
+}
+.four_bg img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .5s;
 }
 .botton_bg{
     height: 340px;
     overflow: hidden;
+}
+.four_bg p{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 50%;
+    top: 40%;
+    left: 25%;
+    color:white;
+    border: 1px solid white;
+    text-align: center;
+    padding: 10px 0;
+    transition: .5s;
+    
+}
+.four_bg div:hover > p{
+    display: block;
+    opacity: 1;
+}
+.four_bg div:hover > img{
+    filter: brightness(30%);
 }
