@@ -22,6 +22,9 @@
     <div class="main_big_pic">
         <figure>
             <img id="BigPic" src="img/風景-大.png" alt="">
+            <!-- <img class="none" src="img/動態-大.png" alt="">
+            <img class="none" src="img/鳥-大.png" alt="">
+            <img class="none" src="img/人像-大.png" alt=""> -->
         </figure>
     </div>
     <div class="orange_border_box"></div>
@@ -52,6 +55,7 @@
             <img class="none" src="img/人像-大.png" alt="">
         </figure>
     </div>
+
 </div>
 <div class="header ">
     <div class="container">
@@ -71,7 +75,7 @@
                 <div class="right_top ">
                     <form method="post" action="">
                         <div class="serbox" style="margin-right:-25px;">                              
-                            <input id="mag" type="search" placeholder="    Search..." name="search">
+                            <input id="mag" type="search" placeholder="  Search..." name="search">
                         <div id="arm"></div>
                     </form>
                     <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;"></a>
@@ -140,11 +144,11 @@
     </div>
 </div>
 <div class="botton_bg">
-    <img src="img/Footer-bg.jpg" alt="">
+    <img src="img/FOURBG.jpg" alt="">
 </div>
 
 
-<?php // include __DIR__ . '/__footer.php' ?>
+<?php  include __DIR__ . '/__footer.php' ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -168,28 +172,32 @@
 //登入切換動畫
     </script> 
     <script>
-        // $(".menu").click(function(){
-        //   $(this).toggleClass('active');
-        // });
+        $(".menu").click(function(){
+          $(this).toggleClass('active');
+        });
 
-        // var headerTop=$(".header").offset().top;
+        var headerTop=$(".header").offset().top;
 
-        // $(window).scroll(function(){
-        // var scrollTop=$(this).scrollTop();
-        // if(scrollTop>=headerTop){
-        //     $(".header").addClass("fixed");
-        // }else{
-        //     $(".header").removeClass("fixed");
-        // }
-        // });
+        $(window).scroll(function(){
+        var scrollTop=$(this).scrollTop();
+        if(scrollTop>=headerTop){
+            $(".header").addClass("fixed");
+        }else{
+            $(".header").removeClass("fixed");
+        }
+        });
     </script>
     <script>
     // console.log(item)    ;   
         let pic= $(".small-pic figure");
+        let B_pic=$(".main_big_pic figure");
         var item = $(".text_ul li");
+
         $(".small-pic figure").on('click', function () {
                 let img=$(this).find("img").next().attr("src");
             $("#BigPic").attr("src",img);
+            // $(B_pic).eq(2).css("opacity","1");
+            // console.log($(B_pic));
                 var as=$(this).attr("data-pic");
                 $(item[as]).addClass("active")
                 $(item[as]).siblings().removeClass("active");

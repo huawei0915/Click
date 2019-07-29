@@ -24,18 +24,25 @@
 }
 .index_view1{
     /* position: relative; */
-    height: 100vh;
+    height: 1000px;
 }
 .main_big_pic{
-    /* background-color: pink; */
-    /* margin-top: 190px; */
     width: 50vw;
-    height: 100vh;
+    height: 1000px;
     overflow: hidden;
+    /* transition: opacity 1s ease-in-out; */
+    position: relative;
+    
 }
 .main_big_pic figure img{
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main_big_pic .none{
+    opacity: 0;
 }
 .orange_border_box{
     width: 35vw;
@@ -88,7 +95,8 @@
     /* border-radius: 0; */
 }
 .small-pic figure .none{
-    display: none;
+    /* display: none; */
+    opacity: 0;
 }
 .small-pic figure:first-child{
     top: 285px;
@@ -198,8 +206,8 @@ main .main_bg .corner .diy_map img:nth-child(3){
 }
 .brand_map_bg .brand_map figure:nth-child(1) img:nth-child(2){
     position: absolute;
-    top:5%;
-    left: 5%;
+    top:2%;
+    left: 8%;
 }
 .brand_map_bg .brand_map figure:nth-child(2) img:nth-child(1){
     position: absolute;
@@ -208,8 +216,8 @@ main .main_bg .corner .diy_map img:nth-child(3){
 }
 .brand_map_bg .brand_map figure:nth-child(2) img:nth-child(2){
     position: absolute;
-    top: 30%;
-    right: 10%;
+    top: 33%;
+    right: 12%;
 }
 .brand_map_bg .brand_map figure:nth-child(3) img:nth-child(1){
     position: absolute;
@@ -219,7 +227,7 @@ main .main_bg .corner .diy_map img:nth-child(3){
 .brand_map_bg .brand_map figure:nth-child(3) img:nth-child(2){
     position: absolute;
     top: 60%;
-    left: 5%;
+    left: 8%;
 }
 .brand_map_bg  .line_yellow{
     position: absolute;
@@ -242,6 +250,6 @@ main .main_bg .corner .diy_map img:nth-child(3){
     height: 25%;
 }
 .botton_bg{
-    height: 300px;
+    height: 340px;
     overflow: hidden;
 }

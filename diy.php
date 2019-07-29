@@ -1,23 +1,23 @@
 <?php require __DIR__. '/__db_connect.php' ;
 
-// $page_name='diy';
+$page_name='diy';
+//取得分類
+$c_sql="SELECT * FORM `categories` WHERE `parent_sid`=0";
+$cates=$pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
 
-// $c_sql="SELECT * FORM `categories` WHERE `parent_sid`=0";
-// $cates=$pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+$where ="WHERE 1";
 
-// $where ="WHERE 1";
+if(!empty($cate)){
+    $where .="AND `category_sid`=$cate";
+}
+// 取得總筆數
+$t_sql="SELECT COUNT(1) FROM `products` $where";
+$totalRows=$pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
-// if(!empty($cate)){
-//     $where .="AND `category_sid`=$cate";
-// }
+$p_sql=sprintf("SELECT * FROM `products` $where LIMIT %s ,%s ", ($page-1)*$per_page,$per_page);
+$stmt=$pdo->query($p_sql);
 
-// $t_sql="SELECT COUNT(1) FROM `products` $where";
-// $totalRows=$pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
-
-// $p_sql=sprintf("SELECT * FROM `products` $where LIMIT %s ,%s ", ($page-1)*$per_page,$per_page);
-// $stmt=$pdo->query($p_sql);
-
-// $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
