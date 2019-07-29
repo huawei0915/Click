@@ -88,7 +88,61 @@
         </div>
     </div>
 </div>
-<div style="height:200vh;"></div>
+<main>
+    <h2>Click 首選推薦</h2>
+    <h3>快速選配符合自己所需</h3>
+  <div class="main_bg">
+    <div class="corner">
+        <figure>
+            <img src="img/corner.png" alt="">
+        </figure>
+        <figure>
+            <img src="img/corner.png" alt="">
+        </figure>
+        <figure>
+            <img src="img/corner.png" alt="">
+        </figure>
+        <figure>
+            <img src="img/corner.png" alt="">
+        </figure>
+        <figure class="diy_map">
+                <img src="img/DIY-table.png" alt="">
+                <img src="img/DIY-line.png" alt="">
+                <img src="img/DIY-camera.png" alt="">
+        </figure>
+    </div>
+    
+</div>
+</main>
+<div class="brand_map_bg">
+    <div class="brand_map">
+        <figure>
+            <img src="img/第三區塊_canon.png" alt="">
+            <img src="img/canon.png" alt="">
+        </figure>
+        <figure>
+            <img src="img/第三區塊_leica.png" alt="">
+            <img src="img/Leica.png" alt="">
+        </figure>
+        <figure>
+            <img src="img/第三區塊_nikon.png" alt="">
+            <img src="img/nikon.png" alt="">
+        </figure>
+    </div>
+<div class="line_yellow"></div>
+</div>
+<div class="four_bg">
+    <div class="container">
+        <img src="img/日月潭-朝霧馬頭.jpg" alt="">
+        <img src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
+        <img src="img/小鬚鳳頭樹燕.jpg" alt="">
+        <img src="img/螢火蟲微光.jpg" alt="">
+    </div>
+</div>
+<div class="botton_bg">
+    <img src="img/Footer-bg.jpg" alt="">
+</div>
+
 
 <?php // include __DIR__ . '/__footer.php' ?>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -114,40 +168,31 @@
 //登入切換動畫
     </script> 
     <script>
-        $(".menu").click(function(){
-          $(this).toggleClass('active');
-        });
+        // $(".menu").click(function(){
+        //   $(this).toggleClass('active');
+        // });
 
-        var headerTop=$(".header").offset().top;
+        // var headerTop=$(".header").offset().top;
 
-        $(window).scroll(function(){
-        var scrollTop=$(this).scrollTop();
-        if(scrollTop>=headerTop){
-            $(".header").addClass("fixed");
-        }else{
-            $(".header").removeClass("fixed");
-        }
-        });
+        // $(window).scroll(function(){
+        // var scrollTop=$(this).scrollTop();
+        // if(scrollTop>=headerTop){
+        //     $(".header").addClass("fixed");
+        // }else{
+        //     $(".header").removeClass("fixed");
+        // }
+        // });
     </script>
     <script>
     // console.log(item)    ;   
-                let pic= $(".small-pic figure");
-                var item = $(".text_ul li");
-    
-                
-            $(".small-pic figure").on('click', function () {
-         
-
-            let img=$(this).find("img").next().attr("src");
+        let pic= $(".small-pic figure");
+        var item = $(".text_ul li");
+        $(".small-pic figure").on('click', function () {
+                let img=$(this).find("img").next().attr("src");
             $("#BigPic").attr("src",img);
-
                 var as=$(this).attr("data-pic");
-
                 $(item[as]).addClass("active")
                 $(item[as]).siblings().removeClass("active");
-
         });
-   
-
     </script>
 <?php include __DIR__ . '/__html_end.php' ?>

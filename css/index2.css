@@ -106,3 +106,142 @@
     top: 285px;
     right:10px;
 }
+
+main{
+    background-color: #1c1c1c;
+    height: 100vh;
+}
+main h2{
+    margin-top: 50px;
+    color: #FFB11B;
+    margin-left: 35%;
+}
+main h3{
+    color: #FFB11B;
+    margin-left: 45%;
+}
+main .main_bg{
+    background-color: #404040;
+    height: 680px;
+}
+main .main_bg .corner{
+    width: 1000px;
+    height: 800px;
+    position: relative;
+    left: calc(50% - 500px);
+    top:-60px;
+}
+main .main_bg .corner figure{
+    width: 200px;
+    height: 200px;
+}
+main .main_bg .corner figure:nth-child(1){
+    position: absolute;
+}
+main .main_bg .corner figure:nth-child(2){
+    position: absolute;
+    transform: rotate(90deg);
+    right: 0;
+    top: 0;
+}
+main .main_bg .corner figure:nth-child(3){
+    position: absolute;
+    transform: rotate(180deg);
+    right: 0;
+    bottom: 0;  
+    z-index: 5;
+}
+main .main_bg .corner figure:nth-child(4){
+    position: absolute;
+    transform: rotate(270deg);
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+main .main_bg .corner .diy_map img:nth-child(1){
+    position: absolute;
+    bottom: 110px;
+    left: calc(50% - 300px);
+    
+}
+main .main_bg .corner .diy_map img:nth-child(2){
+    position: absolute;
+    bottom: 160px;
+    left: 120px;
+}
+main .main_bg .corner .diy_map img:nth-child(3){
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+}
+.brand_map_bg{
+    background-image:url('../img/three-bg.jpg');
+    background-repeat: no-repeat;
+    height: 130vh;
+    margin-top: -150px;
+    overflow: hidden;
+    position: relative;
+}
+.brand_map_bg .brand_map{
+    height: 120vh;
+    border-top: 5px solid #fff;
+    border-left: 5px solid #fff;
+    margin-left: 15%;
+    position: relative;
+    top: 140px;
+}
+.brand_map_bg .brand_map figure:nth-child(1) img:nth-child(1){
+    position: absolute;
+    top:5%;
+    left: 5%;
+}
+.brand_map_bg .brand_map figure:nth-child(1) img:nth-child(2){
+    position: absolute;
+    top:5%;
+    left: 5%;
+}
+.brand_map_bg .brand_map figure:nth-child(2) img:nth-child(1){
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+.brand_map_bg .brand_map figure:nth-child(2) img:nth-child(2){
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+.brand_map_bg .brand_map figure:nth-child(3) img:nth-child(1){
+    position: absolute;
+    top: 60%;
+    left: 5%;
+}
+.brand_map_bg .brand_map figure:nth-child(3) img:nth-child(2){
+    position: absolute;
+    top: 60%;
+    left: 5%;
+}
+.brand_map_bg  .line_yellow{
+    position: absolute;
+    height: 120vh;
+    border-right: 2px solid #FFB11B;
+    border-bottom:2px solid #FFB11B;
+    width: 95vw;
+    top: 0;
+}
+.four_bg{
+    background: #404040;
+    height: 400px;
+}
+.four_bg .container{
+    align-items: center;
+    display: flex;
+}
+.four_bg img{
+    width: 25%;
+    height: 25%;
+}
+.botton_bg{
+    height: 300px;
+    overflow: hidden;
+}
