@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-4">
+                555555555555555555
+            </div>
+            <div class="col-8">
+                555555555555555555
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3 col-lg-4">bye-bye</div>
+            <div class="col-6 col-md-3 col-lg-4">bye-bye</div>
+            <div class="col-6 col-md-3 col-lg-4">bye-bye</div>
+            <div class="col-6 col-md-3 col-lg-4">watch three small</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-3">1</div>
+            <div class="col-md-4 col-lg-3">2</div>
+            <div class="col-md-4 col-lg-3">3</div>
+            <div class="col-md-4 col-lg-3">4</div>
+            <div class="col-md-4 col-lg-3">5</div>
+            <div class="col-md-4 col-lg-3">6</div>
+            <div class="col-md-4 col-lg-3">7</div>
+            <div class="col-md-4 col-lg-3">8</div>
+            <div class="col-md-4 col-lg-3">9</div>
+            <div class="col-md-4 col-lg-3">10</div>
+            <div class="col-md-4 col-lg-3">11</div>
+            <div class="col-md-4 col-lg-3">12</div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <input type="text" name="name" id="name" class="form-control" placeholder="請輸入姓名">
+        <input type="email" id="email" class="form-control" placeholder="請輸入E-mail">
+        <div>
+            <div class="btn btn-danger my-3" id="send">Send</div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    $('#send').click(function () {
+        let name = $('#name').val();
+        let email = $('#email').val();
+        let data = {
+            "name": name,
+            "email": email
+        }
+        // console.log(data);
+        $.ajax({
+                url: 'address.json',
+                type: 'GET',
+                dataType: 'json'
+            }).done(function (response) {
+                // console.log(response)
+                for(i=0; i<response.length; i++){
+                    // console.log(response[i])
+                    console.log(`地址: ${response[i]["data"]["en"]}`);
+                }
+            });
+    });
+
+</script>
+
+
+
+</html>
