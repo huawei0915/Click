@@ -9,7 +9,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
         
-    <script>
+        <!-- LOGIN ANIMATION -->
+        <script>
        let prism = document.querySelector(".rec-prism");
 
 function showSignup(){
@@ -33,5 +34,7 @@ function showContactUs(){
 function showThankYou(){
   prism.style.transform = "translateZ(-100px) rotateX( 90deg)";
 }
-    
   </script>
+
+
+<!-- LOGIN END -->
