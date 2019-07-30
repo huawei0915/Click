@@ -42,6 +42,7 @@ header{
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
+    width: 100%;
     /* transform: translateY(0); */
     /* margin: 0 auto; */
 }
@@ -52,12 +53,14 @@ header.active{
 .header.fixed{
     position: fixed;
     top:0;
-   width: 100%;
-   left: 0;
-   z-index: 999;
-   background: rgba(0,0,0,.5);
-   padding-bottom: 20px;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    padding-bottom: 20px;
    }
+
+
 .index_nav.fixed .right-top{
     right:0;
 }
@@ -70,6 +73,7 @@ header.active{
     flex-direction:row;
     color: white;
 }
+
 /* ---------search--------------------- */
   .serbox {
     position: relative;
@@ -315,7 +319,7 @@ nav.active{
       }
     header{
         margin-top: -16px;
-        height: 60px;
+        height: 80px;
     }
     .space{
         height: 60px;
@@ -327,16 +331,6 @@ nav.active{
         display: none;
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

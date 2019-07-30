@@ -59,7 +59,7 @@
     border:1px solid white;
     position: absolute;
     top:475px;
-    left: 425px;
+    left: 20%;
 }
 .mondel_text ul{
     width: 45%;
@@ -73,8 +73,53 @@
     font-size:80px;
     color: #fff;
 }
+@media screen and (max-width:1641px){
+    .mondel_text{
+        height: 350px;
+    }
+    .mondel_text ul li{
+        font-size: 50px;
+        color: rgba(255,255,255,.5);
+    }
+    .mondel_text ul li.active{
+        font-size:70px;
+        color: #fff;
+    }
+}
+@media screen and (max-width:1440px){
+    .mondel_text{
+        height: 300px;
+    }
+    .mondel_text ul li{
+        font-size: 40px;
+        color: rgba(255,255,255,.5);
+    }
+    .mondel_text ul li.active{
+        font-size:60px;
+        color: #fff;
+    }
+    .orange_border_box{
+        height: 700px;
+    }
+}
+@media screen and (max-width:1236px){
+    .mondel_text{
+        height: 250px;
+    }
+    .mondel_text ul li{
+        font-size: 30px;
+        color: rgba(255,255,255,.5);
+    }
+    .mondel_text ul li.active{
+        font-size:40px;
+        color: #fff;
+    }
+    .orange_border_box{
+        height: 600px;
+    }
+}
 .small-pic figure{
-    width: 190px;
+    width: 10%;
     height: 500px;
     overflow: hidden;
     position: absolute;
@@ -101,21 +146,30 @@
 }
 .small-pic figure:first-child{
     top: 285px;
-    right: 610px;
+    right: 32%;
 }
 .small-pic  figure:nth-child(2){
     top:190px;
-    right: 410px;
+    right: 21.5%;
 }
 .small-pic  figure:nth-child(3){
     top:350px;
-    right: 210px;
+    right: 11%;
 }
 .small-pic  figure:nth-child(4){
     top: 285px;
     right:10px;
 }
+@media screen and (max-width:1630px){
+    /* .small-pic figure{
+        width: 150px;
+        height: 500px;
+    } */
 
+
+}
+
+ 
 main{
     background-color: #1c1c1c;
     height: 100vh;
@@ -184,6 +238,33 @@ main .main_bg .corner .diy_map img:nth-child(3){
     bottom: 20px;
     left: 50px;
 }
+@media screen and (max-width:1200px){
+    main .main_bg .corner{
+        width: 800px;
+        height: 600px;
+        position: relative;
+        left: calc(50% - 400px);
+        top:-60px;
+    }
+    main .main_bg .corner .diy_map img:nth-child(1){
+        position: absolute;
+        bottom: 110px;
+        left: calc(50% - 270px);
+        width: 50%;
+    }
+    main .main_bg .corner .diy_map img:nth-child(2){
+        position: absolute;
+        bottom: 160px;
+        left: 170px;
+        width: 60%;
+    }
+    main .main_bg .corner .diy_map img:nth-child(3) {
+        position: absolute;
+        bottom: 20px;
+        left: 100px;
+        width: 90%;
+    }
+}
 .brand_map_bg{
     background-image:url('../img/three-bg.jpg');
     background-repeat: no-repeat;
@@ -191,6 +272,7 @@ main .main_bg .corner .diy_map img:nth-child(3){
     margin-top: -150px;
     overflow: hidden;
     position: relative;
+    background-size: cover;
 }
 .brand_map_bg .brand_map{
     height: 120vh;
@@ -238,6 +320,36 @@ main .main_bg .corner .diy_map img:nth-child(3){
     width: 95vw;
     top: 0;
 }
+
+@media screen and (max-width:1270px){
+    .brand_map_bg .brand_map{
+        height: 120vh;
+        border-top: 5px solid #fff;
+        border-left: 5px solid #fff;
+        margin-left: 10%;
+        position: relative;
+        top: 140px;
+    }
+    .brand_map_bg .brand_map figure:nth-child(1) img:nth-child(1){
+        width: 80%;
+    }
+    .brand_map_bg .brand_map figure:nth-child(1) img:nth-child(2){
+        width: 30%;
+    }
+    .brand_map_bg .brand_map figure:nth-child(2) img:nth-child(1){
+        width: 80%;
+    }
+    .brand_map_bg .brand_map figure:nth-child(2) img:nth-child(2){
+        width: 30%;
+    }
+    .brand_map_bg .brand_map figure:nth-child(3) img:nth-child(1){
+        width: 80%;
+    }
+    .brand_map_bg .brand_map figure:nth-child(3) img:nth-child(2){
+        width: 30%;
+    }
+}
+
 .four_bg{
     background: #404040;
     height: 400px;
@@ -258,9 +370,12 @@ main .main_bg .corner .diy_map img:nth-child(3){
     cursor: pointer;
     transition: .5s;
 }
-.botton_bg{
+/* .botton_bg{
     height: 340px;
     overflow: hidden;
+} */
+.botton_bg img{
+    width: 100%;
 }
 .four_bg p{
     display: none;
@@ -282,4 +397,120 @@ main .main_bg .corner .diy_map img:nth-child(3){
 }
 .four_bg div:hover > img{
     filter: brightness(30%);
+}
+
+@media screen and (max-width:860px){
+    .show_desk{
+        display: none;
+    }
+}
+@media screen and (min-width:860px){
+    .show_phone{
+        display: none;
+    }
+}
+.right_text{
+    /* width: 55%; */
+    /* height: 400px; */
+    /* border:1px solid white; */
+    position: absolute;
+    top:50%;
+    right: 5%;
+    z-index: 2;
+}
+.right_text ul{
+    /* width: 45%; */
+    text-align: right;
+}
+.right_text ul li{
+    font-size: 25px;
+    color: rgba(255,255,255,.5);
+}
+.right_text ul li.active{
+    font-size:40px;
+    color: #fff;
+}
+@media screen and (max-width:690px){
+    .right_text{
+        top: 40%;
+    }
+}
+@media screen and (max-width:580px){
+    .right_text{
+        top: 20%;
+    }
+}
+.second figure,.three figure{
+    width: 100%;
+    padding-left: 10%;
+    /* height: 100vh; */
+}
+.three figure{
+    background: url("../img/three-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+.second figure img,.three figure img{
+    width: 100%;
+    height: 100%;
+}
+.four{
+    background: #404040;
+    /* height: 300px; */
+    padding: 30px 0;
+}
+.four .container{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.four .container div{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    transition: .5s;
+
+}
+.four img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .5s;
+}
+.four p{
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 50%;
+    top: 40%;
+    left: 25%;
+    color:white;
+    border: 1px solid white;
+    text-align: center;
+    padding: 10px 0;
+    transition: .5s;   
+}
+.four div:hover > p{
+    display: block;
+    opacity: 1;
+}
+.four div:hover > img{
+    filter: brightness(30%);
+}
+@media screen and (max-width:585px){
+    .four{
+        padding: 20px 0;
+    }
+    .four p{
+        display: block;
+        opacity: 1;
+        font-size: 0.6rem;
+    }
+    .four div img{
+        filter: brightness(30%);
+    }
+    .botton_bg img{
+        width: 100%;
+    }
 }
