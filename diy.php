@@ -90,7 +90,32 @@ if(!empty($cate)){
 
                 <div class="table-r">
                     <div>
+                        <div class="d-flex justify-content-around align-items-center comm">
+                            <figure>
+                                <img src="img/2.png" alt="">
+                            </figure>
+                            <h6>EOS 5DZZZZZZZZ</h6>
 
+                            <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        </div>
+                        <!-- -------------------- -->
+                        <div class="d-flex justify-content-around align-items-center comm">
+                            <figure>
+                                <img src="img/2.png" alt="">
+                            </figure>
+                            <h6>EOS 5DZZZZZZZZ</h6>
+                            
+                            <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        </div>
+
+                        <div class="d-flex justify-content-around align-items-center comm">
+                            <figure>
+                                <img src="img/2.png" alt="">
+                            </figure>
+                            <h6>EOS 5DZZZZZZZZ</h6>
+                            
+                            <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        </div>
 
 
                     <div class="d-flex totalMoney">
