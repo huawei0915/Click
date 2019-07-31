@@ -1,0 +1,118 @@
+.prd_filter{
+    background-color: #FCFAF2;
+    height: 120px;
+    
+}
+.filte{
+    width: 100%;
+    display: flex;
+    margin-left: 2%;
+    padding: 1.5%;
+}
+.form-group{
+    width: 200px;
+    margin: 0 auto;
+}
+
+.form-group>label{
+    margin: 0;
+}
+
+.prbar{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+.pl_brand{
+    margin-left:3%;
+}
+.pl_camera{
+    margin-left:3%;
+}
+.pl_lens{
+    margin-left:3%;
+}
+.pl_parts{
+    margin-left:3%;
+}
+.filter_btn{
+    margin-left:3%;
+    border-radius: 10%;
+    padding-top:5%;
+}
+.ftbn{
+    padding:0 15px;
+    font-size: 0.8rem;
+}
+
+/* product list */
+/* PRODUCT CAMERA */
+.prd_cam{
+    width: 100%;
+    height: 1100px;
+    margin-top: 5%;
+    padding: 5%;
+}
+
+.cards_cam{
+    width: 250px;
+    height: 475px;
+    border-radius: 5%;
+    margin: 1%;
+    padding: 2%;
+}
+
+.cam_pic{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+}
+
+.cards_cam li{
+    margin-left: 10%;
+    font-size: 0.7rem;
+    list-style: disc;
+}
+
+.cards_cam h6{
+    text-align: center;
+    margin: 5% 0;
+}
+.cards_cam p{
+    font-weight:bold;
+    font-size: 0.9rem;
+    color: #000046;
+}
+
+
+/* PRODUCT LENS */
+.prd_lens{
+    width: 100%;
+    height: 900px;
+    margin-top: 5%;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+
+.cards_lens{
+    width: 250px;
+    height: 370px;
+    border-radius: 5%;
+    margin: 1%;
+    padding: 2%;
+}
+
+.lens_pic{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+}
+
+.cards_lens h6{
+    text-align: center;
+    margin: 5% 0;
+}
+.cards_lens p{
+    font-weight:bold;
+    font-size: 0.9rem;
+    color: #000046;
+}
