@@ -1,32 +1,43 @@
 <?php require __DIR__. '/__db_connect.php' ;
 
 $page_name='diy';
-//取得分類
-// $c_sql="SELECT * FORM `categories` WHERE `parent_sid`=0";
+// 取得分類
+$c_sql="SELECT * FORM `categories` WHERE `parent_sid`=1";
 // $cates=$pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+
+// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 1;
+
 
 // $where ="WHERE 1";
 
-// if(!empty($cate)){
-//     $where .="AND `category_sid`=$cate";
-// }
-// // 取得總筆數
+if(!empty($cate)){
+    // $where .="AND `category_sid`=$cate";
+}
+
+// 取得總筆數
 // $t_sql="SELECT COUNT(1) FROM `products` $where";
 // $totalRows=$pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+
+
 
 // $p_sql=sprintf("SELECT * FROM `products` $where LIMIT %s ,%s ", ($page-1)*$per_page,$per_page);
 // $stmt=$pdo->query($p_sql);
 
 // $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->query("SELECT * FROM `products_lens_map`
-WHERE 1");
+// $camera = $pdo->query("SELECT * FROM `products` WHERE 1");
+//拿到了 categories 值為 products_sid=1  拿到了三大類的相機
+
+// $lens = $pdo->query("SELECT * FROM `lens` WHERE 1");
+//拿到了 categories 值為 products_sid=1  拿到了三大類的鏡頭
+
+// $tools = $pdo->query("SELECT * FROM `categories` WHERE parent_sid=3");
+//拿到了 categories 值為 products_sid=1  拿到了三大類的配件
+
 
 ?>
 <?php include __DIR__ . '/__html_head.php' ?>
-<style>
-
-</style>
 <?php include __DIR__ . '/__nav.php' ?>
 
 <div class="diy_show_desktop">
@@ -109,7 +120,9 @@ WHERE 1");
                 <div class=" thumbnail overflow-wrapper-x show-step1 show-item1" id="step1">
                 <div class="tab">
                         <figure>
+
                             <img src="./img/1.png" alt="">
+
                         </figure>
                         <figure>
                             <img src="./img/1.png" alt="">
