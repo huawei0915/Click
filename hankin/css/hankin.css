@@ -57,7 +57,7 @@
     line-height: 40px;
 }
 .acc_list ul li{
-    margin: 30px 0 40px 45px;
+    margin: 15px 0 15px 45px;
 }
 .acc_list img{
     width: 12%;
@@ -128,7 +128,7 @@
 .my_favorite{
     width:50%;
     border: 3px solid #1C1C1C;
-    margin: 250px 100px 120px 0;
+    margin: 257px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
 }
 .my_favorite .my_favWord{
@@ -286,7 +286,7 @@
     width: 50%;
     height: 505px;
     border: 3px solid #1C1C1C;
-    margin: 257px 100px 120px 0;
+    margin: 250px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
     position: relative;
 }
@@ -384,7 +384,7 @@
 /* ----------profile area---------- */
     .my_profile{
         width: 50%;
-        height: 505px;
+        min-height: 70vh;
         border: 3px solid #1C1C1C;
         margin: 257px 100px 120px 0;
         border-radius: 35px 35px 27px 27px;
@@ -392,7 +392,7 @@
     }
     .my_profile .my_profileBackground{
         width: 100%;
-        height: 400px;
+        min-height: 60vh;
         border-radius: 30px;
         background: #1C1C1C; 
     }
@@ -408,8 +408,8 @@
     }
     .my_profileFont .my_profileBimg{
         position: absolute;
-        left: 4vh;
-        top: 15vh;
+        left: 3vh;
+        top: 11vh;
     }
     .my_profileFont .my_profileIcon{
         width: 5%;
@@ -417,11 +417,126 @@
         border-radius: 50%;
         border: 1px solid #707070;
         position: absolute;
-        left: 12vh;
-        top: 23vh;
+        left: 11vh;
+        top: 20vh;
     }
     .my_profileFont .my_profileIcon .pro_icon{
         width: 65%;
         padding-bottom: 3px;
     }
-    
+    .my_profile .my_profileBackground .my_card_body{
+        width: 60%;
+        color: white;
+        margin: 0 35%;
+    }
+    .my_profile .my_profileBackground .my_proForm{
+        margin-bottom: 0.5rem;
+    }
+    .my_profile .my_profileBackground .my_label{
+        margin: 0;
+        padding: 0;
+    }
+    .my_profile .my_profileBackground .my_sexcheck{
+        line-height: 30px;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    input[type="radio"] + label:before {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        padding: 3px;
+        margin-right: 5px;
+        background-clip: content-box;
+        border: 1px solid #bbbbbb;
+        background-color: #e7e6e7;
+        border-radius: 50%;
+    }
+    input[type="radio"]:checked + label:before {
+        background-color: #FFC200;
+    }
+    *:before,*:after {
+        box-sizing: border-box;
+    }
+    .sound-signal label {
+        display: inline-flex;
+        align-items: center;
+    }
+    button{
+        background: white ;
+        margin: 0;
+        padding: 0;
+        width: 15vh;
+    }
+    .btn{
+        border: 3px solid #FFA800;
+        border-radius: 16px;
+        line-height: 1.4rem;
+        position: absolute;
+        left: 35vh;
+        top: 62vh;
+    }
+@media screen and (max-width:578px){
+        .my_profile{
+            width: 90%;
+            min-height: 110vh;
+            margin: 40px auto 40px auto;
+            position: relative;
+        }
+        .my_profile .my_profileBackground{
+            min-height: 95vh;
+        }
+        .my_profile .my_profileFont .my_fh6{
+            font-size: 0.85rem;
+        }
+        .my_profileFont .my_profileBimg{
+            position: absolute;
+            left: 33%;
+            top: 12vh;
+        }
+        .my_profileFont .my_profileIcon{
+            width: 8%;
+            position: absolute;
+            left: 28vh;
+            top: 24vh;
+        }
+        .my_profileFont .my_profileIcon .pro_icon{
+            width: 65%;
+        }
+        .my_profile .my_profileBackground .my_card_body{
+            width: 90%;
+            margin: 25% auto;
+        }
+        .my_profile .my_profileBackground .my_proForm{
+            margin-bottom: 0.65rem;
+        }
+        .btn{
+            position: absolute;
+            left: 32vh;
+            top: 98vh;
+        }
+    }
+/* ----------order area---------- */
+.my_order{
+    width:50%;
+    border: 3px solid #1C1C1C;
+    margin: 257px 100px 120px 0;
+    border-radius: 35px 35px 27px 27px;
+}
+.my_order .my_orderWord{
+    background-color: #1C1C1C;
+    color: white;
+    height: 75px;
+    font-size: 1.2rem;
+    padding: 25px 0 0 20px;
+    border-radius: 27px 27px 0 0;
+}
+.order_icon{
+    display: flex;
+    justify-content: space-around;
+}
+.order_icon img{
+    width: 4rem;
+}
