@@ -1,3 +1,51 @@
+<?php   include __DIR__ . '/__db_connect.php';
+
+
+$page_name = 'product-list';
+
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
+// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
+$per_page = 4;
+
+// 用來產生 query string
+// $my_qs = [
+//     'page' => $page,
+//     'cate' => $cate,
+// ];
+
+// 取得分類資料
+// $c_sql = "SELECT * FROM `categories` WHERE `parent_sid`=0 ORDER BY `sequence`"; // 排序條件
+$c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
+$cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+// $where = " WHERE 1 ";
+
+// if(! empty($cate)){
+//     $where .= " AND `category_sid`=$cate ";
+// }
+
+
+// 取得總筆數
+$t_sql = "SELECT COUNT(1) FROM `p_products`";
+$totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+
+$totalPages = ceil($totalRows/$per_page); // 總頁數
+
+// 取得產品資料
+// $p_sql = sprintf("SELECT * FROM `p_products`  LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
+$p_sql=sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16)");
+$stmt = $pdo->query($p_sql);
+
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// var_dump($rows[0]['images']);
+// echo($rows[0]['images']);
+// exit();
+
+
+
+?>
+
 <?php include __DIR__ . '/__html_head.php' ?>
 
 <?php include __DIR__ . '/__nav.php' ?>
@@ -115,7 +163,7 @@
         <div class="plt d-flex">
 
             <div class="prd_cards" style="background-color: #fff;">
-                <figure class="prd_pic"><img src="img/1.png" alt=""></figure>
+                <figure class="prd_pic"><img src="./img/product/lens/<?= $rows[0]['images'] ?>.png" alt=""></figure>
                 <h6>EOS-1D X Mark II</h6>
                 <ul>
                     <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
