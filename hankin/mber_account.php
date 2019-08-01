@@ -51,7 +51,7 @@
         </div>
         <!-- 右側區塊 -->
         <div class="my_favorite">
-            <div class="my_favWord">我的收藏</div>
+            <div class="my_favWord">我的收藏 Collection</div>
             <div class="my_favList d-flex">
                 <div class="my_favImg">
                     <img src="img/EOS5DMarkIV.png" alt="">
@@ -61,7 +61,7 @@
                         Canon EOS 5D Mark IV
                     </div>
                     <div class="my_favSpec">
-                        規格:(EF 24-70mm f/4L IS USM)
+                        (EF 24-70mm f/4L IS USM)
                     </div>
                     <div class="my_favDate">
                         2019-08-20 09:30
@@ -91,7 +91,7 @@
                         Canon EOS 5D Mark IV
                     </div>
                     <div class="my_favSpec">
-                        規格:(EF 24-70mm f/4L IS USM)
+                        (EF 24-70mm f/4L IS USM)
                     </div>
                     <div class="my_favDate">
                         2019-08-20 09:30
@@ -121,7 +121,7 @@
                         Canon EOS 5D Mark IV
                     </div>
                     <div class="my_favSpec">
-                        規格:(EF 24-70mm f/4L IS USM)
+                        (EF 24-70mm f/4L IS USM)
                     </div>
                     <div class="my_favDate">
                         2019-08-20 09:30
@@ -151,7 +151,7 @@
                         Canon EOS 5D Mark IV
                     </div>
                     <div class="my_favSpec">
-                        規格:(EF 24-70mm f/4L IS USM)
+                        (EF 24-70mm f/4L IS USM)
                     </div>
                     <div class="my_favDate">
                         2019-08-20 09:30
@@ -181,7 +181,7 @@
                         Canon EOS 5D Mark IV
                     </div>
                     <div class="my_favSpec">
-                        規格:(EF 24-70mm f/4L IS USM)
+                        (EF 24-70mm f/4L IS USM)
                     </div>
                     <div class="my_favDate">
                         2019-08-20 09:30
