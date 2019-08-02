@@ -67,7 +67,7 @@
                                 <div class="form-group row">
                                     <label for="address" class="col-md-2 col-sm-12 col-form-label ">住址</label>
 
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address2">
                                             <option selected>選縣市</option>
                                             <option value="1">台北市</option>
@@ -75,7 +75,7 @@
                                             <option value="3">桃園市</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address3">
                                             <option selected>鄉鎮區</option>
                                             <option value="1">大安區</option>
@@ -83,10 +83,10 @@
                                             <option value="3">中山區</option>
                                         </select>
                                     </div>
-                                    <input type="text" class="form-control col-sm-2" placeholder="郵遞區號">
+                                    <input type="text" class="form-control col-sm-2 postcode"  placeholder="郵遞區號">
 
                                     <label for="address" class="col-md-2 col-form-label" disable></label>
-                                    <div class="col-md-10 col-sm-12 pr-0 pt-3">
+                                    <div class="col-md-10 col-sm-12 pr-0 pt-3 address_text">
                                         <input type="text" class="form-control" id="address" placeholder="輸入地址">
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="address" class="col-sm-2 col-form-label">住址</label>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address2">
                                             <option selected>選縣市</option>
                                             <option value="1">台北市</option>
@@ -141,7 +141,7 @@
                                             <option value="3">桃園市</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address3">
                                             <option selected>鄉鎮區</option>
                                             <option value="1">大安區</option>
@@ -149,10 +149,10 @@
                                             <option value="3">中山區</option>
                                         </select>
                                     </div>
-                                    <input type="text" class="form-control col-sm-2" placeholder="郵遞區號">
+                                    <input type="text" class="form-control col-sm-2 postcode" placeholder="郵遞區號">
 
                                     <label for="address" class="col-sm-2 col-form-label" disable></label>
-                                    <div class="col-sm-10 pr-0 pt-3">
+                                    <div class="col-sm-10 pr-0 pt-3 address_text">
                                         <input type="text" class="form-control" id="address4" placeholder="輸入地址">
                                     </div>
                                 </div>
@@ -361,7 +361,7 @@
                         <div class=" delivery-main p-time mt-2 ">
                             <!-- ------------------------------------------------------------- -->
                             <div class="house">
-                                <div class="p-time-title">配送時間 : </div>
+                                <div class="p-time-title">配送時間</div>
                                 <div class="p-time-area">
                                     <div class="custom-control custom-radio custom-control-inline radio-text">
                                         <input type="radio" id="customRadioInline4" name="customRadioInline2" class="custom-control-input">
@@ -466,7 +466,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-end mt-4">
+                <div class="d-flex end_btn mt-4">
                     <a href="" class="btn btn-secondary mx-2 px-4">繼續購物</a>
                     <a href="" class="btn btn-danger mx-2 px-4">結 帳</a>
                 </div>

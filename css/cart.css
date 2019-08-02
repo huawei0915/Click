@@ -295,6 +295,18 @@ em{
         padding: 0;
     }
 }
+@media screen and (max-width:576px){
+    .address_box{
+        margin-bottom: 20px !important;
+    }
+    .postcode{
+        margin: 0 15px !important;
+    }
+    .address_text{
+        padding-top: 0 !important;
+        margin-right: 15px !important;
+    }
+}
 .step-3-1 .shop_border{
     border: 1px solid black;
     border-radius: 25px;
@@ -326,7 +338,7 @@ em{
         display: none;
     }
     .add_shop_only{
-        margin-top: 10px;
+        margin-top: 30px;
         /* border:none; */
         width: 100%;
     }
@@ -344,6 +356,7 @@ em{
         width: 100%;
         height: 300px;
         margin-top: 20px;
+        margin-left: 0;
   }
   .add_shop_only .add_shop_only_text{
         width: 70%;
@@ -501,6 +514,9 @@ em{
     width: 100%;
     padding: 5% 0;
 }
+.end_btn{
+    justify-content: flex-end;
+}
 
 @media screen and (max-width:992px){
     .radio-text label{
@@ -508,5 +524,78 @@ em{
     }
     .p-time .p-time-title{
         font-size: 1rem;
+    }
+}
+@media screen and (max-width:576px){
+    .step-4 .delivery-main{
+        flex-direction: column;
+        height: auto;
+        flex-wrap: wrap;
+        text-align: left;
+        align-items: flex-start;
+        padding: 0 7%;
+    }
+    .step-4 .delivery-main>div{
+        margin: 5px 0;
+    }
+    .step-4 em{
+        font-size: 0.8rem;
+
+    }
+    .step-4 .p-time{
+        display: flex;
+        justify-content: flex-start;
+        height: 200px;  
+        position: relative;
+        margin: 0 -20px;
+    }
+    .p-time .p-time-area>div{
+        margin: 5px 0;
+    }
+    .p-time .p-time-area div:nth-child(2) {
+        width: 100%;
+    }
+    .p-time .p-time-area div:nth-child(3) {
+        width: 100%;
+        margin-top: 0;
+    }
+    .p-time .p-time-title {
+        margin-right: 10px;
+        
+    }
+    .step-4 .myself>p{
+        color:#8e8e8e;
+    } 
+    .step-4 .myself figure {
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .step-4 .family_711 .custom-select {
+        padding-left: 1%;
+    }
+    .step-4 .family_711 .custom-select.city_3 {
+        text-align: center;
+        padding-left: 30%;
+    }
+    .pay-style .visa {
+        width: 100%;
+        margin: 40px auto;
+    }
+    .pay-style .visa p{
+        color:#8e8e8e;
+        font-size: 0.8rem;
+    }
+    .pay-style_1 {
+        height: auto;
+        border-radius: 20px;
+    }
+    .personal {
+        text-align: right;
+        padding: 10%;
+    }
+    .end_btn{
+        justify-content: center;
     }
 }
