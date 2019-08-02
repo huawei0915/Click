@@ -1,42 +1,58 @@
-<?php require __DIR__ . '/__db_connect.php';
-
-$page_name = 'diy';
-// 取得分類
-$c_sql = "SELECT * FORM `categories` WHERE `parent_sid`=1";
-// $cates=$pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+<?php include __DIR__ . '/__db_connect.php';
 
 
-// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 1;
+$page_name = 'product-list';
 
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
+// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
+$per_page = 3;
 
-// $where ="WHERE 1";
+// 用來產生 query string
+// $my_qs = [
+//     'page' => $page,
+//     'cate' => $cate,
+// ];
 
-if (!empty($cate)) {
-    // $where .="AND `category_sid`=$cate";
-}
+// 取得分類資料
+// $c_sql = "SELECT * FROM `categories` WHERE `parent_sid`=0 ORDER BY `sequence`"; // 排序條件
+$c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
+$cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+// $where = " WHERE 1 ";
+
+// if(! empty($cate)){
+//     $where .= " AND `category_sid`=$cate ";
+// }
+
 
 // 取得總筆數
-// $t_sql="SELECT COUNT(1) FROM `products` $where";
-// $totalRows=$pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+$t_sql = "SELECT COUNT(1) FROM `p_products`";
+$totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
+$totalPages = ceil($totalRows / $per_page); // 總頁數
 
+// 取得產品資料
+// $p_sql = sprintf("SELECT * FROM `p_products`  LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
+$p_camera = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6");  //鏡頭分類
+$p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AND 16");  //鏡頭分類
+$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10)");    //配件分類
 
-// $p_sql=sprintf("SELECT * FROM `products` $where LIMIT %s ,%s ", ($page-1)*$per_page,$per_page);
-// $stmt=$pdo->query($p_sql);
+$stmt_camera = $pdo->query($p_camera);
+$stmt_lens = $pdo->query($p_lens);
+$stmt_tool = $pdo->query($p_tool);
 
-// $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rowsCamera = $stmt_camera->fetchAll(PDO::FETCH_ASSOC);
+$rowsLens = $stmt_lens->fetchAll(PDO::FETCH_ASSOC);
+$rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
-// $camera = $pdo->query("SELECT * FROM `products` WHERE 1");
-//拿到了 categories 值為 products_sid=1  拿到了三大類的相機
+// var_dump($rows[0]['images']);
+// echo($rows[0]['images']);
+// exit();
 
-// $lens = $pdo->query("SELECT * FROM `lens` WHERE 1");
-//拿到了 categories 值為 products_sid=1  拿到了三大類的鏡頭
-
-// $tools = $pdo->query("SELECT * FROM `categories` WHERE parent_sid=3");
-//拿到了 categories 值為 products_sid=1  拿到了三大類的配件
 
 
 ?>
+
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
 
@@ -55,39 +71,32 @@ if (!empty($cate)) {
                     <figure class="text-center">
                         <img id="camera_BP" src="" alt="">
                     </figure>
-
                 </div>
                 <div class="camera_Intro">
-
-
+                    <h5></h5>
+                    <h6></h6>
+                    <p></p>
                 </div>
-
                 <div class="lens_BP">
-
                     <figure class="text-center">
                         <img id="lens_BP" src="" alt="">
                     </figure>
-
                 </div>
                 <div class="lens_Intro">
-
-
-
+                    <h6></h6>
+                    <p></p>
                 </div>
                 <div class="tools1_BP">
                     <figure class="text-center">
                         <img id="tools1_BP" src="" alt="">
                     </figure>
-
                 </div>
                 <div class="tools1_Intro">
-
-
+                    <h6></h6>
+                    <p></p>
                 </div>
                 <div class="redo"><i class="fas fa-redo-alt"></i></div>
-
             </div>
-
             <div class="table-r">
                 <div>
                     <div class="d-flex justify-content-around align-items-center comm">
@@ -95,7 +104,6 @@ if (!empty($cate)) {
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-
                         <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
                     </div>
                     <!-- -------------------- -->
@@ -104,20 +112,15 @@ if (!empty($cate)) {
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-
                         <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
                     </div>
-
                     <div class="d-flex justify-content-around align-items-center comm">
                         <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-
                         <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
                     </div>
-
-
                     <div class="d-flex totalMoney">
                         <h5>Total : NT $ </h5>
                         <input type="text" readonly value="150000">
@@ -143,21 +146,16 @@ if (!empty($cate)) {
             <div class="flow">
                 <div class="overflow-wrapper-y">
                     <div class=" thumbnail overflow-wrapper-x show-step1 show-item1" id="step1">
+
                         <div class="tab">
-                            <figure>
-
-                                <img src="./img/1.png" alt="">
-
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure>
+                            <?php foreach ($rowsCamera as $r) : ?>
+                                <figure>
+                                    <img src="img/product/camera/<?= $r['images'] ?>.png" alt="">
+                                </figure>
+                                <h5 style="display:none;"><?= $r['model'] ?></h5>
+                                <h6 style="display:none;"><?= $r['description'] ?></h6>
+                                <p style="display:none;"><?= $r['price'] ?></p>
+                            <?php endforeach; ?>
                         </div>
                         <div class="tab">
                             <figure>
@@ -174,7 +172,7 @@ if (!empty($cate)) {
                             </figure>
                         </div>
                         <div class="tab">
-                            <figure>
+                            <!-- <figure>
                                 <img src="./img/1.png" alt="">
                             </figure>
                             <figure>
@@ -185,12 +183,20 @@ if (!empty($cate)) {
                             </figure>
                             <figure>
                                 <img src="./img/2.png" alt="">
-                            </figure>
+                            </figure> -->
                         </div>
                     </div>
                     <div class=" thumbnail overflow-wrapper-x " id="step2">
                         <div class="tab">
-                            <figure>
+                            <?php foreach ($rowsLens as $r) : ?>
+                                <figure>
+                                    <img src="img/product/lens/<?= $r['images'] ?>.png" alt="">
+                                </figure>
+                                <h6 style="display:none;"><?= $r['model'] ?></h6>
+                                <p style="display:none;"><?= $r['price'] ?></p>
+                            <?php endforeach; ?>
+
+                            <!-- <figure>
                                 <img src="./img/2.png" alt="">
                             </figure>
                             <figure>
@@ -201,10 +207,10 @@ if (!empty($cate)) {
                             </figure>
                             <figure>
                                 <img src="./img/1.png" alt="">
-                            </figure>
+                            </figure> -->
                         </div>
                         <div class="tab">
-                            <figure>
+                            <!-- <figure>
                                 <img src="./img/1.png" alt="">
                             </figure>
                             <figure>
@@ -215,10 +221,10 @@ if (!empty($cate)) {
                             </figure>
                             <figure>
                                 <img src="./img/2.png" alt="">
-                            </figure>
+                            </figure> -->
                         </div>
                         <div class="tab">
-                            <figure>
+                            <!-- <figure>
                                 <img src="./img/1.png" alt="">
                             </figure>
                             <figure>
@@ -229,12 +235,20 @@ if (!empty($cate)) {
                             </figure>
                             <figure>
                                 <img src="./img/3.png" alt="">
-                            </figure>
+                            </figure> -->
                         </div>
                     </div>
                     <div class=" thumbnail overflow-wrapper-x " id="step3">
                         <div class="tab">
-                            <figure>
+
+                            <?php foreach ($rowsTool as $r) : ?>
+                                <figure>
+                                    <img src="img/product/tools/<?= $r['images'] ?>.png" alt="">
+                                </figure>
+                                <h6 style="display:none;"><?= $r['model'] ?></h6>
+                                <p style="display:none;"><?= $r['price'] ?></p>
+                            <?php endforeach; ?>
+                            <!-- <figure>
                                 <img src="./img/1.png" alt="">
                             </figure>
                             <figure>
@@ -245,10 +259,10 @@ if (!empty($cate)) {
                             </figure>
                             <figure>
                                 <img src="./img/3.png" alt="">
-                            </figure>
+                            </figure> -->
                         </div>
                         <div class="tab">
-                            <figure>
+                            <!-- <figure>
                                 <img src="./img/2.png" alt="">
                             </figure>
                             <figure>
@@ -260,9 +274,9 @@ if (!empty($cate)) {
                             <figure>
                                 <img src="./img/1.png" alt="">
                             </figure>
-                        </div>
-                        <div class="tab">
-                            <figure>
+                        </div> -->
+                            <div class="tab">
+                                <!-- <figure>
                                 <img src="./img/1.png" alt="">
                             </figure>
                             <figure>
@@ -273,12 +287,14 @@ if (!empty($cate)) {
                             </figure>
                             <figure>
                                 <img src="./img/3.png" alt="">
-                            </figure>
+                            </figure> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <span onclick="showRight();" id="right"><i class="fas fa-chevron-right fa-3x"></i></span>
+
         </div>
     </section>
 </div>
@@ -293,38 +309,18 @@ if (!empty($cate)) {
         <div class="">
             <h2 class="pt-3 ml-3">首選推薦</h2>
             <ul class="d-flex grade_m">
-                <li class="d-flex flex-column align-items-center"><a href="" id="start_m">入門</a><i class="fas fa-caret-down"></i></li>
-                <li class="d-flex flex-column align-items-center"><a href="" id="intel-m">進階</a><i class="fas fa-caret-down"></i></li>
-                <li class="d-flex flex-column align-items-center"><a href="" id="pro_m">專業</a><i class="fas fa-caret-down"></i></li>
+                <li class="d-flex flex-column align-items-center"><a href="#" id="start_m">入門</a><i class="fas fa-caret-down"></i></li>
+                <li class="d-flex flex-column align-items-center"><a href="#" id="intel-m">進階</a><i class="fas fa-caret-down"></i></li>
+                <li class="d-flex flex-column align-items-center"><a href="#" id="pro_m">專業</a><i class="fas fa-caret-down"></i></li>
             </ul>
             <div class="choose_m">
-                <div class="choose_camera_m">
-                    <ul>
-                        <li><span></span>選擇相機<i class="fas fa-chevron-down"></i></li>
-                        <li><img src="img/1.png" alt="">
-                            <p>AEADSDSDS</p>
-                            <p>NT$</p>
-                        </li>
-                    </ul>
-                    <!-- <select class="custom-select" id="address1">
-                        <option selected>選擇相機</option>
-                        <option value="1"><img src="img/1.png" alt=""><p>AEADSDSDS</p><p>NT$</p></option>
-                        <option value="2">文山區</option>
-                        <option value="3">中山區</option>
-                    </select> -->
-                </div>
-                <div class="choose_lens_m">
-                    <ul>
-                        <li><span></span>選擇鏡頭<i class="fas fa-chevron-down"></i></li>
-                        <li><a href=""></a></li>
-                    </ul>
-                </div>
-                <div class="choose_tools_m">
-                    <ul>
-                        <li><span></span>選擇配件<i class="fas fa-chevron-down"></i></li>
-                        <li><a href=""></a></li>
-                    </ul>
-                </div>
+
+                <div id="myDropdown"></div>
+
+                <div id="myDropdown1"></div>
+
+                <div id="myDropdown2"></div>
+
                 <div class="d-flex pt-3 total">
                     <h5 class="">Total </h5>
                     <p class="ml-3"> NT$ 15000</p>
@@ -349,6 +345,8 @@ if (!empty($cate)) {
 <script>
     let table = $("#table").offset().left;
     let camera_BP = $("#camera_BP").offset().left;
+
+
     console.log(table);
     console.log(camera_BP);
     $("#step1 figure").on('click', function() {
@@ -376,31 +374,36 @@ if (!empty($cate)) {
 
         // ------------------
         let img = $(this).find("img").attr("src");
+        let text_h5 = $(this).next().text();
+        let text_h6 = $(this).next().next().text();
+        let text_p = $(this).next().next().next().text();
         $("#camera_BP").attr("src", img);
+        $(".camera_Intro h5").text(text_h5);
+        $(".camera_Intro h6").text(text_h6);
+        $(".camera_Intro p").text('NT$' + text_p);
         $(this).siblings();
 
 
     });
 
     $("#step2 figure").on('click', function() {
-        let smallPicLeft = this.offsetLeft;
-        let smallPicTop = this.offsetTop;
         let img = $(this).find("img").attr("src");
+        let text_h6 = $(this).next().text();
+        let text_p = $(this).next().next().text();
         $("#lens_BP").attr("src", img);
+        $(".lens_Intro h6").text(text_h6);
+        $(".lens_Intro p").text('NT$' + text_p);
         $(this).addClass("active").siblings().removeClass("active");
-
-        console.log(smallPicLeft);
-        console.log(smallPicTop);
     });
     $("#step3 figure").on('click', function() {
-        let smallPicLeft = this.offsetLeft;
-        let smallPicTop = this.offsetTop;
-        let img = $(this).find("img").attr("src");
-        $("#tools1_BP").attr("src", img);
-        $(this).addClass("active").siblings().removeClass("active");
 
-        console.log(smallPicLeft);
-        console.log(smallPicTop);
+        let img = $(this).find("img").attr("src");
+        let text_h6 = $(this).next().text();
+        let text_p = $(this).next().next().text();
+        $("#tools1_BP").attr("src", img);
+        $(".tools1_Intro h6").text(text_h6);
+        $(".tools1_Intro p").text('NT$' + text_p);
+        $(this).addClass("active").siblings().removeClass("active");
     });
 
     // --------- 滑動----------------
@@ -471,25 +474,174 @@ if (!empty($cate)) {
 
     $('.table .redo').click(function() {
         $("#camera_BP").attr("src", "");
+        $(".camera_Intro h5,.camera_Intro h6,.camera_Intro p").text("");
         $("#lens_BP").attr("src", "");
+        $(".lens_Intro h6,.lens_Intro p").text("");
         $("#tools1_BP").attr("src", "");
+        $(".tools1_Intro h6,.tools1_Intro p").text("");
     })
     $('#pro,#pro_m').click(function() {
-        $("#camera_BP").attr("src", "img/2.png");
-        $("#lens_BP").attr("src", "img/3.png");
-        $("#tools1_BP").attr("src", "img/2.png");
+        $("#camera_BP").attr("src", "");
+        $(".camera_Intro h5").text("Leica CL");
+        $(".camera_Intro h6").text("APS-C 尺寸 2,400 萬像 CMOS、4K 拍片、內置 EVF 取景、採用 Leica T 鏡頭系統\r\n2,400 萬像素\r\n視鏡頭而定x 光學變焦\r\nBP-DC 13 專用鋰電池\r\n連電池 403 Gram");
+        $(".camera_Intro p").text("NT$155000");
+        $("#lens_BP").attr("src", "./img/product/lens/LL_04.png");
+        $(".lens_Intro h6").text("Leica Super-Vario-Elmar-SL 16–35/3.5–4.5 ASPH");
+        $(".lens_Intro p").text("NT$179800");
+        $("#tools1_BP").attr("src", "./img/product/tools/FT-03.png");
+        $(".tools1_Intro h6").text("KINGJOY 勁捷 K3208腳架+QH20雲台");
+        $(".tools1_Intro p").text("NT$5390");
     })
     $('#intel,#intel_m').click(function() {
         $("#camera_BP").attr("src", "img/3.png");
+        $(".camera_Intro h5").text("");
+        $(".camera_Intro h6").text("");
+        $(".camera_Intro p").text("");
         $("#lens_BP").attr("src", "img/2.png");
+        $(".lens_Intro h6").text("");
+        $(".lens_Intro p").text("");
         $("#tools1_BP").attr("src", "img/1.png");
+        $(".tools1_Intro h6").text("");
+        $(".tools1_Intro p").text("");
     })
     $('#start,#start_m').click(function() {
         $("#camera_BP").attr("src", "img/1.png");
+        $(".camera_Intro h5").text("");
+        $(".camera_Intro h6").text("");
+        $(".camera_Intro p").text("");
         $("#lens_BP").attr("src", "img/2.png");
+        $(".lens_Intro h6").text("");
+        $(".lens_Intro p").text("");
         $("#tools1_BP").attr("src", "img/2.png");
+        $(".tools1_Intro h6").text("");
+        $(".tools1_Intro p").text("");
     })
 
     console.log($('#step1 .tab').length);
 </script>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>
+<script>
+    var ddData = [{
+            text: "EOS 800D",
+            value: 1,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/product/camera/EOS 800D.png"
+        },
+        {
+            text: "EOS 800D",
+            value: 2,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/2.png"
+        },
+        {
+            text: "EOS 800D",
+            value: 3,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/3.png"
+        },
+        {
+            text: "Foursquare",
+            value: 7,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/product/camera/EOS 800D.png"
+        },
+        {
+            text: "Foursquare",
+            value: 8,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/product/camera/EOS 800D.png"
+        }
+    ];
+    var ddData1 = [{
+            text: "EOS 800D",
+            value: 11,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/product/lens/LC_01.png"
+        },
+        {
+            text: "EOS 800D",
+            value: 12,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/2.png"
+        }
+    ];
+    var ddData2 = [{
+            text: "EOS 800D",
+            value: 21,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/product/tools/FT-03.png"
+        },
+        {
+            text: "EOS 800D",
+            value: 22,
+            selected: false,
+            description: "NT$111111",
+            imageSrc: "img/2.png"
+        }
+    ];
+    var ddData3 = [{
+        text: "EOS 800D",
+        value: 31,
+        selected: true,
+        description: "NT$111111",
+        imageSrc: "img/product/tools/FT-03.png"
+    }];
+
+    $('#myDropdown').ddslick({
+        data: ddData,
+        width: 300,
+        height: 300,
+        imagePosition: "left",
+        selectText: "選擇相機",
+        onSelected: function(selectedData) {
+            console.log(selectedData);
+        }
+    });
+    $('#myDropdown1').ddslick({
+        data: ddData1,
+        width: 300,
+        height: 300,
+        imagePosition: "left",
+        selectText: "選擇鏡頭",
+        onSelected: function(selectedData) {
+            console.log(selectedData)
+        }
+    });
+    $('#myDropdown2').ddslick({
+        data: ddData2,
+        width: 300,
+        height: 200,
+        imagePosition: "left",
+        selectText: "選擇配件",
+        onSelected: function(selectedData) {
+            console.log(selectedData)
+        }
+    });
+
+
+    $('#start_m').on('click', function() {
+        $('#myDropdown').ddslick({
+            data: ddData3,
+        });
+    });
+
+
+
+    $('#start_m').on('click', function(){
+   
+});
+</script>
+
+
+
+
 <?php include __DIR__ . '/__html_end.php' ?>

@@ -32,8 +32,8 @@ $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 $totalPages = ceil($totalRows/$per_page); // 總頁數
 
 // 取得產品資料
-// $p_sql = sprintf("SELECT * FROM `p_products`  LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
-$p_sql=sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16)");
+$p_sql = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16) LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
+// $p_sql=sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16)");
 $stmt = $pdo->query($p_sql);
 
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -161,9 +161,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- PRODUCT LIST TOP -->
         <div class="plt d-flex">
-
+        <?php foreach($rows as $r): ?>
             <div class="prd_cards" style="background-color: #fff;">
-                <figure class="prd_pic"><img src="./img/product/lens/<?= $rows[0]['images'] ?>.png" alt=""></figure>
+                <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
                 <h6>EOS-1D X Mark II</h6>
                 <ul>
                     <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
@@ -174,8 +174,9 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <p>NT$ 169,000</p>
                 <div class="compare">比較</div>               
             </div>
-
-            <div class="prd_cards" style="background-color: #fff;">
+            <?php endforeach; ?>
+            
+            <!-- <div class="prd_cards" style="background-color: #fff;">
                 <figure class="prd_pic"><img src="" alt=""></figure>
                 <h6>EOS-1D X Mark II</h6>
                 <ul>
@@ -212,14 +213,27 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <p>NT$ 169,000</p>
                 <div class="compare">比較</div>               
-            </div>
+            </div> -->
 
         </div>
 
         <!-- PRODUCT LIST MID -->
         <div class="plm d-flex">
-
-        <div class="prd_cards" style="background-color: #fff;">
+        <?php foreach($rows as $r): ?>
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
+                <hr>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div>
+            <?php endforeach; ?>
+        <!-- <div class="prd_cards" style="background-color: #fff;">
                 <figure class="prd_pic"><img src="" alt=""></figure>
                 <h6>EOS-1D X Mark II</h6>
                 <ul>
@@ -269,7 +283,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <p>NT$ 169,000</p>
                 <div class="compare">比較</div>               
-            </div>
+            </div> -->
 
         </div>
 
