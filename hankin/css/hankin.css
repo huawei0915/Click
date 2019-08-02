@@ -533,10 +533,131 @@
     padding: 25px 0 0 20px;
     border-radius: 27px 27px 0 0;
 }
+.ordr_icongroup{
+    height: 10vh;
+}
 .order_icon{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 2.5rem;
 }
 .order_icon img{
-    width: 4rem;
+    width: 3.5rem;
 }
+.order_line{
+    width: 420px;
+    margin: 0 auto;
+    padding-top:2rem; 
+}
+.order_userInfo, .order_listBuy, .order_payInfo{
+    border: 1px solid #707070;
+    border-radius: 27px;
+    width: 95%;
+    margin: 20px auto;
+    padding: 0.65rem 2rem;
+}
+.order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
+    font-size:1.2rem; 
+    color: #707070;
+}
+.order_fh6{
+    color: #707070;
+}
+.userinfomation{
+    padding-left: 1.5rem;
+}
+ .userinfo_user label{
+    margin-left: 3rem;
+}
+.userinfo_mobile label, .userinfo_address label{
+    margin-left: 4rem;
+}
+.order_buyList{
+    display: flex;
+}
+.order_buyList figure{
+    width: 55px;
+    height: 55px;
+}
+.order_count_price{
+    padding-left: 3rem;
+}
+.order_listBuy .order_buyList img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.order_infoBuy{
+    padding: 0;
+    margin: 0;
+    margin-left: 2rem;
+}
+.order_send, .order_date, .odrder_total{
+    padding-left: 1.5rem;
+}
+ .order_send label, .order_date label{
+    margin-left: 4rem;
+}
+.odrder_total label{
+    margin-left: 3rem;
+}
+@media screen and (max-width:578px){
+    .my_order{
+        width: 90%;
+        margin: 40px auto 40px auto;
+        position: relative;
+    }
+    .order_line{
+        width: 100%;
+    }
+    .order_userInfo, .order_listBuy, .order_payInfo{
+        width: 95%;
+    }
+    .order_userInfo{
+        margin-top: 3rem;
+    }
+    .order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
+        font-size:1rem; 
+    }
+    .userinfomation{
+        padding-left: 0.25rem;
+    }
+    .userinfo_address{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .userinfo_address label{
+        /* padding-left: 6rem; */
+        margin: 0;
+    }
+    .order_listBuy .order_buyList img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .order_infoBuy{
+        display: flex;
+        flex-wrap: wrap;
+        color: #7D7D7D;
+    }
+    .order_buyList figure{
+        width: 60px;
+        height: 60px;
+    }
+    .order_name_spec, .order_count_price{
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+    }
+    .order_infoBuy{
+        margin-left: 1rem; 
+    }
+    .order_send label, .order_date label{
+        margin-left: 2rem;
+    }
+    .odrder_total label{
+        margin-left: 1rem;
+    }
+}
+  
