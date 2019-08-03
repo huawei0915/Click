@@ -83,7 +83,7 @@
                                             <option value="3">中山區</option>
                                         </select>
                                     </div>
-                                    <input type="text" class="form-control col-sm-2 postcode"  placeholder="郵遞區號">
+                                    <input type="text" class="form-control col-sm-2 postcode" placeholder="郵遞區號">
 
                                     <label for="address" class="col-md-2 col-form-label" disable></label>
                                     <div class="col-md-10 col-sm-12 pr-0 pt-3 address_text">
@@ -280,7 +280,7 @@
                     </div>
                 </div>
 
-<!-- -------------------------- -->
+                <!-- -------------------------- -->
 
                 <div class="d-flex add_shop_box">
                     <div class="add_shop_only">
@@ -409,33 +409,55 @@
                     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="my-4">
                         <div class="d-flex title_1"><img src="img/icon/付款.svg" alt="">
                             <h5 class="ml-3 pt-3">付款方式</h5>
                         </div>
                         <div class="pay-style ">
-                            <div>
-                                <a href="" class="text-center visa">
+                            <div data-toggle="modal" data-target="#exampleModalCenter">
+                                <a class="text-center visa">
                                     <p class="mt-3">信用卡<br>
                                         VISA/MasterCard/JCB</p>
                                 </a>
                             </div>
+                            <!-- ----------------------------------------- -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">信用卡填寫</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form novalidate autocomplete="on" method="POST" data-toggle="popover" class="visa_card">
+                                                <div class="form-group">
+                                                    <label for="cc-number" class="control-label">信用卡卡號</label>
+                                                    <input id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label">信用卡到期日</label>
+                                                    <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="•• / ••" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="cc-cvc" class="control-label">CVC驗證碼</label>
+                                                    <input id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="•••" required>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-warning ">確認送出</button>
+
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -------------------------------------------- -->
                             <div>
-                                <a href="" class="text-center visa">
+                                <a class="text-center visa">
                                     <p class="mt-3">第三方支付<br>
                                         Line pay/Google pay/Apple pay</p>
                                 </a>
@@ -488,7 +510,7 @@
 
 <?php require __DIR__ . '/__footer.php' ?>
 <?php require __DIR__ . '/__script.php' ?>
-
+<script src="plugin/jquery.payment.js"></script>
 <script>
     // function show(step) {
     //     for(var i = 1; i <= 4; i++) {
@@ -525,5 +547,43 @@
         $(".pay-style_1 .radio-text .number").css("display", "block");
     })
 </script>
+<script>
+    jQuery(function($) {
+        $('[data-numeric]').payment('restrictNumeric');
+        $('.cc-number').payment('formatCardNumber');
+        $('.cc-exp').payment('formatCardExpiry');
+        $('.cc-cvc').payment('formatCardCVC');
+
+        $.fn.toggleInputError = function(erred) {
+            this.parent('.form-group').toggleClass('has-error', erred);
+            return this;
+        };
+
+        $('form').submit(function(e) {
+            e.preventDefault();
+
+            var cardType = $.payment.cardType($('.cc-number').val());
+            $('.cc-number').toggleInputError(!$.payment.validateCardNumber($('.cc-number').val()));
+            $('.cc-exp').toggleInputError(!$.payment.validateCardExpiry($('.cc-exp').payment('cardExpiryVal')));
+            $('.cc-cvc').toggleInputError(!$.payment.validateCardCVC($('.cc-cvc').val(), cardType));
+            $('.cc-brand').text(cardType);
+
+            $('.validation').removeClass('text-danger text-success');
+            $('.validation').addClass($('.has-error').length ? 'text-danger' : 'text-success');
+        });
+
+    });
+</script>
+<script>
+    $(".visa").click(function() {
+        $(".visa_card").show();
+    });
+    $(function() {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+
+
+
 
 <?php require __DIR__ . '/__html_end.php' ?>

@@ -481,40 +481,40 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".tools1_Intro h6,.tools1_Intro p").text("");
     })
     $('#pro,#pro_m').click(function() {
-        $("#camera_BP").attr("src", "");
+        $("#camera_BP").attr("src", "./img/product/camera/CL-02.png");
         $(".camera_Intro h5").text("Leica CL");
         $(".camera_Intro h6").text("APS-C 尺寸 2,400 萬像 CMOS、4K 拍片、內置 EVF 取景、採用 Leica T 鏡頭系統\r\n2,400 萬像素\r\n視鏡頭而定x 光學變焦\r\nBP-DC 13 專用鋰電池\r\n連電池 403 Gram");
-        $(".camera_Intro p").text("NT$155000");
+        $(".camera_Intro p").text("NT$155,000");
         $("#lens_BP").attr("src", "./img/product/lens/LL_04.png");
         $(".lens_Intro h6").text("Leica Super-Vario-Elmar-SL 16–35/3.5–4.5 ASPH");
-        $(".lens_Intro p").text("NT$179800");
+        $(".lens_Intro p").text("NT$179,800");
         $("#tools1_BP").attr("src", "./img/product/tools/FT-03.png");
         $(".tools1_Intro h6").text("KINGJOY 勁捷 K3208腳架+QH20雲台");
-        $(".tools1_Intro p").text("NT$5390");
+        $(".tools1_Intro p").text("NT$5,390");
     })
     $('#intel,#intel_m').click(function() {
-        $("#camera_BP").attr("src", "img/3.png");
-        $(".camera_Intro h5").text("");
-        $(".camera_Intro h6").text("");
-        $(".camera_Intro p").text("");
-        $("#lens_BP").attr("src", "img/2.png");
-        $(".lens_Intro h6").text("");
-        $(".lens_Intro p").text("");
-        $("#tools1_BP").attr("src", "img/1.png");
-        $(".tools1_Intro h6").text("");
-        $(".tools1_Intro p").text("");
+        $("#camera_BP").attr("src", "./img/product/camera/CN-11.png");
+        $(".camera_Intro h5").text("Canon PowerShot G7 X Mark III");
+        $(".camera_Intro h6").text("1 吋背照層疊式 CMOS、Digic 8 影像處理技術、30fps RAW 連拍、24-100mm 等效焦段、最高 ISO 25600、4K 拍片、支援 YouTube 直播服務\r\n2,010 萬像素\r\n4.2x 光學變焦\r\nCanon NB-13L 鋰充電池\r\n機身 235 Gram");
+        $(".camera_Intro p").text("NT$16,500");
+        $("#lens_BP").attr("src", "./img/product/lens/LC_13.png");
+        $(".lens_Intro h6").text("Canon EF-M 11-22mm f/4-5.6 IS STM");
+        $(".lens_Intro p").text("NT$12,000");
+        $("#tools1_BP").attr("src", "./img/product/tools/FT-02.png");
+        $(".tools1_Intro h6").text("FOTOPRO MINI PRO 迷你三腳架");
+        $(".tools1_Intro p").text("NT$2,490");
     })
     $('#start,#start_m').click(function() {
-        $("#camera_BP").attr("src", "img/1.png");
-        $(".camera_Intro h5").text("");
-        $(".camera_Intro h6").text("");
-        $(".camera_Intro p").text("");
-        $("#lens_BP").attr("src", "img/2.png");
-        $(".lens_Intro h6").text("");
-        $(".lens_Intro p").text("");
-        $("#tools1_BP").attr("src", "img/2.png");
-        $(".tools1_Intro h6").text("");
-        $(".tools1_Intro p").text("");
+        $("#camera_BP").attr("src", "./img/product/camera/CN-12.png");
+        $(".camera_Intro h5").text("Nikon Coolpix A1000");
+        $(".camera_Intro h6").text("COOLPIX A1000 配備 35 倍光學變焦及 70 倍動態細緻變焦，於小巧緊湊的機身中提供了最高變焦率。相機備有約 1600 萬有效像素及 ISO 6400 最高感光度，於解像度及高感光度雜訊之間取得最佳平衡，於昏暗環境下仍能呈現優異影像品質。相機機身輕盈，卻支援 4K UHD/30p 格式短片攝錄兼備降低風聲雜音功能，更可在攝錄短片期間儲存靜態影像！\r\n\r\n相機的預先自動對焦 (Pre-AF) 及目標尋找 AF 功能令拍攝特寫或昏暗場景時自動對焦更精準。此外，相機配備的減震 (VR) 功能可於拍");
+        $(".camera_Intro p").text("NT$15,900");
+        $("#lens_BP").attr("src", "./img/product/lens/LN_26.png");
+        $(".lens_Intro h6").text("Nikon AF-S DX Micro NIKKOR 40mm f/2.8G");
+        $(".lens_Intro p").text("NT$9,100");
+        $("#tools1_BP").attr("src", "./img/product/tools/FT-01.png");
+        $(".tools1_Intro h6").text("新武士 SAMURAI Outdoor 255B 反折 三腳架");
+        $(".tools1_Intro p").text("NT$1,590");
     })
 
     console.log($('#step1 .tab').length);
