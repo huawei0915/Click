@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <link rel="stylesheet" href="css/lightbox.css">
 <style>
+    body{
+        height: calc( 100% - 100px ) !important;
+    }
     .serbox {
         padding-left: 160px;
 
@@ -50,7 +53,7 @@
     }
 </style>
 
-<body>
+<body >
     <div class="show_desk">
         <div class="index_view1">
             <div class="main_big_pic">
@@ -146,9 +149,9 @@
                         <img src="img/corner.png" alt="" class="wow slideInLeft slow">
                     </figure>
                     <figure class="diy_map">
-                        <img src="img/DIY-table.png" alt="" class="wow fadeIn delay-2s">
-                        <img src="img/DIY-line.png" alt="" class="wow fadeIn delay-3s">
-                        <img src="img/DIY-camera.png" alt="" class="wow fadeIn delay-4s">
+                        <img src="img/DIY-table.png" alt="" class="wow fadeIn" data-wow-delay="1s">
+                        <img src="img/DIY-line.png" alt="" class="wow fadeIn" data-wow-delay="1.5s">
+                        <img src="img/DIY-camera.png" alt="" class="wow fadeIn" data-wow-delay="2s">
                     </figure>
                 </a>
             </div>
@@ -336,7 +339,7 @@
 
 
 
-    <?php include __DIR__ . '/__footer.php' ?>
+    <?php  include __DIR__ . '/__footer.php' ?>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
