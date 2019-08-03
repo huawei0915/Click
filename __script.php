@@ -8,7 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script>
+        <!-- <script>
         var form = document.querySelector(".form");
         var signIn = document.getElementById("signIn");
         var signUp = document.getElementById("signUp");
@@ -20,7 +20,7 @@
             form.classList.remove("translate");
         });
 //登入切換動畫
-    </script>    
+    </script>     -->
             
       <script>
    $(".menu").click(function(){

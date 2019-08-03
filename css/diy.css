@@ -557,5 +557,6 @@ section .choose .step{
     .total p{
         border-bottom: 1px solid black;
         font-weight: 500;
+        
     }
 }
