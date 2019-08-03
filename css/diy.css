@@ -60,54 +60,87 @@
     width: 230px;
     height: 230px;
     /* padding: 30px; */
-    background-color: pink;
+    /* background-color: pink; */
     position: absolute;
     top: 10px;
     left: 100px;
 }
 .camera_Intro{
-    width: 250px;
+    width: 280px;
     height: 140px;
-    background-color: orange;
+    /* background-color: orange; */
     position: absolute;
     top: 50px;
     left: 350px;
 }
+.camera_Intro h5{
+    color: white;
+}
+.camera_Intro h6{
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.camera_Intro p,.lens_Intro p,.tools1_Intro p{
+    font-weight: 600;
+}
 .lens_BP{
     width: 165px;
     height: 165px;
-    background-color:pink;
+    /* background-color:pink; */
     position: absolute;
     top: 250px;
     left: 60px;
 }
 
 .lens_Intro{
-    width: 120px;
+    width: 170px;
     height: 100px;
-    background-color: orange;
+    /* background-color: orange; */
     position: absolute;
-    top:300px;
+    top:280px;
     left:230px;
+    z-index: 2;
+}
+.lens_Intro h6{
+    color:white;
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .tools1_BP{
-    width: 165px;
-    height: 165px;
-    background-color:pink;
+    width: 140px;
+    height: 140px;
+    /* background-color:pink; */
     position: absolute;
-    top: 250px;
-    left:380px;
+    top: 270px;
+    left:395px;
+    z-index: 1;
 }
 .tools1_Intro{
-    width: 120px;
+    width: 160px;
     height: 100px;
-    background-color:orange;
+    /* background-color:orange; */
     position: absolute;
-    top:300px;
-    left:550px;
+    top:280px;
+    left:535px;
 }
-
+.tools1_Intro h6{
+    color:white;
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 .redo i{
     color:white;
     cursor: pointer;
@@ -130,45 +163,54 @@
     .camera_BP{
         width: 165px;
         height: 165px;
-        background-color: pink;
         top: 10px;
         left: 70px;
     }
     .camera_Intro{
         width: 175px;
         height: 100px;
-        background-color: orange;
+
         top: 50px;
         left: 250px;
+    }
+    .camera_Intro h6{
+        font-size: 0.8rem;
     }
     .lens_BP{
         width: 115px;
         height: 115px;
-        background-color:pink;
-        top: 250px;
+        top: 270px;
         left: 40px;
     }
     
     .lens_Intro{
         width: 85px;
         height: 70px;
-        background-color: orange;
-        top:270px;
+        top:280px;
         left:165px;
+    }
+    .lens_Intro h6{
+        
+        width: 90px;
+        font-size: 0.8rem;
+
     }
     .tools1_BP{
         width: 115px;
         height: 115px;
-        background-color:pink;
-        top: 250px;
+        top: 270px;
         left:270px;
     }
     .tools1_Intro{
         width: 85px;
         height: 70px;
-        background-color:orange;
-        top: 270px;
+        top: 280px;
         left:390px;
+    }
+    .tools1_Intro h6{
+        
+        width: 90px;
+        font-size: 0.8rem;
     }
 }
 @media screen and (max-width:992px){
@@ -209,6 +251,7 @@
         display:none;
     }
 }
+
 /* --------------------- */
 .table-r{
     position: absolute;
@@ -219,6 +262,25 @@
     top: 0;
     right: 0;
 }
+.table-r .comm figure{
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+.table-r .comm figure img{
+    width: 100%;
+    height: 100%;
+}
+.table-r .comm p{
+    border: 1px solid #C1C1C1;
+    color: #C1C1C1;
+    /* border-radius: 50%; */
+    
+}
+.table-r .remove {
+    margin-bottom: 10px;
+}
+
 .totalMoney{
     position: absolute;
     align-items:flex-end;
@@ -288,17 +350,19 @@ input[type="number"]{
 .enterCar_m ,.payMoney_m{
     width: 90%;
     font-size: 1.5rem;
-    margin: 10px;
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 5px;
+    background: #8a8a8a;
+    border: #c1c1c1;
+    color: #fff;
+    margin: 10px;
+
 }
 .enterCar_m{
-    background: #FFB11B;
-    border: #FFB11B;
+    margin-top: 30px;
 }
 .payMoney_m{
-    background: #007bff;
-    border: #007bff;
+    margin-bottom: 30px;
 }
 @media screen and (max-width:992px){
     input[type="number"]{
@@ -309,6 +373,22 @@ input[type="number"]{
         padding:0 5px 0 5px;
         
         text-align: left;
+    }
+    
+    .diy_show_mobile .container h2 {
+        color: #fff;
+    }
+    .grade_m li a{
+        font-size: 1rem;
+        text-align: center;
+        padding: 5px 20px;
+        width: 100%;
+        color: #1c1c1c;
+    }
+    .fa-caret-down:before {
+        color: #fff;
+        /* display: none;  */
+        opacity: 0;
     }
 }
 @media screen and (max-width:578px){
@@ -360,8 +440,8 @@ section .choose .step{
 /* --------------------- */
 
 .thumbnail figure{
-    width: 20%;
-    height: 20%;
+    width: 145px;
+    height: 145px;
     border:2px solid transparent;
     margin: 4px 18px;
     float: left;
@@ -400,6 +480,8 @@ section .choose .step{
     float: left;
     padding: 20px ;
     width: 33.333%;
+    height: 180px;
+    overflow: hidden;
 }
 
 .overflow-wrapper-x.show-item1 {
@@ -432,18 +514,17 @@ section .choose .step{
 
 .overflow-wrapper-y.show-step2 {
     transition: .5s;
-    transform: translateX(0px) translateY(-184px);
+    transform: translateX(0px) translateY(-185px);
 }
 
 .overflow-wrapper-y.show-step3 {
     transition: .5s;
-    transform: translateX(0px) translateY(-368px);
+    transform: translateX(0px) translateY(-370px);
 }
 
 
 /* -------------------------- */
 .choose_m{
-    /* padding: 5px; */
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -456,11 +537,26 @@ section .choose .step{
     margin: 10px;
     border-radius: 10px;
 }
+.choose_m>div{
+    margin: 10px 0;
+}
 
-.choose_m ul li{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    height: 65px;
-    font-size: 1.5rem;
+@media screen and (max-width:992px){
+    .choose_m{
+        margin-top: 20px;
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    .total{
+        width: 100%;
+        text-align: right;
+        justify-content: flex-end;
+        padding-right: 5%;
+    }
+    .total p{
+        border-bottom: 1px solid black;
+        font-weight: 500;
+        
+    }
 }

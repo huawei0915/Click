@@ -1,8 +1,57 @@
+<?php   include __DIR__ . '/__db_connect.php';
+
+
+$page_name = 'product-list';
+
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
+// $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
+$per_page = 4;
+
+// 用來產生 query string
+// $my_qs = [
+//     'page' => $page,
+//     'cate' => $cate,
+// ];
+
+// 取得分類資料
+// $c_sql = "SELECT * FROM `categories` WHERE `parent_sid`=0 ORDER BY `sequence`"; // 排序條件
+$c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
+$cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+// $where = " WHERE 1 ";
+
+// if(! empty($cate)){
+//     $where .= " AND `category_sid`=$cate ";
+// }
+
+
+// 取得總筆數
+$t_sql = "SELECT COUNT(1) FROM `p_products`";
+$totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+
+$totalPages = ceil($totalRows/$per_page); // 總頁數
+
+// 取得產品資料
+$p_sql = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16) LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
+// $p_sql=sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16)");
+$stmt = $pdo->query($p_sql);
+
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// var_dump($rows[0]['images']);
+// echo($rows[0]['images']);
+// exit();
+
+
+
+?>
+
 <?php include __DIR__ . '/__html_head.php' ?>
 
 <?php include __DIR__ . '/__nav.php' ?>
 
 
+    
 <!-- PRODUCT FILTER -->
 <div class="prd_filter">
     <div class="container">
@@ -107,61 +156,46 @@
 <!-- PRODUCT LIST -->
 <div class="container">
 
-    <!-- PRODUCT CAMERA -->
-    <div class="prd_cam" style="background-color: #F1F1F1;">
 
-        <!-- PRODUCT CAMERA TOP -->
-        <div class="prd_camtop d-flex">
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
+    <div class="prd_list" style="background-color: #F1F1F1;">
+
+        <!-- PRODUCT LIST TOP -->
+        <div class="plt d-flex">
+        <?php foreach($rows as $r): ?>
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
+                <h6><?= $r['model']?></h6>
                 <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                    <li>焦距 : <?= $r['description'] ?></li>
                 </ul>
                 <hr>
-                <p>NT$ 169,000</p>
+                <p>NT$<?= $r['price']?></p>
+                <div class="compare">比較</div>               
             </div>
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-            </div>
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-            </div>
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-            </div>
+            <?php endforeach; ?>
+            
+            
+
         </div>
 
-        <!-- PRODUCT CAMERA DOWN -->
-        <div class="prd_camdown d-flex">
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
+        <!-- PRODUCT LIST MID -->
+        <div class="plm d-flex">
+        <?php foreach($rows as $r): ?>
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
+                <h6><?= $r['model']?></h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
+                <hr>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div>
+            <?php endforeach; ?>
+        <!-- <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
                 <h6>EOS-1D X Mark II</h6>
                 <ul>
                     <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
@@ -170,104 +204,116 @@
                 </ul>
                 <hr>
                 <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
             </div>
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-            </div>
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-            </div>
-            <div class="cards_cam" style="background-color: #fff;">
-                <div class="cam_pic"><img src="" alt=""></div>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-            </div>
-        </div>
-       
-    </div>
 
-    <!-- PRODUCT LENS -->
-    <div class="prd_lens" style="background-color: #F1F1F1;">
-        <!-- PRODUCT LENS TOP -->
-        <div class="prd_lenstop d-flex">
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
                 <hr>
-                <p>NT$ 24,400.00</p>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
             </div>
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
+
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
                 <hr>
-                <p>NT$ 24,400.00</p>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
             </div>
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
+
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
                 <hr>
-                <p>NT$ 24,400.00</p>
-            </div>
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
-                <hr>
-                <p>NT$ 24,400.00</p>
-            </div>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div> -->
+
         </div>
 
-        <!-- PRODUCT LENS DOWN -->
-        <div class="prd_lensdown d-flex">
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
-                <hr>
-                <p>NT$ 24,400.00</p>
-            </div>
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
-                <hr>
-                <p>NT$ 24,400.00</p>
-            </div>
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
-                <hr>
-                <p>NT$ 24,400.00</p>
-            </div>
-            <div class="cards_lens" style="background-color: #fff;">
-                <div class="lens_pic"><img src="" alt=""></div>
-                <h6>EF-S18-200mm<br>f/3.5-5.6 IS</h6>
-                <hr>
-                <p>NT$ 24,400.00</p>
-            </div>
-        </div>
+        <span id="dots"></span>
         
-    </div>
+        <span id="more">
 
+        <!-- PRODUCT LIST DOWN -->
+        <div class="pld d-flex">
+
+        <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
+                <hr>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div>
+
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
+                <hr>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div>
+
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
+                <hr>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div>
+
+            <div class="prd_cards" style="background-color: #fff;">
+                <figure class="prd_pic"><img src="" alt=""></figure>
+                <h6>EOS-1D X Mark II</h6>
+                <ul>
+                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
+                    <li> 突破性每秒14張高速連續拍攝</li>
+                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                </ul>
+                <hr>
+                <p>NT$ 169,000</p>
+                <div class="compare">比較</div>               
+            </div>
+
+        </div>
+
+        </span>
+
+        <div onclick="myFunction()" id="morebtn">More</div>
+
+    </div>
 
 </div>
 
@@ -275,4 +321,23 @@
 
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("morebtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "More"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
 <?php include __DIR__ . '/__html_end.php' ?>

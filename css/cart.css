@@ -24,13 +24,14 @@
     margin-right: 10px;
     margin-left: 5%;
 }
-.step-1 form ,.step-2 form{
+.step-1 .form01 ,.step-2 .form01{
     border: 1px solid black;
     border-radius: 40px;
     padding: 30px;
     width: 80%;
     margin: 0 auto;
 }
+
 .step-1 form .form-control ,.step-1 form .custom-select,.step-2 form .form-control ,.step-2 form .custom-select{
     margin-top: 0;
     border-radius: 15px;
@@ -38,7 +39,7 @@
 }
 .step-1 form .custom-select,.step-2 form .custom-select{
     text-align: center;
-    padding-left: 40% ;
+    /* padding-left: 40% ; */
 }
 
 .step-2 .recipient{
@@ -98,7 +99,7 @@ em{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 5%;
     height: 100px;
 }
 
@@ -141,6 +142,8 @@ em{
 .shap_list_main .money{
     display: flex;
     /* padding-left: 20px; */
+    text-align: right;
+    width: 20%;
 }
 .shap_list_main input{
     width: 150px;
@@ -177,7 +180,7 @@ em{
     text-align: center;
 }
 .add_shop_only .add_shop_only_once{
-    width: 200px;
+    width: 180px;
     text-align: center;
 }
 .add_shop_only .add_shop_only_once img{
@@ -238,7 +241,129 @@ em{
     padding:0 0 0 20px;
 }
 
+@media screen and (max-width:1200px){
+    .shap_list_main h4{
+        width: 240px;
+        font-size: 1.2rem;
+    }
+    .shap_list_main h5{
+        width: 120px;
+        font-size: 1rem;
+    }
+}
 
+@media screen and (max-width:992px){
+    .shap_list_main h4{
+        margin-left: 0;
+    }
+    .shap_list_main .count_box{
+        margin-right: 20px;
+    }
+    .shap_list_main .count{
+        width: 30px;
+    }
+    .shap_list_main .count_box div{
+       
+        width: 30px;
+        height: 30px;
+    }
+    .shap_list_main p{
+        margin-right: -20px;
+    }
+    .total_price{
+        width: 50%;
+    }
+}
+@media screen and  (max-width:768px){
+    .cart-header h6{
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .step-1 .form01, .step-2 .form01{
+        border: none;
+        width: 100%;   
+        padding: 0;
+    }
+    .step-2 .recipient h2{
+        margin: 0;
+    }
+    .step-2 .recipient .radio-text{
+        margin-bottom: 0;
+    }
+    .form01{
+        text-align: left;
+        padding: 0;
+    }
+}
+@media screen and (max-width:576px){
+    .address_box{
+        margin-bottom: 20px !important;
+    }
+    .postcode{
+        margin: 0 15px !important;
+    }
+    .address_text{
+        padding-top: 0 !important;
+        margin-right: 15px !important;
+    }
+}
+.step-3-1 .shop_border{
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.step-3-1 h6{
+    background-color: #3e3e3e;
+    color: #fff;
+    border-radius: 35px;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+.step-3-1 img{
+    width: 85px;
+    height: 85px;
+    margin: 10px;
+    
+}
+@media screen and (min-width:576px){
+    .show_mobile{
+        display: none;
+    }
+}
+@media screen and (max-width:576px){
+    .step-3{
+        display: none;
+    }
+    .add_shop_only{
+        margin-top: 30px;
+        /* border:none; */
+        width: 100%;
+    }
+    .step-3-1 h6{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        height: 30px;
+        align-items: center;
+    }
+    .add_shop_box{
+        flex-wrap: wrap;
+    }
+    .total_price{
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 0;
+  }
+  .add_shop_only .add_shop_only_text{
+        width: 70%;
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+}
 .step-4{
     margin-top: 100px;
     padding: 0 10%;
@@ -279,7 +404,7 @@ em{
     top: 15%;
 }
 .p-time .p-time-title{
-    margin-right: 50px ;
+    /* margin-right: 50px ; */
     font-size: 1.5rem ;
     width: 25%;
     text-align: left;
@@ -358,12 +483,25 @@ em{
 
 }
 .pay-style .visa{
-    border:1px solid #5d5d5d;
+    border:2px solid #5d5d5d;
     width: 60%;
     border-radius: 10px;
     margin: 40px auto ;
-
+    color:#707070 !important;
+    cursor: pointer;
 }
+.pay-style .visa:hover{
+    border:2px solid #FFC200;
+    
+}
+
+.visa_card{
+    display: none;
+}
+
+
+
+
 .pay-style_1{
     /* margin: 0 auto; */
     width: 100%;
@@ -388,4 +526,89 @@ em{
     text-align: right;
     width: 100%;
     padding: 5% 0;
+}
+.end_btn{
+    justify-content: flex-end;
+}
+
+@media screen and (max-width:992px){
+    .radio-text label{
+        font-size: 1rem;
+    }
+    .p-time .p-time-title{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:576px){
+    .step-4 .delivery-main{
+        flex-direction: column;
+        height: auto;
+        flex-wrap: wrap;
+        text-align: left;
+        align-items: flex-start;
+        padding: 0 7%;
+    }
+    .step-4 .delivery-main>div{
+        margin: 5px 0;
+    }
+    .step-4 em{
+        font-size: 0.8rem;
+
+    }
+    .step-4 .p-time{
+        display: flex;
+        justify-content: flex-start;
+        height: 200px;  
+        position: relative;
+        margin: 0 -20px;
+    }
+    .p-time .p-time-area>div{
+        margin: 5px 0;
+    }
+    .p-time .p-time-area div:nth-child(2) {
+        width: 100%;
+    }
+    .p-time .p-time-area div:nth-child(3) {
+        width: 100%;
+        margin-top: 0;
+    }
+    .p-time .p-time-title {
+        margin-right: 10px;
+        
+    }
+    .step-4 .myself>p{
+        color:#8e8e8e;
+    } 
+    .step-4 .myself figure {
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .step-4 .family_711 .custom-select {
+        padding-left: 1%;
+    }
+    .step-4 .family_711 .custom-select.city_3 {
+        text-align: center;
+        padding-left: 30%;
+    }
+    .pay-style .visa {
+        width: 100%;
+        margin: 40px auto;
+    }
+    .pay-style .visa p{
+        color:#8e8e8e;
+        font-size: 0.8rem;
+    }
+    .pay-style_1 {
+        height: auto;
+        border-radius: 20px;
+    }
+    .personal {
+        text-align: right;
+        padding: 10%;
+    }
+    .end_btn{
+        justify-content: center;
+    }
 }

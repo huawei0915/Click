@@ -43,17 +43,21 @@
     border: 2px solid black;
     border-radius: 3px;
   }
+  
   .face .content {
     color: #666;
   }
+
   .face .content h2 {
     font-size: 1rem;
     color: black;
   }
+
   .face .content .field-wrapper {
     margin-top: 20px;
     position: relative;
   }
+
   .face .content .field-wrapper label {
     position: absolute;
     pointer-events: none;
@@ -64,13 +68,16 @@
     transition: all ease-in 0.25s;
     color: #999999;
   }
+
   .face .content .field-wrapper input[type="text"], .face .content .field-wrapper input[type="password"], .face .content .field-wrapper input[type="submit"], .face .content .field-wrapper textarea {
     -webkit-appearance: none;
     appearance: none;
   }
+
   .face .content .field-wrapper input[type="text"]:focus, .face .content .field-wrapper input[type="password"]:focus, .face .content .field-wrapper input[type="submit"]:focus, .face .content .field-wrapper textarea:focus {
     outline: none;
   }
+
   .face .content .field-wrapper input[type="text"], .face .content .field-wrapper input[type="password"], .face .content .field-wrapper textarea {
     width: 100%;
     border: none;
@@ -79,22 +86,28 @@
     border-bottom: 1px solid black;
     color: #666;
   }
+
   .face .content .field-wrapper input[type="text"]::-webkit-input-placeholder, .face .content .field-wrapper input[type="password"]::-webkit-input-placeholder, .face .content .field-wrapper textarea::-webkit-input-placeholder {
     opacity: 0;
   }
+
   .face .content .field-wrapper input[type="text"]::-moz-placeholder, .face .content .field-wrapper input[type="password"]::-moz-placeholder, .face .content .field-wrapper textarea::-moz-placeholder {
     opacity: 0;
   }
+
   .face .content .field-wrapper input[type="text"]:-ms-input-placeholder, .face .content .field-wrapper input[type="password"]:-ms-input-placeholder, .face .content .field-wrapper textarea:-ms-input-placeholder {
     opacity: 0;
   }
+
   .face .content .field-wrapper input[type="text"]:-moz-placeholder, .face .content .field-wrapper input[type="password"]:-moz-placeholder, .face .content .field-wrapper textarea:-moz-placeholder {
     opacity: 0;
   }
+
   .face .content .field-wrapper input[type="text"]:focus + label, .face .content .field-wrapper input[type="text"]:not(:placeholder-shown) + label, .face .content .field-wrapper input[type="password"]:focus + label, .face .content .field-wrapper input[type="password"]:not(:placeholder-shown) + label, .face .content .field-wrapper textarea:focus + label, .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
     top: -20%;
     color: black;
   }
+
   .face .content .field-wrapper input[type="submit"] {
     -webkit-appearance: none;
     appearance: none;
@@ -107,19 +120,24 @@
     border-radius: 3px;
     padding: 3px;
   }
+
   .face .content .field-wrapper input[type="submit"]:hover {
     opacity: 0.9;
   }
+
   .face .content .field-wrapper input[type="submit"]:active {
     transform: scale(0.96);
   }
+
   .face .content .field-wrapper textarea {
     resize: none;
     line-height: 0.7rem;
   }
+
   .face .content .field-wrapper textarea:focus + label, .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
     top: -15%;
   }
+
   .face .thank-you-msg {
     position: absolute;
     width: 200px;
@@ -131,6 +149,7 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
   }
+
   .face .thank-you-msg:after {
     position: absolute;
     content: '';
@@ -147,22 +166,28 @@
     animation: success ease-in 0.15s forwards;
     animation-delay: 2.5s;
   }
+
   .face-front {
     transform: rotateY(0deg) translateZ(125px);
   }
+
   .face-top {
     height: 250px;
     transform: rotateX(90deg) translateZ(125px);
   }
+
   .face-back {
     transform: rotateY(180deg) translateZ(125px);
   }
+
   .face-right {
     transform: rotateY(90deg) translateZ(125px);
   }
+
   .face-left {
     transform: rotateY(-90deg) translateZ(125px);
   }
+
   .face-bottom {
     height: 250px;
     transform: rotateX(-90deg) translateZ(225px);
@@ -182,6 +207,7 @@
     position: relative;
     cursor: pointer;
   }
+
   .nav li:after {
     content: "";
     position: absolute;
@@ -191,6 +217,7 @@
     border-bottom: 2px solid #FFB11B;
     transition: all ease-in 0.25s;
   }
+
   .nav li:hover:after {
     width: 100%;
   }
@@ -219,5 +246,138 @@
   
   /* Login End */
 
+/* Service Start */
 
-  
+.A_service-body{
+  background: rgb(255, 251, 245);
+}
+
+.A_service_main{
+  display:grid;
+  justify-content: center;
+}
+
+.A_service_slogan{
+  margin:1vh;
+  justify-content: center;
+}
+
+.svtri{
+  width:4vh;
+  height:4vh;
+}
+
+.A_service_main_logo{
+  /* background:url(/img/SV4.svg); */
+  /* background: #1c1c1c; */
+  height:20vh;
+  width:20vh;
+  padding-top:1vh;
+  margin:8%;
+}
+
+.A_service_tri{
+  height:2vh;
+  width:2vh;
+}
+
+.card-link{
+  font-size: 1rem;
+  color:gray;
+}
+
+.card{
+  width: 75vh;
+  border-radius: 20px;
+}
+
+.card img{
+  width:5vh;
+  height:5vh;
+}
+
+.a_card_m{
+  padding:2vh;
+  display:grid;
+  justify-content: center;
+}
+
+@media screen and (max-width:768px){
+ .card{
+   width:50vh;
+   background: whitesmoke;
+ }
+ .card-header{
+   background-color: rgba(0,0,0,0);
+   text-align:left;
+  }
+ .A_service_main_logo{
+   margin:0 auto;
+   margin-top:10%;
+ }  
+ .card-link{
+   justify-content: left;
+ }
+ .a_card_m{
+  display:grid;
+  justify-content:center; 
+ }
+}
+
+
+
+.card-header{
+  padding: .25rem 1rem;
+  background-color: rgba(0,0,0,0);
+  border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.card-body{
+  text-justify: auto;
+  font-size:0.8rem;
+}
+
+.form-group label{
+  font-size:0.7rem;
+}
+
+.form-group input{
+  font-size:0.7rem;
+}
+
+.form-group textarea{
+  font-size:0.7rem;
+}
+
+.form-group invalid-feedback{
+  font-size:0.6rem;
+}
+
+.btn-secondary{
+  font-size:0.7rem;
+  color:white;
+}
+
+/* Service End */
+
+/* Service FAQ Start */
+.faq-question{
+  color:darkblue;
+}
+.faq-question:hover{
+  color:darkblue;
+  border-left:2px solid orange;
+  border-bottom:2px solid orange;
+}
+.js .faq-answer.hidden{
+  display:none;
+}
+.faq-question.active {
+  color: darkblue;
+}
+.faq a{
+  font-size:0.9rem;
+}
+.faq-answer{
+  font-size:0.8rem;
+}
