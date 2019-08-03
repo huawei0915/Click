@@ -14,7 +14,7 @@
     margin: 0 auto;
 }
 
-.form-group>label{
+.form-group label{
     margin: 0;
 }
 
@@ -43,6 +43,11 @@
     padding:0 15px;
     font-size: 0.8rem;
 }
+
+.pl-ban img{
+    margin: 0 auto;
+}
+
 
 /* product list */
 /* PRODUCT CAMERA */
