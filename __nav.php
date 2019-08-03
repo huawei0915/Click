@@ -26,7 +26,7 @@
                               <li><a href="" class="transition">CANON</a></li>
                               <li><a href="" class="transition">NIKON</a></li>
                               <li><a href="" class="transition">LEICA</a></li>
-                              <li><a href="" class="transition">產品列表</a></li>
+                              <li><a href="product-list.php" class="transition">產品列表</a></li>
                               <li><a href="diy.php" class="transition">首選推薦</a></li>
                               <li><a href="" class="transition">攝影分享</a></li>
                               <li><a href="" class="transition">關於我們</a></li>
@@ -45,7 +45,7 @@
                     <li><a href="" class="deskshow">CANON</a></li>
                     <li><a href="" class="deskshow" >NIKON</a></li>
                     <li><a href="" class="deskshow" style="letter-spacing:1px;">LEICA</a></li>
-                    <li><a href="" >產品列表</a></li>
+                    <li><a href="product-list.php" >產品列表</a></li>
                     <li><a href="diy.php" >首選推薦</a></li>
                     <li><a href="" >攝影分享</a></li>
                 </ul>

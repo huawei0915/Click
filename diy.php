@@ -634,11 +634,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         });
     });
 
-
-
-    $('#start_m').on('click', function(){
-   
-});
 </script>
 
 

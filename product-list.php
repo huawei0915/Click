@@ -164,56 +164,17 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach($rows as $r): ?>
             <div class="prd_cards" style="background-color: #fff;">
                 <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
-                <h6>EOS-1D X Mark II</h6>
+                <h6><?= $r['model']?></h6>
                 <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                    <li>焦距 : <?= $r['description'] ?></li>
                 </ul>
                 <hr>
-                <p>NT$ 169,000</p>
+                <p>NT$<?= $r['price']?></p>
                 <div class="compare">比較</div>               
             </div>
             <?php endforeach; ?>
             
-            <!-- <div class="prd_cards" style="background-color: #fff;">
-                <figure class="prd_pic"><img src="" alt=""></figure>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-                <div class="compare">比較</div>               
-            </div>
-
-            <div class="prd_cards" style="background-color: #fff;">
-                <figure class="prd_pic"><img src="" alt=""></figure>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-                <div class="compare">比較</div>               
-            </div>
-
-            <div class="prd_cards" style="background-color: #fff;">
-                <figure class="prd_pic"><img src="" alt=""></figure>
-                <h6>EOS-1D X Mark II</h6>
-                <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                </ul>
-                <hr>
-                <p>NT$ 169,000</p>
-                <div class="compare">比較</div>               
-            </div> -->
+            
 
         </div>
 
@@ -222,7 +183,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach($rows as $r): ?>
             <div class="prd_cards" style="background-color: #fff;">
                 <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
-                <h6>EOS-1D X Mark II</h6>
+                <h6><?= $r['model']?></h6>
                 <ul>
                     <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
                     <li> 突破性每秒14張高速連續拍攝</li>
