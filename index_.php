@@ -151,7 +151,7 @@
                     <figure class="diy_map">
                         <img src="img/DIY-table.png" alt="" class="wow fadeIn" data-wow-delay="1s">
                         <img src="img/DIY-line.png" alt="" class="wow fadeIn" data-wow-delay="1.5s">
-                        <img src="img/DIY-camera.png" alt="" class="wow fadeIn" data-wow-delay="2.5s">
+                        <img src="img/DIY-camera.png" alt="" class="wow fadeIn" data-wow-delay="2.2s">
                     </figure>
                 </a>
             </div>

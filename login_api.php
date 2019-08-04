@@ -4,7 +4,7 @@ require __DIR__. '/__db_connect.php';
 $result = [
     'success' => false,
     'code' => 0,
-    'info' => '資料欄位不足',
+    // 'info' => '資料欄位不足',
     'post' => $_POST,
 ];
 
@@ -18,7 +18,7 @@ if(empty($_POST['email']) or empty($_POST['password'])){
 
 $stmt = $pdo->prepare("SELECT `sid`, `email`, `nickname` 
 FROM `members`
-WHERE `email`=? AND `password`=SHA1(?)");
+WHERE `email`=? AND `password`= SHA1(?)");
 
 $stmt->execute([
     $_POST['email'],

@@ -16,7 +16,7 @@
                                 <div id="arm"></div>
                         </form>
                     <a href="cart.php"><img src="img/icon/shop.svg" alt="購物車" class="px-3 ml-2 shop"></a>
-                    <a href=""><img src="img/icon/會員.svg" alt="會員中心" class="px-2"></a>
+                    <a href="A_login.php"><img src="img/icon/會員.svg" alt="會員中心" class="px-2"></a>
                     <div class="menu transition show_mobile " >
                             <div class="bar bar1 transition"></div>
                             <div class="bar bar2 transition"></div>
