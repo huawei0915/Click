@@ -5,7 +5,10 @@ $page_name = 'product-list';
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
 // $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
-$per_page = 3;
+$per_page_camera = 4;
+$per_page_lens = 4;
+$per_page_tools=4;
+
 
 // 用來產生 query string
 // $my_qs = [
@@ -29,13 +32,13 @@ $cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
 $t_sql = "SELECT COUNT(1) FROM `p_products`";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
-$totalPages = ceil($totalRows / $per_page); // 總頁數
+// $totalPages = ceil($totalRows / $per_page); // 總頁數
 
 // 取得產品資料
 // $p_sql = sprintf("SELECT * FROM `p_products`  LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
-$p_camera = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6");  //鏡頭分類
-$p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AND 16");  //鏡頭分類
-$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10)");    //配件分類
+$p_camera = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6 LIMIT %s, %s ", ($page-1)*$per_page_camera, $per_page_camera);  //鏡頭分類
+$p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AND 16 LIMIT %s, %s ", ($page-1)*$per_page_lens, $per_page_lens );  //鏡頭分類
+$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10) LIMIT %s, %s ", ($page-1)*$per_page_tools, $per_page_tools );    //配件分類
 
 $stmt_camera = $pdo->query($p_camera);
 $stmt_lens = $pdo->query($p_lens);
@@ -410,6 +413,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     // 1. 先初始化，應該第一步和第一頁
     let index = 1;
     let step = 1;
+    let $page=<?php echo $page ?>;
 
     function showLeft() {
         if (index - 1 >= 1) {
@@ -422,6 +426,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         if (index + 1 <= 3) {
             index++;
             changeItem(index);
+            $page++;
+
         }
     }
 

@@ -6,6 +6,7 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾�
 // $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
 $per_page_camera = 8;
 $per_page_lens = 4;
+$per_page_tools=0;
 
 $c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
 $cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
@@ -16,7 +17,7 @@ $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
 $p_camera = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6 LIMIT %s, %s ", ($page-1)*$per_page_camera,$per_page_camera );  //鏡頭分類
 $p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AND 16 LIMIT %s, %s ", ($page-1)*$per_page_lens, $per_page_lens);  //鏡頭分類
-$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10)");   //配件分類
+$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10) LIMIT %s, %s ", ($page-1)*$per_page_tools, $per_page_tools);   //配件分類
 
 $stmt_camera = $pdo->query($p_camera);
 $stmt_lens = $pdo->query($p_lens);
