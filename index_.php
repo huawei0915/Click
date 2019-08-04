@@ -151,7 +151,7 @@
                     <figure class="diy_map">
                         <img src="img/DIY-table.png" alt="" class="wow fadeIn" data-wow-delay="1s">
                         <img src="img/DIY-line.png" alt="" class="wow fadeIn" data-wow-delay="1.5s">
-                        <img src="img/DIY-camera.png" alt="" class="wow fadeIn" data-wow-delay="2s">
+                        <img src="img/DIY-camera.png" alt="" class="wow fadeIn" data-wow-delay="2.5s">
                     </figure>
                 </a>
             </div>
@@ -180,7 +180,7 @@
         <div class="container">
 
             <div>
-                <a href="img/日月潭-朝霧馬頭.jpg" class="example-image-link" data-lightbox="example-set" data-title="日月潭-朝霧馬頭.jpg">
+                <a href="img/日月潭朝霧碼頭-大.jpg" class="example-image-link" data-lightbox="example-set" data-title="日月潭-朝霧馬頭.jpg">
                     <img class="example-image" src="img/日月潭-朝霧馬頭.jpg" alt="">
                 </a>
 
@@ -188,20 +188,20 @@
                     朝霧馬頭</p>
             </div>
             <div>
-                <a href="img/極北冬雪幻境-羅浮敦群島.jpg"  class="example-image-link" data-lightbox="example-set" data-title="極北冬雪幻境-羅浮敦群島">
+                <a href="img/極北冬雪幻境-大.jpg"  class="example-image-link" data-lightbox="example-set" data-title="極北冬雪幻境-羅浮敦群島">
                     <img class="example-image" src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
                 </a>
                 <p>極北冬雪幻境<br>
                     羅浮敦群島</p>
             </div>
             <div>
-                <a href="img/小鬚鳳頭樹燕.jpg"  class="example-image-link" data-lightbox="example-set" data-title="小鬚鳳頭樹燕">
+                <a href="img/小鬚鳳頭樹燕-大.jpg"  class="example-image-link" data-lightbox="example-set" data-title="小鬚鳳頭樹燕">
                     <img class="example-image" src="img/小鬚鳳頭樹燕.jpg" alt="">
                 </a>
                 <p>小鬚鳳頭樹燕</p>
             </div>
             <div>
-                <a href="img/螢火蟲微光.jpg"  class="example-image-link" data-lightbox="example-set" data-title="螢火蟲微光">
+                <a href="img/螢火蟲微光-大.jpg"  class="example-image-link" data-lightbox="example-set" data-title="螢火蟲微光">
                     <img class="example-image" src="img/螢火蟲微光.jpg" alt="">
                 </a>
                 <p>螢火蟲微光</p>
@@ -394,7 +394,7 @@
         let B_pic = $(".main_big_pic figure");
         var item = $(".text_ul li");
 
-        $(".small-pic figure").on('click', function() {
+        $(".small-pic figure").on('mouseenter', function() {
             let img = $(this).find("img").next().attr("src");
             $("#BigPic").attr("src", img);
             // $(B_pic).eq(2).css("opacity","1");
