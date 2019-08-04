@@ -1,56 +1,39 @@
 <?php   include __DIR__ . '/__db_connect.php';
 
-
 $page_name = 'product-list';
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
 // $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
-$per_page = 4;
+$per_page_camera = 8;
+$per_page_lens = 4;
 
-// 用來產生 query string
-// $my_qs = [
-//     'page' => $page,
-//     'cate' => $cate,
-// ];
-
-// 取得分類資料
-// $c_sql = "SELECT * FROM `categories` WHERE `parent_sid`=0 ORDER BY `sequence`"; // 排序條件
 $c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
 $cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
-
-// $where = " WHERE 1 ";
-
-// if(! empty($cate)){
-//     $where .= " AND `category_sid`=$cate ";
-// }
-
 
 // 取得總筆數
 $t_sql = "SELECT COUNT(1) FROM `p_products`";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
-$totalPages = ceil($totalRows/$per_page); // 總頁數
+$p_camera = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6 LIMIT %s, %s ", ($page-1)*$per_page_camera,$per_page_camera );  //鏡頭分類
+$p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AND 16 LIMIT %s, %s ", ($page-1)*$per_page_lens, $per_page_lens);  //鏡頭分類
+$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10)");   //配件分類
 
-// 取得產品資料
-$p_sql = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16) LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
-// $p_sql=sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (11,12,13,14,15,16)");
-$stmt = $pdo->query($p_sql);
+$stmt_camera = $pdo->query($p_camera);
+$stmt_lens = $pdo->query($p_lens);
+$stmt_tool = $pdo->query($p_tool);
 
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+$rowsCamera = $stmt_camera->fetchAll(PDO::FETCH_ASSOC);
+$rowsLens = $stmt_lens->fetchAll(PDO::FETCH_ASSOC);
+$rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($rows[0]['images']);
 // echo($rows[0]['images']);
 // exit();
 
 
-
 ?>
 
 <?php include __DIR__ . '/__html_head.php' ?>
-
 <?php include __DIR__ . '/__nav.php' ?>
-
-
     
 <!-- PRODUCT FILTER -->
 <div class="prd_filter">
@@ -160,15 +143,15 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="prd_list" style="background-color: #F1F1F1;">
 
         <!-- PRODUCT LIST TOP -->
-        <div class="plt d-flex">
-        <?php foreach($rows as $r): ?>
+        <div class="plt d-flex flex-wrap">
+        <?php foreach($rowsCamera as $r): ?>
             <div class="prd_cards" style="background-color: #fff;">
-                <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
+                <figure class="prd_pic"><img  src="img/product/camera/<?= $r['images'] ?>.png" alt=""></figure>
                 <h6><?= $r['model']?></h6>
                 <ul>
-                    <li>焦距 : <?= $r['description'] ?></li>
+                    <li><?= $r['description'] ?></li>
                 </ul>
-                <hr>
+                <!-- <hr> -->
                 <p>NT$<?= $r['price']?></p>
                 <div class="compare">比較</div>               
             </div>
@@ -179,18 +162,16 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <!-- PRODUCT LIST MID -->
-        <div class="plm d-flex">
-        <?php foreach($rows as $r): ?>
+        <div class="plt d-flex flex-wrap">
+        <?php foreach($rowsLens as $r): ?>
             <div class="prd_cards" style="background-color: #fff;">
                 <figure class="prd_pic"><img src="./img/product/lens/<?= $r['images'] ?>.png" alt=""></figure>
                 <h6><?= $r['model']?></h6>
                 <ul>
-                    <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                    <li> 突破性每秒14張高速連續拍攝</li>
-                    <li> 高精確度61點高密度網型結構自動對焦感應器</li>
+                    <li>焦距 : <?= $r['description'] ?></li>
                 </ul>
-                <hr>
-                <p>NT$ 169,000</p>
+                <!-- <hr> -->
+                <p>NT$<?= $r['price']?></p>
                 <div class="compare">比較</div>               
             </div>
             <?php endforeach; ?>
