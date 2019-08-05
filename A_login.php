@@ -27,10 +27,6 @@ if(empty($_SERVER['HTTP_REFERER'])){
 </style>
 <?php require __DIR__ .'/__nav.php' ?>
 
-
-
-
-
 <div class="login-body">
 <ul class="nav">
   <li onclick="showLogin()">登入</li>
@@ -40,6 +36,7 @@ if(empty($_SERVER['HTTP_REFERER'])){
   <!-- <li onclick="showContactUs()">連絡我們</li> -->
 </ul>
 <div class="wrapper">
+
   <div class="rec-prism">
     <!-- <div class="face face-top">
       <div class="content">
