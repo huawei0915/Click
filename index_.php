@@ -242,7 +242,7 @@
                                 <li><a href="" class="transition">CANON</a></li>
                                 <li><a href="" class="transition">NIKON</a></li>
                                 <li><a href="" class="transition">LEICA</a></li>
-                                <li><a href="" class="transition">產品列表</a></li>
+                                <li><a href="product-list.php" class="transition">產品列表</a></li>
                                 <li><a href="diy.php" class="transition">首選推薦</a></li>
                                 <li><a href="" class="transition">攝影分享</a></li>
                                 <li><a href="" class="transition">關於我們</a></li>
@@ -261,7 +261,7 @@
                         <li><a href="" class="deskshow">CANON</a></li>
                         <li><a href="" class="deskshow">NIKON</a></li>
                         <li><a href="" class="deskshow" style="letter-spacing:1px;">LEICA</a></li>
-                        <li><a href="">產品列表</a></li>
+                        <li><a href="product-list.php">產品列表</a></li>
                         <li><a href="diy.php">首選推薦</a></li>
                         <li><a href="">攝影分享</a></li>
                     </ul>
@@ -296,33 +296,45 @@
             </div>
         </div>
         <div class="second">
+            <a href="diy.php">
             <figure>
                 <img src="img/第二區.png" alt="">
             </figure>
+            </a>
         </div>
         <div class="three">
+            <a href="product-list.php">
             <figure>
                 <img src="img/第三區.png" alt="">
             </figure>
+            </a>
         </div>
         <div class="four">
             <div class="container">
                 <div>
-                    <img src="img/日月潭-朝霧馬頭.jpg" alt="">
+                <a href="img/日月潭朝霧碼頭-大.jpg" class="example-image-link" data-lightbox="example-set1" data-title="日月潭-朝霧馬頭.jpg">
+                    <img class="example-image" src="img/日月潭-朝霧馬頭.jpg" alt="">
+                </a>
                     <p>日月潭<br>
                         朝霧馬頭</p>
                 </div>
                 <div>
-                    <img src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
+                <a href="img/極北冬雪幻境-大.jpg"  class="example-image-link" data-lightbox="example-set1" data-title="極北冬雪幻境-羅浮敦群島">
+                    <img class="example-image" src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
+                    </a>
                     <p>極北冬雪幻境<br>
                         羅浮敦群島</p>
                 </div>
                 <div>
-                    <img src="img/小鬚鳳頭樹燕.jpg" alt="">
+                <a href="img/小鬚鳳頭樹燕-大.jpg"  class="example-image-link" data-lightbox="example-set1" data-title="小鬚鳳頭樹燕">
+                    <img class="example-image" src="img/小鬚鳳頭樹燕.jpg" alt="">
+                    </a>
                     <p>小鬚鳳頭樹燕</p>
                 </div>
                 <div>
-                    <img src="img/螢火蟲微光.jpg" alt="">
+                <a href="img/螢火蟲微光-大.jpg"  class="example-image-link" data-lightbox="example-set1" data-title="螢火蟲微光">
+                    <img class="example-image" src="img/螢火蟲微光.jpg" alt="">
+                    </a>
                     <p>螢火蟲微光</p>
                 </div>
             </div>
@@ -358,20 +370,6 @@
         new WOW().init();
     </script>
 
-
-    <!-- <script>
-        var form = document.querySelector(".form");
-        var signIn = document.getElementById("signIn");
-        var signUp = document.getElementById("signUp");
-
-        signUp.addEventListener("click", function() {
-            form.classList.add("translate");
-        });
-        signIn.addEventListener("click", function() {
-            form.classList.remove("translate");
-        });
-        //登入切換動畫
-    </script> -->
     <script>
         $(".menu").click(function() {
             $(this).toggleClass('active');

@@ -58,9 +58,9 @@
         prism.style.transform = "translateZ(-100px) rotateX( -90deg)";
       }
 
-      // function showContactUs(){
-      //   prism.style.transform = "translateZ(-100px) rotateY( 90deg)";
-      // }
+      function showContactUs(){
+        prism.style.transform = "translateZ(-100px) rotateY( 90deg)";
+      }
 
       function showThankYou(){
         prism.style.transform = "translateZ(-100px) rotateX( 90deg)";
@@ -191,7 +191,11 @@
                     // alertInfo.removeClass('alert-success');
                     // alertInfo.addClass('alert-danger');
                     // submitBtn.show();
-                    alert("帳號或密碼錯誤");
+                    // alert("帳號或密碼錯誤");
+                    showContactUs();
+                    setTimeout(function (){
+                      location.href = "A_login.php";
+                    }, 3000);
                 }
                 // alertInfo.text(data.info);
                 // alertInfo.show();
