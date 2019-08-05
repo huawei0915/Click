@@ -93,17 +93,17 @@
 
         if(! validateEmail($email2.val())) {
             isPass = false;
-            $email2.next().text('請輸入正確的 Email 格式');
+            $email2.next().text('請輸入正確的 Email 格式').css("color","red");
         }
 
         if($password2.val().length < 6) {
             isPass = false;
-            $password2.next().text('請輸入六個以上的字元');
+            $password2.next().text('請輸入六個以上的字元').css("color","red");
         }
 
         if($password2.val() !== $password2_check.val()) {
             isPass = false;
-            $password2_check.next().text('密碼和密碼確認欄裡的值不同');
+            $password2_check.next().text('密碼和密碼確認欄裡的值不同').css("color","red");
         }
 
 
@@ -141,6 +141,7 @@
 
 
 <script>
+
     var $email = $('#email');
     var $password = $('#password');
 
@@ -163,12 +164,12 @@
 
         if(! validateEmail($email.val())) {
             isPass = false;
-            $email.next().text('請輸入正確的 Email 格式');
+            $email.next().text('請輸入正確的 Email 格式').css("color","red");
         }
 
         if($password.val().length < 6) {
             isPass = false;
-            $password.next().text('請輸入六個以上的字元');
+            $password.next().text('請輸入六個以上的字元').css("color","red");
         }
 
         if(isPass){
@@ -187,12 +188,13 @@
                       location.href = "product-list.php";
                     }, 1000);
                 } else {
-                    alertInfo.removeClass('alert-success');
-                    alertInfo.addClass('alert-danger');
-                    submitBtn.show();
+                    // alertInfo.removeClass('alert-success');
+                    // alertInfo.addClass('alert-danger');
+                    // submitBtn.show();
+                    alert("帳號或密碼錯誤");
                 }
-                alertInfo.text(data.info);
-                alertInfo.show();
+                // alertInfo.text(data.info);
+                // alertInfo.show();
 
             }, 'json');
         }
