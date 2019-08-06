@@ -9,7 +9,7 @@
 
 
                 <div class="features pb-2">
-                        <form method="post" action="">
+                        <form method="post" action="" id="search_form">
                             <div class="serbox">   
                                 <input id="mag" type="search" placeholder="    Search..." name="search">   
                                 <div id="arm"></div>

@@ -47,8 +47,13 @@ $p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AN
 $p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10) LIMIT %s, %s ", ($page-1)*$per_page_tools, $per_page_tools);   //配件分類
 
 
+$search = sprintf ("SELECT * FROM `p_products` WHERE `model` LIKE 'canon%' OR `model` LIKE 'leica%' OR `model` LIKE 'nikon%'"); //收尋
+
+
 
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $result['rows'] = $rows;
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE);
+
+

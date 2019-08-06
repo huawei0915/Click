@@ -205,6 +205,10 @@
         return false;
     }
 
+            $("#mag").keypress(function(event){
+                if(event.keyCode==13)$("#search_form").submit();
+            });
+
 
 
 </script>
