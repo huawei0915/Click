@@ -231,7 +231,7 @@ input[type=range]:focus {
 
 .prd_list{
     width: 100%;
-    /* margin: 5% auto; */
+    margin: 5% auto;
     padding: 4%;
 }
 .prd_cards{

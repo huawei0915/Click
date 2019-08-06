@@ -5,7 +5,7 @@ $page_name = 'product-list';
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
 $cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
 $per_page_camera = 8;  //相機顯示數量
-$per_page_lens = 4;  //鏡頭顯示數量
+$per_page_lens = 8;  //鏡頭顯示數量
 $per_page_tools = 0;    //配件顯示數量
 
 $c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
@@ -174,7 +174,7 @@ if (!empty($category)) {
 
     <div class="prd_list" style="background-color: #F1F1F1;">
 
-        <!-- PRODUCT LIST TOP -->
+        <!-- PRODUCT LIST CAMERA -->
         <div class="plt d-flex flex-wrap">
             <?php foreach ($rowsCamera as $r) : ?>
                 <div class="prd_cards" style="background-color: #fff;">
@@ -188,12 +188,13 @@ if (!empty($category)) {
                     <div class="compare">比較</div>
                 </div>
             <?php endforeach; ?>
-
-
-
         </div>
 
-        <!-- PRODUCT LIST MID -->
+    </div>
+
+    <div class="prd_list" style="background-color: #F1F1F1;">
+       
+        <!-- PRODUCT LIST LENS -->
         <div class="plt d-flex flex-wrap">
             <?php foreach ($rowsLens as $r) : ?>
                 <div class="prd_cards" style="background-color: #fff;">
@@ -207,74 +208,7 @@ if (!empty($category)) {
                     <div class="compare">比較</div>
                 </div>
             <?php endforeach; ?>
-
-
         </div>
-
-        <span id="dots"></span>
-
-        <span id="more">
-
-            <!-- PRODUCT LIST DOWN -->
-            <div class="pld d-flex">
-
-                <div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="" alt=""></figure>
-                    <h6>EOS-1D X Mark II</h6>
-                    <ul>
-                        <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                        <li> 突破性每秒14張高速連續拍攝</li>
-                        <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                    </ul>
-                    <hr>
-                    <p>NT$ 169,000</p>
-                    <div class="compare">比較</div>
-                </div>
-
-                <div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="" alt=""></figure>
-                    <h6>EOS-1D X Mark II</h6>
-                    <ul>
-                        <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                        <li> 突破性每秒14張高速連續拍攝</li>
-                        <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                    </ul>
-                    <hr>
-                    <p>NT$ 169,000</p>
-                    <div class="compare">比較</div>
-                </div>
-
-                <div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="" alt=""></figure>
-                    <h6>EOS-1D X Mark II</h6>
-                    <ul>
-                        <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                        <li> 突破性每秒14張高速連續拍攝</li>
-                        <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                    </ul>
-                    <hr>
-                    <p>NT$ 169,000</p>
-                    <div class="compare">比較</div>
-                </div>
-
-                <div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="" alt=""></figure>
-                    <h6>EOS-1D X Mark II</h6>
-                    <ul>
-                        <li> 全新2,020萬像素全片幅CMOS影像感應器</li>
-                        <li> 突破性每秒14張高速連續拍攝</li>
-                        <li> 高精確度61點高密度網型結構自動對焦感應器</li>
-                    </ul>
-                    <hr>
-                    <p>NT$ 169,000</p>
-                    <div class="compare">比較</div>
-                </div>
-
-            </div>
-
-        </span>
-
-        <div onclick="myFunction()" id="morebtn">More</div>
 
     </div>
 
@@ -285,23 +219,7 @@ if (!empty($category)) {
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
 
-<script>
-    function myFunction() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("morebtn");
 
-        if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML = "More";
-            moreText.style.display = "none";
-        } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Less";
-            moreText.style.display = "inline";
-        }
-    }
-</script>
 <script src="plugin/json2.js"></script>
 <script>
 var rangeOne = document.querySelector('input[name="rangeOne"]'),
