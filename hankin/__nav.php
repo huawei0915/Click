@@ -8,7 +8,7 @@
                 </div>
 
 
-                <!-- <div class="features pb-2">
+                <div class="features pb-2">
                         <form method="post" action="">
                             <div class="serbox">   
                                 <input id="mag" type="search" placeholder="    Search..." name="search">   
@@ -32,7 +32,7 @@
                               <li><a href="" class="transition">客服支援</a></li>
                             </ul>
                           </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </header>

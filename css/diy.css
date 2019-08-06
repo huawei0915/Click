@@ -289,17 +289,18 @@
     bottom: 70px;
 }
 
-/* .totalMoney input{
+
+.totalMoney input{
     border: 0;
     border-bottom: 1px solid #ccc;
     background-color: transparent;
-    line-height: 1.5rem;
-    font-size: 1.5rem;
-    width: 120px;
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    width: 60%;
     padding:0 10px 0 0;
     margin-bottom: .35rem;
     text-align: right;
-} */
+}
 .diyBtn{
     position: absolute;
     justify-content: space-evenly;
