@@ -1,12 +1,13 @@
 *{
     box-sizing: border-box;
-    font: 16px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
+    font: 20px/1.5 "Helvetica", "Lucida Grande", "Microsoft JhengHei", sans-serif;
     font-weight: 100;
    
 }
 html,body{
     background-color: #1C1C1C;
     height: calc(100% - 123px);
+    /* height: 100%; */
 }
 li{
     list-style-type: none;
@@ -42,6 +43,7 @@ header{
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
+    width: 100%;
     /* transform: translateY(0); */
     /* margin: 0 auto; */
 }
@@ -49,7 +51,20 @@ header.active{
     /* transform: translateX(-50%); */
     transform: translate(-50%,-80px);
 }
+.header.fixed{
+    position: fixed;
+    top:0;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    padding-bottom: 20px;
+   }
 
+
+.index_nav.fixed .right-top{
+    right:0;
+}
 .logo a img{
     padding-top: 16px;
     height: 75px;
@@ -59,6 +74,7 @@ header.active{
     flex-direction:row;
     color: white;
 }
+
 /* ---------search--------------------- */
   .serbox {
     position: relative;
@@ -78,7 +94,7 @@ header.active{
     border-radius: 20px;
     color: white;
     border: solid 2px white;
-    background-color: #1C1C1C;
+    background-color: transparent;
     margin-top: 2px;
     transition: width 1s ease-in-out, border-radius 1.5s ease-in-out;
   }
@@ -100,11 +116,12 @@ header.active{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 105px;
-    top: 72%;
+    right: 122px;
+    top: 71%;
     /* z-index: -1; */
     transform: rotate(135deg);
     color: white;
+    background: #fff;
     border: solid 2px white;
   }
 /* ----------------------------------   */
@@ -129,14 +146,18 @@ header.active{
     top:56px;
     background:#1C1C1C;
     width:150px;
-    opacity: 0;
+    /* opacity: 0; */
+    display: none;
     /* max-height: 0; */
     overflow: hidden;
     padding:0 0 0 30px;
+    transition: .5s;
   }
   .menu.active ul{
     opacity: 1;
-    min-height: calc(100vh - 60px);
+    display: block;
+    /* min-height: 100vh; */
+    height: auto;
    
   }
   
@@ -233,7 +254,11 @@ nav.active{
 .head_mobile{
     align-items: center;
 }
-
+.space{
+    height: 115px;
+    background:transparent;
+    width: 90vw;
+}
 @media screen and (max-width:992px){
     .deskshow{
         display: none;
@@ -248,7 +273,7 @@ nav.active{
     }
 }
 
-@media screen and (max-width:577px){
+@media screen and (max-width:578px){
   
     .features img{
         margin-top: 25px;
@@ -261,16 +286,21 @@ nav.active{
     .features .menu{
         /* padding-top: 20px; */
     }
-    .logo a img{
+    .show_destop a img{
+        /* padding: 5px 0;
+        height: 45px; */
+        display: none;
+    }
+    .show_mobile a img{
         padding: 5px 0;
+        margin-left: -20px;
         height: 45px;
-        /* display: none; */
     }
     #mag , #arm{
         display: none;
     }
     .container{
-        width: 100vw;
+        width: 90vw;
     }
     nav{
         display: none;
@@ -290,25 +320,18 @@ nav.active{
       }
     header{
         margin-top: -16px;
+        height: 80px;
+    }
+    .space{
         height: 60px;
     }
     
 }
-@media screen and (min-width:577px){
+@media screen and (min-width:578px){
     .show_mobile{
         display: none;
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -381,12 +404,13 @@ footer .container{
 .fa-linkedin-in:hover{
     color:#0077B5;
 }
-@media screen and (min-width:577px){
+@media screen and (min-width:860px){
     .show_mob{
         display: none;
     }
 }
-@media screen and (max-width:577px){
+@media screen and (max-width:860px){
+
     footer{
         width: 100%;
         height: 130px;
@@ -395,10 +419,12 @@ footer .container{
     footer .container{
         display: flex;
         flex-direction: column;
+        text-align: center;
     }
     .show_desk{
         display: none;
     }
+    
     .foot-l .txt{
         font-size: 12px;
         line-height:20px;
@@ -411,8 +437,10 @@ footer .container{
         font-size: 8px ;
         /* line-height:20px; */
         height:10px;
-        padding-top: 10px;
+        /* padding-top: 10px; */
+        margin-top: -40px;
         color:#8a8a8a;
+        text-align: center;
     }
     .txt-mob>div{
         display: flex;

@@ -18,7 +18,7 @@
                     <div class="acc_data mx-3 mt-3 mb-3 py-3 d-flex flex-column justify-content-end">
                         <div class="acc_name">Taoyuan GD</div>
                         <div class="acc_mod">
-                            <a class="cl" href="mber_profile.php">
+                            <a class="cl1" href="mber_profile.php">
                                 <img src="img/edit.svg" alt="">編輯個人資料
                             </a>
                         </div>

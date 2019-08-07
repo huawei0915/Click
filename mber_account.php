@@ -9,7 +9,7 @@
                 <img src="img/account.svg" alt="">
                 我的帳戶
             </div>
-            <!-- 編輯個人資料寬寬 -->
+            <!-- 編輯個人資料框框 -->
             <div class="acc_bg">
                 <div class="acc_info d-flex">
                     <div class="circle_ckh">
@@ -18,7 +18,7 @@
                     <div class="acc_data mx-3 mt-3 mb-3 py-3 d-flex flex-column justify-content-end">
                         <div class="acc_name">Taoyuan GD</div>
                         <div class="acc_mod">
-                            <a class="cl1" href="mber_profile.php">
+                            <a class="cl" href="">
                                 <img src="img/edit.svg" alt="">編輯個人資料
                             </a>
                         </div>
@@ -27,19 +27,19 @@
                 <div class="acc_list">
                     <ul class="v_menu">
                         <li>
-                            <a href="mber_password.php" class="cl">
+                            <a href="" class="cl">
                                 <img src="img/password.svg" alt="">
                                 更改密碼
                             </a>
                         </li>
                         <li>
-                            <a href="mber_order.php" class="cl">
+                            <a href="" class="cl">
                                 <img src="img/order.svg" alt="">
                                 訂單查詢
                             </a>
                         </li>
                         <li>
-                            <a href="mber_favorite.php" class="cl">
+                            <a href="" class="cl">
                                 <img src="img/love.svg" alt="">
                                 我的收藏
                             </a>
