@@ -72,9 +72,10 @@
   </script>
   <script>
     var $email2 = $('#email2');
+    var $nickname=$("#nickname");
     var $password2 = $('#password2');
     var $password2_check = $('#password2Check');
-    var fields2 = [$email2, $password2, $password2_check];
+    var fields2 = [$email2,$nickname, $password2, $password2_check];
 
     function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -95,7 +96,10 @@
             isPass = false;
             $email2.next().text('請輸入正確的 Email 格式').css("color","red");
         }
-
+        if($nickname.val().length < 2) {
+            isPass = false;
+            $nickname.next().text('請輸入兩個以上的字元');
+        }
         if($password2.val().length < 6) {
             isPass = false;
             $password2.next().text('請輸入六個以上的字元').css("color","red");
@@ -121,7 +125,7 @@
                     // alertInfo.addClass('alert-success');
                     showSubscribe();
                     setTimeout(function (){
-                        location.href = backToUrl;
+                        location.href = "A_login.php";
                         // location.href = "product-list.php";
                     }, 1000);
                 } else {

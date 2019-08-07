@@ -65,7 +65,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
               <label>密碼</label>
             </div>
             <div class="field-wrapper">
-              <input type="submit">
+              <input type="submit" value="登入">
             </div>
             <span class="psw" onclick="showForgotPassword()">忘記密碼? </span>
             <span class="signup" onclick="showSignup()">尚未成為我們的會員, 按此前往註冊</span>
@@ -82,7 +82,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
               <label>e-mail</label>
             </div>
             <div class="field-wrapper">
-              <input class="A-submit" type="submit" onclick="showThankYou()">
+              <input class="A-submit" type="submit" onclick="showThankYou()" value="送出">
             </div>
           </form>
         </div>
@@ -96,6 +96,10 @@ if (empty($_SERVER['HTTP_REFERER'])) {
               <label>e-mail</label>
             </div>
             <div class="field-wrapper">
+              <input type="text" name="nickname" id="nickname" placeholder="nickname">
+              <label>暱稱</label>
+            </div>
+            <div class="field-wrapper">
               <input type="password" name="password" id="password2" placeholder="password" autocomplete="new-password">
               <label>請輸入密碼</label>
             </div>
@@ -104,7 +108,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
               <label>再次輸入密碼</label>
             </div>
             <div class="field-wrapper">
-              <input class="A-submit" type="submit">
+              <input class="A-submit" type="submit" value="註冊">
             </div>
             <span class="singin" onclick="showLogin()">已經是我們的會員 , 請前往登入</span>
           </form>
@@ -113,14 +117,14 @@ if (empty($_SERVER['HTTP_REFERER'])) {
       <div class="face face-top">
         <div class="content">
           <div class="thank-you-msg">
-            註冊成功!
+          註冊成功
           </div>
         </div>
       </div>
       <div class="face face-bottom">
         <div class="content">
           <div class="thank-you-msg">
-            登入成功!
+            登入成功
           </div>
         </div>
       </div>
