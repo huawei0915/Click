@@ -55,6 +55,7 @@
 
 <body >
     <div class="show_desk">
+        
         <div class="index_view1">
             <div class="main_big_pic">
                 <figure>
@@ -94,36 +95,36 @@
             </div>
 
         </div>
-        <div class="header ">
-            <div class="container">
-                <div class="row index_nav align-items-end">
-                    <div class="col-9 ">
-                        <ul class="row align-items-end">
-                            <li class="logo"><a href="index.php"><img src="img/icon/logo_s.svg" alt=""></a></li>
-                            <li><a href="" class="eng">CANON</a></li>
-                            <li><a href="" class="eng">NIKON</a></li>
-                            <li><a href="" class="eng" style="letter-spacing:1px;">LEICA</a></li>
-                            <li><a href="product-list.php">產品列表</a></li>
-                            <li><a href="diy.php">首選推薦</a></li>
-                            <li><a href="">攝影分享</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-3 ">
-                        <div class="right_top ">
-                            <form method="post" action="">
-                                <div class="serbox" style="margin-right:-25px;">
-                                    <input id="mag" type="search" placeholder="  Search..." name="search">
-                                    <div id="arm"></div>
-                            </form>
-                            <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;"></a>
-                            <a href=""><img src="img/icon/會員.svg" alt="" style="height: 26px;" class="px-2"></a>
-                        </div>
-                        <div class="nar_right">
-                            <ul class="row">
-                                <li><a href="">關於我們</a></li>
-                                <li><a href="">客服支援</a></li>
+            <div class="header ">
+                <div class="container">
+                    <div class="row index_nav align-items-end">
+                        <div class="col-9 ">
+                            <ul class="row align-items-end">
+                                <li class="logo"><a href="index.php"><img src="img/icon/logo_s.svg" alt=""></a></li>
+                                <li><a href="" class="eng">CANON</a></li>
+                                <li><a href="" class="eng">NIKON</a></li>
+                                <li><a href="" class="eng" style="letter-spacing:1px;">LEICA</a></li>
+                                <li><a href="product-list.php">產品列表</a></li>
+                                <li><a href="diy.php">首選推薦</a></li>
+                                <li><a href="">攝影分享</a></li>
                             </ul>
                         </div>
+                        <div class="col-3 ">
+                            <div class="right_top ">
+                                <form method="post" action="">
+                                    <div class="serbox" style="margin-right:-25px;">
+                                        <input id="mag" type="search" placeholder="  Search..." name="search">
+                                        <div id="arm"></div>
+                                </form>
+                                <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;"></a>
+                                <a href=""><img src="img/icon/會員.svg" alt="" style="height: 26px;" class="px-2"></a>
+                            </div>
+                            <div class="nar_right">
+                                <ul class="row">
+                                    <li><a href="">關於我們</a></li>
+                                    <li><a href="">客服支援</a></li>
+                                </ul>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -137,17 +138,17 @@
             <div class="corner">
                 <a href="diy.php">
                     <figure>
+                        <img src="img/corner-l.png" alt="" class="wow slideInLeft slow">
+                    </figure>
+                    <figure>
+                        <img src="img/corner-r.png" alt="" class="wow slideInRight slow">
+                    </figure>
+                    <!-- <figure>
                         <img src="img/corner.png" alt="" class="wow slideInLeft slow">
                     </figure>
                     <figure>
                         <img src="img/corner.png" alt="" class="wow slideInLeft slow">
-                    </figure>
-                    <figure>
-                        <img src="img/corner.png" alt="" class="wow slideInLeft slow">
-                    </figure>
-                    <figure>
-                        <img src="img/corner.png" alt="" class="wow slideInLeft slow">
-                    </figure>
+                    </figure> -->
                     <figure class="diy_map">
                         <img src="img/DIY-table.png" alt="" class="wow fadeIn" data-wow-delay="1s">
                         <img src="img/DIY-line.png" alt="" class="wow fadeIn" data-wow-delay="1.5s">
@@ -162,16 +163,16 @@
     <div class="brand_map_bg">
         <div class="brand_map">
             <figure>
-                <img src="img/第三區塊_canon.png" alt="" data-100="transform: translateX(-150px);" data-end="transform: translateX(10px);">
-                <img src="img/canon.png" alt="" data-100="transform: translateX(-500px);" data-end="transform: translateX(120px);">
+                <img src="img/第三區塊_canon.png" alt="" class="wow fadeIn" data-wow-delay=".5s" data-100="transform: translateX(-150px);" data-end="transform: translateX(10px);">
+                <img src="img/canon.png" alt="" class="wow fadeIn" data-wow-delay=".5s" data-100="transform: translateX(-500px);" data-end="transform: translateX(120px);">
             </figure>
             <figure>
-                <img src="img/第三區塊_leica.png" alt="" data-100="transform: translateX(158px);" data-end="transform: translateX(-10px);">
-                <img src="img/Leica.png" alt="" data-100="transform: translateX(550px);" data-end="transform: translateX(-20px);">
+                <img src="img/第三區塊_leica.png" alt="" class="wow fadeIn" data-wow-delay=".5s" data-100="transform: translateX(158px);" data-end="transform: translateX(-10px);">
+                <img src="img/Leica.png" alt="" class="wow fadeIn" data-wow-delay=".5s" data-100="transform: translateX(550px);" data-end="transform: translateX(-20px);">
             </figure>
             <figure>
-                <img src="img/第三區塊_nikon.png" alt="" data-100="transform: translateX(-158px);" data-end="transform: translateX(10px);">
-                <img src="img/nikon.png" alt="" data-100="transform: translateX(-550px);" data-end="transform: translateX(20px);">
+                <img src="img/第三區塊_nikon.png" alt="" class="wow fadeIn" data-wow-delay=".5s" data-100="transform: translateX(-158px);" data-end="transform: translateX(10px);">
+                <img src="img/nikon.png" alt="" class="wow fadeIn" data-wow-delay=".5s" data-100="transform: translateX(-550px);" data-end="transform: translateX(5px);">
             </figure>
         </div>
         <div class="line_yellow"></div>
