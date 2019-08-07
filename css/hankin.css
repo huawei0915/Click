@@ -675,10 +675,12 @@
     }
 }
 /* ----------profile_share----------   */
+
+/* ------share banner ---- */
 .profileBG{
     background: #FEFDF9;
     width: 100%;
-    min-height: 200vh;
+    min-height: 280vh;
     position: relative;
 }
 .art_text{
@@ -695,6 +697,7 @@
 }
 .art_text .article_info{
     font-size: 0.9rem;
+    padding: 0;
 }
 .share_bigImg{
     background: url("../img/s0.jpg") no-repeat center;
@@ -720,7 +723,7 @@
     font-size: 1rem;
     position: absolute;
     top: 48vh;
-    right: 15%;
+    right: 22%;
     font-weight: bold;
     z-index: 2;
 }
@@ -735,17 +738,63 @@
 .share_author{
     font-size: 0.85rem;
     position: absolute;
-    right: 15%;
+    right: 22%;
     padding-top:1%;
 }
-.share_Pimges{
+@media screen and (max-width:578px){
+    .profileBG{
+        min-height: 500vh;
+    }
+    .share_bigImg{
+        height: 260px;
+        object-fit: contain;
+        background-size: 900px;
+        top:22vh;
+    }
+    .art_text .new_article{
+        font-size: 1.1rem;
+        padding: 1.2rem 0 0.25rem 0;
+    }
+    .art_text .article_date{
+        font-size: 0.85rem;
+    }
+    .art_text .article_info{
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+    }
+    .share_word{
+        color:#1C1C1C;
+        width: 90%;
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+        top: 48vh;
+    }
+    .share_filter{
+     display: none;
+    }
+    .share_author{
+        font-size: 0.7rem;
+        position: absolute;
+        right: 8%;
+        padding-top:2%;
+    }
+    .share_more{
+        color: #1C1C1C;
+        font-size: 0.85rem;
+        position: absolute;
+        top: 86vh;
+        right: 10%;
+    }
+}
+/* ------share img group Up---- */
+.share_pimgesUp{
     position: absolute;
     top: 90vh;
 }
-.pimges_left, .pimges_right{
+.share_pimgesUp .pimges_left, .pimges_right{
     width:50%;   
 }
-.pimges_black{
+.share_pimgesUp .pimges_black_right{
     width:50%;
     height: 110px;
     background: black;
@@ -753,20 +802,197 @@
     bottom: 33%;
     color: white;
 }
-.pimges_black .pimges_bigtext{
-    font-size: 1.3rem;
+.pimges_black_right .pimges_bigtext{
+    font-size: 1rem;
     line-height: 1.5em;
     font-weight: 400;
-    padding-top:  3%;
-    padding-left: 25%;
+    padding-top:  3.5%;
+    padding-left: 39%;
 }
-.pimges_black .pimges_smalltext{
+.pimges_black_right .pimges_smalltext{
     font-size: 0.75rem;
     font-weight: 300;
     padding-left: 48%;
+    padding-top: 1%;
 }
-.s11_sh{
-    box-shadow: 10px 10px 20px #1C1C1C;
+.pimges_black_overlay{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.pimges_black_overlay:hover{
+    opacity: 0.3;
+}
+.share_pimgesUp .pimges_black_left{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+.pimges_black_left .pimges_bigtext_left{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  4%;
+    padding-left: 3.5%;
+}
+.pimges_black_left .pimges_smalltext_left{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 4%;
+    padding-top: 1%;
+}
+.pimges_black_overlay1{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top:34%;
+    transition: 0.5s;
+}
+.pimges_black_overlay1:hover{
+    opacity: 0.3;
+}
+.share_pimgesUp .s_sh, .share_pimgesdown .s_sh{
+    box-shadow: 2px 2px 5px #1C1C1C;
+}
+/* ------share img group down---- */
+.share_pimgesdown{
+    position: absolute;
+    top: 178.6vh;
+}
+.pimges_black_right_down{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 33%;
+    color: white;
+}
+.pimges_black_overlay2{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    left:0;
+    top:0;
+    transition: 0.5s;
+}
+.pimges_black_overlay2:hover{
+    opacity: 0.3;
+}
+.pimges_black_left_down{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+.pimges_black_right_down .pimges_bigtext_down{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  4%;
+    padding-left: 70%;
+}
+.pimges_black_right_down .pimges_smalltext_down{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 52%;
+}
+.pimges_black_left_down .pimges_bigtext_left_down{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  4%;
+    padding-left: 4%;
+}
+.pimges_black_left_down .pimges_smalltext_left_down{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 4.5%;
+}
+.pimges_black_overlay3{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    left:50%;
+    top:33%;
+    transition: 0.5s;
+}
+.pimges_black_overlay3:hover{
+    opacity: 0.3;
+}
+@media screen and (max-width:578px){
+    .share_pimgesUp{
+        top: 120vh;
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+    }
+    .pimgesUp_Bimg{
+        width: 100%;
+    }
+    .pimges_black_right .pimges_bigtext{
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        padding-top:  3.5%;
+        padding-left: 39%;
+    }
+    .pimges_black_right .pimges_smalltext{
+        font-size: 0.75rem;
+        font-weight: 300;
+        padding-left: 48%;
+        padding-top: 1%;
+    }
+  
+    .share_pimgesUp .pimges_black_left{
+        width:50%;
+        height: 110px;
+        background: black;
+        position: absolute;
+        bottom: 0;
+        color: white;
+    }
+    .pimges_black_left .pimges_bigtext_left{
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        padding-top:  4%;
+        padding-left: 3.5%;
+    }
+    .pimges_black_left .pimges_smalltext_left{
+        font-size: 0.75rem;
+        font-weight: 300;
+        padding-left: 4%;
+        padding-top: 1%;
+    }
+    .share_pimgesUp .s_sh, .share_pimgesdown .s_sh{
+        box-shadow: 2px 2px 5px #1C1C1C;
+    }
+    /* --------------------- */
+    .share_pimgesdown{
+        top: 300vh;
+    }
+    .pimges_black_overlay, .pimges_black_overlay1, .pimges_black_overlay2, .pimges_black_overlay3{
+        display: none;
+    }
 }
 
 
