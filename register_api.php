@@ -10,8 +10,8 @@ $result = [
 
 // TODO: 檢查欄位
 // filter_var('bob@example.com', FILTER_VALIDATE_EMAIL) // 檢查 email 格式
-if(empty($_POST['email']) or empty($_POST['password'])){
-    // 兩個欄位只要有一個沒填, 就結束
+if(empty($_POST['email']) or empty($_POST['password']) or empty($_POST['nickname'])){
+    // 三個欄位只要有一個沒填, 就結束
     echo json_encode($result);
     exit;
 }
@@ -33,7 +33,7 @@ if( $stmt->rowCount()>=1 ){
 $hash = sha1($_POST['email']. uniqid(). rand()); // 產生一個不容易相同的字串
 
 $stmt = $pdo->prepare("INSERT INTO `members`
-(`email`, `password` ) VALUES (?, SHA1(?))");
+(`email`, `password`, `nickname` ) VALUES (?, SHA1(?),?)");
 
 $stmt->execute([
     $_POST['email'],
@@ -43,7 +43,7 @@ $stmt->execute([
 
     // $_POST['birthday'],
     // $hash,
-    // $_POST['nickname'],
+    $_POST['nickname'],
 ]);
 
 if($stmt->rowCount()==1){
