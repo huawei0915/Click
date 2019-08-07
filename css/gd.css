@@ -230,7 +230,7 @@ input[type=range]:focus {
 /* product list */
 
 .prd_list{
-    width: 100%;
+    width: 75%;
     margin: 5% auto;
     padding: 4%;
 }
