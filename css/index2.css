@@ -379,6 +379,8 @@ main .main_bg .corner .diy_map img:nth-child(3){
     cursor: pointer;
     transition: .5s;
 }
+
+
 /* .botton_bg{
     height: 340px;
     overflow: hidden;
@@ -407,6 +409,7 @@ main .main_bg .corner .diy_map img:nth-child(3){
     filter: brightness(30%);
     box-shadow: 0 1px 5px black;
 }
+
 @media screen and (max-width:860px){
     .show_desk{
         display: none;

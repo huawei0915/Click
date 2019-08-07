@@ -230,7 +230,7 @@ input[type=range]:focus {
 /* product list */
 
 .prd_list{
-    width: 75%;
+    width: 100%;
     margin: 5% auto;
     padding: 4%;
 }
@@ -294,17 +294,80 @@ input[type=range]:focus {
     padding-top: 15px;
 }
 
-#more {display: none;}
 
-#morebtn{
-    width: 60px;
-    text-align: center;
-    margin-top:2%;
-    margin-left: 93%;
-    border: 1px solid gray;
-    color: gray;
+
+
+/* PRODUCT PAGE*/
+.prdtop{
+    background-color: #F1F1F1;
+}    
+
+.prdpic {
+    width: 50%;
+    background-color: black;
+    overflow: hidden;
+    margin: 3%;
 }
-#morebtn:hover{
-    border: 1px solid black;
-    color: black;
+.prd_introduct{
+    width: 50%;
+    margin: 3%;
+}
+.prd_introduct h1{
+    color:#8a8a8a;
+}
+.prd_introduct h6{
+    color:#8a8a8a;
+}
+.prd_introduct p{
+    line-height: 40px;
+}
+.prdprice{
+    margin-left:55%;
+}
+.prdprice h6{
+    margin-right:3%;
+    margin-top: 1%;
+}
+.prd_btn{
+    margin-left: 53%;
+}
+.prd_comparison{
+    width: 120px;
+    height: 30px;
+    border: solid 1px gray;
+    margin-right: 2%;
+}
+.prd_collection{
+    width: 120px;
+    height: 30px;
+    border: solid 1px gray;
+    margin-right: 2%;
+}
+.prd_quantity{
+    width: 120px;
+    height: 30px;
+    border: solid 1px gray;
+    margin-right: 2%;
+}
+.prd_car{
+    width: 120px;
+    height: 30px;
+    border: solid 1px gray;
+}
+.prd_specification{
+    margin: 3%;
+}
+.prd_specification li{
+    font-size: 0.8rem;
+    list-style: disc;
+}
+.specification_left{
+    width: 50%;
+    margin: 3%;
+    margin-top: 0;
+}
+.specification_right{
+    width: 50%;
+    margin: 3%;
+    margin-top: 0;
 }
