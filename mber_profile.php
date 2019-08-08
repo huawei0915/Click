@@ -15,7 +15,7 @@
                     <div class="circle_ckh">
                         <img src="img/CKH.jpg" alt="">
                     </div>
-                    <div class="acc_data mx-3 mt-3 mb-3 py-3 d-flex flex-column justify-content-end">
+                    <div class="acc_data mx-2 mt-4 mb-3 py-3 d-flex flex-column justify-content-end">
                         <div class="acc_name">Taoyuan GD</div>
                         <div class="acc_mod">
                             <a class="cl1" href="#" id="profile">
@@ -50,7 +50,7 @@
             </div>
         </div>
         <!-- --profile page-- -->
-        <div class="my_profile" >
+        <div class="my_profile">
             <div class="my_profileBackground">
                 <div class="my_profileFont py-3">
                     編輯個人資料 Profile
@@ -106,9 +106,9 @@
         <!-- --Password page-- -->
         <div class="my_passWord">
             <div class="my_passBackground">
-                <div class="my_passFont py-5">
+                <div class="my_passFont py-3">
                     更改密碼 Change The Password <br>
-                    <h6 class="my_fh6">為了保護您帳號安全，請謹慎保管個人密碼</h6>
+                    <h6 class="my_fh6 py-2">為了保護您帳號安全，請謹慎保管個人密碼</h6>
                 </div>
                 <div class="my_passForm">
                     <form action="" method="post" id="form1" name="form1">
@@ -129,9 +129,9 @@
         </div>
         <!-- order -->
         <div class="my_order">
-            <div class="my_orderWord py-3">
+            <div class="my_orderWord py-2">
                 訂單查詢 Order Tracking
-                <h6 class="my_fh6 mx-3">訂單編號：000000</h6>
+                <h6 class="my_fh6 py-1 mx-3">訂單編號：000000</h6>
             </div>
             <div class="ordr_icongroup">
                 <div class="order_line">
@@ -147,54 +147,50 @@
             </div>
             <div class="order_userInfo">
                 <h4>收件人資訊</h4>
-                <div class="userinfomation">
-                    <div class="userinfo_user d-flex">
-                        收件人
+                <div class="userinfomation d-flex">
+                    <div class="userinfomation_info">
+                        <div>收件人</div>
+                        <div>電話</div>
+                        <div>地址</div>
+                    </div>
+                    <div class="userinfomation_label">
                         <label for="">張高華</label>
-                    </div>
-                    <div class="userinfo_mobile d-flex">
-                        電話
                         <label for="">0987654321</label>
-                    </div>
-                    <div class="userinfo_address d-flex">
-                        地址
-                        <label for="">台北市XX區XX路XX巷XX弄XX號XX樓 </label>
+                        <label for="">台北市XX區XX路XX巷XX弄XX號XX樓</label>
                     </div>
                 </div>
             </div>
             <div class="order_listBuy">
                 <h4>訂單明細</h4>
-                <div class="order_buyList py-1">
+                <div class="order_buyList">
                     <figure>
                         <img src="img/EOS5DMarkIV.png" alt="">
                     </figure>
                     <div class="order_infoBuy d-flex">
                         <div class="order_name_spec">
-                            Canon EOS 5D Mark IV
-                            <br>
-                            EF 24-70mm f/4L IS USM
+                            <div>Canon EOS 5D Mark IV</div>
+                            <div>EF 24-70mm f/4L IS USM</div>
                         </div>
                         <div class="order_count_price">
-                            x 1
-                            <br>
-                            NT$ 169,000
+                            <div>x 1</div>
+                            <div>NT$ 169,000</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="order_payInfo">
                 <h4>付款資訊</h4>
-                <div class="order_send">
-                    寄送方式
-                    <label for="">宅配-NT $100</label>
-                </div>
-                <div class="order_date">
-                    訂單日期
-                    <label for="">2019-08-20</label>
-                </div>
-                <div class="odrder_total">
-                    購買總金額
-                    <label for="">NT$ 169,000</label>
+                <div class="orderpayInformation d-flex">
+                    <div class="order_payinfodata">
+                        <div>寄送方式</div>
+                        <div>訂單日期</div>
+                        <div>購買總金額</div>
+                    </div>
+                    <div class="order_payinfocount">
+                        <label for="">宅配-NT $100</label>
+                        <label for="">2019-08-20</label>
+                        <label for="">NT$ 169,000</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,128 +227,7 @@
                     </div>
                 </div>
             </div>
-            <div class="my_favList d-flex">
-                <div class="my_favImg">
-                    <img src="img/EOS5DMarkIV.png" alt="">
-                </div>
-                <div class="my_favBkg">
-                    <div class="my_favItem">
-                        Canon EOS 5D Mark IV
-                    </div>
-                    <div class="my_favSpec">
-                        (EF 24-70mm f/4L IS USM)
-                    </div>
-                    <div class="my_favDate">
-                        2019-08-20 09:30
-                    </div>
-                    <div class="my_favPrice">
-                        NT$ 169,000
-                    </div>
-                    <div class="my_favCart">
-                        <a href="" class="cart_icon">
-                            <img src="img/cart.svg" alt="">
-                            加入購物車
-                        </a>
-                    </div>
-                    <div class="my_favRemove">
-                        <a href="">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="my_favList d-flex">
-                <div class="my_favImg">
-                    <img src="img/EOS5DMarkIV.png" alt="">
-                </div>
-                <div class="my_favBkg">
-                    <div class="my_favItem">
-                        Canon EOS 5D Mark IV
-                    </div>
-                    <div class="my_favSpec">
-                        (EF 24-70mm f/4L IS USM)
-                    </div>
-                    <div class="my_favDate">
-                        2019-08-20 09:30
-                    </div>
-                    <div class="my_favPrice">
-                        NT$ 169,000
-                    </div>
-                    <div class="my_favCart">
-                        <a href="" class="cart_icon">
-                            <img src="img/cart.svg" alt="">
-                            加入購物車
-                        </a>
-                    </div>
-                    <div class="my_favRemove">
-                        <a href="">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="my_favList d-flex">
-                <div class="my_favImg">
-                    <img src="img/EOS5DMarkIV.png" alt="">
-                </div>
-                <div class="my_favBkg">
-                    <div class="my_favItem">
-                        Canon EOS 5D Mark IV
-                    </div>
-                    <div class="my_favSpec">
-                        (EF 24-70mm f/4L IS USM)
-                    </div>
-                    <div class="my_favDate">
-                        2019-08-20 09:30
-                    </div>
-                    <div class="my_favPrice">
-                        NT$ 169,000
-                    </div>
-                    <div class="my_favCart">
-                        <a href="" class="cart_icon">
-                            <img src="img/cart.svg" alt="">
-                            加入購物車
-                        </a>
-                    </div>
-                    <div class="my_favRemove">
-                        <a href="">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="my_favList d-flex">
-                <div class="my_favImg">
-                    <img src="img/EOS5DMarkIV.png" alt="">
-                </div>
-                <div class="my_favBkg">
-                    <div class="my_favItem">
-                        Canon EOS 5D Mark IV
-                    </div>
-                    <div class="my_favSpec">
-                        (EF 24-70mm f/4L IS USM)
-                    </div>
-                    <div class="my_favDate">
-                        2019-08-20 09:30
-                    </div>
-                    <div class="my_favPrice">
-                        NT$ 169,000
-                    </div>
-                    <div class="my_favCart">
-                        <a href="" class="cart_icon">
-                            <img src="img/cart.svg" alt="">
-                            加入購物車
-                        </a>
-                    </div>
-                    <div class="my_favRemove">
-                        <a href="">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
-
     </div>
 </div>
 </div>
@@ -361,38 +236,38 @@
 <?php include __DIR__ . '/__script.php' ?>
 
 <script>
-$("#profile").click(function(){
-    $(".my_profile").show();
-    $(".my_passWord").hide();
-    $(".my_order").hide();
-    $(".my_favorite").hide();
-});
-$("#changepwd").click(function(){
-    $(".my_profile").hide();
-    $(".my_passWord").show();
-    $(".my_order").hide();
-    $(".my_favorite").hide();
-});
-$("#order").click(function(){
-    $(".my_profile").hide();
-    $(".my_passWord").hide();
-    $(".my_order").show();
-    $(".my_favorite").hide();
-});
-$("#favorite").click(function(){
-    $(".my_profile").hide();
-    $(".my_passWord").hide();
-    $(".my_order").hide();
-    $(".my_favorite").show();
+    $("#profile").click(function() {
+        $(".my_profile").show();
+        $(".my_passWord").hide();
+        $(".my_order").hide();
+        $(".my_favorite").hide();
+    });
+    $("#changepwd").click(function() {
+        $(".my_profile").hide();
+        $(".my_passWord").show();
+        $(".my_order").hide();
+        $(".my_favorite").hide();
+    });
+    $("#order").click(function() {
+        $(".my_profile").hide();
+        $(".my_passWord").hide();
+        $(".my_order").show();
+        $(".my_favorite").hide();
+    });
+    $("#favorite").click(function() {
+        $(".my_profile").hide();
+        $(".my_passWord").hide();
+        $(".my_order").hide();
+        $(".my_favorite").show();
 
-});
+    });
 
 
 
     $("#confirmBtn").click(function() {
-            $('.al_password').show();
-            $('.al_password').delay(2000).hide(0);
-        
+        $('.al_password').show();
+        $('.al_password').delay(2000).hide(0);
+
 
     });
 </script>
