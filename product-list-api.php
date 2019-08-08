@@ -1,22 +1,29 @@
 <?php require __DIR__. '/__db_connect.php';
 
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1; // 用戶要看第幾頁
-$cate = isset($_GET['cate']) ? intval($_GET['cate']) : 0; // 用戶要看哪個分類
+$page = isset($_POST['page']) ? intval($_POST['page']) : 1; // 用戶要看第幾頁
 $per_page_camera = 8;  //相機顯示數量
-$per_page_lens = 4 ;  //鏡頭顯示數量
-$per_page_tools=0;    //配件顯示數量
+$per_page_lens = 8;  //鏡頭顯示數量
+$per_page_tools = 4;    //配件顯示數量
 
-// 用來產生 query string
+
 $my_qs = [
     'page' => $page,
     'cate' => $cate,
 ];
 
+$min = Integer.parseInt($_POST['min']);
+$max = Integer.parseInt($_POST['max']);
+$cate = !empty($_POST['cate']) ? $_POST['cate'] : 0;
+$brand = !empty($_POST['brand']) ? $_POST['brand'] : 0;
+$cateVal=is_array($cate) ? implode("','",$cate) : $cate;
+$brandVal=is_array($brand) ? implode("','",$brand) : $brand;
+
 // 回傳資料的格式
 $result = [
     'page' => $page,
-    'cate' => $cate,
-    'per_page' => $per_page,
+    'per_page_camera' => $per_page_camera,
+    'per_page_lens' => $per_page_lens,
+    'per_page_tools' => $per_page_tools,
     'totalRows' => 0,
     'totalPages' => 0,
     'qs' => $my_qs,
@@ -24,35 +31,56 @@ $result = [
 ];
 
 $where = " WHERE 1 ";
-
-if(! empty($cate)){
+if(!empty($min)){
+    $where .= " AND `price`>$min ";
+};
+if(!empty($min)){
+    $where .= " AND `price`<$max ";
+}
+if (!empty($brand)) {
+    $where .= " AND `brand_sid`=$brand ";
+}
+if (!empty($cate)) {
     $where .= " AND `category_sid`=$cate ";
 }
 
 
+$c_sql = "SELECT * FROM `p_products` ORDER BY `category_sid` ASC";
+// $c_sql = "SELECT * FROM `categories` WHERE `parent_sid`=1";
+$cates = $pdo->query($c_sql)->fetchAll(PDO::FETCH_ASSOC);
+
 // 取得總筆數
-$t_sql = "SELECT COUNT(1) FROM `products` $where ";
-$totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
-$result['totalRows'] = $totalRows;
+$t_sql_camera = "SELECT COUNT(1) FROM `p_products` AND `category_sid` BETWEEN 4 AND 6";
+$totalRows_camera = $pdo->query($t_sql_camera)->fetch(PDO::FETCH_NUM)[0];
+$result['totalRows_camera']=$totalRows_camera;
 
-$totalPages = ceil($totalRows/$per_page); // 總頁數
-$result['totalPages'] = $totalPages;
+$t_sql_lens = "SELECT COUNT(1) FROM `p_products` AND `category_sid` BETWEEN 11 AND 16";
+$totalRows_lens = $pdo->query($t_sql_lens)->fetch(PDO::FETCH_NUM)[0];
+$result['totalRows_lens']=$totalRows_lens;
 
-// 取得產品資料
-$p_sql = sprintf("SELECT * FROM `products` $where LIMIT %s, %s ", ($page-1)*$per_page, $per_page );
-$stmt = $pdo->query($p_sql);
+$t_sql_tools = "SELECT COUNT(1) FROM `p_products` AND `category_sid` IN (8,10)";
+$totalRows_tools = $pdo->query($t_sql_camera)->fetch(PDO::FETCH_NUM)[0];
+$result['totalRows_tools']=$totalRows_tools;
 
-$p_camera = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6 LIMIT %s, %s ", ($page-1)*$per_page_camera,$per_page_camera );  //鏡頭分類
-$p_lens = sprintf("SELECT * FROM `p_products` WHERE `category_sid` BETWEEN 11 AND 16 LIMIT %s, %s ", ($page-1)*$per_page_lens, $per_page_lens);  //鏡頭分類
-$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` IN (8,10) LIMIT %s, %s ", ($page-1)*$per_page_tools, $per_page_tools);   //配件分類
+$totalPage_camera = ceil($totalRows/$per_page_camera);
+$result['totalPage_camera']=$totalPage_camera;
+$totalPage_lens = ceil($totalRows/$per_page_lens);
+$result['totalPage_lens']=$per_page_lens;
+$totalPage_tools = ceil($totalRows/$per_page_tools);
+$result['totalPage_tools']=$per_page_tools;
 
 
-$search = sprintf ("SELECT * FROM `p_products` WHERE `model` LIKE 'canon%' OR `model` LIKE 'leica%' OR `model` LIKE 'nikon%'"); //收尋
+$p_camera = sprintf("SELECT * FROM `p_products`".$where."AND `category_sid` BETWEEN 4 AND 6 LIMIT %s, %s ", ($page - 1) * $per_page_camera, $per_page_camera);  //鏡頭分類
+$p_lens = sprintf("SELECT * FROM `p_products`".$where."AND `category_sid` BETWEEN 11 AND 16 LIMIT %s, %s ", ($page - 1) * $per_page_lens, $per_page_lens);  //鏡頭分類
+$p_tool = sprintf("SELECT * FROM `p_products`".$where."AND `category_sid` IN (8,10) LIMIT %s, %s ", ($page - 1) * $per_page_tools, $per_page_tools);   //配件分類
 
+$stmt_camera = $pdo->query($p_camera);
+$stmt_lens = $pdo->query($p_lens);
+$stmt_tool = $pdo->query($p_tool);
 
-
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$result['rows'] = $rows;
+$rowsCamera = $stmt_camera->fetchAll(PDO::FETCH_ASSOC);
+$rowsLens = $stmt_lens->fetchAll(PDO::FETCH_ASSOC);
+$rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE);
 

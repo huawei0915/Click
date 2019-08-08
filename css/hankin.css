@@ -6,7 +6,7 @@
 /* ----------left area 會員List--------- */
 .acc_box{
     width: 50%;
-    padding: 155px 0 0 100px;
+    padding: 40px 0 0 100px;
 }
 .acc_box .my_account img{
     width: 12%;
@@ -142,6 +142,7 @@
     border: 3px solid #1C1C1C;
     margin: 257px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
+    display: none;
 }
 .my_favorite .my_favWord{
     background-color: #1C1C1C;
@@ -301,6 +302,7 @@
     margin: 250px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
     position: relative;
+    display: none;
 }
 .my_passWord .my_passBackground{
     width: 100%;
@@ -352,6 +354,7 @@
     text-align: center;
     font-size: 1.2rem;
     line-height: 40px;
+    display: none;
 }
 /* ---------Password RWD-------- */
 @media screen and (max-width:578px){
@@ -398,9 +401,10 @@
         width: 50%;
         min-height: 70vh;
         border: 3px solid #1C1C1C;
-        margin: 257px 100px 120px 0;
+        margin: 142px 100px 120px 0;
         border-radius: 35px 35px 27px 27px;
         position: relative;
+
     }
     .my_profile .my_profileBackground{
         width: 100%;
@@ -538,6 +542,7 @@
     border: 3px solid #1C1C1C;
     margin: 257px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
+    display: none;
 }
 .my_order .my_orderWord{
     background-color: #1C1C1C;
