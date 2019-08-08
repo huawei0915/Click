@@ -134,7 +134,7 @@ $page_name = 'product-list';
 
         </div>
         <div class="d-flex justify-content-center mt-3 arrow_list_camera">
-         
+
         </div>
 
     </div>
@@ -332,6 +332,11 @@ $page_name = 'product-list';
     // ----------------------
 
     $(".product_form input").change(function() {
+
+        form_post()
+    })
+    $(".product_form").change(function() {
+        $(".camera_page").val(1);
         form_post()
     })
 
