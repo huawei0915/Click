@@ -3,7 +3,7 @@
     width: 100%;
     background: white;
 }
-/* ----------left area 會員List--------- */
+/* ----------會員List--------- */
 .acc_box{
     width: 50%;
     padding: 40px 0 0 100px;
@@ -40,31 +40,37 @@
 .acc_info .circle_ckh{
     margin: 35px 0 0 25px;
 }
+.acc_data{
+    width: 100%;
+}
 .acc_info .acc_name{
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     height: 40px;
     line-height: 40px;
 }
 .acc_mod img{
-    width: 15%;
+    width: 10%;
     margin: 0 10px 5px 0;
 }
 .acc_mod a{
-    width: 130px;
+    width: 100%;
+    font-size: 0.85rem;
+    padding-top: 8%;
 }
 .acc_info .acc_mod{
     height: 40px;
     line-height: 40px;
+   
 }
 .acc_list ul li{
     margin: 15px 0 15px 45px;
 }
 .acc_list img{
-    width: 12%;
+    width: 15%;
     margin: 0 10px 10px 10px;
 }
 .acc_list a{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .acc_list .box_black{
     width: 100%;
@@ -95,7 +101,7 @@
     .acc_box{
      width:100%;
      padding: 0;
-     margin: 45px 0 0 0;
+     margin: 30px 0 0 0;
      justify-content: center;
      display: flex;
      flex-wrap: wrap;
@@ -106,7 +112,7 @@
     .my_account{
         width: 100%;
         flex-shrink: 0;
-        padding: 25px 0 0 35px;
+        padding: 20px 0 0 35px;
     }
     .v_menu{
         display: flex;
@@ -120,12 +126,12 @@
     }
     .v_menu a{
         width: 100%;
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
     .v_menu img{
-        width: 40%;
+        width: 35%;
         margin: 0 auto;
-        padding: 0 0 5px 0;
+        padding: 0 0 10px 0;
     } 
     .acc_list ul li{
         padding: 0;
@@ -136,11 +142,11 @@
         padding: 30px 0;
     }
 }
-/* ----------right area 收藏清單web-------- */
+/* ------收藏清單--------------- */
 .my_favorite{
     width:50%;
     border: 3px solid #1C1C1C;
-    margin: 257px 100px 120px 0;
+    margin: 143px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
     display: none;
 }
@@ -148,8 +154,8 @@
     background-color: #1C1C1C;
     color: white;
     height: 75px;
-    font-size: 1.2rem;
-    padding: 25px 0 0 20px;
+    font-size: 1rem;
+    padding: 20px 0 0 20px;
     border-radius: 27px 27px 0 0;
 }
 .my_favorite .my_favList{
@@ -165,30 +171,27 @@
     margin: 10px 0 10px 20px;
 }
 .my_favList .my_favBkg{
-    margin: 10px;
+    margin: 1rem;
     width: 375px;
     position: relative;
 }
 .my_favList .my_favBkg .my_favItem{
     width: 200px;
-    height: 30px;
     color: #1C1C1C;
     line-height: 30px;
-    font-size: 1.1rem;  
+    font-size: 0.85rem;  
 }
 .my_favList .my_favBkg .my_favSpec{
     width: 240px;
-    height: 30px;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     color: #707070;
-    line-height: 30px;
+    line-height: 20px;
 }
 .my_favList .my_favBkg .my_favDate{
     width: 240px;
-    height: 30px;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     color: #707070;
-    line-height: 30px;
+    line-height: 20px;
 }
 .my_favList .my_favBkg .my_favCart img{
     width: 10%;
@@ -227,7 +230,7 @@
     width: 16%;
     padding-bottom: 5px;
 }
-/* --收藏清單RWD-- */
+/* -----------收藏清單RWD----------- */
 @media screen and (max-width:578px){
     .my_favorite{
         width: 86%;
@@ -294,12 +297,12 @@
         top:-20px;
     }
 }
-/* --modify password area--  */
+/*------modify password area------  */
 .my_passWord{
     width: 50%;
-    height: 505px;
+    height: 510px;
     border: 3px solid #1C1C1C;
-    margin: 250px 100px 120px 0;
+    margin: 143px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
     position: relative;
     display: none;
@@ -312,13 +315,15 @@
 }
 .my_passWord .my_passFont{
     justify-content: center;
-    text-align: center;
-    font-size: 1.3rem;
+    text-align: left;
+    padding-left: 5%;
+    font-size: 1rem;
     letter-spacing: 3px;
     color: white;
 }
 .my_passWord .my_passFont .my_fh6{
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    padding-left: 10%;
 }
 .my_passWord .my_passForm .form-group{
     width: 58%;
@@ -326,14 +331,14 @@
 }
 .my_passWord .my_passForm .form-group .my_form{
     border-radius: 1rem;
-    height: calc(1.2em + .8rem + 3px);
+    height: calc(1.5em + .85rem + 2px);
     border: 2px solid #707070;
 }
 .my_passBackground .confirmBtn{
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
-    line-height: 35px;
-    width: 130px;
+    line-height: 30px;
+    width: 150px;
     color: #1C1C1C;
     border: 3px solid #FFA800;
     border-radius: 15px;
@@ -356,25 +361,26 @@
     line-height: 40px;
     display: none;
 }
-/* ---------Password RWD-------- */
+/*----modify password area- RWD--  */
 @media screen and (max-width:578px){
     .my_passWord{
-        width: 90%;
-        height: 400px;
+        width: 94%;
+        min-height: 300px;
         margin: 40px auto 40px auto;
         position: relative;
     }
     .my_passWord .my_passBackground{
         width: 100%;
-        height: 320px;
+        min-height: 250px;
     }
     .my_passWord .my_passFont{
-        font-size: 1rem;
-        padding:0;
-        padding-bottom: 1.1rem !important;
+        font-size: 0.8rem;
+        letter-spacing: 0;
+        padding-left: 10%;
     }
     .my_passWord .my_passFont .my_fh6{
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        padding: 5%;
     }
     .my_passWord .my_passForm .form-group{
         width: 90%;
@@ -394,6 +400,7 @@
         top: 85%;
         width: 40%;
         line-height: 40px;
+        font-size: 1rem;
     }
 }
 /* ----------profile area---------- */
@@ -414,18 +421,20 @@
     }
     .my_profileBackground .my_profileFont{
         justify-content: center;
-        text-align: center;
-        font-size: 1.3rem;
+        text-align: left;
+        padding-left: 5%;
+        font-size: 1rem;
         letter-spacing: 3px;
         color: white;
     }
     .my_profile .my_profileFont .my_fh6{
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        padding-left: 10%;
     }
     .my_profileFont .my_profileBimg{
         position: absolute;
-        left: 5.5vh;
-        top: 12vh;
+        left: 5%;
+        top: 19%;
     }
     .my_profileFont .my_profileIcon{
         width: 5%;
@@ -433,28 +442,30 @@
         border-radius: 50%;
         border: 1px solid #707070;
         position: absolute;
-        left: 14vh;
-        top: 20vh;
+        left: 20%;
+        top:30%;
     }
     .my_profileFont .my_profileIcon .pro_icon{
-        width: 70%;
+        width:75%;
         padding-bottom: 3px;
+        padding-left: 4px;
     }
     .my_profile .my_profileBackground .my_card_body{
         width: 15%;
         color: white;
-        margin: 0 36%;
+        margin: 0 33%;
     }
     .my_profile .my_profileBackground .my_proForm{
-        margin-bottom: 0.5rem;
-        width: 280px;
+        margin-bottom: 0.45rem;
+        width: 300px;
     }
     .my_profile .my_profileBackground .my_label{
         margin: 0;
         padding: 0;
     }
     .my_profile .my_profileBackground .my_sexcheck{
-        line-height: 30px;
+        line-height: 20px;
+        font-size: 0.75rem;
     }
     input[type="radio"] {
         display: none;
@@ -493,9 +504,10 @@
         left: 35vh;
         top: 62vh;
     }
+/* -----profile area RWD-------- */
 @media screen and (max-width:578px){
         .my_profile{
-            width: 90%;
+            width: 94%;
             min-height: 110vh;
             margin: 40px auto 40px auto;
             position: relative;
@@ -503,36 +515,41 @@
         .my_profile .my_profileBackground{
             min-height: 97vh;
         }
+        .my_profileBackground .my_profileFont{
+            font-size: 0.8rem;
+            padding-left: 10%;
+        }
         .my_profile .my_profileFont .my_fh6{
-            font-size: 0.85rem;
+            font-size: 0.65rem;
         }
         .my_profileFont .my_profileBimg{
             position: absolute;
             left: 33%;
-            top: 12vh;
+            top: 12%;
         }
         .my_profileFont .my_profileIcon{
-            width: 8%;
+            width: 9%;
             position: absolute;
-            left: 28vh;
+            left: 26vh;
             top: 24vh;
         }
         .my_profileFont .my_profileIcon .pro_icon{
-            width: 65%;
+            padding-left: 20%;
+            width: 85%;
         }
         .my_profile .my_profileBackground .my_card_body{
-            width: 90%;
+            width: 85%;
             margin: 22% auto;
         }
-        .my_profile .my_profileBackground .my_sexcheck{
-            padding-left: 20%;
+        .my_profile .my_profileBackground .my_proForm{
+            width: 100%;
         }
         .my_profile .my_profileBackground .my_proForm{
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.25rem;
         }
         .btn_save{
             position: absolute;
-            left: 32vh;
+            left: 30vh;
             top: 100vh;
         }
     }
@@ -540,7 +557,7 @@
 .my_order{
     width:50%;
     border: 3px solid #1C1C1C;
-    margin: 257px 100px 120px 0;
+    margin: 143px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
     display: none;
 }
@@ -548,9 +565,12 @@
     background-color: #1C1C1C;
     color: white;
     height: 75px;
-    font-size: 1.2rem;
-    padding: 25px 0 0 20px;
+    font-size: 1rem;
+    padding: 20px 0 0 20px;
     border-radius: 27px 27px 0 0;
+}
+.my_order .my_fh6{
+    font-size: 0.85rem;
 }
 .ordr_icongroup{
     height: 10vh;
@@ -559,38 +579,51 @@
     display: flex;
     justify-content: space-evenly;
     position: relative;
-    bottom: 2.5rem;
+    bottom: 2.3rem;
 }
 .order_icon img{
-    width: 3.5rem;
+    width: 3rem;
 }
-.order_line{
+.ordr_icongroup .order_line{
     width: 420px;
     margin: 0 auto;
     padding-top:2rem; 
 }
-.order_userInfo, .order_listBuy, .order_payInfo{
+.order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
+    font-size:0.8rem; 
+    color: #707070;
+}
+.order_userInfo{
     border: 1px solid #707070;
     border-radius: 27px;
     width: 95%;
-    margin: 20px auto;
-    padding: 0.65rem 1rem;
+    margin: 1.5rem auto 1rem auto;
+    padding: 0.5rem 0 0.5rem 1.5rem;
 }
-.order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
-    font-size:1.2rem; 
+.order_listBuy, .order_payInfo{
+    border: 1px solid #707070;
+    border-radius: 27px;
+    width: 95%;
+    margin: 1.2rem auto 1rem auto;
+    padding: 0.5rem 0 0 1.5rem;
+}
+.order_userInfo .userinfomation, .order_payInfo .orderpayInformation{
+    padding-left: 1.5rem
+}
+.userinfomation_info div{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    width: 50px;
     color: #707070;
 }
-.order_fh6{
+.userinfomation_label label{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    margin: 0;
+    padding-left: 4rem;
     color: #707070;
-}
-.userinfomation{
-    padding-left: 1.5rem;
-}
- .userinfo_user label{
-    margin-left: 3rem;
-}
-.userinfo_mobile label, .userinfo_address label{
-    margin-left: 4rem;
 }
 .order_buyList{
     display: flex;
@@ -607,77 +640,103 @@
     height: 100%;
     object-fit: contain;
 }
+.order_name_spec div, .order_count_price div{
+    font-size: 0.75rem;
+    color: #707070;
+}
 .order_infoBuy{
     padding: 0;
     margin: 0;
     margin-left: 2rem;
 }
-.order_send, .order_date, .odrder_total{
-    padding-left: 1.5rem;
+.order_payInfo .order_payinfodata div{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    width: 80px;
+    color: #707070;
 }
- .order_send label, .order_date label{
-    margin-left: 4rem;
+.order_payinfocount label{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    margin: 0;
+    padding-left: 2.5rem;
+    color: #707070;
 }
-.odrder_total label{
-    margin-left: 3rem;
-}
+/* -----------order RWD----------- */
 @media screen and (max-width:578px){
     .my_order{
-        width: 90%;
+        width: 94%;
         margin: 40px auto 40px auto;
         position: relative;
     }
-    .order_line{
-        width: 100%;
+    .my_order .my_orderWord{
+        font-size: 0.85rem;
+        padding-top: 0.25rem;
+    }
+    .my_order .my_fh6{
+        font-size: 0.65rem;
+    }
+    .order_icon img{
+        width: 2.2rem;
+    }
+    .order_icon{
+        bottom: 2rem;
+    }
+    .ordr_icongroup .order_line{
+        width: 85%;
+        margin: 0 auto;
+        padding-top:1.2rem; 
     }
     .order_userInfo, .order_listBuy, .order_payInfo{
         width: 95%;
     }
-    .order_userInfo{
-        margin-top: 3rem;
-    }
     .order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
-        font-size:1rem; 
+        font-size:0.75rem; 
     }
-    .userinfomation{
-        padding-left: 0.25rem;
+    .order_userInfo .userinfomation, .order_payInfo .orderpayInformation{
+        padding-left: 0.6rem
     }
-    .userinfo_address{
-        display: flex;
-        flex-wrap: wrap;
+    .userinfomation_info div{
+        font-size: 0.6rem;
     }
-    .userinfo_address label{
-        /* padding-left: 6rem; */
-        margin: 0;
-    }
-    .order_listBuy .order_buyList img{
-        width: 120%;
-        height: 120%;
-        object-fit: contain;
-    }
-    .order_infoBuy{
-        display: flex;
-        flex-wrap: wrap;
-        color: #7D7D7D;
+    .userinfomation_label label{
+        font-size: 0.6rem;
+        padding-left:1.3rem;
     }
     .order_buyList figure{
-        width: 60px;
-        height: 60px;
-    }
-    .order_name_spec, .order_count_price{
-        padding: 0 5%;
-        margin: 0;
-        font-size: 1rem;
+        width: 70px;
+        height: 70px;
     }
     .order_infoBuy{
-        margin-left: 1rem; 
+        display: flex;
+        flex-direction: column;
+        color: #707070;
+        margin: 0;
+        padding-left: 1rem;
     }
-    .order_send label, .order_date label{
-        margin-left: 2rem;
+    .order_infoBuy .order_name_spec div{
+        padding: 0;
+        margin: 0;
+        font-size: 0.6rem;
     }
-    .odrder_total label{
-        margin-left: 1rem;
+    .order_infoBuy .order_count_price{
+        padding: 0;
     }
+    .order_infoBuy .order_count_price div{
+        padding: 0;
+        margin: 0;
+        font-size: 0.6rem;
+    }
+    .order_payInfo .order_payinfodata div{
+        font-size: 0.6rem;
+    }
+    .order_payinfocount label{
+        font-size: 0.6rem;
+        padding: 0;
+    }
+    
 }
 /* ----------profile_share----------   */
 
