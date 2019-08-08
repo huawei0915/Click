@@ -330,17 +330,17 @@ input[type=range]:focus {
     font-size: .8rem;
 }
 .prd_btn{
-    margin-left: 53%;
+    margin-left: 57%;
 }
 .prd_comparison{
-    width: 120px;
+    width: 100px;
     height: 30px;
     margin-right: 2%;
     font-size: .8rem;
     padding-top: 4px  ;
 }
 .prd_collection{
-    width: 120px;
+    width: 100px;
     height: 30px;
     margin-right: 2%;
     font-size: .8rem;
@@ -356,7 +356,7 @@ input[type=range]:focus {
     margin-right: 2%;
 }  
 .quantity button {
-    width: 30px;
+    width: 25px;
     height: 30px;
     padding: 0 1px;
     border: solid 1px gray;
@@ -374,7 +374,7 @@ input[type=range]:focus {
 }
 .quantity input {
     padding: 0 5px;
-    width: 60px;
+    width: 50px;
     height: 30px;
     font-weight: bold;
     font-size: 15px;
@@ -384,11 +384,12 @@ input[type=range]:focus {
 
 
 .prd_car{
-    width: 120px;
+    width: 100px;
     height: 30px;
     font-size: .8rem;
     padding-top: 4px  ;
     margin-right: 2%;
+    padding: 4px 5px 7px 5px;
 }
 .prd_specification{
     margin: 3%;

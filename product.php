@@ -19,14 +19,15 @@
 
         <div class="prd_btn d-flex">
             <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
+
             <button type="button" class="btn btn-outline-secondary prd_collection"><i class="far fa-star"></i>收藏</button>
-<!-- ------------------------------------- -->
+
             <div class="quantity">
                 <button type="button" class="btn btn-outline-secondary down">-</button>
                 <input type="text" name="quantity_input" id="quantity_number" value="1" min="1" max="10">
                 <button type="button" class="btn btn-outline-secondary up">+</button>
             </div>
-<!-- ------------------------------------- -->
+
             <button type="button" class="btn btn-outline-secondary prd_car">放入購物車</button>
         </div>
 
@@ -69,7 +70,7 @@
 <?php include __DIR__ . '/__script.php' ?>
 
 <script>
-var input = $('input'),
+var input = $('#quantity_number'),
     btnUp = $('button.up'),
     btnDown = $('button.down');
 
