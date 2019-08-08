@@ -251,13 +251,13 @@ $page_name = 'product-list';
 
     var pagination_camera = $('.arrow_list_camera');
     var products_container_camera = $('.camera_box');
-    var pagination_item_str = `<a class="mr-3 prev">
+    var pagination_item_str_camera = `<a class="mr-3 prev">
                 <i class="fas fa-caret-left"></i>
                 上一頁</a>         
                 <a class="ml-3 next" data-total="<%= camera_totalPage %>">下一頁
                     <i class="fas fa-caret-right"></i>
                 </a>`;
-    var pagination_item_fn = _.template(pagination_item_str);
+    var pagination_item_fn_camera = _.template(pagination_item_str_camera);
     var p_item_str_camera = `<div class="prd_cards" style="background-color: #fff;">
                     <figure class="prd_pic"><img src="img/product/camera/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
@@ -271,6 +271,13 @@ $page_name = 'product-list';
 
     var pagination_lens = $('.arrow_list_lens');
     var products_container_lens = $('.lens_box');
+    var pagination_item_str_lens = `<a class="mr-3 prev">
+                <i class="fas fa-caret-left"></i>
+                上一頁</a>         
+                <a class="ml-3 next" data-total="<%= lens_totalPage %>">下一頁
+                    <i class="fas fa-caret-right"></i>
+                </a>`;
+    var pagination_item_fn_lens = _.template(pagination_item_str_lens);
     var p_item_str_lens =`<div class="prd_cards" style="background-color: #fff;">
                     <figure class="prd_pic"><img src="./img/product/lens/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
@@ -282,7 +289,7 @@ $page_name = 'product-list';
                     <div class="compare">比較</div>
                 </div>`;
     var p_item_fn_lens = _.template(p_item_str_lens);
-
+// -----------------------相機分頁----------------
 
     $("html").on("click",'.arrow_list_camera .prev',function(){
         var camera_page = Number($(".camera_page").val())
@@ -306,6 +313,30 @@ $page_name = 'product-list';
         form_post()
     })
 
+// ---------------------鏡頭分頁-----------------------
+    $("html").on("click",'.arrow_list_lens .prev',function(){
+        var lens_page = Number($(".lens_page").val())
+        if(lens_page!=1){
+            $(".lens_page").val(lens_page-1)
+        }else{
+            $(".lens_page").val(1)
+        }
+        console.log($(".lens_page").val())
+        form_post()
+    })
+    $("html").on("click",'.arrow_list_lens .next',function(){
+        var lens_page =  Number($(".lens_page").val())
+        var total = $(this).attr("data-total")
+        if(lens_page!=total){
+            $(".lens_page").val(lens_page+1)
+        }else{
+            $(".lens_page").val(total)
+        }
+        console.log($(".lens_page").val())
+        form_post()
+    })
+
+
     $(".product_form input").change(function() {
         form_post()
     })
@@ -317,9 +348,13 @@ $page_name = 'product-list';
                 'camera_page' : data.camera_page,
                 'camera_totalPage' : data.totalPage_camera,
             }
-            
+           
             pagination_camera.html("")
-            pagination_camera.append(pagination_item_fn(camera_page_array));
+            pagination_camera.append(pagination_item_fn_camera(camera_page_array));
+
+
+           
+
 
             var camera_rows = data.rowsCamera.length
             products_container_camera.html("")
@@ -336,21 +371,33 @@ $page_name = 'product-list';
                     }
                     products_container_camera.append(p_item_fn_camera(camera_array));
             }
-            // var lens_rows = data.rowsLens.length
-            // products_container_lens.html("")
-            // for(var i=0;i<lens_rows;i++){
-            //     var lens_images = data.rowsLens[i]['images']
-            //     var lens_model = data.rowsLens[i]['model']
-            //     var lens_description = data.rowsLens[i]['description']
-            //     var lens_price = data.rowsLens[i]['price']
-            //     var lens_array={
-            //         'images': lens_images,
-            //         'model': lens_model,
-            //         'description': lens_description,
-            //         'price': lens_price,
-            //         }
-            //         products_container_lens.append(p_item_fn_lens(lens_array));
-            // }
+
+
+            var lens_page_array={
+                'lens_page' : data.lens_page,
+                'lens_totalPage' : data.totalPage_lens,
+            }
+            
+            pagination_lens.html("")
+            pagination_lens.append(pagination_item_fn_lens(lens_page_array));
+
+
+            var lens_rows = data.rowsLens.length
+            products_container_lens.html("")
+
+            for(var i=0;i<lens_rows;i++){
+                var lens_images = data.rowsLens[i]['images']
+                var lens_model = data.rowsLens[i]['model']
+                var lens_description = data.rowsLens[i]['description']
+                var lens_price = data.rowsLens[i]['price']
+                var lens_array={
+                    'images': lens_images,
+                    'model': lens_model,
+                    'description': lens_description,
+                    'price': lens_price,
+                    }
+                    products_container_lens.append(p_item_fn_lens(lens_array));
+            }lens_array
         },"json")
     }
 
