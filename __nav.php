@@ -76,16 +76,16 @@
 
 
     <script>
-        function calcQty(cart_data) {
-            var sum = 0;
-            for (let s in cart_data) {
-                sum += cart_data[s];
-            }
-            $('.cart-qty').text(sum);
-        }
+        // function calcQty(cart_data) {
+        //     var sum = 0;
+        //     for (let s in cart_data) {
+        //         sum += cart_data[s];
+        //     }
+        //     $('.cart-qty').text(sum);
+        // }
 
 
-        $.get('add_to_cart.php', function(data) {
-            calcQty(data);
-        }, 'json');
+        // $.get('add_to_cart.php', function(data) {
+        //     calcQty(data);
+        // }, 'json');
     </script>
