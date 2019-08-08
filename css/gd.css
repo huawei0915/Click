@@ -301,16 +301,15 @@ input[type=range]:focus {
 .prdtop{
     background-color: #F1F1F1;
 }    
-
 .prdpic {
     width: 50%;
     background-color: black;
     overflow: hidden;
-    margin: 3%;
+    margin: 5%;
 }
 .prd_introduct{
     width: 50%;
-    margin: 3%;
+    margin: 5%;
 }
 .prd_introduct h1{
     color:#8a8a8a;
@@ -320,13 +319,15 @@ input[type=range]:focus {
 }
 .prd_introduct p{
     line-height: 40px;
+    font-size: .8rem;
 }
 .prdprice{
-    margin-left:55%;
+    margin-left:50%;
 }
 .prdprice h6{
     margin-right:3%;
-    margin-top: 1%;
+    margin-top: 2%;
+    font-size: .8rem;
 }
 .prd_btn{
     margin-left: 53%;
@@ -334,25 +335,60 @@ input[type=range]:focus {
 .prd_comparison{
     width: 120px;
     height: 30px;
-    border: solid 1px gray;
     margin-right: 2%;
+    font-size: .8rem;
+    padding-top: 4px  ;
 }
 .prd_collection{
     width: 120px;
     height: 30px;
-    border: solid 1px gray;
     margin-right: 2%;
+    font-size: .8rem;
+    padding-top: 4px ;
 }
-.prd_quantity{
-    width: 120px;
+.prd_collection i{
+    margin-right: 5%;
+}
+
+/* 數量增減*/
+.quantity {
+    display: flex;
+    margin-right: 2%;
+}  
+.quantity button {
+    width: 30px;
     height: 30px;
+    padding: 0 1px;
     border: solid 1px gray;
-    margin-right: 2%;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}      
+.quantity .down {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}    
+.quantity .up {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
+.quantity input {
+    padding: 0 5px;
+    width: 60px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    border: solid 1px gray;
+    text-align: center;
+}
+
+
 .prd_car{
     width: 120px;
     height: 30px;
-    border: solid 1px gray;
+    font-size: .8rem;
+    padding-top: 4px  ;
+    margin-right: 2%;
 }
 .prd_specification{
     margin: 3%;
@@ -371,3 +407,5 @@ input[type=range]:focus {
     margin: 3%;
     margin-top: 0;
 }
+
+

@@ -18,10 +18,16 @@
         </div>
 
         <div class="prd_btn d-flex">
-            <div class="prd_comparison">商品比較</div>
-            <div class="prd_collection">收藏</div>
-            <div class="prd_quantity">數量</div>
-            <div class="prd_car">放入購物車</div>
+            <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
+            <button type="button" class="btn btn-outline-secondary prd_collection"><i class="far fa-star"></i>收藏</button>
+<!-- ------------------------------------- -->
+            <div class="quantity">
+                <button type="button" class="btn btn-outline-secondary down">-</button>
+                <input type="text" name="quantity_input" id="quantity_number" value="1" min="1" max="10">
+                <button type="button" class="btn btn-outline-secondary up">+</button>
+            </div>
+<!-- ------------------------------------- -->
+            <button type="button" class="btn btn-outline-secondary prd_car">放入購物車</button>
         </div>
 
         <div class="prd_specification d-flex">
@@ -61,4 +67,40 @@
 
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
+
+<script>
+var input = $('input'),
+    btnUp = $('button.up'),
+    btnDown = $('button.down');
+
+btnUp.on("click", function(){
+  var max = parseInt(input.attr("max")),
+      val = parseInt(input.val());
+  
+  if (val < max && val != max) {
+    val++;
+    input.val(val);
+  }
+});
+
+btnDown.on("click", function(){
+  var val = parseInt(input.val());
+  
+  if (val > 1) {
+    val--;
+    input.val(val);
+  }
+});
+
+input.on("focusout", function(){
+  var max = parseInt(input.attr("max")),
+      val = parseInt(input.val());
+  
+  if (val > max) {
+    input.val(max);
+  }
+});
+</script>
+
+
 <?php include __DIR__ . '/__html_end.php' ?>
