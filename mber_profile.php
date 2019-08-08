@@ -102,7 +102,6 @@
             <button class="btn_save">儲存</button>
             </form>
         </div>
-
         <!-- --Password page-- -->
         <div class="my_passWord">
             <div class="my_passBackground">
@@ -215,14 +214,14 @@
                         NT$ 169,000
                     </div>
                     <div class="my_favCart">
-                        <a href="" class="cart_icon">
+                        <a href="" class="cart_icon d-flex">
                             <img src="img/cart.svg" alt="">
-                            加入購物車
+                            <div>加入購物車</div>
                         </a>
                     </div>
                     <div class="my_favRemove">
                         <a href="">
-                            <i class="fas fa-times"></i>
+                            <i class="fas fa-times" style="font-size: 15px;"></i>
                         </a>
                     </div>
                 </div>
