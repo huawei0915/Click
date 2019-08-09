@@ -312,7 +312,7 @@ input[type=range]:focus {
 /* 產品照 */    
 .prdpic{
     width: 50%;
-    /* background-color: black; */
+    background-color: black;
     overflow: hidden;
     margin: 5%;
     margin-bottom: 2%;
