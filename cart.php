@@ -1,26 +1,28 @@
 <?php require __DIR__ . '/__db_connect.php';
 
 
-// if(! empty($_SESSION['cart'])){
-//     $keys = array_keys($_SESSION['cart']);
+if (!empty($_SESSION['cart'])) {
+    // $keys = array_keys($_SESSION['cart']);
 
-//     $sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s)",
-//         implode(',', $keys));
-//     $stmt = $pdo->query($sql);
-//     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $sql = sprintf(
+        "SELECT * FROM `products` WHERE `sid` IN (%s)",
+        implode(',', $keys)
+    );
+    $stmt = $pdo->query($sql);
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//     $dict = array();
-//     foreach($rows as $r){
-//         $dict[$r['sid']] = $r;
-//     }
-//    header('Content-Type: text/plain');
-//    print_r($dict);
-//    print_r($keys);
-//    exit;
-// } else {
-//     header('Location: product-list.php'); //頁面跳轉 產品清單
-//     exit;
-// }
+    $dict = array();
+    foreach ($rows as $r) {
+        $dict[$r['sid']] = $r;
+    }
+    header('Content-Type: text/plain');
+    print_r($dict);
+    print_r($keys);
+    exit;
+} else {
+    header('Location: product-list.php'); //頁面跳轉 產品清單
+    exit;
+}
 
 
 
@@ -68,7 +70,7 @@
                                     <label for="address" class="col-md-2 col-sm-12 col-form-label ">住址</label>
 
                                     <div class="col-sm-4 address_box">
-                                        <select class="custom-select" id="address2">
+                                        <select class="custom-select" id="address0">
                                             <option selected>選縣市</option>
                                             <option value="1">台北市</option>
                                             <option value="2">新北市</option>
@@ -76,7 +78,7 @@
                                         </select>
                                     </div>
                                     <div class="col-sm-4 address_box">
-                                        <select class="custom-select" id="address3">
+                                        <select class="custom-select" id="address1">
                                             <option selected>鄉鎮區</option>
                                             <option value="1">大安區</option>
                                             <option value="2">文山區</option>
@@ -171,14 +173,34 @@
                             <li></li>
                         </ul>
                         <div class="shap_list_border">
+                            <?php foreach ($keys as $k) :
+                                $r = $dict[$k];
+                                ?>
+                                <div class="shap_list_main p-item" data-sid="<?= $r['sid'] ?>">
+                                    <img src="img/product/camera<?= $r['images'] ?>.png" alt="">
+                                    <h4><?= $r['model'] ?></h4>
+                                    <h5><?= $r['price'] ?></h5>
+                                    <div class="quantity" data-qty="<?= $_SESSION['cart'][$k] ?>">
+                                        <button type="button" class="btn btn-outline-secondary down">-</button>
+                                        <input type="text" name="quantity_input" id="quantity_number1" value="<?= $i ?>" min="1" max="10" data-num="1">
+                                        <button type="button" class="btn btn-outline-secondary up">+</button>
+                                    </div>
+                                    <div class="money subtotal">NT$<input type="text" readonly value="150000"></div>
+                                    <p class="remove-btn">X</p>
+
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+
+                        <!-- <div class="shap_list_border">
                             <div class="shap_list_main">
                                 <img src="img/1.png" alt="">
                                 <h4>產品名稱</h4>
                                 <h5>產品單價</h5>
-                                <div class="d-flex count_box">
-                                    <div>-</div>
-                                    <input class="count" type="text" readonly value="1">
-                                    <div>+</div>
+                                <div class="quantity">
+                                    <button type="button" class="btn btn-outline-secondary down">-</button>
+                                    <input type="text" name="quantity_input" id="quantity_number2" value="1" min="1" max="10" data-num="2">
+                                    <button type="button" class="btn btn-outline-secondary up">+</button>
                                 </div>
                                 <div class="money">NT$<input type="text" readonly value="150000"></div>
                                 <p>X</p>
@@ -190,30 +212,15 @@
                                 <img src="img/1.png" alt="">
                                 <h4>產品名稱</h4>
                                 <h5>產品單價</h5>
-                                <div class="d-flex count_box">
-                                    <div>-</div>
-                                    <input class="count" type="text" readonly value="1">
-                                    <div>+</div>
-                                </div>
-                                <div class="money">NT$<input type="text" readonly value="150000"></div>
-                                <p>X</p>
-                            </div>
-                        </div>
-
-                        <div class="shap_list_border">
-                            <div class="shap_list_main">
-                                <img src="img/1.png" alt="">
-                                <h4>產品名稱</h4>
-                                <h5>產品單價</h5>
-                                <div class="d-flex count_box">
-                                    <div>-</div>
-                                    <input class="count" type="text" readonly value="1">
-                                    <div>+</div>
+                                <div class="quantity">
+                                    <button type="button" class="btn btn-outline-secondary down">-</button>
+                                    <input type="text" name="quantity_input" id="quantity_number3" value="1" min="1" max="10" data-num="3">
+                                    <button type="button" class="btn btn-outline-secondary up">+</button>
                                 </div>
                                 <div class="money">NT$<input type="text" readonly value="15000"></div>
                                 <p>X</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- -------------------------------------------Z -->
 
@@ -226,10 +233,10 @@
                             <img src="img/1.png" alt="">
                             <h4>產品名稱</h4>
                             <h5>產品單價</h5>
-                            <div class="d-flex count_box">
-                                <div>-</div>
-                                <input class="count" type="text" readonly value="1">
-                                <div>+</div>
+                            <div class="quantity">
+                                <button type="button" class="btn btn-outline-secondary down">-</button>
+                                <input type="text" name="quantity_input" id="quantity_number4" value="1" min="1" max="10" data-num="4">
+                                <button type="button" class="btn btn-outline-secondary up">+</button>
                             </div>
                             <div class="money">NT$<input type="text" readonly value="15000"></div>
                             <p>X</p>
@@ -573,6 +580,41 @@
         });
 
     });
+
+
+    var num = 1;
+
+    var input = $('#quantity_number' + num), //
+        btnUp = $('button.up'), //+
+        btnDown = $('button.down'); //-
+
+    $('button.up').on("click", function() {
+        var max = parseInt(input.attr("max")),
+            val = parseInt(input.val());
+
+        if (val < max && val != max) {
+            val++;
+            input.val(val);
+        }
+    });
+
+    $('button.down').on("click", function() {
+        var val = parseInt(input.val());
+
+        if (val > 1) {
+            val--;
+            input.val(val);
+        }
+    });
+
+    input.on("focusout", function() {
+        var max = parseInt(input.attr("max")),
+            val = parseInt(input.val());
+
+        if (val > max) {
+            input.val(max);
+        }
+    });
 </script>
 <script>
     $(".visa").click(function() {
@@ -582,7 +624,65 @@
         $('[data-toggle="popover"]').popover()
     })
 </script>
+<script>
+    var p_items = $('.p-item');
+    var remove_btns = $('.remove-btn');
 
+    var dallorCommas = function(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    };
+
+    p_items.each(function() {
+        var price = $(this).find('.price').attr('data-price');
+        var qty = $(this).find('.qty').attr('data-qty');
+        $(this).find('.subtotal').text('$ ' + dallorCommas(price * qty));
+        $(this).find('.price').text('$ ' + dallorCommas(price));
+
+        // select element
+        $(this).find('.qty').val(qty);
+    });
+
+    remove_btns.click(function() {
+        var tr = $(this).closest('.p-item');
+        var sid = tr.attr('data-sid');
+
+        $.get('add_to_cart.php', {
+            sid: sid
+        }, function(data) {
+            calcQty(data);
+            tr.remove();
+            calcTotalPrice();
+        }, 'json');
+    });
+
+    $('select.qty').change(function() {
+        var tr = $(this).closest('.p-item');
+        var sid = tr.attr('data-sid');
+        var price = tr.find('.price').attr('data-price');
+        var qty = $(this).val();
+        $.get('add_to_cart.php', {
+            sid: sid,
+            qty: qty
+        }, function(data) {
+            calcQty(data);
+            tr.find('.subtotal').text('$ ' + dallorCommas(price * qty));
+            calcTotalPrice();
+        }, 'json');
+    });
+
+    function calcTotalPrice() {
+        var t = 0;
+        $('.p-item').each(function() {
+            var price = $(this).find('.price').attr('data-price');
+            var qty = $(this).find('.qty').val();
+
+            t += price * qty;
+        });
+
+        $('#total_price').text('$ ' + dallorCommas(t));
+    }
+    calcTotalPrice();
+</script>
 
 
 
