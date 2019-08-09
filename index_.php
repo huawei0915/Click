@@ -117,12 +117,12 @@
                                         <div id="arm"></div>
                                 </form>
                                 <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;"></a>
-                                <a href=""><img src="img/icon/會員.svg" alt="" style="height: 26px;" class="px-2"></a>
+                                <a href="A_login.php"><img src="img/icon/會員.svg" alt="" style="height: 26px;" class="px-2"></a>
                             </div>
                             <div class="nar_right">
                                 <ul class="row">
-                                    <li><a href="">關於我們</a></li>
-                                    <li><a href="">客服支援</a></li>
+                                    <li><a href="A_aboutus.php">關於我們</a></li>
+                                    <li><a href="A_service.php">客服支援</a></li>
                                 </ul>
                             </div>
                     </div>
@@ -233,13 +233,13 @@
                                 <div id="arm"></div>
                         </form>
                         <a href="cart.php"><img src="img/icon/shop.svg" alt="購物車" class="px-3 ml-2 shop"></a>
-                        <a href=""><img src="img/icon/會員.svg" alt="會員中心" class="px-2"></a>
+                        <a href="A_login.php"><img src="img/icon/會員.svg" alt="會員中心" class="px-2"></a>
                         <div class="menu transition show_mobile ">
                             <div class="bar bar1 transition"></div>
                             <div class="bar bar2 transition"></div>
                             <div class="bar bar3 transition"></div>
                             <ul class="transition">
-                                <li><a href="" class="transition"></a></li>
+                                <li><a href="#" class="transition"></a></li>
                                 <li><a href="" class="transition">CANON</a></li>
                                 <li><a href="" class="transition">NIKON</a></li>
                                 <li><a href="" class="transition">LEICA</a></li>

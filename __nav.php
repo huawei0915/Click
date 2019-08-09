@@ -44,8 +44,8 @@
                             <li><a href="product-list.php" class="transition">產品列表</a></li>
                             <li><a href="diy.php" class="transition">首選推薦</a></li>
                             <li><a href="" class="transition">攝影分享</a></li>
-                            <li><a href="" class="transition">關於我們</a></li>
-                            <li><a href="" class="transition">客服支援</a></li>
+                            <li><a href="A_aboutus.php" class="transition">關於我們</a></li>
+                            <li><a href="A_service.php" class="transition">客服支援</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                     <li><a href="">攝影分享</a></li>
                 </ul>
                 <ul class="d-flex nav-r">
-                    <li><a href="">關於我們</a></li>
-                    <li><a href="">客服支援</a></li>
+                    <li><a href="A_aboutus.php">關於我們</a></li>
+                    <li><a href="A_service.php">客服支援</a></li>
                 </ul>
             </div>
         </div>
