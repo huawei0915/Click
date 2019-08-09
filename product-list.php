@@ -209,7 +209,7 @@ $page_name = 'product-list';
                 </a>`;
     var pagination_item_fn_camera = _.template(pagination_item_str_camera);
     var p_item_str_camera = `<div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="img/product/camera/<%= images %>.png" alt=""></figure>
+                    <figure class="prd_pic"><img src="img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
                     <ul>
                         <li><%= description %></li>
@@ -229,7 +229,7 @@ $page_name = 'product-list';
                 </a>`;
     var pagination_item_fn_lens = _.template(pagination_item_str_lens);
     var p_item_str_lens = `<div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="./img/product/lens/<%= images %>.png" alt=""></figure>
+                    <figure class="prd_pic"><img src="./img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
                     <ul>
                         <li>焦距 : <%= description %></li>
@@ -250,7 +250,7 @@ $page_name = 'product-list';
                 </a>`;
     var pagination_item_fn_tools = _.template(pagination_item_str_tools);
     var p_item_str_tools = `<div class="prd_cards" style="background-color: #fff;">
-                    <figure class="prd_pic"><img src="./img/product/tools/<%= images %>.png" alt=""></figure>
+                    <figure class="prd_pic"><img src="./img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
                     <ul>
                         <li><%= description %></li>
@@ -270,7 +270,7 @@ $page_name = 'product-list';
         } else {
             $(".camera_page").val(1)
         }
-        // console.log($(".camera_page").val())
+        console.log($(".camera_page").val())
         form_post()
     })
     $("html").on("click", '.arrow_list_camera .next', function() {
@@ -281,7 +281,7 @@ $page_name = 'product-list';
         } else {
             $(".camera_page").val(total)
         }
-        // console.log($(".camera_page").val())
+        console.log($(".camera_page").val())
         form_post()
     })
 
@@ -293,7 +293,7 @@ $page_name = 'product-list';
         } else {
             $(".lens_page").val(1)
         }
-        // console.log($(".lens_page").val())
+        console.log($(".lens_page").val())
         form_post()
     })
     $("html").on("click", '.arrow_list_lens .next', function() {
@@ -304,7 +304,7 @@ $page_name = 'product-list';
         } else {
             $(".lens_page").val(total)
         }
-        // console.log($(".lens_page").val())
+        console.log($(".lens_page").val())
         form_post()
     })
     // ---------------------配件分頁-----------------------
@@ -315,18 +315,19 @@ $page_name = 'product-list';
         } else {
             $(".tools_page").val(1)
         }
-        // console.log($(".tools_page").val())
+        console.log($(".tools_page").val())
         form_post()
     })
     $("html").on("click", '.arrow_list_tools .next', function() {
         var tools_page = Number($(".tools_page").val())
         var total = $(this).attr("data-total")
+        console.log(total)
         if (tools_page != total) {
             $(".tools_page").val(tools_page + 1)
         } else {
             $(".tools_page").val(total)
         }
-        // console.log($(".tools_page").val())
+        console.log($(".tools_page").val())
         form_post()
     })
     // ----------------------
@@ -403,12 +404,14 @@ $page_name = 'product-list';
                 'tools_page': data.tools_page,
                 'tools_totalPage': data.totalPage_tools,
             }
+            console.log(data.totalPage_tools);
 
             pagination_tools.html("")
             pagination_tools.append(pagination_item_fn_tools(tools_page_array));
 
 
             var tools_rows = data.rowsTools.length
+            console.log(tools_rows);
             products_container_tools.html("")
 
             for (var i = 0; i < tools_rows; i++) {
@@ -430,8 +433,9 @@ $page_name = 'product-list';
 
 
     form_post({})
+    
 </script>
-
+ 
 
 
 
