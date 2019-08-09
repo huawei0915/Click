@@ -146,11 +146,11 @@
 .my_favorite{
     width:50%;
     border: 3px solid #1C1C1C;
-    margin: 143px 100px 120px 0;
+    margin: 135px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
     display: none;
 }
-.my_favorite .my_favWord{
+.my_favWord{
     background-color: #1C1C1C;
     color: white;
     height: 75px;
@@ -158,7 +158,7 @@
     padding: 20px 0 0 20px;
     border-radius: 27px 27px 0 0;
 }
-.my_favorite .my_favList{
+.my_favList{
     border: 1.2px solid #1C1C1C;
     margin: 15px;
     border-radius: 27px;
@@ -166,135 +166,129 @@
 .my_favImg{
     width: 120px;
 }
-.my_favorite .my_favList .my_favImg img{
+.my_favImg img{
     width: 75%;
     margin: 10px 0 10px 20px;
 }
-.my_favList .my_favBkg{
-    margin: 1rem;
+.my_favBkg{
+    margin: .75rem;
     width: 375px;
     position: relative;
 }
-.my_favList .my_favBkg .my_favItem{
+.my_favItem{
     width: 200px;
     color: #1C1C1C;
     line-height: 30px;
     font-size: 0.85rem;  
 }
-.my_favList .my_favBkg .my_favSpec{
+.my_favSpec{
     width: 240px;
     font-size: 0.75rem;
     color: #707070;
     line-height: 20px;
 }
-.my_favList .my_favBkg .my_favDate{
+.my_favDate{
     width: 240px;
     font-size: 0.75rem;
     color: #707070;
     line-height: 20px;
 }
-.my_favList .my_favBkg .my_favCart img{
+.my_favCart img{
     width: 10%;
 }
-.my_favList .my_favBkg .my_favRemove{
+.my_favRemove{
     width: 20px;
     text-align: center;
     position: absolute;
     right: 15px;
     top:0px;
 }
-.my_favList .my_favBkg .my_favRemove i{
+.my_favRemove i{
     color: #7D7D7D;
+    position: absolute;
+    top: 0;
 }
-.my_favList .my_favBkg .my_favPrice{
-    font-size: 0.9rem;
+.my_favPrice{
+    font-size: 0.75rem;
     color: #7D7D7D;
     width:100px; 
     position: absolute;
     right: 0;
-    top: 35px; 
+    top: 29px; 
 }
-.my_favList .my_favBkg .my_favCart{
+.my_favCart div{
+    font-size: 0.75rem;
+    padding-left: .55rem;
+}
+.my_favCart{
     width: 120px;
     position: absolute;
-    right: 0;
-    top: 65px;
+    right: -3px;
+    top: 48px;
 }
-.my_favList .my_favBkg .my_favCart .cart_icon{
+.cart_icon{
     font-size: 1rem;
     color: #7D7D7D;
     color: #1C1C1C;
     line-height: 0;
 }
-.my_favList .my_favBkg .my_favCart img{
+.my_favCart img{
     width: 16%;
     padding-bottom: 5px;
 }
 /* -----------收藏清單RWD----------- */
 @media screen and (max-width:578px){
     .my_favorite{
-        width: 86%;
+        width: 94%;
         margin: 40px auto 40px auto;
+        position: relative;
     }
-    .my_favorite .my_favList{
-        height: 130px;
+    .my_favWord{
+        font-size: 0.8rem;
+    }
+    .my_favList{
+        width: 95%;
+        min-height: 110px;
+        margin: 0.65rem auto;
         border-radius: 16px;
     }
-    .my_favorite .my_favList .my_favImg img{
-        width: 100%;
+    .my_favImg img{
+        width: 80%;
         margin: 15px 10px 8px 8px;
     }
     .my_favList .my_favBkg{
-        margin: 25px 0 10px 15px;
+        margin: .65rem 0 .25rem .1rem;
         width: 300px;
     }
-    .my_favList .my_favBkg .my_favItem{
-        width: 200px;
-        height: 20px;
-        color: #1C1C1C;
-        line-height: 20px;
-        font-size: 1rem;  
+    .my_favItem{
+        font-size: 0.7rem; 
+        width: 150px; 
     }
-    .my_favList .my_favBkg .my_favSpec{
-        width: 200px;
-        height: 20px;
-        font-size: 0.85rem;
-        color: #707070;
-        line-height: 20px;
+    .my_favSpec, .my_favDate{
+        font-size: 0.6rem;
+        width: 150px;
     }
-    .my_favList .my_favBkg .my_favDate{
-        width: 200px;
-        height: 20px;
-        font-size: 0.85rem;
-        color: #707070;
-        line-height: 20px;
+    .my_favPrice, .my_favCart div{
+        font-size: 0.6rem;
     }
-    .my_favList .my_favBkg .my_favPrice{
-        font-size: 1rem;
-        color: #7D7D7D;
-        width:100px; 
+    .my_favPrice{
         position: absolute;
-        right: 8px;
-        top: 70px; 
+        top: 80%;
+        right: 0;
+        width: 80px;
     }
-    .my_favList .my_favBkg .my_favCart{
-        width: 120px;
-        font-size: 1rem;
-        line-height: 20px;
+    .my_favCart div{
+        line-height: 1.8em;
+    }
+    .my_favCart{
         position: absolute;
-        left: -75px;
-        top: 72px;
+        left: -35%;
+        top: 80%;
     }
-    .my_favList .my_favBkg .my_favCart img{
-        width: 16%;
-        padding-bottom: 6px;
-    }
-    .my_favList .my_favBkg .my_favRemove{
-        width: 20px;
-        text-align: center;
+    .my_favRemove i{
         position: absolute;
-        right: 8px;
-        top:-20px;
+        right: -1px;
+        top: -5px;
     }
 }
 /*------modify password area------  */
@@ -328,6 +322,18 @@
 .my_passWord .my_passForm .form-group{
     width: 58%;
     margin: 20px auto; 
+}
+.edit_ok{
+
+    width: 200px;
+    color: #1C1C1C;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    margin: 20px 0 0 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 40px;
+    display: none;
 }
 .my_passWord .my_passForm .form-group .my_form{
     border-radius: 1rem;
@@ -551,6 +557,7 @@
             position: absolute;
             left: 30vh;
             top: 100vh;
+            font-size: 0.8rem;
         }
     }
 /* ----------order area---------- */
