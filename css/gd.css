@@ -356,6 +356,7 @@ input[type=range]:focus {
     margin-right: 2%;
     font-size: .8rem;
     padding-top: 4px  ;
+    box-shadow: 0 2px 2px #aaa;
 }
 .prd_collection{
     width: 100px;
@@ -363,6 +364,7 @@ input[type=range]:focus {
     margin-right: 2%;
     font-size: .8rem;
     padding-top: 4px ;
+    box-shadow: 0 2px 2px #aaa;
 }
 .prd_collection i{
     margin-right: 5%;
@@ -381,6 +383,8 @@ input[type=range]:focus {
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
+    box-shadow: 0 2px 2px #aaa;
+
 }      
 .quantity .down {
     border-top-right-radius: 0;
@@ -398,6 +402,8 @@ input[type=range]:focus {
     font-size: 15px;
     border: solid 1px gray;
     text-align: center;
+    box-shadow: 0 2px 2px #aaa;
+
 }
 /* 數量增減鈕 END*/
 
@@ -408,6 +414,8 @@ input[type=range]:focus {
     padding-top: 4px  ;
     margin-right: 2%;
     padding: 4px 5px 7px 5px;
+    box-shadow: 0 2px 2px #aaa;
+
 }
 .prd_specification{
     margin:0 5%;
