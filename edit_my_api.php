@@ -10,7 +10,7 @@ $result = [
 
 // TODO: 檢查欄位
 if(empty($_POST['sid']) or empty($_POST['nickname'])){
-    // 三個欄位只要有一個沒填, 就結束
+    // 欄位只要有一個沒填, 就結束
     echo json_encode($result);
     exit;
 }

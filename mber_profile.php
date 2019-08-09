@@ -66,6 +66,7 @@ if (empty($row)) {
         <!-- --profile page-- -->
         <div class="my_profile">
             <div class="my_profileBackground">
+            <div id="alertInfo" class="alert alert-primary" role="alert" style="display: none;"></div>
                 <div class="my_profileFont py-3">
                     編輯個人資料 Profile
                     <br>
@@ -115,18 +116,19 @@ if (empty($row)) {
                 </div>
             </div>
             <button class="btn_save" id="submitBtn">儲存</button>
-            <div class="edit_ok">修改完成</div>
+            <div class="edit_ok">修改成功</div>
             </form>
         </div>
         <!-- --Password page-- -->
         <div class="my_passWord">
             <div class="my_passBackground">
+            <div id="alertInfo" class="alert alert-primary" role="alert" style="display: none;"></div>
                 <div class="my_passFont py-3">
                     更改密碼 Change The Password <br>
                     <h6 class="my_fh6 py-2">為了保護您帳號安全，請謹慎保管個人密碼</h6>
                 </div>
                 <div class="my_passForm">
-                    <form action="" method="post" id="form1" method="post" onsubmit="return checkForm_pwd()">
+                    <form action="" id="pwdform" method="post" onsubmit="return checkForm_pwd()">
                         <div class="form-group">
                             <input type="password" class="form-control my_form" name="password" id="password" placeholder="請輸入原始密碼">
                         </div>
@@ -287,10 +289,10 @@ if (empty($row)) {
     // });
 </script>
 <script>
-   
+   var alertInfo = $('#alertInfo');
     var submitBtn = $('#submitBtn');
     var $nickname = $('#nickname');
-
+    var editOk=$('.edit_ok');
     // var $password = $('#password');
 
     var fields = [$nickname];
@@ -317,14 +319,17 @@ if (empty($row)) {
                     alertInfo.addClass('alert-success');
 
                     $('#my_nickname').text($nickname.val());
+                    
+                    // $('.edit_ok').delay(2000).hide(0);
                 } else {
                     alertInfo.removeClass('alert-success');
                     alertInfo.addClass('alert-danger');
                     // submitBtn.show();
                 }
-                // alertInfo.text(data.info);
+                alertInfo.text(data.info);
                 // alertInfo.show();
-                $('.edit_ok').delay(2000).hide(0);
+                editOk.show();
+                editOk.delay(2000).hide(0);
             }, 'json');
         } else {
             // submitBtn.show();
@@ -334,7 +339,7 @@ if (empty($row)) {
     }
 // ------------------------------------------------------------------
 
-
+    var al_password=$('.al_password');
     var $password = $('#password');
     var $newpassword=$("#newpassword");
     var $confirmpassword=$("#confirmpassword");
@@ -343,6 +348,7 @@ if (empty($row)) {
 
     function checkForm_pwd() {
         // 先回復到原來的狀態
+
         // fields.forEach(function(val){
         //     val.next().text('');
         // });
@@ -361,7 +367,7 @@ if (empty($row)) {
         }
 
         if(isPass){
-            $.post('edit_my_pwd_api.php', $('#form1').serialize(), function(data){
+            $.post('edit_my_pwd_api.php', $('#pwdform').serialize(), function(data){
                 console.log(data);
 
                 if(data.success){
@@ -376,10 +382,11 @@ if (empty($row)) {
                     // submitBtn.show();
                 }
                 // alertInfo.text(data.info);
-                // alertInfo.show();
-                // $('.al_password').delay(2000).hide(0);
+                al_password.show();
+                al_password.delay(2000).hide(0);
             }, 'json');
         } else {
+
             // $('.al_password').delay(2000).hide(0);
         }
         return false;

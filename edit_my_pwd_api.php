@@ -8,9 +8,10 @@ $result = [
     'post' => $_POST,
 ];
 
+
 // TODO: 檢查欄位
-if( empty($_POST['password']) ){
-    // 三個欄位只要有一個沒填, 就結束
+if(empty($_POST['sid']) or empty($_POST['password'])){
+    // 欄位只要有一個沒填, 就結束
     echo json_encode($result);
     exit;
 }
@@ -24,13 +25,13 @@ $stmt->execute([
     $_POST['password'],
 ]);
 
-if( $stmt->rowCount()<1 ){
-    $result['code'] = 430;
-    $result['info'] = '密碼錯誤';
+// if( $stmt->rowCount()<1 ){
+//     $result['code'] = 430;
+//     $result['info'] = '密碼錯誤';
 
-    echo json_encode($result);
-    exit;
-}
+//     echo json_encode($result);
+//     exit;
+// }
 
 
 $sql = "UPDATE `members` SET `password`=SHA1(?) WHERE `sid`=?";
@@ -46,7 +47,7 @@ if($stmt->rowCount()==1){
     $result['success'] = true;
     $result['info'] = '資料修改成功';
 
-    $_SESSION['loginUser']['nickname'] = $_POST['nickname'];
+    // $_SESSION['loginUser']['nickname'] = $_POST['nickname'];
 } else {
     $result['info'] = '資料修改失敗';
     $result['code'] = 400;
