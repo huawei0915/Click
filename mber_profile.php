@@ -1,3 +1,17 @@
+<?php
+require __DIR__ . '/__db_connect.php';
+
+$page_name = 'edit_my';
+
+$sql = "SELECT * FROM `members` WHERE `sid`=" . intval($_SESSION['loginUser']['sid']);
+$row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+
+if (empty($row)) {
+    header('Location: ./');
+    exit;
+}
+
+?>
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
 
@@ -66,40 +80,42 @@
                     </div>
                 </div>
                 <div class="my_card_body">
-                    <form action="">
+                    <form action="" id="myeditform" method="post" onsubmit="return checkForm_my()">
                         <div class="form-group my_proForm">
+                            <input type="hidden" name="sid" value="<?= $row['sid'] ?>">
                             <label class="my_label py-1" for="email">信箱</label>
-                            <input type="text" class="form-control my_proControl" id="email" name="email" placeholder="請輸入E-mail">
+                            <input type="text" class="form-control my_proControl" id="email" name="email" value="<?= htmlentities($row['email']) ?>" disabled>
                             <small class="form-text"></small>
                         </div>
                         <div class="form-group my_proForm">
                             <label class="py-1" for="mobile">手機</label>
-                            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="請輸入手機號碼">
+                            <input type="text" class="form-control" id="mobile" name="mobile" value="<?= htmlentities($row['mobile']) ?>">
                             <small class="form-text"></small>
                         </div>
                         <div class="form-group my_proForm">
                             <label class="py-1" for="nickname">暱稱</label>
-                            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="請輸入暱稱">
+                            <input type="text" class="form-control" id="nickname" name="nickname" value="<?= htmlentities($row['nickname']) ?>">
                             <small class="form-text"></small>
                         </div>
                         <div class="form-check form-check-inline py-2">
-                            <input class="form-check-input" type="radio" name="sex" id="inlineRadio1" value="1">
+                            <input class="form-check-input" type="radio" name="sex" id="inlineRadio1" value="1" value="<?= htmlentities($row['sex']) ?>">
                             <label class="form-check-label my_sexcheck text-nowrap" for="inlineRadio1">男</label>
-                            <input class="form-check-input" type="radio" name="sex" id="inlineRadio2" value="2">
+                            <input class="form-check-input" type="radio" name="sex" id="inlineRadio2" value="2" value="<?= htmlentities($row['sex']) ?>">
                             <label class="form-check-label my_sexcheck text-nowrap ml-4" for="inlineRadio2">女</label>
                         </div>
                         <div class="form-group my_proForm">
                             <label class="py-1" for="birthday">生日</label>
-                            <input type="text" class="form-control" id="birthday" name="birthday" placeholder="YYYY-MM-DD">
+                            <input type="date" class="form-control" id="birthday" name="birthday" value="<?= htmlentities($row['birthday']) ?>">
                         </div>
                         <div class="form-group my_proForm">
                             <label class="py-1" for="address">地址</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="輸入詳細地址">
+                            <input type="text" class="form-control" id="address" name="address" value="<?= htmlentities($row['address']) ?>">
                             <small class="form-text"></small>
                         </div>
                 </div>
             </div>
-            <button class="btn_save">儲存</button>
+            <button class="btn_save" id="submitBtn">儲存</button>
+            <div class="edit_ok">修改完成</div>
             </form>
         </div>
         <!-- --Password page-- -->
@@ -110,20 +126,22 @@
                     <h6 class="my_fh6 py-2">為了保護您帳號安全，請謹慎保管個人密碼</h6>
                 </div>
                 <div class="my_passForm">
-                    <form action="" method="post" id="form1" name="form1">
+                    <form action="" method="post" id="form1" method="post" onsubmit="return checkForm_pwd()">
                         <div class="form-group">
-                            <input type="password" class="form-control my_form" name="password" placeholder="請輸入原始密碼">
+                            <input type="password" class="form-control my_form" name="password" id="password" placeholder="請輸入原始密碼">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control my_form" name="newpassword" placeholder="請輸入新密碼">
+                            <input type="password" class="form-control my_form" name="newpassword" id="newpassword" placeholder="請輸入新密碼">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control my_form" name="confirmpassword" placeholder="請再次輸入新密碼">
+                            <input type="password" class="form-control my_form" name="confirmpassword" id="confirmpassword" placeholder="請再次輸入新密碼">
                         </div>
+                        <button class="confirmBtn" type="submit" id="confirmBtn">確認</button>
+                        <div class="al_password">修改完成</div>
                     </form>
                 </div>
-                <button class="confirmBtn" id="confirmBtn">確認</button>
-                <div class="al_password">修改完成</div>
+                <!-- <button class="confirmBtn" id="confirmBtn">確認</button>
+                <div class="al_password">修改完成</div> -->
             </div>
         </div>
         <!-- order -->
@@ -263,14 +281,110 @@
 
 
 
-    $("#confirmBtn").click(function() {
-        $('.al_password').show();
-        $('.al_password').delay(2000).hide(0);
-
-
-    });
+    // $("#confirmBtn").click(function() {
+    //     $('.al_password').show();
+    //     $('.al_password').delay(2000).hide(0);
+    // });
 </script>
+<script>
+   
+    var submitBtn = $('#submitBtn');
+    var $nickname = $('#nickname');
 
+    // var $password = $('#password');
+
+    var fields = [$nickname];
+
+    function checkForm_my() {
+        // 先回復到原來的狀態
+        fields.forEach(function(val) {
+            val.next().text('');
+        });
+
+        var isPass = true; // 表單是否有通過檢查
+
+        if ($nickname.val().length < 2) {
+            isPass = false;
+            $nickname.next().text('請輸入兩個以上的字元');
+        }
+
+        if (isPass) {
+            $.post('edit_my_api.php', $('#myeditform').serialize(), function(data) {
+                console.log(data);
+
+                if (data.success) {
+                    alertInfo.removeClass('alert-danger');
+                    alertInfo.addClass('alert-success');
+
+                    $('#my_nickname').text($nickname.val());
+                } else {
+                    alertInfo.removeClass('alert-success');
+                    alertInfo.addClass('alert-danger');
+                    // submitBtn.show();
+                }
+                // alertInfo.text(data.info);
+                // alertInfo.show();
+                $('.edit_ok').delay(2000).hide(0);
+            }, 'json');
+        } else {
+            // submitBtn.show();
+            
+        }
+        return false;
+    }
+// ------------------------------------------------------------------
+
+
+    var $password = $('#password');
+    var $newpassword=$("#newpassword");
+    var $confirmpassword=$("#confirmpassword");
+
+    // var fields = [$password];
+
+    function checkForm_pwd() {
+        // 先回復到原來的狀態
+        // fields.forEach(function(val){
+        //     val.next().text('');
+        // });
+      
+
+        var isPass = true; // 表單是否有通過檢查
+
+        if($password.val().length < 6) {
+            isPass = false;
+            $password.next().text('請輸入六個以上的字元');
+        }
+
+        if($newpassword !== $confirmpassword){
+            isPass = false;
+            $newpassword.next().text('確認密碼錯誤');
+        }
+
+        if(isPass){
+            $.post('edit_my_pwd_api.php', $('#form1').serialize(), function(data){
+                console.log(data);
+
+                if(data.success){
+                    //location.href = 'data_list.php';
+                    alertInfo.removeClass('alert-danger');
+                    alertInfo.addClass('alert-success');
+
+                    // $('#my_nickname').text($nickname.val());
+                } else {
+                    alertInfo.removeClass('alert-success');
+                    alertInfo.addClass('alert-danger');
+                    // submitBtn.show();
+                }
+                // alertInfo.text(data.info);
+                // alertInfo.show();
+                // $('.al_password').delay(2000).hide(0);
+            }, 'json');
+        } else {
+            // $('.al_password').delay(2000).hide(0);
+        }
+        return false;
+    }
+</script>
 
 
 

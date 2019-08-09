@@ -9,14 +9,15 @@ $result = [
 ];
 
 // TODO: 檢查欄位
-if(empty($_POST['sid']) or empty($_POST['password']) or empty($_POST['nickname'])){
+if( empty($_POST['password']) ){
     // 三個欄位只要有一個沒填, 就結束
     echo json_encode($result);
     exit;
 }
 
 // 判斷密碼正不正確
-$sql = "SELECT * FROM `members` WHERE `password`=SHA1(?) AND `password`=SHA1(?)";
+$sql = "SELECT * FROM `members` WHERE `sid`=? AND `password`=SHA1(?)";
+
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['sid'],
