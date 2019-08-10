@@ -38,7 +38,8 @@ $row = $stmt->fetch();
             <div class="prd_btn d-flex">
                 <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
 
-                <button type="button" class="btn btn-outline-secondary prd_collection"><i class="far fa-star"></i>收藏</button>
+                <button type="button" class="btn btn-outline-secondary prd_collection" onclick="myFunction()" id="myclt"><i class="far fa-star"></i>收藏</button>
+                
 
                 <div class="quantity">
                     <button type="button" class="btn btn-outline-secondary down">-</button>
@@ -169,6 +170,21 @@ $row = $stmt->fetch();
 
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myclt");
+      x.classList.toggle("far fa-star");
+      
+  if (x.innerHTML === "A") {
+    x.innerHTML = "B";
+    x.classList.toggle("fas fa-star");
+  } else {
+    x.innerHTML = "A";
+    x.classList.toggle("far fa-star");
+  }
+}
+</script>
 
 <script>
     var input = $('#quantity_number'),
