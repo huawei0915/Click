@@ -28,8 +28,8 @@ $page_name = 'product-list';
                                 <span class="output outputTwo"></span>
                                 <span class="full-range"></span>
                                 <span class="incl-range"></span>
-                                <input value="1000" min="0" max="400000" step="1" type="range" name="min">
-                                <input value="400000" min="0" max="400000" step="1" type="range" name="max">
+                                <input value="1000" min="0" max="300000" step="1" type="range" name="min">
+                                <input value="300000" min="0" max="300000" step="1" type="range" name="max">
                             </section>
                         </div>
                     </div>
@@ -209,7 +209,7 @@ $page_name = 'product-list';
                 </a>`;
     var pagination_item_fn_camera = _.template(pagination_item_str_camera);
     var p_item_str_camera = `<div class="prd_cards" style="background-color: #fff;">
-                    <a href="product.php?sid=<%= sid %>">
+                    <a href="product.php?sid=<%= sid %>" style="color:black;">
                     <input type="hidden" value="1">
                     <figure class="prd_pic"><img src="img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>

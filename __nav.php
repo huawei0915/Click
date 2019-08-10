@@ -81,11 +81,24 @@
             for (let s in cart_data) {
                 sum += cart_data[s];
             }
+      
             $('.cart-qty').text(sum);
+
         }
 
 
         $.get('add_to_cart.php', function(data) {
             calcQty(data);
         }, 'json');
+
+
+        // // $(".cart-qty").hide();
+        // var cartNum= $(".cart-qty");
+        // // $(".cart-qty").hide();
+
+        // if(cartNum.innerText =0){
+        //     $(".cart-qty").hide();
+        // }
+       
+       
     </script>

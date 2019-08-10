@@ -23,16 +23,14 @@ if (!empty($_SESSION['cart'])) {
     header('Location: product-list.php'); //頁面跳轉 產品清單
     exit;
 }
-if( !empty($_SESSION['loginUser']['sid'])){
+
+if (!empty($_SESSION['loginUser']['sid'])) {
     $sql = "SELECT * FROM `members` WHERE `sid`=" . intval($_SESSION['loginUser']['sid']);
     $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-
-}else{
-    $row=[];
 }
 
 
-$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` =7"); 
+$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` =7");
 $stmt_tool = $pdo->query($p_tool);
 $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -65,13 +63,13 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="form-group row ">
                                     <label for="name" class="col-lg-2 col-sm-2 col-form-label ">姓名</label>
                                     <div class="col-lg-4 col-sm-10">
-                                        <input type="text" class="form-control" id="name" value="<?= htmlentities($row['nickname']) ?>">
+                                        <input type="text" class="form-control" id="name" value="<?= isset($row['nickname']) ? htmlentities($row['nickname']) : "" ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="mobile" class="col-lg-2 col-sm-2 col-form-label">電話</label>
                                     <div class="col-lg-4 col-sm-10">
-                                        <input type="text" class="form-control" id="mobile" value="<?= htmlentities($row['mobile']) ?>">
+                                        <input type="text" class="form-control" id="mobile" value="<?= isset($row['mobile']) ? htmlentities($row['mobile']) : "" ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -97,7 +95,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                                     <label for="address" class="col-md-2 col-form-label" disable></label>
                                     <div class="col-md-10 col-sm-12 pr-0 pt-3 address_text">
-                                        <input type="text" class="form-control" id="address" value="<?= htmlentities($row['address']) ?>">
+                                        <input type="text" class="form-control" id="address" value="<?= isset($row['address']) ? htmlentities($row['address']) : "" ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -190,19 +188,19 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                     <h5 class=price data-price="<?= $r['price'] ?>"></h5>
                                     <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
                                         <button type="button" class="btn btn-outline-secondary down">-</button>
-                                        <input type="text" name="quantity_input" id="quantity_number1" value="0" min="1" max="10" data-num="1">
+                                        <input type="text" name="quantity_input" id="quantity_number1" value="1" min="1" max="10" data-num="1">
                                         <button type="button" class="btn btn-outline-secondary up">+</button>
                                     </div>
-                                    <div class="money subtotal">NT$<span id="total_price"></span></div>
+                                    <div class="money ">NT$<span class="subtotal"></span></div>
                                     <p class="remove-btn">X</p>
-                            </div>
+                                </div>
                             <?php endforeach; ?>
                         </div>
 
-                        
+
                     </div>
                     <!-- ------------------------- -->
-                    <div class="add_shop">加購商品</div>
+                    <!-- <div class="add_shop">加購商品</div>
                     <div class="shap_list_border">
                         <div class="shap_list_main">
                             <img src="img/1.png" alt="">
@@ -213,10 +211,10 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="text" name="quantity_input" id="quantity_number4" value="1" min="1" max="10" data-num="4">
                                 <button type="button" class="btn btn-outline-secondary up">+</button>
                             </div>
-                            <div class="money">NT$<input type="text" readonly value="15000"></div>
-                            <p>X</p>
+                            <div class="money">NT$<span class=""></span></div>
+                            <p class="remove-btn">X</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -225,41 +223,26 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="step-3-1 show_mobile">
                     <h6>購物清單</h6>
-                    <div class="shop_border">
-                        <img src="img/1.png" alt="">
-                        <div class="w-100 p-2">
-                            <p>商品名稱<br>
-                                商品簡介</p>
-                            <div class="d-flex justify-content-between ">
-                                <p>數量</p>
-                                <em>價格00000</em>
-                            </div>
-                        </div>
-                    </div>
+                    <?php foreach ($keys as $k) :
+                        $r = $dict[$k];
+                        ?>
+                        <div class="shop_border p-item mb-3" data-sid="<?= $r['sid'] ?>">
 
-                    <div class="shop_border">
-                        <img src="img/1.png" alt="">
-                        <div class="w-100 p-2">
-                            <p>商品名稱<br>
-                                商品簡介</p>
-                            <div class="d-flex justify-content-between ">
-                                <p>數量</p>
-                                <em>價格00000</em>
+                            <img src="./img/product/<?= $r['images'] ?>.png" alt="">
+                            <div class="w-100 p-2">
+                                <p><?= $r['model'] ?>
+                                    <div class="d-flex justify-content-between ">
+                                        <select class="qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
+                                            <?php for ($i = 1; $i <= 20; $i++) : ?>
+                                                <option value="<?= $i ?>"><?= $i ?></option>
+                                            <?php endfor; ?>
+                                        </select>
+                                        <em class=price data-price="<?= $r['price'] ?>"></em>
+                                    </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="shop_border">
-                        <img src="img/1.png" alt="">
-                        <div class="w-100 p-2">
-                            <p>商品名稱<br>
-                                商品簡介</p>
-                            <div class="d-flex justify-content-between ">
-                                <p>數量</p>
-                                <em>價格00000</em>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
+                    
                 </div>
 
                 <!-- -------------------------- -->
@@ -276,7 +259,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             </div>
 
                             <div class="add_shop_only_once">
-                            <img src="./img/product/<?= $rowsTool[1]['images'] ?>.png" alt="">
+                                <img src="./img/product/<?= $rowsTool[1]['images'] ?>.png" alt="">
                                 <h6><?= $rowsTool[1]['model'] ?></h6>
                                 <h6>NT$<?= $rowsTool[1]['price'] ?></h6>
                                 <a href="#">加購</a>
@@ -284,7 +267,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 
                             <div class="add_shop_only_once">
-                            <img src="./img/product/<?= $rowsTool[2]['images'] ?>.png" alt="">
+                                <img src="./img/product/<?= $rowsTool[2]['images'] ?>.png" alt="">
                                 <h6><?= $rowsTool[2]['model'] ?></h6>
                                 <h6>NT$<?= $rowsTool[2]['price'] ?></h6>
                                 <a href="#">加購</a>
@@ -292,7 +275,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 
                             <div class="add_shop_only_once">
-                            <img src="./img/product/<?= $rowsTool[3]['images'] ?>.png" alt="">
+                                <img src="./img/product/<?= $rowsTool[3]['images'] ?>.png" alt="">
                                 <h6><?= $rowsTool[3]['model'] ?></h6>
                                 <h6>NT$<?= $rowsTool[3]['price'] ?></h6>
                                 <a href="#">加購</a>
@@ -316,7 +299,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <div class="d-flex sm_total">
                                 <p class="text">總計:</p>
                                 <p>NT$</p>
-                                <p class="price"></p>
+                                <p class="price" id="total_price"></p>
+
                             </div>
                         </div>
                     </div>
@@ -558,7 +542,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 
     var num = 1;
-
     var input = $('#quantity_number' + num), //
         btnUp = $('button.up'), //+
         btnDown = $('button.down'); //-
@@ -569,27 +552,26 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
         if (val < max && val != max) {
             val++;
-            input.val(val);
+            $(this).siblings("input").val(val);
         }
     });
 
     $('button.down').on("click", function() {
         var val = parseInt(input.val());
-
         if (val > 1) {
             val--;
-            input.val(val);
+            $(this).siblings("input").val(val);
         }
     });
 
-    input.on("focusout", function() {
-        var max = parseInt(input.attr("max")),
-            val = parseInt(input.val());
+    // input.on("focusout", function() {
+    //     var max = parseInt(input.attr("max")),
+    //         val = parseInt(input.val());
 
-        if (val > max) {
-            input.val(max);
-        }
-    });
+    //     if (val > max) {
+    //         input.val(max);
+    //     }
+    // });
 </script>
 <script>
     $(".visa").click(function() {
@@ -610,8 +592,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     p_items.each(function() {
         var price = $(this).find('.price').attr('data-price');
         var qty = $(this).find('.qty').attr('data-qty');
-        $(this).find('.subtotal').text('$ ' + dallorCommas(price * qty));
-        $(this).find('.price').text('$ ' + dallorCommas(price));
+        $(this).find('.subtotal').text( dallorCommas(price * qty));
+        $(this).find('.price').text( dallorCommas(price));
 
         // select element
         $(this).find('.qty').val(qty);
@@ -630,17 +612,18 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         }, 'json');
     });
 
-    $('.qty>input').change(function() {
+    $('.qty button').on('click', function() {
         var tr = $(this).closest('.p-item');
         var sid = tr.attr('data-sid');
         var price = tr.find('.price').attr('data-price');
-        var qty = $(this).val();
+        var qty = $(this).siblings("input").val();
+        console.log(qty);
         $.get('add_to_cart.php', {
             sid: sid,
             qty: qty
         }, function(data) {
             calcQty(data);
-            tr.find('.subtotal').text('$ ' + dallorCommas(price * qty));
+            tr.find('.subtotal').text( dallorCommas(price * qty) );
             calcTotalPrice();
         }, 'json');
     });
@@ -654,7 +637,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             t += price * qty;
         });
 
-        $('#total_price').text('$ ' + dallorCommas(t));
+        $('#total_price').text( dallorCommas(t) );
     }
     calcTotalPrice();
 </script>
