@@ -1,6 +1,7 @@
 /* ---------background--------- */
 .bg_mber{
     width: 100%;
+    min-height: 150vh;
     background: white;
 }
 /* ----------會員List--------- */
@@ -1053,5 +1054,120 @@
         display: none;
     }
 }
-
-
+/* ----------order_check---------- */
+.order_checkImg{
+    width: 35%;
+    margin: 0 auto;
+    padding-top: 3.5rem;
+}
+.order_checkProducts{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    padding-top: 2.5rem;
+}
+.productsImg{
+    width: 100px;
+    height: 100px;
+}
+.productsphoto{
+    width: 100px;
+    height: 100px;
+    margin-left: 3rem;
+}
+.productsName, .productsCount, .productsPrice{
+    font-size: 1rem;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+}
+.productsName, .productsCount{
+    color: #7D7D7D;
+}
+.productsPrice{
+    color: red;
+    padding-right: 2rem;
+}
+.order_underline{
+    width: 65%;
+    margin: 0 auto;
+    border-top: 1px solid #707070;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+}
+.order_checkButton{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+    margin-right: 8rem;
+    padding-bottom: 2rem;
+}
+.checkbutton_orderlist{
+    border: 1px solid #707070;
+    background: #707070;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 2.5rem;
+}
+.checkbutton_backhome{
+    border: 1px solid #707070;
+    border-radius: 5px;
+    color: #707070;
+    font-size: 0.8rem;
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+@media screen and (max-width:578px){
+    .order_checkImg{
+        width: 65%;
+    }
+    .order_checkProducts{
+        padding-top: 1.35rem;
+    }
+    .productsImg{
+        width: 50px;
+        height: 50px;
+    }
+    .productsphoto{
+        width: 50px;
+        height: 50px;
+        margin-left: 0.15rem;
+    }
+    .productsName, .productsCount, .productsPrice{
+        font-size: 0.6rem;
+    }
+    .productsPrice{
+        padding-right: 0.6rem;
+    }
+    .order_underline{
+        width: 80%;
+        padding-top: 0.65rem;
+        padding-bottom: 1rem;
+    }
+    .order_checkButton{
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+    }
+    .checkbutton_orderlist{
+        font-size: 0.6rem;
+        width:70px;
+        height: 30px;
+        line-height: 30px;
+        margin-right: 1rem;
+    }
+    .checkbutton_backhome{
+        font-size: 0.6rem;
+        width: 70px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
