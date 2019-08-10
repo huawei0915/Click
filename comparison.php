@@ -1,3 +1,22 @@
+<?php require __DIR__ . '/__db_connect.php';
+
+$t_sql_camera = "SELECT * FROM `products` ";
+$totalRows_camera = $pdo->query($t_sql_camera)->fetch(PDO::FETCH_NUM);
+$result['totalRows_camera']=$totalRows_camera;  //相機總筆數
+
+$t_sql_lens = "SELECT * FROM `lens`";
+$totalRows_lens = $pdo->query($t_sql_lens)->fetch(PDO::FETCH_NUM);
+$result['totalRows_lens']=$totalRows_lens;      //鏡頭總筆數
+
+
+// var_dump($totalRows_camera);
+// echo '<hr>';
+// echo '<br>';
+// echo '<br>';
+// var_dump($totalRows_lens);
+// exit;
+
+?>
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
 <div class="container" style="background:#F1F1F1;">
@@ -36,7 +55,10 @@
             <div class="d-flex pro_right_select1">
                 <div class="mr-3 ">
                     <select class="form-control">
+                    <?php foreach($totalRows_camera as $c): ?>
                         <option>產品選擇</option>
+                        <option ><?= $c ?></option>
+                        <?php endforeach; ?>
                     </select>
                     <div class="pro_pic_info card">
                         <figure>
@@ -49,8 +71,12 @@
             </div>
             <div class="d-flex pro_right_select2">
                 <div class="mr-3">
-                    <select class="form-control">
+                    <select class="form-control">   
+                    <?php foreach($totalRows_lens as $l): ?>
+
                         <option>產品選擇</option>
+                        <option ><?= $l ?></option>
+                        <?php endforeach; ?>
                     </select>
                     <div class="pro_pic_info card">
                         <figure>
