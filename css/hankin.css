@@ -1021,39 +1021,34 @@
         width: 100%;
     }
     .pimges_black_right .pimges_bigtext{
-        font-size: 1rem;
-        line-height: 1.5em;
-        font-weight: 400;
-        padding-top:  3.5%;
-        padding-left: 39%;
+        font-size: 0.65rem;
+        line-height: 0.8em;
+        padding-top:  4.5%;
+        padding-left: 30%;
     }
     .pimges_black_right .pimges_smalltext{
-        font-size: 0.75rem;
-        font-weight: 300;
-        padding-left: 48%;
-        padding-top: 1%;
+        font-size: 0.6rem;
+        padding-left: 30%;
+        padding-top: 2%;
     }
-  
+    .share_pimgesUp .pimges_black_right{
+        width:50%;
+        height: 60px;
+    }
     .share_pimgesUp .pimges_black_left{
         width:50%;
-        height: 110px;
-        background: black;
-        position: absolute;
-        bottom: 0;
-        color: white;
+        height: 60px;
     }
     .pimges_black_left .pimges_bigtext_left{
-        font-size: 1rem;
-        line-height: 1.5em;
-        font-weight: 400;
-        padding-top:  4%;
-        padding-left: 3.5%;
+        font-size: 0.65rem;
+        line-height: 0.8em;
+        padding-top:  4.5%;
+        padding-left: 30%;
     }
     .pimges_black_left .pimges_smalltext_left{
-        font-size: 0.75rem;
-        font-weight: 300;
-        padding-left: 4%;
-        padding-top: 1%;
+        font-size: 0.6rem;
+        padding-left: 30%;
+        padding-top: 2%;
     }
     .share_pimgesUp .s_sh, .share_pimgesdown .s_sh{
         box-shadow: 2px 2px 5px #1C1C1C;
@@ -1138,6 +1133,7 @@
     line-height: 40px;
     text-align: center;
 }
+/* ----------order_check RWD---------- */
 @media screen and (max-width:578px){
     .order_checkImg{
         width: 65%;
