@@ -126,6 +126,16 @@ header.active{
   }
 /* ----------------------------------   */
 
+  .cart{
+      position: relative;
+  }
+    .cart>span{
+        position: absolute;
+        right: 5px;
+        top: -5px;
+    }
+
+
   .transition{
     transition: 0.4s;
   }
@@ -326,6 +336,17 @@ nav.active{
         height: 60px;
     }
     
+    .cart>span{
+        position: absolute;
+        right: -5px;
+        top: 15px;
+        width: 20px;
+        height: 20px;
+        line-height: 15px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
 }
 @media screen and (min-width:578px){
     .show_mobile{

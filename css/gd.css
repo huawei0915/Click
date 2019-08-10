@@ -1,3 +1,5 @@
+/* ----------PRODUCT LIST---------- */
+
 .prd_filter{
     background-color: #FCFAF2;
     height: 120px;  
@@ -295,21 +297,35 @@ input[type=range]:focus {
 }
 
 
+/* ----------PRODUCT LIST END---------- */
 
 
-/* PRODUCT PAGE*/
+
+
+
+/* ----------PRODUCT PAGE----------*/
+
+/* 品名介紹 */
 .prdtop{
     background-color: #F1F1F1;
-}    
-.prdpic {
+}
+/* 產品照 */    
+.prdpic{
     width: 50%;
     background-color: black;
     overflow: hidden;
     margin: 5%;
+    margin-bottom: 2%;
+    text-align: center;
 }
+.prdpic img{
+    width: 100%;
+}
+/* 產品名 */  
 .prd_introduct{
     width: 50%;
     margin: 5%;
+    margin-bottom: 2%;
 }
 .prd_introduct h1{
     color:#8a8a8a;
@@ -322,15 +338,17 @@ input[type=range]:focus {
     font-size: .8rem;
 }
 .prdprice{
-    margin-left:50%;
+    margin-left:53%;
 }
 .prdprice h6{
     margin-right:3%;
     margin-top: 2%;
     font-size: .8rem;
 }
+/* 四個按鈕 */
 .prd_btn{
     margin-left: 57%;
+    margin-bottom: 3%;
 }
 .prd_comparison{
     width: 100px;
@@ -338,6 +356,7 @@ input[type=range]:focus {
     margin-right: 2%;
     font-size: .8rem;
     padding-top: 4px  ;
+    box-shadow: 0 2px 2px #aaa;
 }
 .prd_collection{
     width: 100px;
@@ -345,12 +364,13 @@ input[type=range]:focus {
     margin-right: 2%;
     font-size: .8rem;
     padding-top: 4px ;
+    box-shadow: 0 2px 2px #aaa;
 }
 .prd_collection i{
     margin-right: 5%;
 }
 
-/* 數量增減*/
+/* 數量增減鈕*/
 .quantity {
     display: flex;
     margin-right: 2%;
@@ -363,6 +383,8 @@ input[type=range]:focus {
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
+    box-shadow: 0 2px 2px #aaa;
+
 }      
 .quantity .down {
     border-top-right-radius: 0;
@@ -380,8 +402,10 @@ input[type=range]:focus {
     font-size: 15px;
     border: solid 1px gray;
     text-align: center;
-}
+    box-shadow: 0 2px 2px #aaa;
 
+}
+/* 數量增減鈕 END*/
 
 .prd_car{
     width: 100px;
@@ -390,9 +414,12 @@ input[type=range]:focus {
     padding-top: 4px  ;
     margin-right: 2%;
     padding: 4px 5px 7px 5px;
+    box-shadow: 0 2px 2px #aaa;
+
 }
 .prd_specification{
-    margin: 3%;
+    margin:0 5%;
+    padding: 3% 0;
 }
 .prd_specification li{
     font-size: 0.8rem;
@@ -400,13 +427,127 @@ input[type=range]:focus {
 }
 .specification_left{
     width: 50%;
-    margin: 3%;
+    margin: 2%;
     margin-top: 0;
 }
 .specification_right{
     width: 50%;
-    margin: 3%;
+    margin: 2%;
     margin-top: 0;
 }
 
 
+/* 詳細規格 */
+.prd_dtlspec{
+    background-color: #8A8A8A;
+    width: 100%;
+    height: 350px;
+}
+.dtlspec{
+    background-color: #444444;
+    width: 90%;
+    height: 350px;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: center;
+}
+.dtlspec h4{
+    text-align: center;
+    font-weight: bold;
+    color: #DDD;
+    padding: 2% 0;
+}
+
+/* 產品特色 */
+.prd_characteristic{
+    background-color: #E1E1E1;
+    width: 100%;
+    padding: 3%
+}
+.prd_characteristic h4{
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 2%;
+}
+.prd_charpic{
+    text-align: center;
+    padding-left: 3%;
+}
+
+/* 下半部 */
+.prddown{
+    background-color: #F1F1F1;
+}
+/* 附件 */
+.annex{
+    width: 90%;
+    margin: 0 auto;
+    padding: 5% 0;
+}
+.annex h4{
+    font-weight: bold;
+}
+.prd_annex{
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 10px;
+    padding: 2%;
+}
+.prd_annex img{
+    width: 40%;
+    margin-right: 5%;
+}
+.prd_annex li{
+    font-size: .8rem;
+    list-style: disc;
+}
+/* 實測 */
+.prd_text{
+    width: 90%;
+    margin: 0 auto;
+    padding: 5% 0;
+}
+.prd_text h4{
+    font-weight: bold;
+}
+.tcs{
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 2%;
+    width: 30%;
+    transition:all .5s;
+}
+.tcs:hover{
+    box-shadow: 0 0 10px #ccc;
+    transform: translate(0,-5px);
+}
+.tcs img{
+    width: 100%;
+    margin-bottom: 2%;
+    box-shadow: 0 0 5px #999;
+}
+.tcs h6{
+    font-weight: bold;
+}
+.tcs p{
+    text-align: right;
+    font-size: .8rem;
+}
+.tcs li{
+    font-size: .8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------PRODUCT PAGE END----------*/

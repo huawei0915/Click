@@ -113,27 +113,29 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="table-r">
                 <div>
+
+
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <!-- -------------------- -->
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <div class="d-flex totalMoney">
                         <h6>Total : NT $ </h6>
@@ -160,77 +162,44 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             <div class="flow">
                 <div class="overflow-wrapper-y">
                     <div class=" thumbnail overflow-wrapper-x show-step1 show-item1" id="step1">
-                    <!-- 1.有一個外層包住裡面長度塞四個值 -->
+                        <!-- 1.有一個外層包住裡面長度塞四個值 -->
 
-                    <!-- 2.依序取出四個值 直到取完 -->
+                        <!-- 2.依序取出四個值 直到取完 -->
 
-                        
-                        
-                            <div class="tab">
-                                <?php foreach ($rowsCamera as $r) : ?>
-                                    <figure>
-                                        <img src="img/product/camera/<?= $r['images'] ?>.png" alt="">
-                                    </figure>
-                                    <h5 style="display:none;"><?= $r['model'] ?></h5>
-                                    <h6 style="display:none;"><?= $r['description'] ?></h6>
-                                    <p style="display:none;"><?= $r['price'] ?></p>
-                                <?php endforeach; ?>
-                            </div>
-                     
-                           <div class="tab">
-                            <!-- <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure> -->
+
+
+                        <div class="tab">
+                            <?php foreach ($rowsCamera as $r) : ?>
+                                <figure>
+                                    <img src="img/product/<?= $r['images'] ?>.png" alt="">
+                                </figure>
+                                <h5 style="display:none;"><?= $r['model'] ?></h5>
+                                <h6 style="display:none;"><?= $r['description'] ?></h6>
+                                <p style="display:none;"><?= $r['price'] ?></p>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="tab">
+
                         </div>
                     </div>
                     <div class=" thumbnail overflow-wrapper-x " id="step2">
                         <div class="tab">
                             <?php foreach ($rowsLens as $r) : ?>
                                 <figure>
-                                    <img src="img/product/lens/<?= $r['images'] ?>.png" alt="">
+                                    <img src="img/product/<?= $r['images'] ?>.png" alt="">
                                 </figure>
                                 <h6 style="display:none;"><?= $r['model'] ?></h6>
                                 <p style="display:none;"><?= $r['price'] ?></p>
                             <?php endforeach; ?>
 
-                       
+
                         </div>
                         <div class="tab">
-                            <!-- <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure> -->
+
                         </div>
                         <div class="tab">
-                            <!-- <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/3.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/3.png" alt="">
-                            </figure> -->
+
                         </div>
                     </div>
                     <div class=" thumbnail overflow-wrapper-x " id="step3">
@@ -238,51 +207,17 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                             <?php foreach ($rowsTool as $r) : ?>
                                 <figure>
-                                    <img src="img/product/tools/<?= $r['images'] ?>.png" alt="">
+                                    <img src="img/product/<?= $r['images'] ?>.png" alt="">
                                 </figure>
                                 <h6 style="display:none;"><?= $r['model'] ?></h6>
                                 <p style="display:none;"><?= $r['price'] ?></p>
                             <?php endforeach; ?>
-                            <!-- <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/3.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/3.png" alt="">
-                            </figure> -->
+
                         </div>
                         <div class="tab">
-                            <!-- <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/2.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                        </div> -->
+
                             <div class="tab">
-                                <!-- <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/3.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/1.png" alt="">
-                            </figure>
-                            <figure>
-                                <img src="./img/3.png" alt="">
-                            </figure> -->
+
                             </div>
                         </div>
                     </div>
@@ -454,48 +389,43 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".tools1_Intro h6,.tools1_Intro p").text("");
     })
     $('#pro,#pro_m').click(function() {
-        $("#camera_BP").attr("src", "./img/product/camera/<?= $rowsCamera[2]['images'] ?>.png");
+        $("#camera_BP").attr("src", "./img/product/<?= $rowsCamera[2]['images'] ?>.png");
         $(".camera_Intro h5").text("<?= $rowsCamera[2]['model'] ?>");
         $(".camera_Intro h6").text("APS-C 尺寸 2,400 萬像 CMOS、4K 拍片、內置 EVF 取景、採用 Leica T 鏡頭系統\r\n2,400 萬像素\r\n視鏡頭而定x 光學變焦\r\nBP-DC 13 專用鋰電池\r\n連電池 403 Gram");
         $(".camera_Intro p").text("NT$<?= $rowsCamera[2]['price'] ?>");
-        $("#lens_BP").attr("src", "./img/product/lens/<?= $rowsLens[70]['images'] ?>.png");
+        $("#lens_BP").attr("src", "./img/product/<?= $rowsLens[70]['images'] ?>.png");
         $(".lens_Intro h6").text("<?= $rowsLens[70]['model'] ?>");
         $(".lens_Intro p").text("NT$<?= $rowsLens[70]['price'] ?>");
-        $("#tools1_BP").attr("src", "./img/product/tools/<?= $rowsTool[2]['images'] ?>.png");
+        $("#tools1_BP").attr("src", "./img/product/<?= $rowsTool[2]['images'] ?>.png");
         $(".tools1_Intro h6").text("<?= $rowsTool[2]['model'] ?>");
         $(".tools1_Intro p").text("NT$<?= $rowsTool[2]['price'] ?>");
     })
     $('#intel,#intel_m').click(function() {
-        $("#camera_BP").attr("src", "./img/product/camera/<?= $rowsCamera[13]['images'] ?>.png");
+        $("#camera_BP").attr("src", "./img/product/<?= $rowsCamera[13]['images'] ?>.png");
         $(".camera_Intro h5").text("<?= $rowsCamera[13]['model'] ?>");
         $(".camera_Intro h6").text("1 吋背照層疊式 CMOS、Digic 8 影像處理技術、30fps RAW 連拍、24-100mm 等效焦段、最高 ISO 25600、4K 拍片、支援 YouTube 直播服務\r\n2,010 萬像素\r\n4.2x 光學變焦\r\nCanon NB-13L 鋰充電池\r\n機身 235 Gram");
         $(".camera_Intro p").text("NT$<?= $rowsCamera[13]['price'] ?>");
-        $("#lens_BP").attr("src", "./img/product/lens/<?= $rowsLens[30]['images'] ?>.png");
+        $("#lens_BP").attr("src", "./img/product/<?= $rowsLens[30]['images'] ?>.png");
         $(".lens_Intro h6").text("<?= $rowsLens[30]['model'] ?>");
         $(".lens_Intro p").text("NT$<?= $rowsLens[30]['price'] ?>");
-        $("#tools1_BP").attr("src", "./img/product/tools/<?= $rowsTool[1]['images'] ?>.png");
+        $("#tools1_BP").attr("src", "./img/product/<?= $rowsTool[1]['images'] ?>.png");
         $(".tools1_Intro h6").text("<?= $rowsTool[1]['model'] ?>");
         $(".tools1_Intro p").text("NT$<?= $rowsTool[1]['price'] ?>");
     })
     $('#start,#start_m').click(function() {
-        $("#camera_BP").attr("src", "./img/product/camera/<?= $rowsCamera[3]['images'] ?>.png");
+        $("#camera_BP").attr("src", "./img/product/<?= $rowsCamera[3]['images'] ?>.png");
         $(".camera_Intro h5").text("<?= $rowsCamera[3]['model'] ?>");
         $(".camera_Intro h6").text("COOLPIX A1000 配備 35 倍光學變焦及 70 倍動態細緻變焦，於小巧緊湊的機身中提供了最高變焦率。相機備有約 1600 萬有效像素及 ISO 6400 最高感光度，於解像度及高感光度雜訊之間取得最佳平衡，於昏暗環境下仍能呈現優異影像品質。相機機身輕盈，卻支援 4K UHD/30p 格式短片攝錄兼備降低風聲雜音功能，更可在攝錄短片期間儲存靜態影像！\r\n\r\n相機的預先自動對焦 (Pre-AF) 及目標尋找 AF 功能令拍攝特寫或昏暗場景時自動對焦更精準。此外，相機配備的減震 (VR) 功能可於拍");
         $(".camera_Intro p").text("NT$<?= $rowsCamera[3]['price'] ?>");
-        $("#lens_BP").attr("src", "img/product/lens/<?= $rowsLens[2]['images'] ?>.png");
+        $("#lens_BP").attr("src", "img/product/<?= $rowsLens[2]['images'] ?>.png");
         $(".lens_Intro h6").text("<?= $rowsLens[2]['model'] ?>");
         $(".lens_Intro p").text("NT$<?= $rowsLens[2]['price'] ?>");
-        $("#tools1_BP").attr("src", "./img/product/tools/<?= $rowsTool[3]['images'] ?>.png");
+        $("#tools1_BP").attr("src", "./img/product/<?= $rowsTool[3]['images'] ?>.png");
         $(".tools1_Intro h6").text("<?= $rowsTool[3]['model'] ?>");
         $(".tools1_Intro p").text("NT$<?= $rowsTool[3]['price'] ?>");
     })
 
     console.log($('#step1 .tab').length);
-
-
-
-
-
 </script>
 
 <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>

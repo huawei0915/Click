@@ -32,6 +32,7 @@
     margin: 0 auto;
 }
 
+
 .step-1 form .form-control ,.step-1 form .custom-select,.step-2 form .form-control ,.step-2 form .custom-select{
     margin-top: 0;
     border-radius: 15px;
@@ -109,7 +110,7 @@ em{
     height: 85px;
 }
 .shap_list_main h4{
-    width: 280px;
+    width: 220px;
     overflow: hidden;
     color: #8e8e8e;
     margin-left: 20px;
@@ -142,7 +143,8 @@ em{
 .shap_list_main .money{
     display: flex;
     /* padding-left: 20px; */
-    text-align: right;
+    /* text-align: right; */
+    justify-content: center;
     width: 20%;
 }
 .shap_list_main input{

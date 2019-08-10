@@ -324,6 +324,18 @@
     width: 58%;
     margin: 20px auto; 
 }
+.edit_ok{
+
+    width: 200px;
+    color: #1C1C1C;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    margin: 20px 0 0 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 40px;
+    display: none;
+}
 .my_passWord .my_passForm .form-group .my_form{
     border-radius: 1rem;
     height: calc(1.5em + .85rem + 2px);

@@ -15,4 +15,5 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/icon/logo_s.png"/>  
     <link rel="stylesheet" href="css/style.css?a=<?= uniqid() ?>">
+    <script src="plugin/jquery-3.4.1.min.js"></script>
 </head>

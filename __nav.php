@@ -15,8 +15,8 @@
                             <input id="mag" type="search" placeholder="    Search..." name="search">
                             <div id="arm"></div>
                     </form>
-                    <a href="cart.php"><img src="img/icon/shop.svg" alt="購物車" class="px-3 ml-2 shop">
-                        <span class="badge badge-pill badge-primary cart-qty"></span>
+                    <a href="cart.php" class="cart"><img src="img/icon/shop.svg" alt="購物車" class="px-3 ml-2 shop">
+                        <span class="badge badge-pill badge-warning cart-qty"></span>
                     </a>
 
                     <?php if (isset($_SESSION['loginUser'])) : ?>
@@ -44,8 +44,8 @@
                             <li><a href="product-list.php" class="transition">產品列表</a></li>
                             <li><a href="diy.php" class="transition">首選推薦</a></li>
                             <li><a href="" class="transition">攝影分享</a></li>
-                            <li><a href="" class="transition">關於我們</a></li>
-                            <li><a href="" class="transition">客服支援</a></li>
+                            <li><a href="A_aboutus.php" class="transition">關於我們</a></li>
+                            <li><a href="A_service.php" class="transition">客服支援</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                     <li><a href="">攝影分享</a></li>
                 </ul>
                 <ul class="d-flex nav-r">
-                    <li><a href="">關於我們</a></li>
-                    <li><a href="">客服支援</a></li>
+                    <li><a href="A_aboutus.php">關於我們</a></li>
+                    <li><a href="A_service.php">客服支援</a></li>
                 </ul>
             </div>
         </div>
@@ -76,16 +76,29 @@
 
 
     <script>
-        // function calcQty(cart_data) {
-        //     var sum = 0;
-        //     for (let s in cart_data) {
-        //         sum += cart_data[s];
-        //     }
-        //     $('.cart-qty').text(sum);
+        function calcQty(cart_data) {
+            var sum = 0;
+            for (let s in cart_data) {
+                sum += cart_data[s];
+            }
+      
+            $('.cart-qty').text(sum);
+
+        }
+
+
+        $.get('add_to_cart.php', function(data) {
+            calcQty(data);
+        }, 'json');
+
+
+        // // $(".cart-qty").hide();
+        // var cartNum= $(".cart-qty");
+        // // $(".cart-qty").hide();
+
+        // if(cartNum.innerText =0){
+        //     $(".cart-qty").hide();
         // }
-
-
-        // $.get('add_to_cart.php', function(data) {
-        //     calcQty(data);
-        // }, 'json');
+       
+       
     </script>
