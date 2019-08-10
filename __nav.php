@@ -15,8 +15,8 @@
                             <input id="mag" type="search" placeholder="    Search..." name="search">
                             <div id="arm"></div>
                     </form>
-                    <a href="cart.php"><img src="img/icon/shop.svg" alt="購物車" class="px-3 ml-2 shop">
-                        <span class="badge badge-pill badge-primary cart-qty"></span>
+                    <a href="cart.php" class="cart"><img src="img/icon/shop.svg" alt="購物車" class="px-3 ml-2 shop">
+                        <span class="badge badge-pill badge-warning cart-qty"></span>
                     </a>
 
                     <?php if (isset($_SESSION['loginUser'])) : ?>
@@ -76,16 +76,16 @@
 
 
     <script>
-        // function calcQty(cart_data) {
-        //     var sum = 0;
-        //     for (let s in cart_data) {
-        //         sum += cart_data[s];
-        //     }
-        //     $('.cart-qty').text(sum);
-        // }
+        function calcQty(cart_data) {
+            var sum = 0;
+            for (let s in cart_data) {
+                sum += cart_data[s];
+            }
+            $('.cart-qty').text(sum);
+        }
 
 
-        // $.get('add_to_cart.php', function(data) {
-        //     calcQty(data);
-        // }, 'json');
+        $.get('add_to_cart.php', function(data) {
+            calcQty(data);
+        }, 'json');
     </script>

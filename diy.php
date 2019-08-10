@@ -113,27 +113,29 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="table-r">
                 <div>
+
+
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <!-- -------------------- -->
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <div class="d-flex totalMoney">
                         <h6>Total : NT $ </h6>

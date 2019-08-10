@@ -209,14 +209,19 @@ $page_name = 'product-list';
                 </a>`;
     var pagination_item_fn_camera = _.template(pagination_item_str_camera);
     var p_item_str_camera = `<div class="prd_cards" style="background-color: #fff;">
+                    <a href="product.php?sid=<%= sid %>">
+                    <input type="hidden" value="1">
                     <figure class="prd_pic"><img src="img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
                     <ul>
                         <li><%= description %></li>
                     </ul>
+                    </a>
                     <p>NT$<%= price %></p>
                     <div class="compare">比較</div>
-                </div>`;
+                    
+                </div>
+                `;
     var p_item_fn_camera = _.template(p_item_str_camera);
 
     var pagination_lens = $('.arrow_list_lens');
@@ -353,17 +358,16 @@ $page_name = 'product-list';
             pagination_camera.append(pagination_item_fn_camera(camera_page_array));
 
 
-
-
-
             var camera_rows = data.rowsCamera.length
             products_container_camera.html("")
             for (var i = 0; i < camera_rows; i++) {
+                var camera_sid=data.rowsCamera[i]['sid']
                 var camera_images = data.rowsCamera[i]['images']
                 var camera_model = data.rowsCamera[i]['model']
                 var camera_description = data.rowsCamera[i]['description']
                 var camera_price = data.rowsCamera[i]['price']
                 var camera_array = {
+                    'sid': camera_sid,
                     'images': camera_images,
                     'model': camera_model,
                     'description': camera_description,
@@ -433,9 +437,8 @@ $page_name = 'product-list';
 
 
     form_post({})
-    
 </script>
- 
+
 
 
 

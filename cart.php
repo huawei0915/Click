@@ -2,10 +2,10 @@
 
 
 if (!empty($_SESSION['cart'])) {
-    // $keys = array_keys($_SESSION['cart']);
+    $keys = array_keys($_SESSION['cart']);
 
     $sql = sprintf(
-        "SELECT * FROM `products` WHERE `sid` IN (%s)",
+        "SELECT * FROM `p_products` WHERE `sid` IN (%s)",
         implode(',', $keys)
     );
     $stmt = $pdo->query($sql);
@@ -15,18 +15,26 @@ if (!empty($_SESSION['cart'])) {
     foreach ($rows as $r) {
         $dict[$r['sid']] = $r;
     }
-    header('Content-Type: text/plain');
-    print_r($dict);
-    print_r($keys);
-    exit;
+    // header('Content-Type: text/plain');
+    // print_r($dict);
+    // print_r($keys);
+    // exit;
 } else {
     header('Location: product-list.php'); //頁面跳轉 產品清單
     exit;
 }
+if( !empty($_SESSION['loginUser']['sid'])){
+    $sql = "SELECT * FROM `members` WHERE `sid`=" . intval($_SESSION['loginUser']['sid']);
+    $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+
+}else{
+    $row=[];
+}
 
 
-
-
+$p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` =7"); 
+$stmt_tool = $pdo->query($p_tool);
+$rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php require __DIR__ . '/__html_head.php' ?>
@@ -57,13 +65,13 @@ if (!empty($_SESSION['cart'])) {
                                 <div class="form-group row ">
                                     <label for="name" class="col-lg-2 col-sm-2 col-form-label ">姓名</label>
                                     <div class="col-lg-4 col-sm-10">
-                                        <input type="text" class="form-control" id="name" value="">
+                                        <input type="text" class="form-control" id="name" value="<?= htmlentities($row['nickname']) ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="mobile" class="col-lg-2 col-sm-2 col-form-label">電話</label>
                                     <div class="col-lg-4 col-sm-10">
-                                        <input type="text" class="form-control" id="mobile" value="">
+                                        <input type="text" class="form-control" id="mobile" value="<?= htmlentities($row['mobile']) ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -89,7 +97,7 @@ if (!empty($_SESSION['cart'])) {
 
                                     <label for="address" class="col-md-2 col-form-label" disable></label>
                                     <div class="col-md-10 col-sm-12 pr-0 pt-3 address_text">
-                                        <input type="text" class="form-control" id="address" placeholder="輸入地址">
+                                        <input type="text" class="form-control" id="address" value="<?= htmlentities($row['address']) ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -172,60 +180,27 @@ if (!empty($_SESSION['cart'])) {
                             <li>小記</li>
                             <li></li>
                         </ul>
-                        <div class="shap_list_border">
+                        <div class="shap_list_border ">
                             <?php foreach ($keys as $k) :
                                 $r = $dict[$k];
                                 ?>
-                                <div class="shap_list_main p-item" data-sid="<?= $r['sid'] ?>">
-                                    <img src="img/product/camera<?= $r['images'] ?>.png" alt="">
+                                <div class="shap_list_main p-item mb-3" data-sid="<?= $r['sid'] ?>">
+                                    <img src="./img/product/<?= $r['images'] ?>.png" alt="">
                                     <h4><?= $r['model'] ?></h4>
-                                    <h5><?= $r['price'] ?></h5>
-                                    <div class="quantity" data-qty="<?= $_SESSION['cart'][$k] ?>">
+                                    <h5 class=price data-price="<?= $r['price'] ?>"></h5>
+                                    <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
                                         <button type="button" class="btn btn-outline-secondary down">-</button>
-                                        <input type="text" name="quantity_input" id="quantity_number1" value="<?= $i ?>" min="1" max="10" data-num="1">
+                                        <input type="text" name="quantity_input" id="quantity_number1" value="0" min="1" max="10" data-num="1">
                                         <button type="button" class="btn btn-outline-secondary up">+</button>
                                     </div>
-                                    <div class="money subtotal">NT$<input type="text" readonly value="150000"></div>
+                                    <div class="money subtotal">NT$<span id="total_price"></span></div>
                                     <p class="remove-btn">X</p>
-
-                                <?php endforeach; ?>
                             </div>
+                            <?php endforeach; ?>
                         </div>
 
-                        <!-- <div class="shap_list_border">
-                            <div class="shap_list_main">
-                                <img src="img/1.png" alt="">
-                                <h4>產品名稱</h4>
-                                <h5>產品單價</h5>
-                                <div class="quantity">
-                                    <button type="button" class="btn btn-outline-secondary down">-</button>
-                                    <input type="text" name="quantity_input" id="quantity_number2" value="1" min="1" max="10" data-num="2">
-                                    <button type="button" class="btn btn-outline-secondary up">+</button>
-                                </div>
-                                <div class="money">NT$<input type="text" readonly value="150000"></div>
-                                <p>X</p>
-                            </div>
-                        </div>
-
-                        <div class="shap_list_border">
-                            <div class="shap_list_main">
-                                <img src="img/1.png" alt="">
-                                <h4>產品名稱</h4>
-                                <h5>產品單價</h5>
-                                <div class="quantity">
-                                    <button type="button" class="btn btn-outline-secondary down">-</button>
-                                    <input type="text" name="quantity_input" id="quantity_number3" value="1" min="1" max="10" data-num="3">
-                                    <button type="button" class="btn btn-outline-secondary up">+</button>
-                                </div>
-                                <div class="money">NT$<input type="text" readonly value="15000"></div>
-                                <p>X</p>
-                            </div>
-                        </div> -->
+                        
                     </div>
-                    <!-- -------------------------------------------Z -->
-
-
-
                     <!-- ------------------------- -->
                     <div class="add_shop">加購商品</div>
                     <div class="shap_list_border">
@@ -294,32 +269,32 @@ if (!empty($_SESSION['cart'])) {
                         <div class="add_shop_only_text">加購商品</div>
                         <div class="d-flex justify-content-center flex-wrap detail">
                             <div class="add_shop_only_once">
-                                <img src="img/3.png" alt="">
-                                <h6>品名</h6>
-                                <h6>價格</h6>
+                                <img src="./img/product/<?= $rowsTool[0]['images'] ?>.png" alt="">
+                                <h6><?= $rowsTool[0]['model'] ?></h6>
+                                <h6>NT$<?= $rowsTool[0]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
 
                             <div class="add_shop_only_once">
-                                <img src="img/3.png" alt="">
-                                <h6>品名</h6>
-                                <h6>價格</h6>
-                                <a href="#">加購</a>
-                            </div>
-
-
-                            <div class="add_shop_only_once">
-                                <img src="img/3.png" alt="">
-                                <h6>品名</h6>
-                                <h6>價格</h6>
+                            <img src="./img/product/<?= $rowsTool[1]['images'] ?>.png" alt="">
+                                <h6><?= $rowsTool[1]['model'] ?></h6>
+                                <h6>NT$<?= $rowsTool[1]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
 
 
                             <div class="add_shop_only_once">
-                                <img src="img/3.png" alt="">
-                                <h6>品名</h6>
-                                <h6>價格</h6>
+                            <img src="./img/product/<?= $rowsTool[2]['images'] ?>.png" alt="">
+                                <h6><?= $rowsTool[2]['model'] ?></h6>
+                                <h6>NT$<?= $rowsTool[2]['price'] ?></h6>
+                                <a href="#">加購</a>
+                            </div>
+
+
+                            <div class="add_shop_only_once">
+                            <img src="./img/product/<?= $rowsTool[3]['images'] ?>.png" alt="">
+                                <h6><?= $rowsTool[3]['model'] ?></h6>
+                                <h6>NT$<?= $rowsTool[3]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
                         </div>
@@ -655,7 +630,7 @@ if (!empty($_SESSION['cart'])) {
         }, 'json');
     });
 
-    $('select.qty').change(function() {
+    $('.qty>input').change(function() {
         var tr = $(this).closest('.p-item');
         var sid = tr.attr('data-sid');
         var price = tr.find('.price').attr('data-price');

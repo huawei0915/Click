@@ -1,36 +1,54 @@
+<?php  require __DIR__ . '/__db_connect.php';
+
+
+// if(!isset($_GET['sid'])){
+//     header('Location: ./');
+//     exit();
+// }
+
+
+$sid = isset($_GET['sid']) ? $_GET['sid'] : " ";
+$sql="SELECT * FROM p_products WHERE `sid` =".$_GET['sid'];
+$stmt= $pdo->query($sql);
+$row = $stmt->fetch();
+
+?>
+
+
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
 
 
 <div class="container">
+    <?php //foreach ($rows as $r) : ?>
+        <div class="prdtop p-item" data-sid="<?= $row['sid'] ?>">
 
-    <div class="prdtop">
-
-        <div class="d-flex">
-            <figure class="prdpic"><img src="img/product/camera/CC-01.png" alt=""></figure>
-            <div class="prd_introduct">
-                <h1>EOS 5D Mark IV</h1>
-                <p>期待已久的EOS 5D Mark IV數位單眼相機搭載全新設計的3,040萬像素全片幅CMOS影像感測器及革命性Dual Pixel RAW，以追求更高影像品質；更配備承襲自旗艦型號EOS-1D X Mark II、全部61點自動對焦點均支援f/8光圈自動對焦的先進61點自動對焦系統及卓越的「雙像素CMOS自動對焦」技術，進一步提升攝影、錄影的自動對焦表現，同時支援DCI 4K短片拍攝，勢將拍攝錄影全面體驗進一步普及化。</p>
-                <div class="prdprice d-flex">
-                     <h6>建議售價</h6><h5>NT$169,000</h5>
+            <div class="d-flex">
+                <figure class="prdpic"><img src="./img/product/<?= $row['images'] ?>.png" alt=""></figure>
+                <div class="prd_introduct">
+                    <h1><?= $row['model'] ?></h1>
+                    <p>期待已久的EOS 5D Mark IV數位單眼相機搭載全新設計的3,040萬像素全片幅CMOS影像感測器及革命性Dual Pixel RAW，以追求更高影像品質；更配備承襲自旗艦型號EOS-1D X Mark II、全部61點自動對焦點均支援f/8光圈自動對焦的先進61點自動對焦系統及卓越的「雙像素CMOS自動對焦」技術，進一步提升攝影、錄影的自動對焦表現，同時支援DCI 4K短片拍攝，勢將拍攝錄影全面體驗進一步普及化。</p>
+                    <div class="prdprice d-flex">
+                        <h6>建議售價</h6>
+                        <h5>NT$<?= $row['price'] ?></h5>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="prd_btn d-flex">
-            <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
+            <div class="prd_btn d-flex">
+                <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
 
-            <button type="button" class="btn btn-outline-secondary prd_collection"><i class="far fa-star"></i>收藏</button>
+                <button type="button" class="btn btn-outline-secondary prd_collection"><i class="far fa-star"></i>收藏</button>
 
-            <div class="quantity">
-                <button type="button" class="btn btn-outline-secondary down">-</button>
-                <input type="text" name="quantity_input" id="quantity_number" value="1" min="1" max="10">
-                <button type="button" class="btn btn-outline-secondary up">+</button>
+                <div class="quantity">
+                    <button type="button" class="btn btn-outline-secondary down">-</button>
+                    <input type="text" name="quantity_input" id="quantity_number" value="1" min="1" max="10">
+                    <button type="button" class="btn btn-outline-secondary up">+</button>
+                </div>
+
+                <button type="button" class="btn btn-outline-secondary prd_car buy-btn">放入購物車</button>
             </div>
-
-            <button type="button" class="btn btn-outline-secondary prd_car">放入購物車</button>
-        </div>
-
+        <?php //endforeach; ?>
         <div class="prd_specification d-flex">
             <div class="specification_left">
                 <ul>
@@ -52,12 +70,12 @@
                     <li>內建GPS接收器及支援記錄器功能</li>
                 </ul>
             </div>
-        </div>  
+        </div>
     </div>
 
     <div class="prd_dtlspec">
         <div class="dtlspec">
-        <h4>詳細規格</h4>
+            <h4>詳細規格</h4>
             <img src="img/spec.png" alt="">
         </div>
     </div>
@@ -88,7 +106,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="prd_text">
             <h4>產品實測</h4>
             <div class="text_cards d-flex">
@@ -153,38 +171,65 @@
 <?php include __DIR__ . '/__script.php' ?>
 
 <script>
-var input = $('#quantity_number'),
-    btnUp = $('button.up'),
-    btnDown = $('button.down');
+    var input = $('#quantity_number'),
+        btnUp = $('button.up'),
+        btnDown = $('button.down');
 
-btnUp.on("click", function(){
-  var max = parseInt(input.attr("max")),
-      val = parseInt(input.val());
-  
-  if (val < max && val != max) {
-    val++;
-    input.val(val);
-  }
-});
+    btnUp.on("click", function() {
+        var max = parseInt(input.attr("max")),
+            val = parseInt(input.val());
 
-btnDown.on("click", function(){
-  var val = parseInt(input.val());
-  
-  if (val > 1) {
-    val--;
-    input.val(val);
-  }
-});
+        if (val < max && val != max) {
+            val++;
+            input.val(val);
+        }
+    });
 
-input.on("focusout", function(){
-  var max = parseInt(input.attr("max")),
-      val = parseInt(input.val());
-  
-  if (val > max) {
-    input.val(max);
-  }
-});
+    btnDown.on("click", function() {
+        var val = parseInt(input.val());
+
+        if (val > 1) {
+            val--;
+            input.val(val);
+        }
+    });
+
+    input.on("focusout", function() {
+        var max = parseInt(input.attr("max")),
+            val = parseInt(input.val());
+
+        if (val > max) {
+            input.val(max);
+        }
+    });
 </script>
+
+<script>
+    var buy_btn = $('.buy-btn');
+    buy_btn.click(function() {
+        var p_item = $(this).closest('.p-item');
+        var sid = p_item.attr('data-sid');
+        var qty = p_item.find('#quantity_number').val();
+        console.log({
+            sid: sid,
+            qty: qty
+        });
+
+        $.get('add_to_cart.php', {
+            sid: sid,
+            qty: qty
+        }, function(data) {
+            calcQty(data);
+            // alert('感謝加入購物車');
+
+        }, 'json');
+
+
+    });
+</script>
+
+
+
 
 
 <?php include __DIR__ . '/__html_end.php' ?>
