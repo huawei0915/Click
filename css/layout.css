@@ -152,7 +152,7 @@ header.active{
   }
   .menu ul{
     position: absolute;
-    right: -20px;
+    right: -40px;
     top:56px;
     background:#1C1C1C;
     width:150px;
@@ -292,6 +292,9 @@ nav.active{
     }
     .features .shop{
         height: 21px;
+    }
+    .mber{
+        margin-top: 25px;
     }
     .features .menu{
         /* padding-top: 20px; */
