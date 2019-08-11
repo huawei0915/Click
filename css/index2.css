@@ -54,14 +54,15 @@
     position: absolute;
 }
 .mondel_text{
-    width: 65%;
+    width: 70%;
     height: 350px;
     /* border:1px solid white; */
     background-image: url(../img/border.svg);
+    /* background-size: cover; */
     background-repeat: no-repeat;
     position: absolute;
     top:330px;
-    left: 28%;
+    left: 25%;
 }
 .mondel_text ul{
     width: 42%;
@@ -80,6 +81,8 @@
 @media screen and (max-width:1641px){
     .mondel_text{
         height: 350px;
+        width: 80%;
+        left: 20%;
     }
     .mondel_text ul li{
         font-size: 50px;
@@ -93,6 +96,9 @@
 @media screen and (max-width:1440px){
     .mondel_text{
         height: 300px;
+        width: 80%;
+        left: 20%;
+        background-size: cover;
     }
     .mondel_text ul li{
         font-size: 40px;
@@ -108,7 +114,7 @@
 }
 @media screen and (max-width:1236px){
     .mondel_text{
-        height: 250px;
+        /* height: 250px; */
     }
     .mondel_text ul li{
         font-size: 30px;

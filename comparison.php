@@ -1,20 +1,20 @@
 <?php require __DIR__ . '/__db_connect.php';
 
-$t_sql_camera = "SELECT * FROM `products` ";
-$totalRows_camera = $pdo->query($t_sql_camera)->fetch(PDO::FETCH_NUM);
-$result['totalRows_camera']=$totalRows_camera;  //相機總筆數
+$sql_camera = "SELECT `product_name` FROM `products`";
+$totalRows_camera = $pdo->query($sql_camera)->fetchAll(PDO::FETCH_NUM);
+$result['totalRows_camera']=$totalRows_camera;   //取得相機型號
 
-$t_sql_lens = "SELECT * FROM `lens`";
-$totalRows_lens = $pdo->query($t_sql_lens)->fetch(PDO::FETCH_NUM);
-$result['totalRows_lens']=$totalRows_lens;      //鏡頭總筆數
+$sql_lens = "SELECT `model` FROM `lens` ";
+$totalRows_lens = $pdo->query($sql_lens)->fetchAll(PDO::FETCH_NUM);
+$result['totalRows_lens']=$totalRows_lens;      //取得鏡頭型號
 
-
-// var_dump($totalRows_camera);
+// print_r($totalRows_camera);
 // echo '<hr>';
 // echo '<br>';
 // echo '<br>';
 // var_dump($totalRows_lens);
 // exit;
+// echo json_encode($result, JSON_UNESCAPED_UNICODE);
 
 ?>
 <?php include __DIR__ . '/__html_head.php' ?>
@@ -56,13 +56,13 @@ $result['totalRows_lens']=$totalRows_lens;      //鏡頭總筆數
                 <div class="mr-3 ">
                     <select class="form-control">
                     <?php foreach($totalRows_camera as $c): ?>
-                        <option>產品選擇</option>
+                        <!-- <option>產品選擇</option> -->
                         <option ><?= $c ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="pro_pic_info card">
                         <figure>
-                            <img src="img/product/camera/CC-01.png" alt="">
+                            <img src="img/product/CC-01.png" alt="">
                         </figure>
                         <h6>Canon EOS 5D Mark IV</h6>
                         <h5>NT$1111,000</h5>
@@ -74,13 +74,13 @@ $result['totalRows_lens']=$totalRows_lens;      //鏡頭總筆數
                     <select class="form-control">   
                     <?php foreach($totalRows_lens as $l): ?>
 
-                        <option>產品選擇</option>
+                        <!-- <option>產品選擇</option> -->
                         <option ><?= $l ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="pro_pic_info card">
                         <figure>
-                        <img src="img/product/camera/CC-01.png" alt="">
+                        <img src="img/product/CC-01.png" alt="">
                         </figure>
                         <h6></h6>
                         <h5></h5>
@@ -94,7 +94,7 @@ $result['totalRows_lens']=$totalRows_lens;      //鏡頭總筆數
                     </select>
                     <div class="pro_pic_info card">
                         <figure>
-                        <img src="img/product/camera/CC-01.png" alt="">
+                        <img src="img/product/CC-01.png" alt="">
                         </figure>
                         <h6></h6>
                         <h5></h5>

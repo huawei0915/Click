@@ -3,9 +3,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <link rel="stylesheet" href="css/lightbox.css">
 <style>
-    body{
-        height: calc( 100% - 100px ) !important;
+    body {
+        height: calc(100% - 100px) !important;
     }
+
     .serbox {
         padding-left: 160px;
 
@@ -53,9 +54,9 @@
     }
 </style>
 
-<body >
+<body>
     <div class="show_desk">
-        
+
         <div class="index_view1">
             <div class="main_big_pic">
                 <figure>
@@ -95,36 +96,36 @@
             </div>
 
         </div>
-            <div class="header ">
-                <div class="container">
-                    <div class="row index_nav align-items-end">
-                        <div class="col-9 ">
-                            <ul class="row align-items-end">
-                                <li class="logo"><a href="index.php"><img src="img/icon/logo_s.svg" alt=""></a></li>
-                                <li><a href="" class="eng">CANON</a></li>
-                                <li><a href="" class="eng">NIKON</a></li>
-                                <li><a href="" class="eng" style="letter-spacing:1px;">LEICA</a></li>
-                                <li><a href="product-list.php">產品列表</a></li>
-                                <li><a href="diy.php">首選推薦</a></li>
-                                <li><a href="">攝影分享</a></li>
+        <div class="header ">
+            <div class="container">
+                <div class="row index_nav align-items-end">
+                    <div class="col-9 ">
+                        <ul class="row align-items-end">
+                            <li class="logo"><a href="index.php"><img src="img/icon/logo_s.svg" alt=""></a></li>
+                            <li><a href="" class="eng">CANON</a></li>
+                            <li><a href="" class="eng">NIKON</a></li>
+                            <li><a href="" class="eng" style="letter-spacing:1px;">LEICA</a></li>
+                            <li><a href="product-list.php">產品列表</a></li>
+                            <li><a href="diy.php">首選推薦</a></li>
+                            <li><a href="">攝影分享</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 ">
+                        <div class="right_top ">
+                            <form method="post" action="">
+                                <div class="serbox" style="margin-right:-25px;">
+                                    <input id="mag" type="search" placeholder="  Search..." name="search">
+                                    <div id="arm"></div>
+                            </form>
+                            <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;"></a>
+                            <a href="A_login.php"><img src="img/icon/會員.svg" alt="" style="height: 26px;" class="px-2"></a>
+                        </div>
+                        <div class="nar_right">
+                            <ul class="row">
+                                <li><a href="A_aboutus.php">關於我們</a></li>
+                                <li><a href="A_service.php">客服支援</a></li>
                             </ul>
                         </div>
-                        <div class="col-3 ">
-                            <div class="right_top ">
-                                <form method="post" action="">
-                                    <div class="serbox" style="margin-right:-25px;">
-                                        <input id="mag" type="search" placeholder="  Search..." name="search">
-                                        <div id="arm"></div>
-                                </form>
-                                <a href=""><img src="img/icon/shop.svg" alt="" class="px-3 ml-2" style="height: 28px;"></a>
-                                <a href="A_login.php"><img src="img/icon/會員.svg" alt="" style="height: 26px;" class="px-2"></a>
-                            </div>
-                            <div class="nar_right">
-                                <ul class="row">
-                                    <li><a href="A_aboutus.php">關於我們</a></li>
-                                    <li><a href="A_service.php">客服支援</a></li>
-                                </ul>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -189,20 +190,20 @@
                     朝霧馬頭</p>
             </div>
             <div>
-                <a href="img/極北冬雪幻境-大.jpg"  class="example-image-link" data-lightbox="example-set" data-title="極北冬雪幻境-羅浮敦群島">
+                <a href="img/極北冬雪幻境-大.jpg" class="example-image-link" data-lightbox="example-set" data-title="極北冬雪幻境-羅浮敦群島">
                     <img class="example-image" src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
                 </a>
                 <p>極北冬雪幻境<br>
                     羅浮敦群島</p>
             </div>
             <div>
-                <a href="img/小鬚鳳頭樹燕-大.jpg"  class="example-image-link" data-lightbox="example-set" data-title="小鬚鳳頭樹燕">
+                <a href="img/小鬚鳳頭樹燕-大.jpg" class="example-image-link" data-lightbox="example-set" data-title="小鬚鳳頭樹燕">
                     <img class="example-image" src="img/小鬚鳳頭樹燕.jpg" alt="">
                 </a>
                 <p>小鬚鳳頭樹燕</p>
             </div>
             <div>
-                <a href="img/螢火蟲微光-大.jpg"  class="example-image-link" data-lightbox="example-set" data-title="螢火蟲微光">
+                <a href="img/螢火蟲微光-大.jpg" class="example-image-link" data-lightbox="example-set" data-title="螢火蟲微光">
                     <img class="example-image" src="img/螢火蟲微光.jpg" alt="">
                 </a>
                 <p>螢火蟲微光</p>
@@ -298,43 +299,43 @@
         </div>
         <div class="second">
             <a href="diy.php">
-            <figure>
-                <img src="img/第二區.png" alt="">
-            </figure>
+                <figure>
+                    <img src="img/第二區.png" alt="">
+                </figure>
             </a>
         </div>
         <div class="three">
             <a href="product-list.php">
-            <figure>
-                <img src="img/第三區.png" alt="">
-            </figure>
+                <figure>
+                    <img src="img/第三區.png" alt="">
+                </figure>
             </a>
         </div>
         <div class="four">
             <div class="container">
                 <div>
-                <a href="img/日月潭朝霧碼頭-大.jpg" class="example-image-link" data-lightbox="example-set1" data-title="日月潭-朝霧馬頭.jpg">
-                    <img class="example-image" src="img/日月潭-朝霧馬頭.jpg" alt="">
-                </a>
+                    <a href="img/日月潭朝霧碼頭-大.jpg" class="example-image-link" data-lightbox="example-set1" data-title="日月潭-朝霧馬頭.jpg">
+                        <img class="example-image" src="img/日月潭-朝霧馬頭.jpg" alt="">
+                    </a>
                     <p>日月潭<br>
                         朝霧馬頭</p>
                 </div>
                 <div>
-                <a href="img/極北冬雪幻境-大.jpg"  class="example-image-link" data-lightbox="example-set1" data-title="極北冬雪幻境-羅浮敦群島">
-                    <img class="example-image" src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
+                    <a href="img/極北冬雪幻境-大.jpg" class="example-image-link" data-lightbox="example-set1" data-title="極北冬雪幻境-羅浮敦群島">
+                        <img class="example-image" src="img/極北冬雪幻境-羅浮敦群島.jpg" alt="">
                     </a>
                     <p>極北冬雪幻境<br>
                         羅浮敦群島</p>
                 </div>
                 <div>
-                <a href="img/小鬚鳳頭樹燕-大.jpg"  class="example-image-link" data-lightbox="example-set1" data-title="小鬚鳳頭樹燕">
-                    <img class="example-image" src="img/小鬚鳳頭樹燕.jpg" alt="">
+                    <a href="img/小鬚鳳頭樹燕-大.jpg" class="example-image-link" data-lightbox="example-set1" data-title="小鬚鳳頭樹燕">
+                        <img class="example-image" src="img/小鬚鳳頭樹燕.jpg" alt="">
                     </a>
                     <p>小鬚鳳頭樹燕</p>
                 </div>
                 <div>
-                <a href="img/螢火蟲微光-大.jpg"  class="example-image-link" data-lightbox="example-set1" data-title="螢火蟲微光">
-                    <img class="example-image" src="img/螢火蟲微光.jpg" alt="">
+                    <a href="img/螢火蟲微光-大.jpg" class="example-image-link" data-lightbox="example-set1" data-title="螢火蟲微光">
+                        <img class="example-image" src="img/螢火蟲微光.jpg" alt="">
                     </a>
                     <p>螢火蟲微光</p>
                 </div>
@@ -352,22 +353,30 @@
 
 
 
-    <?php  include __DIR__ . '/__footer.php' ?>
+    <?php include __DIR__ . '/__footer.php' ?>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
     <!-- <script src="plugin/drag/dist/jquery.js"></script> -->
-    <script src="plugin/drag/dist/owl.carousel.min.js"></script>
     <script src="plugin/skrollr.min.js"></script>
+    <script src="plugin/drag/dist/owl.carousel.min.js"></script>
+    
     <script src="plugin/wow.min.js"></script>
     <script src="plugin/lightbox/lightbox.js"></script>
 
 
 
     <script>
-        var s = skrollr.init();
+        $(window).width(function() {
+            var x = $(window).width();
+            console.log(x);
+            if (x > 960) {
+                var s = skrollr.init();
+            }
+        });
+       
         new WOW().init();
     </script>
 
@@ -412,7 +421,14 @@
             });
         });
     </script>
-
-
+    <script>
+        $(window).width(function() {
+            var x = $(window).width();
+            console.log(x);
+            if (x < 960) {
+             
+            }
+        });
+    </script>
 
     <?php include __DIR__ . '/__html_end.php' ?>
