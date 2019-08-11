@@ -66,7 +66,7 @@ if (empty($row)) {
         <!-- --profile page-- -->
         <div class="my_profile">
             <div class="my_profileBackground">
-            <div id="alertInfo" class="alert alert-primary" role="alert" style="display: none;"></div>
+                <div id="alertInfo" class="alert alert-primary" role="alert" style="display: none;"></div>
                 <div class="my_profileFont py-3">
                     編輯個人資料 Profile
                     <br>
@@ -122,7 +122,7 @@ if (empty($row)) {
         <!-- --Password page-- -->
         <div class="my_passWord">
             <div class="my_passBackground">
-            <div id="alertInfo" class="alert alert-primary" role="alert" style="display: none;"></div>
+                <div id="alertInfo" class="alert alert-primary" role="alert" style="display: none;"></div>
                 <div class="my_passFont py-3">
                     更改密碼 Change The Password <br>
                     <h6 class="my_fh6 py-2">為了保護您帳號安全，請謹慎保管個人密碼</h6>
@@ -289,10 +289,10 @@ if (empty($row)) {
     // });
 </script>
 <script>
-   var alertInfo = $('#alertInfo');
+    var alertInfo = $('#alertInfo');
     var submitBtn = $('#submitBtn');
     var $nickname = $('#nickname');
-    var editOk=$('.edit_ok');
+    var editOk = $('.edit_ok');
     // var $password = $('#password');
 
     var fields = [$nickname];
@@ -319,7 +319,7 @@ if (empty($row)) {
                     alertInfo.addClass('alert-success');
 
                     $('#my_nickname').text($nickname.val());
-                    
+
                     // $('.edit_ok').delay(2000).hide(0);
                 } else {
                     alertInfo.removeClass('alert-success');
@@ -333,16 +333,16 @@ if (empty($row)) {
             }, 'json');
         } else {
             // submitBtn.show();
-            
+
         }
         return false;
     }
-// ------------------------------------------------------------------
+    // ------------------------------------------------------------------
 
-    var al_password=$('.al_password');
+    var al_password = $('.al_password');
     var $password = $('#password');
-    var $newpassword=$("#newpassword");
-    var $confirmpassword=$("#confirmpassword");
+    var $newpassword = $("#newpassword");
+    var $confirmpassword = $("#confirmpassword");
 
     // var fields = [$password];
 
@@ -352,25 +352,25 @@ if (empty($row)) {
         // fields.forEach(function(val){
         //     val.next().text('');
         // });
-      
+
 
         var isPass = true; // 表單是否有通過檢查
 
-        if($password.val().length < 6) {
+        if ($password.val().length < 6) {
             isPass = false;
             $password.next().text('請輸入六個以上的字元');
         }
 
-        if($newpassword !== $confirmpassword){
+        if ($newpassword !== $confirmpassword) {
             isPass = false;
             $newpassword.next().text('確認密碼錯誤');
         }
 
-        if(isPass){
-            $.post('edit_my_pwd_api.php', $('#pwdform').serialize(), function(data){
+        if (isPass) {
+            $.post('edit_my_pwd_api.php', $('#pwdform').serialize(), function(data) {
                 console.log(data);
 
-                if(data.success){
+                if (data.success) {
                     //location.href = 'data_list.php';
                     alertInfo.removeClass('alert-danger');
                     alertInfo.addClass('alert-success');

@@ -1,7 +1,7 @@
 /* ---------background--------- */
 .bg_mber{
     width: 100%;
-    min-height: 150vh;
+    /* min-height: 150vh; */
     background: white;
 }
 /* ----------會員List--------- */
@@ -866,7 +866,7 @@
 .share_pimgesUp .pimges_left, .pimges_right{
     width:50%;   
 }
-.share_pimgesUp .pimges_black_right{
+.pimges_black_right{
     width:50%;
     height: 110px;
     background: black;
@@ -874,14 +874,14 @@
     bottom: 33%;
     color: white;
 }
-.pimges_black_right .pimges_bigtext{
+.pimges_bigtext{
     font-size: 1rem;
     line-height: 1.5em;
     font-weight: 400;
     padding-top:  3.5%;
     padding-left: 39%;
 }
-.pimges_black_right .pimges_smalltext{
+.pimges_smalltext{
     font-size: 0.75rem;
     font-weight: 300;
     padding-left: 48%;
@@ -902,7 +902,7 @@
 .pimges_black_overlay:hover{
     opacity: 0.3;
 }
-.share_pimgesUp .pimges_black_left{
+.pimges_black_left{
     width:50%;
     height: 110px;
     background: black;
@@ -910,14 +910,14 @@
     bottom: 0;
     color: white;
 }
-.pimges_black_left .pimges_bigtext_left{
+.pimges_bigtext_left{
     font-size: 1rem;
     line-height: 1.5em;
     font-weight: 400;
     padding-top:  4%;
     padding-left: 3.5%;
 }
-.pimges_black_left .pimges_smalltext_left{
+.pimges_smalltext_left{
     font-size: 0.75rem;
     font-weight: 300;
     padding-left: 4%;
@@ -1014,28 +1014,29 @@
     .share_pimgesUp{
         top: 120vh;
         display: flex;
-        flex-shrink: 0;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     .pimgesUp_Bimg{
         width: 100%;
     }
-    .pimges_black_right .pimges_bigtext{
+    .pimges_black_right{
+        height: 60px;
+        position: absolute;
+        top: 26%;
+    }
+   .pimges_bigtext{
         font-size: 0.65rem;
         line-height: 0.8em;
         padding-top:  4.5%;
-        padding-left: 30%;
+        padding-left: 25%;
+        letter-spacing: 0.05rem;
     }
-    .pimges_black_right .pimges_smalltext{
+    .pimges_smalltext{
         font-size: 0.6rem;
         padding-left: 30%;
         padding-top: 2%;
     }
-    .share_pimgesUp .pimges_black_right{
-        width:50%;
-        height: 60px;
-    }
-    .share_pimgesUp .pimges_black_left{
+    .pimges_black_left{
         width:50%;
         height: 60px;
     }
@@ -1049,9 +1050,6 @@
         font-size: 0.6rem;
         padding-left: 30%;
         padding-top: 2%;
-    }
-    .share_pimgesUp .s_sh, .share_pimgesdown .s_sh{
-        box-shadow: 2px 2px 5px #1C1C1C;
     }
     /* --------------------- */
     .share_pimgesdown{
