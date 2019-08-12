@@ -95,6 +95,13 @@ $p_search = sprintf("SELECT * FROM `p_products` WHERE `model` LIKE 'canon%' OR `
 $stmt_search = $pdo->query($p_search);
 $rowsSearch = $stmt_search->fetchAll(PDO::FETCH_ASSOC);
 $result['rowsSearch']=$rowsSearch;
+
+// $sid = isset($_GET['sid']) ? $_GET['sid'] : " ";
+// $sql="SELECT * FROM p_products WHERE `sid` =".$_GET['sid'];
+
+
+echo $data;
+exit;
 }
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE);

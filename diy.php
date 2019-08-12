@@ -226,15 +226,15 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 <script>
     let table = $("#table").offset().left;
     let camera_BP = $("#camera_BP").offset().left;
-    let rowsCamera = <?= json_encode($rowsCamera, JSON_UNESCAPED_UNICODE) ?>;
-    let rowsLens = <?= json_encode($rowsLens, JSON_UNESCAPED_UNICODE) ?>;
-    let rowsTool = <?= json_encode($rowsTool, JSON_UNESCAPED_UNICODE) ?>;
-    let my_set = {
+    let rowsCamera = <?= json_encode($rowsCamera, JSON_UNESCAPED_UNICODE) ?>;//將所有的相機資料撈出來
+    let rowsLens = <?= json_encode($rowsLens, JSON_UNESCAPED_UNICODE) ?>;//將所有的鏡頭資料撈出來
+    let rowsTool = <?= json_encode($rowsTool, JSON_UNESCAPED_UNICODE) ?>;//將所有的配件資料撈出來
+    let my_set = {                                    //設定我一開始沒有選擇時的數值為0
         camera: 0,
         len: 0,
         tool: 0,
     };
-    let pre_set = [{
+    let pre_set = [{                                    //設定我指定的推薦等級
             camera: rowsCamera[2],
             len: rowsLens[70],
             tool: rowsTool[2]
@@ -251,21 +251,21 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     ];
 
 
-    $("#step1 figure").on('click', function() {
+    $("#step1 figure").on('click', function() {                         //第一步的相機選擇
         let index = parseInt($(this).attr('data-index'));
         let dataObj = rowsCamera[index];
         my_set.camera = dataObj;
         showPreSet();
     });
 
-    $("#step2 figure").on('click', function() {
+    $("#step2 figure").on('click', function() {                         //第二步的鏡頭選擇
         let index = parseInt($(this).attr('data-index'));
         let dataObj = rowsLens[index];
         my_set.len = dataObj;
         showPreSet();
 
     });
-    $("#step3 figure").on('click', function() {
+    $("#step3 figure").on('click', function() {                         //第三步的配件選擇
         let index = parseInt($(this).attr('data-index'));
         let dataObj = rowsTool[index];
         my_set.tool = dataObj;
@@ -361,8 +361,10 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
     function showPreSet() {
         let setObj = my_set;
-        if (setObj.camera === 0) {
+       
+        if (setObj.camera === 0) {      //如果沒有選相機的時候 清單表清空
             $(".comm").html('');
+            // $(".calcMoney").val(setObj.camera.price=0);
         } else {
             $("#camera_BP").attr("src", "./img/product/" + setObj.camera.images + ".png");
             $(".camera_Intro h5").text(setObj.camera.model);
@@ -374,7 +376,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         <h6>${setObj.camera.model}</h6>`);
         }
         if (setObj.len === 0) {
-            $(".comm1").html('');
+            $(".comm1").html('');       //如果沒有選鏡頭的時候 清單表清空
+            // $(".calcMoney").val(setObj.len.price=0);
         } else {
             $("#lens_BP").attr("src", "./img/product/" + setObj.len.images + ".png");
             $(".lens_Intro h6").text(setObj.len.model);
@@ -383,9 +386,11 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             <img src="./img/product/${setObj.len.images}.png" alt="">
             </figure>
         <h6>${setObj.len.model}</h6>`);
+        // $(".calcMoney").val(parseInt(setObj.camera.price) + parseInt(setObj.len.price));
         }
         if (setObj.tool === 0) {
-            $(".comm2").html('');
+            $(".comm2").html('');       //如果沒有選配件的時候 清單表清空
+            // $(".calcMoney").val(setObj.tool.price=0);
         } else {
             $("#tools1_BP").attr("src", "./img/product/" + setObj.tool.images + ".png");
             $(".tools1_Intro h6").text(setObj.tool.model);
@@ -394,9 +399,9 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <img src="./img/product/${setObj.tool.images}.png" alt="">
                         </figure>
                         <h6>${setObj.tool.model}</h6>`);
-            $(".calcMoney").val(parseInt(setObj.camera.price) + parseInt(setObj.len.price) + parseInt(setObj.tool.price));
-
+            
         }
+        $(".calcMoney").val(parseInt(setObj.camera.price) + parseInt(setObj.len.price) + parseInt(setObj.tool.price));
     }
     $('#pro,#pro_m').click(function() {
         my_set = {
