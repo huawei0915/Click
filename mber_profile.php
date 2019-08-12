@@ -59,7 +59,7 @@ if (empty($row)) {
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="cl" id="favorite">
+                            <a href="logout.php" class="cl" id="favorite">
                                 <img src="img/logout.svg" alt="">
                                 登      出
                             </a>

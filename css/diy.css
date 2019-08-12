@@ -262,31 +262,32 @@
     top: 0;
     right: 0;
 }
-.table-r .comm{
+.table-r .comm,.table-r .comm1,.table-r .comm2{
     width: 100%;
+    margin: 20px 5px;
 }
-.table-r .comm figure{
+.table-r .comm figure,.table-r .comm1 figure,.table-r .comm2 figure{
     width: 20%;
     height: 20%;
     overflow: hidden;
 }
-.table-r .comm figure img{
+.table-r .comm figure img,.table-r .comm1 figure img,.table-r .comm2 figure img{
     width: 100%;
     height: 100%;
 }
-.table-r .comm h6{
+.table-r .comm h6,.table-r .comm1 h6,.table-r .comm2 h6{
     width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.table-r .comm p{
+.table-r .comm p,.table-r .comm1 p,.table-r .comm2 p{
     border: 1px solid #C1C1C1;
     color: #C1C1C1;
     /* border-radius: 50%; */
     
 }
-.table-r .comm a{
+.table-r .comm a,.table-r .comm1 a,.table-r .comm2 a{
    width: 10%;
     
 }
