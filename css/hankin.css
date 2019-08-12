@@ -1010,6 +1010,7 @@
 .pimges_black_overlay3:hover{
     opacity: 0.3;
 }
+/* ----------profile_share RWD---------- */
 @media screen and (max-width:578px){
     .share_pimgesUp{
         top: 120vh;
