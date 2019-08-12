@@ -1,7 +1,7 @@
 /* ---------background--------- */
 .bg_mber{
     width: 100%;
-    /* min-height: 150vh; */
+    height:1400px;
     background: white;
 }
 /* ----------會員List--------- */
@@ -123,14 +123,14 @@
     .v_menu .cl{
         display: flex;
         flex-flow: column;
-        width: 120px;
+        width: 80px;
     }
     .v_menu a{
         width: 100%;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     .v_menu img{
-        width: 35%;
+        width: 45%;
         margin: 0 auto;
         padding: 0 0 10px 0;
     } 
@@ -145,7 +145,8 @@
 }
 /* ------收藏清單--------------- */
 .my_favorite{
-    width:50%;
+    width:510px;
+    height: 700px;
     border: 3px solid #1C1C1C;
     margin: 135px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
@@ -325,7 +326,6 @@
     margin: 20px auto; 
 }
 .edit_ok{
-
     width: 200px;
     color: #1C1C1C;
     background-color: #F3F3F3;
@@ -400,6 +400,7 @@
         line-height: 30px;
         left: 60%;
         top: 85%;
+        font-size: 0.8rem;
     }
     .al_password{
         position: absolute;
@@ -413,7 +414,7 @@
 /* ----------profile area---------- */
     .my_profile{
         width: 50%;
-        min-height: 70vh;
+        height: 700px;
         border: 3px solid #1C1C1C;
         margin: 142px 100px 120px 0;
         border-radius: 35px 35px 27px 27px;
@@ -463,7 +464,7 @@
         margin: 0 33%;
     }
     .my_profile .my_profileBackground .my_proForm{
-        margin-bottom: 0.45rem;
+        margin-bottom: 0.2rem;
         width: 300px;
     }
     .my_profile .my_profileBackground .my_label{
@@ -552,7 +553,7 @@
             width: 100%;
         }
         .my_profile .my_profileBackground .my_proForm{
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
         }
         .btn_save{
             position: absolute;
@@ -564,6 +565,7 @@
 /* ----------order area---------- */
 .my_order{
     width:50%;
+    height: 630px;
     border: 3px solid #1C1C1C;
     margin: 143px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
@@ -676,6 +678,7 @@
 @media screen and (max-width:578px){
     .my_order{
         width: 94%;
+        height: 650px;
         margin: 40px auto 40px auto;
         position: relative;
     }
@@ -699,6 +702,7 @@
     }
     .order_userInfo, .order_listBuy, .order_payInfo{
         width: 95%;
+        padding: 1rem 0.5rem 0.5rem 1rem;
     }
     .order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
         font-size:0.75rem; 
@@ -711,7 +715,7 @@
     }
     .userinfomation_label label{
         font-size: 0.6rem;
-        padding-left:1.3rem;
+        padding-left:2rem;
     }
     .order_buyList figure{
         width: 70px;
@@ -722,7 +726,7 @@
         flex-direction: column;
         color: #707070;
         margin: 0;
-        padding-left: 1rem;
+        padding-left: 1.5rem;
     }
     .order_infoBuy .order_name_spec div{
         padding: 0;
@@ -742,7 +746,7 @@
     }
     .order_payinfocount label{
         font-size: 0.6rem;
-        padding: 0;
+        padding-left: 0.5rem;
     }
     
 }
@@ -1020,6 +1024,13 @@
     .pimgesUp_Bimg{
         width: 100%;
     }
+    .pimges_left{
+      margin-left: 5%;
+    }
+    .pimges_right{
+        margin-top: 5%;
+        margin-left:5%;
+    }
     .pimges_black_right{
         height: 60px;
         position: absolute;
@@ -1044,18 +1055,33 @@
     .pimges_black_left .pimges_bigtext_left{
         font-size: 0.65rem;
         line-height: 0.8em;
-        padding-top:  4.5%;
-        padding-left: 30%;
+        padding-top:  5%;
+        padding-left: 5%;
     }
     .pimges_black_left .pimges_smalltext_left{
         font-size: 0.6rem;
-        padding-left: 30%;
+        padding-left: 6%;
         padding-top: 2%;
     }
     /* --------------------- */
     .share_pimgesdown{
-        top: 300vh;
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
     }
+    .pimges_left_down{
+        height: 60px;
+        position: absolute;
+    }
+    .pimges_black_right_down{
+        height: 60px;
+        position: absolute;
+    }
+    .pimges_bigtext_down
+
+
+
+
     .pimges_black_overlay, .pimges_black_overlay1, .pimges_black_overlay2, .pimges_black_overlay3{
         display: none;
     }
