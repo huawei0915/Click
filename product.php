@@ -27,7 +27,8 @@ $row = $stmt->fetch();
                 <figure class="prdpic"><img src="./img/product/<?= $row['images'] ?>.png" alt=""></figure>
                 <div class="prd_introduct">
                     <h1><?= $row['model'] ?></h1>
-                    <p>期待已久的EOS 5D Mark IV數位單眼相機搭載全新設計的3,040萬像素全片幅CMOS影像感測器及革命性Dual Pixel RAW，以追求更高影像品質；更配備承襲自旗艦型號EOS-1D X Mark II、全部61點自動對焦點均支援f/8光圈自動對焦的先進61點自動對焦系統及卓越的「雙像素CMOS自動對焦」技術，進一步提升攝影、錄影的自動對焦表現，同時支援DCI 4K短片拍攝，勢將拍攝錄影全面體驗進一步普及化。</p>
+                    <p><?= $row['description'] ?></p>
+                    <!-- <p>期待已久的EOS 5D Mark IV數位單眼相機搭載全新設計的3,040萬像素全片幅CMOS影像感測器及革命性Dual Pixel RAW，以追求更高影像品質；更配備承襲自旗艦型號EOS-1D X Mark II、全部61點自動對焦點均支援f/8光圈自動對焦的先進61點自動對焦系統及卓越的「雙像素CMOS自動對焦」技術，進一步提升攝影、錄影的自動對焦表現，同時支援DCI 4K短片拍攝，勢將拍攝錄影全面體驗進一步普及化。</p> -->
                     <div class="prdprice d-flex">
                         <h6>建議售價</h6>
                         <h5>NT$<?= $row['price'] ?></h5>
