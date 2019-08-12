@@ -115,28 +115,28 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <div >
 
 
-                    <div class="d-flex justify-content-around align-items-center comm">
-                        <figure>
+                    <div class="d-flex justify-content-around align-items-center flex-wrap comm">
+                        <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
                     </div>
                     <!-- -------------------- -->
-                    <div class="d-flex justify-content-around align-items-center comm">
+                    <!-- <div class="d-flex justify-content-around align-items-center comm"> -->
                         <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
                         <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
-                    </div>
-                    <div class="d-flex justify-content-around align-items-center comm">
+                    <!-- </div> -->
+                    <!-- <div class="d-flex justify-content-around align-items-center comm"> -->
                         <!-- <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
                         <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
-                    </div>
+                    <!-- </div> -->
                     <div class="d-flex totalMoney">
                         <h6>Total : NT $ </h6>
                         <input type="text" readonly value="150000">
@@ -275,6 +275,9 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 <script>
     let table = $("#table").offset().left;
     let camera_BP = $("#camera_BP").offset().left;
+    var camera={pic=;text_h5=;p=;};
+    var lens={};
+    var tools={};
 
 
     console.log(table);
@@ -288,12 +291,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".camera_Intro h5").text(text_h5);
         $(".camera_Intro h6").text(text_h6);
         $(".camera_Intro p").text('NT$' + text_p);
-        $(this).siblings();
-        // $(".comm").append(`<figure>
-        //                     <img src="img/product/${}" alt="">
-        //                 </figure>
-        //                 <h6>${}</h6>
-        //                 <a href="" class="remove remove-btn"><img src="img/icon/X.svg" alt=""></a>`)
+        
     });
 
     $("#step2 figure").on('click', function() {
@@ -304,6 +302,13 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".lens_Intro h6").text(text_h6);
         $(".lens_Intro p").text('NT$' + text_p);
         $(this).addClass("active").siblings().removeClass("active");
+        $(".comm").append(`
+        <figure>
+                            <img src="${ img }" alt="">
+                        </figure>
+                        <h6>${ text_h6 }</h6>
+                        <a href="" class="remove remove-btn"><img src="img/icon/X.svg" alt=""></a>`)
+
     });
     $("#step3 figure").on('click', function() {
 
@@ -314,8 +319,15 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".tools1_Intro h6").text(text_h6);
         $(".tools1_Intro p").text('NT$' + text_p);
         $(this).addClass("active").siblings().removeClass("active");
+        $(".comm").append(`<figure>
+                            <img src="${ img }" alt="">
+                        </figure>
+                        <h6>${ text_h6 }</h6>
+                        <a href="" class="remove remove-btn"><img src="img/icon/X.svg" alt=""></a>`)
     });
+    $(".remove-btn").on("click",function(){
 
+    })
     // --------- 滑動----------------
     // 1. 先初始化，應該第一步和第一頁
     let index = 1;
