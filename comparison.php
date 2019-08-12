@@ -1,12 +1,10 @@
 <?php require __DIR__ . '/__db_connect.php';
 $page_name = 'comparison';
-// $sql_camera = "SELECT `product_name` FROM `products`";
-// $totalRows_camera_model = $pdo->query($sql_camera)->fetchAll(PDO::FETCH_NUM);
-// $result['totalRows_camera_model']=$totalRows_camera_model;   //取得相機型號
+$sql_camera = "SELECT * FROM `products`";
+$totalRows_camera_model = $pdo->query($sql_camera)->fetchAll();   //取得相機型號
 
-// $sql_lens = "SELECT `model` FROM `lens` ";
-// $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll(PDO::FETCH_NUM);
-// $result['totalRows_lens_model']=$totalRows_lens_model;      //取得鏡頭型號
+$sql_lens = "SELECT * FROM `lens` ";
+$totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型號
 
 // $t_sql_camera = "SELECT * FROM `products`";
 // $totalRows_camera = $pdo->query($t_sql_camera)->fetchAll(PDO::FETCH_NUM);
@@ -57,34 +55,39 @@ $page_name = 'comparison';
 
             <div class="d-flex pro_right_select1">
                 <div class="mr-3 ">
-                    <select class="form-control" id="camera">
+                    <select class="form-control" id="camera" name="camera">
+                    <?php foreach($totalRows_camera_model as $c): ?>
+                        <option value="<?= $c['sid'] ?>"><?= $c['product_name'] ?></option>
+                    <?php endforeach;?>
                     </select>
 
-                    <div class="pro_pic_info card">
-                        <?php  ?>
-                        <figure>
+                    <div class="pro_pic_info card camera_com">
+               
+                        <!-- <figure>
                             <img src="img/product/<?= $c['images'] ?>.png" alt="" id="cameraPic">
                         </figure>
-                        <h6 id="cameraModel"></h6>
-                        <h5>NT$1111,000</h5>
-                        <?php  ?>
+                        <h6 ></h6><?= $c['product_name'] ?></h6>
+                        <h5>NT$<?= $c['price'] ?></h5> -->
+                
                     </div>
                 </div>
             </div>
             <div class="d-flex pro_right_select2">
                 <div class="mr-3">
                     <select class="form-control" id="lens">
-
+                    <?php foreach($totalRows_lens_model as $l): ?>
+                        <option value="<?= $l['sid'] ?>"><?= $l['model'] ?></option>
+                    <?php endforeach;?>
                     </select>
                     <div class="pro_pic_info card">
-                        <?php foreach ($totalRows_lens as $l) : ?>
+                  
 
                             <figure>
                                 <img src="img/product/<?= $l['images'] ?>.png" alt="">
                             </figure>
-                            <h6></h6>
-                            <h5></h5>
-                        <?php endforeach; ?>
+                            <h6><?= $l['model'] ?></h6>
+                            <h5>NT$<?= $l['price'] ?></h5>
+                    
                     </div>
                 </div>
             </div>
@@ -113,6 +116,7 @@ $page_name = 'comparison';
 
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
+
 <script>
     $.ajax({
         url: 'comparison_api.php',
@@ -120,12 +124,12 @@ $page_name = 'comparison';
         dataType: 'json',
         success: function(data) {
             var $camera = $('#camera');
-            for (var i = 0; i < data['totalRows_camera_model'].length; i++) {
-                $camera.append('<option id=' + 'totalRows_camera_model' + i + ' value=' + i + '>' + data['totalRows_camera_model'][i] + '</option>');
+            for (var i = 0 ; i < data['totalRows_camera_model'].length ; i++) {
+                $camera.append('<option id=' + 'totalRows_camera_model' + i + ' value=' + data['totalRows_camera_model'][i] + '>' + data['totalRows_camera_model'][i] + '</option>');
             }
             var $lens = $('#lens');
-            for (var i = 0; i < data['totalRows_lens_model'].length; i++) {
-                $lens.append('<option id=' + 'totalRows_lens_model' + i + ' value=' + i + '>' + data['totalRows_lens_model'][i] + '</option>');
+            for (var i = 0 ; i < data['totalRows_lens_model'].length ; i++) {
+                $lens.append('<option id=' + 'totalRows_lens_model' + i + ' value=' + data['totalRows_lens_model'][i] + '>' + data['totalRows_lens_model'][i] + '</option>');
             }
 
 
@@ -133,25 +137,43 @@ $page_name = 'comparison';
             // for (var i=0; i< data['totalRows_camera'].length;i++){
             //     $cameraPic.attr("src",'img/product/'+ [i]['images'] + '.png' );
             // }
-            console.log(data['totalRows_camera']);
+            // console.log(data['totalRows_camera']);
         }
 
     });
 
+    var products_container_camera = $('.camera_com');
+    var p_item_str_camera = `<figure>
+                            <img src="img/product/<%= images %>.png" alt="" id="cameraPic">
+                        </figure>
+                        <h6 ></h6><%= product_name %?></h6>
+                        <h5>NT$<%= price %></h5>`;
+    var p_item_fn_camera = _.template(p_item_str_camera);
+
     $('#camera').change(function() {
+        var camera = $('#camera').val()
+        var data = {camera_sid:camera}
         $.ajax({
             url: 'comparison_api.php',
             type: 'POST',
+            data: data,
             dataType: 'json',
             success: function(data) {
-                var $cameraPic = $("#cameraPic"),
-                    $cameraModel = $("#cameraModel");
-                for (var i = 0; i < data['totalRows_camera'].length; i++) {
-                    // $cameraPic.attr("src", './img/product/' + data['totalRows_camera'][i]['images'] + '.png');
-                    // $cameraModel.append(data['totalRows_camera'][i]);
-                    console.log(i['product_name']);
+                var totalRows_camera = data.totalRows_camera.length
+                totalRows_camera.html("")
+                for (var i = 0; i < totalRows_camera; i++) {
+                var camera_images = data.totalRows_camera[i]['images']
+                var camera_model = data.totalRows_camera[i]['model']
+                var camera_price = data.totalRows_camera[i]['price']
+                var camera_array = {
+                    'images': tools_images,
+                    'model': tools_model,
+                    'description': tools_description,
+                    'price': tools_price,
                 }
-                // console.log(data['totalRows_camera']);
+                totalRows_camera.append(p_item_fn_camera(camera_array));
+            }
+                
             }
         });
     });

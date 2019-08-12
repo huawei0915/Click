@@ -226,10 +226,10 @@ function myFunction() {
         var p_item = $(this).closest('.p-item');
         var sid = p_item.attr('data-sid');
         var qty = p_item.find('#quantity_number').val();
-        console.log({
-            sid: sid,
-            qty: qty
-        });
+        // console.log({
+        //     sid: sid,
+        //     qty: qty
+        // });
 
         $.get('add_to_cart.php', {
             sid: sid,
