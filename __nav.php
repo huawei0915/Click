@@ -99,6 +99,12 @@
         // if(cartNum.innerText =0){
         //     $(".cart-qty").hide();
         // }
-       
+        $("#mag").keypress(function(event) {
+        if (event.keyCode == 13) {
+            var data = $("#mag").val()
+            location.href = './product-list.php?search='+data;
+        }
+    });
+ 
        
     </script>

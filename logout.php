@@ -2,6 +2,7 @@
 session_start();
 
 unset($_SESSION['loginUser']);
+unset($_SESSION['cart']);
 
-header('Location: ./');
+header('Location: ./product-list.php');
 

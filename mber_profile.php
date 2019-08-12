@@ -58,6 +58,12 @@ if (empty($row)) {
                                 我的收藏
                             </a>
                         </li>
+                        <li>
+                            <a href="logout.php" class="cl" id="favorite">
+                                <img src="img/logout.svg" alt="">
+                                登 出
+                            </a>
+                        </li>
                     </ul>
                     <div class="box_black"></div>
                 </div>
