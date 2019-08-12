@@ -250,12 +250,10 @@ $('.prd_collection').click(function(){
     // var fas=$("#myclt").hasClass("fas");
     if(far){
         $("#myclt").removeClass("far");
-        $("#myclt").addClass("fas");
-        $(this).innerHTML("已收藏");
+        $(this).html(`<i class="fas fa-star" id="myclt"></i>已收藏`);
     }else{
         $("#myclt").removeClass("fas");
-        $("#myclt").addClass("far");
-        $(this).innerHTML("收藏");
+        $(this).html(`<i class="far fa-star" id="myclt"></i>收藏`);
     }
 })
 </script>
