@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="order_underline"></div>
-    <div class="container">
+    <!-- <div class="container">
         <div class="order_checkProducts d-flex">
             <div class="productsImg">
                 <img class="productsphoto" src="img/EOS5DMarkIV.png" alt="">
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-    <div class="order_underline"></div>
+    <div class="order_underline"></div> -->
     <!-- -----BackHome & orderlist----- -->
     <div class="container">
         <div class="order_checkButton d-flex">
