@@ -4,8 +4,8 @@
             <div class="row justify-content-between align-items-end  mobile-style">
                 <div class="d-flex head_mobile">
 
-                    <div class="logo px-2 show_destop"><a href=""><img src="img/logo.svg" alt=""></a></div>
-                    <div class="logo px-2 show_mobile "><a href=""><img src="img/logo_m.svg" alt=""></a></div>
+                    <div class="logo px-2 show_destop"><a href="index.php"><img src="img/logo.svg" alt=""></a></div>
+                    <div class="logo px-2 show_mobile "><a href="index.php"><img src="img/logo_m.svg" alt=""></a></div>
                 </div>
 
 
@@ -38,12 +38,12 @@
                         <div class="bar bar3 transition"></div>
                         <ul class="transition">
                             <li><a href="" class="transition"></a></li>
-                            <li><a href="" class="transition">CANON</a></li>
-                            <li><a href="" class="transition">NIKON</a></li>
-                            <li><a href="" class="transition">LEICA</a></li>
+                            <li><a href="canon.php" class="transition">CANON</a></li>
+                            <li><a href="nikon.php" class="transition">NIKON</a></li>
+                            <li><a href="leica.php" class="transition">LEICA</a></li>
                             <li><a href="product-list.php" class="transition">產品列表</a></li>
                             <li><a href="diy.php" class="transition">首選推薦</a></li>
-                            <li><a href="" class="transition">攝影分享</a></li>
+                            <li><a href="profile_share.php" class="transition">攝影分享</a></li>
                             <li><a href="A_aboutus.php" class="transition">關於我們</a></li>
                             <li><a href="A_service.php" class="transition">客服支援</a></li>
                         </ul>
@@ -56,13 +56,13 @@
         <div class="container">
             <div class="d-flex justify-content-between">
                 <ul class="d-flex nav-l">
-                    <li><a href="">首頁</a></li>
-                    <li><a href="" class="deskshow">CANON</a></li>
-                    <li><a href="" class="deskshow">NIKON</a></li>
-                    <li><a href="" class="deskshow" style="letter-spacing:1px;">LEICA</a></li>
+                    <li><a href="index.php">首頁</a></li>
+                    <li><a href="canon.php" class="deskshow">CANON</a></li>
+                    <li><a href="nikon.php" class="deskshow">NIKON</a></li>
+                    <li><a href="leica.php" class="deskshow" style="letter-spacing:1px;">LEICA</a></li>
                     <li><a href="product-list.php">產品列表</a></li>
                     <li><a href="diy.php">首選推薦</a></li>
-                    <li><a href="">攝影分享</a></li>
+                    <li><a href="profile_share.php">攝影分享</a></li>
                 </ul>
                 <ul class="d-flex nav-r">
                     <li><a href="A_aboutus.php">關於我們</a></li>

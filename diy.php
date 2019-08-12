@@ -142,7 +142,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         <input type="text" readonly value="150000">
                     </div>
                     <div class="d-flex diyBtn">
-                        <button type="button" class="enterCar">放入購物車</button>
+                        <button type="button" class="enterCar buy-btn">放入購物車</button>
                         <button type="button" class="payMoney">立即結帳</button>
                     </div>
                 </div>
@@ -542,8 +542,28 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         });
     });
 </script>
+<script>
+var buy_btn = $('.buy-btn');
+    buy_btn.click(function() {
+        var p_item = $(this).closest('.p-item');
+        var sid = p_item.attr('data-sid');
+        var qty = p_item.find('#quantity_number').val();
+        console.log({
+            sid: sid,
+            qty: qty
+        });
+
+        $.get('add_to_cart.php', {
+            sid: sid,
+            qty: qty
+        }, function(data) {
+            calcQty(data);
+            // alert('感謝加入購物車');
+
+        }, 'json');
 
 
+    });
 
-
+    </script>
 <?php include __DIR__ . '/__html_end.php' ?>

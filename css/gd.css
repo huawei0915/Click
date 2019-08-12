@@ -296,7 +296,9 @@ input[type=range]:focus {
     padding-top: 15px;
 }
 
-
+.next,.prev{
+    cursor: pointer;
+}
 /* ----------PRODUCT LIST END---------- */
 
 

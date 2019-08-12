@@ -45,7 +45,7 @@ $page_name = 'product-list';
                         <label class="custom-control-label" for="br_nikon">NIKON</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="br_leica" value="3" name="brand[]">
+                        <input type="checkbox" class="custom-control-input" id="br_leica" value="3" name="brand[]" checked>
                         <label class="custom-control-label" for="br_leica">LEICA</label>
                     </div>
                 </div>

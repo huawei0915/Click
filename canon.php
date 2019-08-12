@@ -37,7 +37,7 @@ $page_name = 'product-list';
 
                 <div class="pl_brand">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="br_canon" value="1" name="brand[]">
+                        <input type="checkbox" class="custom-control-input" id="br_canon" value="1" name="brand[]" checked>
                         <label class="custom-control-label" for="br_canon">CANON</label>
                     </div>
                     <div class="custom-control custom-checkbox">
