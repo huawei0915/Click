@@ -458,7 +458,7 @@ input[type=range]:focus {
     box-shadow: 0 2px 2px #aaa;
 }
 .prd_collection{
-    width: 100px;
+    width: 110px;
     height: 30px;
     margin-right: 2%;
     font-size: .8rem;
