@@ -61,7 +61,7 @@ if (empty($row)) {
                         <li>
                             <a href="#" class="cl" id="favorite">
                                 <img src="img/logout.svg" alt="">
-                                登      出
+                                登 出
                             </a>
                         </li>
                     </ul>

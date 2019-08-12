@@ -22,7 +22,7 @@
         </div>
     </div>
     <!-- -----圖片集----- -->
-    <div class="container">
+    <div class="container d-flex">
         <div class="share_pimgesUp d-flex">
             <div class="pimges_left">
                 <div class="pimges_black_right">
@@ -31,21 +31,21 @@
                 </div>
                 <img class="s_sh pimgesUp_Bimg" src="img/s11.jpg" alt="">
                 <div class="pimges_black_overlay"></div>
-                <div class="d-flex">
+                <div class="d-flex pimgesUPsmallphoto">
                     <img class="s_sh pimgesUp_Simg" src="img/s1.jpg" alt="">
                     <img class="s_sh pimgesUp_Simg" src="img/s2.jpg" alt="">
                 </div>
             </div>
             <div class="pimges_right">
-                <div class="d-flex">
-                    <img class="s_sh" src="img/s4.jpg" alt="">
-                    <img class="s_sh" src="img/s5.jpg" alt="">
+                <div class="d-flex pimgesUPsmallphoto">
+                    <img class="s_sh pimgesUp_Simg" src="img/s4.jpg" alt="">
+                    <img class="s_sh pimgesUp_Simg" src="img/s5.jpg" alt="">
                 </div>
                 <div class="pimges_black_left">
                     <div class="pimges_bigtext_left">極北冬雪幻境 羅浮敦群島</div>
                     <div class="pimges_smalltext_left">撰文及攝影：翼賢 Louis Liu</div>
                 </div>
-                <img class="s_sh pimgesUp_Bimg bigImages" src="img/s12.jpg" alt="">
+                <img class="s_sh pimgesUp_Bimg" src="img/s12.jpg" alt="">
                 <div class="pimges_black_overlay1"> </div>
             </div>
         </div>
@@ -55,23 +55,23 @@
                     <div class="pimges_bigtext_down">螢火蟲微光</div>
                     <div class="pimges_smalltext_down">撰文及攝影：十面埋伏 蔡志雄</div>
                 </div>
-                <img class="s_sh pimgesUp_Bimg" src="img/s14.jpg" alt="">
+                <img class="s_sh pimgesdown_Bimg" src="img/s14.jpg" alt="">
                 <div class="pimges_black_overlay2"></div>
-                <div class="d-flex">
-                    <img class="s_sh" src="img/s1.jpg" alt="">
-                    <img class="s_sh" src="img/s2.jpg" alt="">
+                <div class="d-flex pimgesdownsmallphoto">
+                    <img class="s_sh pimgesUp_Simg" src="img/s8.jpg" alt="">
+                    <img class="s_sh pimgesUp_Simg" src="img/s9.jpg" alt="">
                 </div>
             </div>
-            <div class="pimges_right">
-                <div class="d-flex">
-                    <img class="s_sh" src="img/s6.jpg" alt="">
-                    <img class="s_sh" src="img/s7.jpg" alt="">
+            <div class="pimges_right_down">
+                <div class="d-flex pimgesUPsmallphoto">
+                    <img class="s_sh pimgesUp_Simg" src="img/s6.jpg" alt="">
+                    <img class="s_sh pimgesUp_Simg" src="img/s7.jpg" alt="">
                 </div>
                 <div class="pimges_black_left_down">
                     <div class="pimges_bigtext_left_down">小鬚鳳頭樹燕</div>
                     <div class="pimges_smalltext_left_down">撰文及攝影：陳耀恩 Ean Chen</div>
                 </div>
-                <img class="s_sh pimgesUp_Bimg" src="img/s3.jpg" alt="">
+                <img class="s_sh pimgesdown_Bimg" src="img/s3.jpg" alt="">
                 <div class="pimges_black_overlay3"></div>
             </div>
         </div>
