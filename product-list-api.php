@@ -6,7 +6,7 @@ $tools_page = isset($_POST['tools_page']) ? intval($_POST['tools_page']) : 1;
 $per_page_camera = 8;  //相機顯示數量
 $per_page_lens = 8;  //鏡頭顯示數量
 $per_page_tools=4;
-
+$data = isset($_POST['data']) ? intval($_POST['data']) : 0;
 
 $min = intval($_POST['min']);
 $max = intval($_POST['max']);
@@ -30,6 +30,7 @@ $result = [
     'min' => $min,
     'max' => $max,
     'rows' => [],
+    'data' => $data,
 ];
 
 $where = " WHERE 1 ";
@@ -86,6 +87,15 @@ $rowsLens = $stmt_lens->fetchAll(PDO::FETCH_ASSOC);
 $result['rowsLens']=$rowsLens;
 $rowsTools = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 $result['rowsTools']=$rowsTools;
+
+
+if(!empty($data)){
+
+$p_search = sprintf("SELECT * FROM `p_products` WHERE `model` LIKE 'canon%' OR `model` LIKE 'nikon%' OR `model` LIKE 'leica%'" );   //搜尋條件
+$stmt_search = $pdo->query($p_search);
+$rowsSearch = $stmt_search->fetchAll(PDO::FETCH_ASSOC);
+$result['rowsSearch']=$rowsSearch;
+}
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE);
 
