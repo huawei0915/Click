@@ -39,7 +39,7 @@ $row = $stmt->fetch();
             <div class="prd_btn d-flex">
                 <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
 
-                <button type="button" class="btn btn-outline-secondary prd_collection" onclick="myFunction()" id="myclt"><i class="far fa-star"></i>收藏</button>
+                <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star" id="myclt"></i>收藏</button>
                 
 
                 <div class="quantity">
@@ -173,18 +173,18 @@ $row = $stmt->fetch();
 <?php include __DIR__ . '/__script.php' ?>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("myclt");
-      x.classList.toggle("far fa-star");
+// function myFunction() {
+//   var x = document.getElementById("myclt");
+//       x.classList.toggle("far fa-star");
       
-  if (x.innerHTML === "A") {
-    x.innerHTML = "B";
-    x.classList.toggle("fas fa-star");
-  } else {
-    x.innerHTML = "A";
-    x.classList.toggle("far fa-star");
-  }
-}
+//   if (x.innerHTML === "A") {
+//     x.innerHTML = "B";
+//     x.classList.toggle("fas fa-star");
+//   } else {
+//     x.innerHTML = "A";
+//     x.classList.toggle("far fa-star");
+//   }
+// }
 </script>
 
 <script>
@@ -244,7 +244,21 @@ function myFunction() {
 
     });
 </script>
-
+<script>
+$('.prd_collection').click(function(){
+    var far=$("#myclt").hasClass("far");
+    // var fas=$("#myclt").hasClass("fas");
+    if(far){
+        $("#myclt").removeClass("far");
+        $("#myclt").addClass("fas");
+        $(this).innerHTML("已收藏");
+    }else{
+        $("#myclt").removeClass("fas");
+        $("#myclt").addClass("far");
+        $(this).innerHTML("收藏");
+    }
+})
+</script>
 
 
 

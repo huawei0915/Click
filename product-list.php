@@ -11,8 +11,11 @@ $page_name = 'product-list';
 <?php include __DIR__ . '/__nav.php' ?>
 
 <!-- PRODUCT FILTER -->
+<div class="container flt_btn">
+    <button type="button" class="btn btn-outline-secondary fltbtn">篩選列表</button>
+</div>
 <div class="prd_filter">
-    <div class="container">
+    <div class="container fltcon">
         <form action="" method="post" class="product_form">
             <div class="filte">
 
@@ -360,6 +363,11 @@ $page_name = 'product-list';
 
             var camera_rows = data.rowsCamera.length
             products_container_camera.html("")
+
+            if(camera_rows==0){
+                products_container_camera.html(`<h2>無相符合之商品</h2>`)
+            }
+
             for (var i = 0; i < camera_rows; i++) {
                 var camera_sid=data.rowsCamera[i]['sid']
                 var camera_images = data.rowsCamera[i]['images']
@@ -389,6 +397,9 @@ $page_name = 'product-list';
             var lens_rows = data.rowsLens.length
             products_container_lens.html("")
 
+            if(lens_rows==0){
+                products_container_lens.html(`<h2>無相符合之商品</h2>`)
+            }
             for (var i = 0; i < lens_rows; i++) {
                 var lens_images = data.rowsLens[i]['images']
                 var lens_model = data.rowsLens[i]['model']
@@ -408,16 +419,17 @@ $page_name = 'product-list';
                 'tools_page': data.tools_page,
                 'tools_totalPage': data.totalPage_tools,
             }
-            console.log(data.totalPage_tools);
 
             pagination_tools.html("")
             pagination_tools.append(pagination_item_fn_tools(tools_page_array));
 
 
             var tools_rows = data.rowsTools.length
-            console.log(tools_rows);
             products_container_tools.html("")
 
+            if(tools_rows==0){
+                products_container_tools.html(`<h2>無相符合之商品</h2>`)
+            }
             for (var i = 0; i < tools_rows; i++) {
                 var tools_images = data.rowsTools[i]['images']
                 var tools_model = data.rowsTools[i]['model']
@@ -439,6 +451,11 @@ $page_name = 'product-list';
     form_post({})
 </script>
 
+<script>
+    $('.flt_btn').click(function(){
+        $('.prd_filter').toggle(".filte");
+    })
+</script>
 
 
 
