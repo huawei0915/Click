@@ -480,3 +480,7 @@ footer .container{
         order:-1;
     }
 }
+
+.remove-btn{
+    cursor: pointer;
+}

@@ -112,15 +112,15 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <div class="redo"><i class="fas fa-redo-alt"></i></div>
             </div>
             <div class="table-r">
-                <div>
+                <div >
 
 
                     <div class="d-flex justify-content-around align-items-center comm">
-                        <!-- <figure>
+                        <figure>
                             <img src="img/2.png" alt="">
                         </figure>
                         <h6>EOS 5DZZZZZZZZ</h6>
-                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a> -->
+                        <a href="" class="remove"><img src="img/icon/X.svg" alt=""></a>
                     </div>
                     <!-- -------------------- -->
                     <div class="d-flex justify-content-around align-items-center comm">
@@ -289,6 +289,11 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".camera_Intro h6").text(text_h6);
         $(".camera_Intro p").text('NT$' + text_p);
         $(this).siblings();
+        // $(".comm").append(`<figure>
+        //                     <img src="img/product/${}" alt="">
+        //                 </figure>
+        //                 <h6>${}</h6>
+        //                 <a href="" class="remove remove-btn"><img src="img/icon/X.svg" alt=""></a>`)
     });
 
     $("#step2 figure").on('click', function() {
@@ -430,48 +435,17 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>
 <script>
-    var ddData = [{
-            text: "EOS 800D",
-            value: 1,
-            selected: false,
-            description: "NT$111111",
-            imageSrc: "img/product/camera/EOS 800D.png"
-        },
-        {
-            text: "EOS 800D",
-            value: 2,
-            selected: false,
-            description: "NT$111111",
-            imageSrc: "img/2.png"
-        },
-        {
-            text: "EOS 800D",
-            value: 3,
-            selected: false,
-            description: "NT$111111",
-            imageSrc: "img/3.png"
-        },
-        {
-            text: "Foursquare",
-            value: 7,
-            selected: false,
-            description: "NT$111111",
-            imageSrc: "img/product/camera/EOS 800D.png"
-        },
-        {
-            text: "Foursquare",
-            value: 8,
-            selected: false,
-            description: "NT$111111",
-            imageSrc: "img/product/camera/EOS 800D.png"
-        }
-    ];
+    var ddData =function(){
+        // foreach(){
+            
+        // }
+    };
     var ddData1 = [{
             text: "EOS 800D",
             value: 11,
-            selected: false,
+            // selected: false,
             description: "NT$111111",
-            imageSrc: "img/product/lens/LC_01.png"
+            imageSrc: "img/product/LC_01.png"
         },
         {
             text: "EOS 800D",
@@ -496,13 +470,13 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             imageSrc: "img/2.png"
         }
     ];
-    var ddData3 = [{
-        text: "EOS 800D",
-        value: 31,
-        selected: true,
-        description: "NT$111111",
-        imageSrc: "img/product/tools/FT-03.png"
-    }];
+    // var ddData3 = [{
+    //     text: "EOS 800D",
+    //     value: 31,
+    //     selected: true,
+    //     description: "NT$111111",
+    //     imageSrc: "img/product/tools/FT-03.png"
+    // }];
 
     $('#myDropdown').ddslick({
         data: ddData,
@@ -536,34 +510,34 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     });
 
 
-    $('#start_m').on('click', function() {
-        $('#myDropdown').ddslick({
-            data: ddData3,
-        });
-    });
+    // $('#start_m').on('click', function() {
+    //     $('#myDropdown').ddslick({
+    //         data: ddData3,
+    //     });
+    // });
 </script>
 <script>
-var buy_btn = $('.buy-btn');
-    buy_btn.click(function() {
-        var p_item = $(this).closest('.p-item');
-        var sid = p_item.attr('data-sid');
-        var qty = p_item.find('#quantity_number').val();
-        console.log({
-            sid: sid,
-            qty: qty
-        });
+// var buy_btn = $('.buy-btn');
+//     buy_btn.click(function() {
+//         var p_item = $(this).closest('.p-item');
+//         var sid = p_item.attr('data-sid');
+//         var qty = p_item.find('#quantity_number').val();
+//         console.log({
+//             sid: sid,
+//             qty: qty
+//         });
 
-        $.get('add_to_cart.php', {
-            sid: sid,
-            qty: qty
-        }, function(data) {
-            calcQty(data);
-            // alert('感謝加入購物車');
+//         $.get('add_to_cart.php', {
+//             sid: sid,
+//             qty: qty
+//         }, function(data) {
+//             calcQty(data);
+//             // alert('感謝加入購物車');
 
-        }, 'json');
+//         }, 'json');
 
 
-    });
+//     });
 
     </script>
 <?php include __DIR__ . '/__html_end.php' ?>

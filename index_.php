@@ -259,7 +259,7 @@
             <div class="container">
                 <div class="d-flex justify-content-between">
                     <ul class="d-flex nav-l">
-                        <li><a href="index.php">首頁</a></li>
+                        <li><a href="">首頁</a></li>
                         <li><a href="canon.php" class="deskshow">CANON</a></li>
                         <li><a href="nikon.php" class="deskshow">NIKON</a></li>
                         <li><a href="leica.php" class="deskshow" style="letter-spacing:1px;">LEICA</a></li>

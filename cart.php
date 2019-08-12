@@ -188,7 +188,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                     <h5 class=price data-price="<?= $r['price'] ?>"></h5>
                                     <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
                                         <button type="button" class="btn btn-outline-secondary down">-</button>
-                                        <input type="text" name="quantity_input" id="quantity_number1" value="1" min="1" max="10" data-num="1">
+                                        <input type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1">
                                         <button type="button" class="btn btn-outline-secondary up">+</button>
                                     </div>
                                     <div class="money ">NT$<span class="subtotal"></span></div>
@@ -226,7 +226,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                     <?php foreach ($keys as $k) :
                         $r = $dict[$k];
                         ?>
-                        <div class="shop_border p-item mb-3" data-sid="<?= $r['sid'] ?>">
+                        <div class="shop_border p-item1 mb-3" data-sid="<?= $r['sid'] ?>">
 
                             <img src="./img/product/<?= $r['images'] ?>.png" alt="">
                             <div class="w-100 p-2">
@@ -287,7 +287,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <div class="d-flex sm_price">
                                 <p class="text">商品小計:</p>
                                 <p>NT$</p>
-                                <p class="price">22222</p>
+                                <p class="price" id="total_price"></p>
                             </div>
                             <div class="d-flex sm_send">
                                 <p class="text">運費:</p>
@@ -299,7 +299,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <div class="d-flex sm_total">
                                 <p class="text">總計:</p>
                                 <p>NT$</p>
-                                <p class="price" id="total_price"></p>
+                                <p class="price" id="total_price3"></p>
 
                             </div>
                         </div>
@@ -541,14 +541,12 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     });
 
 
-    var num = 1;
-    var input = $('#quantity_number' + num), //
         btnUp = $('button.up'), //+
         btnDown = $('button.down'); //-
 
     $('button.up').on("click", function() {
-        var max = parseInt(input.attr("max")),
-            val = parseInt(input.val());
+        var max = parseInt($(this).siblings("input").attr("max")),
+            val = parseInt($(this).siblings("input").val());
 
         if (val < max && val != max) {
             val++;
@@ -557,7 +555,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     });
 
     $('button.down').on("click", function() {
-        var val = parseInt(input.val());
+        var val = parseInt($(this).siblings("input").val());
         if (val > 1) {
             val--;
             $(this).siblings("input").val(val);
