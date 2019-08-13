@@ -75,7 +75,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="form-group row">
                                     <label for="address" class="col-md-2 col-sm-12 col-form-label ">住址</label>
 
-                                    <div class="col-sm-4 address_box">
+                                    <!-- <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address0">
                                             <option selected>選縣市</option>
                                             <option value="1">台北市</option>
@@ -93,12 +93,12 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                     <input type="text" class="form-control col-sm-2 postcode" placeholder="郵遞區號">
 
-                                    <label for="address" class="col-md-2 col-form-label" disable></label>
-                                    <div class="col-md-10 col-sm-12 pr-0 pt-3 address_text">
+                                    <label for="address" class="col-md-2 col-form-label" disable></label> -->
+                                    <div class="col-md-10 col-sm-12 pr-0  address_text">
                                         <input type="text" class="form-control" id="address" value="<?= isset($row['address']) ? htmlentities($row['address']) : "" ?>">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label for="pwd" class="col-lg-2  col-sm-4 col-form-label">密碼</label>
                                     <div class="col-lg-4 col-sm-8">
                                         <input type="password" class="form-control" id="pwd" placeholder="">
@@ -111,7 +111,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="col-lg-4 col-sm-8">
                                         <input type="password" class="form-control" id="pwd_check" placeholder="">
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                                 <div class="form-group row">
                                     <label for="address" class="col-sm-2 col-form-label">住址</label>
-                                    <div class="col-sm-4 address_box">
+                                    <!-- <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address2">
                                             <option selected>選縣市</option>
                                             <option value="1">台北市</option>
@@ -159,8 +159,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                     <input type="text" class="form-control col-sm-2 postcode" placeholder="郵遞區號">
 
-                                    <label for="address" class="col-sm-2 col-form-label" disable></label>
-                                    <div class="col-sm-10 pr-0 pt-3 address_text">
+                                    <label for="address" class="col-sm-2 col-form-label" disable></label> -->
+                                    <div class="col-sm-10 pr-0 address_text">
                                         <input type="text" class="form-control" id="address4" placeholder="輸入地址">
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <div id="step-3" class="step-3">
                     <div class="shap_list">
                         <ul>
-                            <li>購物清單</li>
+                            <li class="shopList">購物清單</li>
                             <li>商品名稱</li>
                             <li>單價</li>
                             <li>數量</li>
@@ -192,7 +192,9 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                         <button type="button" class="btn btn-outline-secondary up">+</button>
                                     </div>
                                     <div class="money ">NT$<span class="subtotal"></span></div>
+                                   
                                     <p class="remove-btn">X</p>
+                                
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -221,29 +223,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <!-- ------------------------------------------------ -->
 
 
-                <div class="step-3-1 show_mobile">
-                    <h6>購物清單</h6>
-                    <?php foreach ($keys as $k) :
-                        $r = $dict[$k];
-                        ?>
-                        <div class="shop_border p-item1 mb-3" data-sid="<?= $r['sid'] ?>">
-
-                            <img src="./img/product/<?= $r['images'] ?>.png" alt="">
-                            <div class="w-100 p-2">
-                                <p><?= $r['model'] ?>
-                                    <div class="d-flex justify-content-between ">
-                                        <select class="qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
-                                            <?php for ($i = 1; $i <= 20; $i++) : ?>
-                                                <option value="<?= $i ?>"><?= $i ?></option>
-                                            <?php endfor; ?>
-                                        </select>
-                                        <em class=price data-price="<?= $r['price'] ?>"></em>
-                                    </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                    
-                </div>
+                
 
                 <!-- -------------------------- -->
 
@@ -456,7 +436,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="d-flex end_btn mt-4">
                     <a href="" class="btn btn-secondary mx-2 px-4">繼續購物</a>
-                    <a href="" class="btn btn-danger mx-2 px-4">結 帳</a>
+                    <a href="order_check.php" class="btn btn-danger mx-2 px-4">結 帳</a>
                 </div>
 
                 <div class="custom-control custom-checkbox personal">
@@ -540,7 +520,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
     });
 
-
+        var input=$('.qty').find("input");
         btnUp = $('button.up'), //+
         btnDown = $('button.down'); //-
 
@@ -561,15 +541,15 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             $(this).siblings("input").val(val);
         }
     });
+    input.on("focusout", function() {
+        var max = parseInt(input.attr("max")),
+            val = parseInt(input.val());
 
-    // input.on("focusout", function() {
-    //     var max = parseInt(input.attr("max")),
-    //         val = parseInt(input.val());
+        if (val > max) {
+            input.val(max);
+        }
+    });
 
-    //     if (val > max) {
-    //         input.val(max);
-    //     }
-    // });
 </script>
 <script>
     $(".visa").click(function() {
@@ -615,7 +595,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         var sid = tr.attr('data-sid');
         var price = tr.find('.price').attr('data-price');
         var qty = $(this).siblings("input").val();
-        console.log(qty);
         $.get('add_to_cart.php', {
             sid: sid,
             qty: qty
@@ -630,14 +609,17 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         var t = 0;
         $('.p-item').each(function() {
             var price = $(this).find('.price').attr('data-price');
-            var qty = $(this).find('.qty').val();
+            var qty = $(this).find("input").val();
 
             t += price * qty;
         });
-
+        
         $('#total_price').text( dallorCommas(t) );
     }
     calcTotalPrice();
+
+
+
 </script>
 
 
