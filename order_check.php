@@ -19,8 +19,7 @@ if (!empty($_SESSION['cart'])) {
     // print_r($dict);
     // print_r($keys);
     // exit;
-}
- else {
+} else {
     header('Location: product-list.php'); //頁面跳轉 產品清單
     exit;
 }
@@ -66,20 +65,19 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 ?>
             <div class="shap_list_main p-item mb-3" data-sid="<?= $r['sid'] ?>">
                 <img src="./img/product/<?= $r['images'] ?>.png" alt="">
-                <h4><?= $r['model'] ?></h4>
-                <h5 class=price data-price="<?= $r['price'] ?>"></h5>
+                <h4 class="productsName"><?= $r['model'] ?></h4>
+                <h5 class="productsPrice price" data-price="<?= $r['price'] ?>"></h5>
                 <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
                     <!-- <button type="button" class="btn btn-outline-secondary down">-</button> -->
-                    <input type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1" readonly>
+                    <input class="mx-1" type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1" readonly>
                     <!-- <button type="button" class="btn btn-outline-secondary up">+</button> -->
                 </div>
-                <div class="money ">NT$<span class="subtotal"></span></div>
+                <div class="money productsPrice">NT$<span class="subtotal productsPrice"></span></div>
                 <!-- <p class="remove-btn">X</p> -->
             </div>
             <?php endforeach; ?>
-
         </div>
-        <div class="order_underline"></div>
+        <!-- <div class="order_underline"></div> -->
         <!-- <div class="container">
         <div class="order_checkProducts d-flex">
             <div class="productsImg">
