@@ -20,8 +20,8 @@ $page_name = 'product-list';
             <div class="filte">
 
                 <div class="prd_price">
-                    <div class="form-group">
-                        <label for="formControlRange">篩選列表</label>
+                    <div class="prdfil">
+                        <label class="" for="formControlRange">篩選列表</label>
                         <!-- <input type="range" class="form-control-range prbar" id="formControlRange"> -->
                     </div>
                     <div>
