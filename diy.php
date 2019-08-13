@@ -360,7 +360,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 
     function showPreSet() {
-        let setObj = my_set;
+        var setObj = my_set;
        
         if (setObj.camera === 0) {      //如果沒有選相機的時候 清單表清空
             $(".comm").html('');
@@ -370,7 +370,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             $(".camera_Intro h5").text(setObj.camera.model);
             $(".camera_Intro h6").html(setObj.camera.description);
             $(".camera_Intro p").text("NT$" + setObj.camera.price);
-            $(".comm").html(`<figure>
+            $(".comm").html(`<figure data-index="${setObj.camera.sid}">
                             <img src="./img/product/${setObj.camera.images}.png" alt="">
                         </figure>
                         <h6>${setObj.camera.model}</h6>`);
@@ -382,7 +382,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             $("#lens_BP").attr("src", "./img/product/" + setObj.len.images + ".png");
             $(".lens_Intro h6").text(setObj.len.model);
             $(".lens_Intro p").text("NT$" + setObj.len.price);
-            $(".comm1").html(`<figure>
+            $(".comm1").html(`<figure  data-index="${setObj.len.sid}">
             <img src="./img/product/${setObj.len.images}.png" alt="">
             </figure>
         <h6>${setObj.len.model}</h6>`);
@@ -395,13 +395,17 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             $("#tools1_BP").attr("src", "./img/product/" + setObj.tool.images + ".png");
             $(".tools1_Intro h6").text(setObj.tool.model);
             $(".tools1_Intro p").text("NT$" + setObj.tool.price);
-            $(".comm2").html(`<figure>
+            $(".comm2").html(`<figure  data-index="${setObj.tool.sid}">
                             <img src="./img/product/${setObj.tool.images}.png" alt="">
                         </figure>
                         <h6>${setObj.tool.model}</h6>`);
             
         }
-        $(".calcMoney").val(parseInt(setObj.camera.price) + parseInt(setObj.len.price) + parseInt(setObj.tool.price));
+        $(".calcMoney").val(
+            (parseInt(setObj.camera.price) || 0) + 
+            (parseInt(setObj.len.price) || 0) + 
+            (parseInt(setObj.tool.price) || 0)
+        );
     }
     $('#pro,#pro_m').click(function() {
         my_set = {
@@ -488,22 +492,55 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     var buy_btn = $('.buy-btn');
         buy_btn.click(function() {
             var p_item = $(this).closest('.p-item');
-            var sid = p_item.attr('data-index');
-            // var qty = p_item.find('#quantity_number').val();
+            // var sid = p_item.attr('data-index');
+            var sid_c=my_set.camera['sid'],
+                sid_l=my_set.len['sid'],
+                sid_t=my_set.tool['sid'];
+
+            // $(".p-item figure").each(function(){
+            //     let sid=$(this).data("sid")
+            // })
+           
+            // var sidData = []
+            // for(var i=0; i< setObj.length;i++){
+            //     sidData[i] = sid;
+            // }
+
             console.log({
-                sid: sid,
+                sid_c:sid_c,
+                sid_l:sid_l,
+                sid_t:sid_t,
+                // sid: sid,
                 qty: 1,
             });
-
             $.get('add_to_cart.php', {
-                sid: sid,
-                qty: 1
+                sid: sid_c,
+                qty: 1,
+              
             }, function(data) {
                 calcQty(data);
                 // alert('感謝加入購物車');
 
             }, 'json');
+            $.get('add_to_cart.php', {
+             
+                sid:sid_l,
+                qty: 1,
+              
+            }, function(data) {
+                calcQty(data);
+                // alert('感謝加入購物車');
 
+            }, 'json');
+            $.get('add_to_cart.php', {
+               
+                sid:sid_t,
+                qty:1,
+            }, function(data) {
+                calcQty(data);
+                alert('感謝加入購物車');
+
+            }, 'json');
 
         });
 </script>

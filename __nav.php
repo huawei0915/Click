@@ -10,7 +10,7 @@
 
 
                 <div class="features pb-2">
-                    <form method="post" action="">
+                    <form method="post" action="" onsubmit="return false">
                         <div class="serbox">
                             <input id="mag" type="search" placeholder="    Search..." name="search">
                             <div id="arm"></div>
@@ -99,12 +99,12 @@
         // if(cartNum.innerText =0){
         //     $(".cart-qty").hide();
         // }
+        
         $("#mag").keypress(function(event) {
-        if (event.keyCode == 13) {
-            var data = $("#mag").val()
-            location.href = './product-list.php?search='+data;
-        }
-    });
- 
+            if (event.keyCode == 13) {
+                var data = $("#mag").val()
+                location.href = 'product-list.php?search='+data;
+            }
+        })
        
     </script>

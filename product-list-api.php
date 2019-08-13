@@ -6,7 +6,28 @@ $tools_page = isset($_POST['tools_page']) ? intval($_POST['tools_page']) : 1;
 $per_page_camera = 8;  //相機顯示數量
 $per_page_lens = 8;  //鏡頭顯示數量
 $per_page_tools=4;
-$data = isset($_POST['data']) ? intval($_POST['data']) : 0;
+
+$data = isset($_POST['search']) ? $_POST['search'] : 0;
+$result = [
+    'camera_page' => $camera_page,
+    'per_page_camera' => $per_page_camera,
+    'data' => $data,
+];
+
+if(!empty($data)){
+
+    $t_sql_camera = "SELECT COUNT(1) FROM `p_products` WHERE `category_sid` BETWEEN 4 AND 6";
+    $totalRows_camera = $pdo->query($t_sql_camera)->fetch(PDO::FETCH_NUM)[0];
+    $result['totalRows_camera']=$totalRows_camera;
+
+    $p_search = "SELECT * FROM `p_products` WHERE `model` LIKE '%$data%'";   //搜尋條件
+    $stmt_search = $pdo->query($p_search);
+    $rowsSearch = $stmt_search->fetchAll(PDO::FETCH_ASSOC);
+    $result['rowsCamera']=$rowsSearch;
+    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
 
 $min = intval($_POST['min']);
 $max = intval($_POST['max']);
@@ -62,7 +83,7 @@ $totalRows_lens = $pdo->query($t_sql_lens)->fetch(PDO::FETCH_NUM)[0];
 $result['totalRows_lens']=$totalRows_lens;
 
 $t_sql_tools = "SELECT COUNT(1) FROM `p_products` WHERE `category_sid` IN (8,10)";
-$totalRows_tools = $pdo->query($t_sql_camera)->fetch(PDO::FETCH_NUM)[0];
+$totalRows_tools = $pdo->query($t_sql_tools)->fetch(PDO::FETCH_NUM)[0];
 $result['totalRows_tools']=$totalRows_tools;
 
 $totalPage_camera = ceil($totalRows_camera/$per_page_camera);
@@ -89,20 +110,7 @@ $rowsTools = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 $result['rowsTools']=$rowsTools;
 
 
-if(!empty($data)){
 
-$p_search = sprintf("SELECT * FROM `p_products` WHERE `model` LIKE 'canon%' OR `model` LIKE 'nikon%' OR `model` LIKE 'leica%'" );   //搜尋條件
-$stmt_search = $pdo->query($p_search);
-$rowsSearch = $stmt_search->fetchAll(PDO::FETCH_ASSOC);
-$result['rowsSearch']=$rowsSearch;
-
-// $sid = isset($_GET['sid']) ? $_GET['sid'] : " ";
-// $sql="SELECT * FROM p_products WHERE `sid` =".$_GET['sid'];
-
-
-echo $data;
-exit;
-}
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE);
 

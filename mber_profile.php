@@ -11,6 +11,9 @@ if (empty($row)) {
     exit;
 }
 
+$list = isset($_GET['aaa']) ? 'true': 'false';
+
+
 ?>
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
@@ -47,7 +50,7 @@ if (empty($row)) {
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="cl" id="order">
+                            <a href="#3" class="cl" id="order">
                                 <img src="img/order.svg" alt="">
                                 訂單查詢
                             </a>
@@ -397,6 +400,18 @@ if (empty($row)) {
         }
         return false;
     }
+    if(<?= $list ?>){
+        $(".my_profile").hide();
+        $(".my_passWord").hide();
+        $(".my_order").show();
+        $(".my_favorite").hide();
+    }
+
+
+
+
+
+
 </script>
 
 

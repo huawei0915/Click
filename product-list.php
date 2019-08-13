@@ -1,6 +1,8 @@
 <?php include __DIR__ . '/__db_connect.php';
 
 $page_name = 'product-list';
+$data = isset($_GET['search']) ? $_GET['search'] : 0;
+
 ?>
 
 <?php include __DIR__ . '/__html_head.php' ?>
@@ -341,7 +343,6 @@ $page_name = 'product-list';
     // ----------------------
 
     $(".product_form input").change(function() {
-
         form_post()
     })
     $(".product_form").change(function() {
@@ -349,9 +350,51 @@ $page_name = 'product-list';
         form_post()
     })
 
-    function form_post() {
-        $.post("product-list-api.php", $(".product_form").serialize(), function(data) {
 
+    function form_post(){
+        if(<?= !empty($data) ? 'true' : 'false' ?>){
+            obj = '<?= $data ?>'
+
+            $.post("product-list-api.php", {'search':obj}, function(data){
+                // console.log(data)
+                var camera_page_array = {
+                    'camera_page': data.camera_page,
+                    'camera_totalPage': data.totalPage_camera,
+                }
+
+                pagination_camera.html("")
+
+
+                var camera_rows = data.rowsCamera.length
+                products_container_camera.html("")
+
+                if(camera_rows==0){
+                    products_container_camera.html(`<h2>無相符合之商品</h2>`)
+                }
+
+                for (var i = 0; i < camera_rows; i++) {
+                    var camera_sid=data.rowsCamera[i]['sid']
+                    var camera_images = data.rowsCamera[i]['images']
+                    var camera_model = data.rowsCamera[i]['model']
+                    var camera_description = data.rowsCamera[i]['description']
+                    var camera_price = data.rowsCamera[i]['price']
+                    var camera_array = {
+                        'sid': camera_sid,
+                        'images': camera_images,
+                        'model': camera_model,
+                        'description': camera_description,
+                        'price': camera_price,
+                    }
+                    products_container_camera.append(p_item_fn_camera(camera_array));
+                }
+            },"json")
+                $(".prd_list").eq(1).hide();
+                $(".prd_list").eq(2).hide();
+                
+
+
+        }else{
+            $.post("product-list-api.php", $(".product_form").serialize(), function(data) {
             var camera_page_array = {
                 'camera_page': data.camera_page,
                 'camera_totalPage': data.totalPage_camera,
@@ -443,7 +486,7 @@ $page_name = 'product-list';
                 }
                 products_container_tools.append(p_item_fn_tools(tools_array));
             }
-        }, "json")
+        }, "json")}
     }
 
 

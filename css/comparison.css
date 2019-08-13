@@ -4,11 +4,17 @@
 .pro_left{
     margin-right: 30px;
 }
+.pro_left .table{
+    width: 200px !important;
+}
+
+
 .pro_title h4{
     padding-top: 35px;
     padding-left: 70px;
     font-weight: 600;
 }
+
 .cate ul{
     margin-left: 70px;
     display: flex;
@@ -24,7 +30,9 @@
 .cate ul li a{
     font-weight: 600;
     color: #c1c1c1;
+    cursor: pointer;
 }
+
 .cate ul li a.active{
     color:#ffb11b;   
 }
