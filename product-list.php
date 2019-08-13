@@ -223,8 +223,9 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                     </ul>
                     </a>
                     <p>NT$<%= price %></p>
+                    <a href="comparison.php">
                     <div class="compare">比較</div>
-                    
+                    </a>
                 </div>
                 `;
     var p_item_fn_camera = _.template(p_item_str_camera);
@@ -246,7 +247,9 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                     </ul>
 
                     <p>NT$<%= price %></p>
+                    <a href="comparison.php">
                     <div class="compare">比較</div>
+                    </a>
                 </div>`;
     var p_item_fn_lens = _.template(p_item_str_lens);
     // ----------------------------

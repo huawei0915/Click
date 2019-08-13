@@ -360,7 +360,9 @@
 
 
     <!-- <script src="plugin/drag/dist/jquery.js"></script> -->
+  
     <script src="plugin/skrollr.min.js"></script>
+    
     <script src="plugin/drag/dist/owl.carousel.min.js"></script>
     
     <script src="plugin/wow.min.js"></script>
@@ -395,8 +397,7 @@
                 $(".header").removeClass("fixed");
             }
         });
-    </script>
-    <script>
+
         // console.log(item)    ;   
         let pic = $(".small-pic figure");
         let B_pic = $(".main_big_pic figure");
@@ -410,18 +411,22 @@
             var as = $(this).attr("data-pic");
             $(item[as]).addClass("active")
             $(item[as]).siblings().removeClass("active");
+
         });
-    </script>
-    <script>
+
+
+
         $(document).ready(function() {
             $('.owl-carousel').owlCarousel({
                 items: 1,
                 margin: 10,
-                autoHeight: true
+                autoHeight: true,
+                // autoplay: true,
+                loop: true,
+                autoplayTimeout: 500,
             });
         });
-    </script>
-    <script>
+
         $(window).width(function() {
             var x = $(window).width();
             console.log(x);

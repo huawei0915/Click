@@ -1,14 +1,18 @@
 .pro_compar{
     display: flex;
+    position: relative;
 }
 .pro_left{
     margin-right: 30px;
 }
 .pro_left .table{
-    width: 200px !important;
+    width: 95%;
+    table-layout: fixed;
 }
 
-
+/* .pro_left .table tr{
+    visibility: hidden;
+} */
 .pro_title h4{
     padding-top: 35px;
     padding-left: 70px;
@@ -45,8 +49,11 @@
 .card{
     min-height: 280px;
 }
-.pro_right{
-    width: 45vw;
+.pro_compar .pro_right{
+    width: 80%;
+    display: flex;
+    position: absolute;
+    right: 0;
 }
 .pro_right_select1,.pro_right_select2,.pro_right_select3{
     width: 33%;
