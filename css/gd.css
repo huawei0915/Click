@@ -416,6 +416,9 @@ input[type=range]:focus {
 .prdtop{
     background-color: #F1F1F1;
 }
+.picint{
+    display: flex;
+}
 /* 產品照 */    
 .prdpic{
     width: 50%;
@@ -482,10 +485,28 @@ input[type=range]:focus {
     font-size: .8rem;
     color:gray;
 }
+@media screen and (max-width:375px){
+
+    .picint{
+        flex-wrap: wrap;
+        /* display: none; */
+    }
+    .prdpic{
+        width: 100%;
+    }
+    .prd_introduct{
+        width: 100%;
+    }
+    .prdprice{
+        margin-left:35%;
+    }
+    
+}
 
 /* 四個按鈕 */
 .prd_btn{
     margin-left: 57%;
+    display: flex;
 }
 @media screen and (max-width:1200px){
     .prd_btn{
@@ -502,6 +523,7 @@ input[type=range]:focus {
         margin-left: 9%;
     }
 }
+
 
 .prd_comparison{
     width: 100px;
@@ -550,7 +572,7 @@ input[type=range]:focus {
 .quantity input {
     padding: 0 5px;
     width: 50px;
-    height: 30px;
+    height: 30px !important;
     font-weight: bold;
     font-size: 15px;
     border: solid 1px gray;
@@ -568,11 +590,41 @@ input[type=range]:focus {
     margin-right: 2%;
     padding: 4px 5px 7px 5px;
     box-shadow: 0 2px 2px #aaa;
-
+}
+@media screen and (max-width:375px){
+    .prd_btn{
+        flex-wrap: wrap;
+        margin: 5px auto;
+    }
+    .prd_comparison{
+        width: 48%;
+    }
+    .prd_collection{
+        width: 48%;
+    }
+    .prd_btn{
+        margin-left: 2%;
+    }
+    .quantity{
+        margin-top: 10px;
+    }
+    .quantity button{
+        width: 48px;
+    }
+    .quantity input {
+        width: 60px !important;
+        height: 30px;
+    }
+    .prd_car{
+        width: 48%;
+        margin-top: 10px;
+    }
 }
 .prd_specification{
     margin:0 5%;
     padding: 3% 0;
+    display: flex;
+}
 }
 .prd_specification li{
     font-size: 0.8rem;
@@ -601,6 +653,21 @@ input[type=range]:focus {
         font-size: 0.8rem;
     }
 }
+@media screen and (max-width:375px){
+    .prd_specification{
+        flex-wrap: wrap;
+    }
+    .specification_left{
+        width: 100%;
+        margin: 0;
+    }
+    .specification_right{
+        width: 100%;
+        padding: 0;
+    }
+    
+}
+
 
 /* 詳細規格 */
 .prd_dtlspec{
