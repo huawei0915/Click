@@ -538,7 +538,8 @@ em{
         justify-content: flex-start;
         height: 200px;  
         position: relative;
-        margin: 0 -20px;
+        /* margin: 0 -20px; */
+        width:270px;
     }
     .p-time-area{
         padding-left:2.5rem; 
