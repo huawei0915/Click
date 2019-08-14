@@ -97,7 +97,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="d-flex diyBtn">
                         <button type="button" class="enterCar buy-btn">放入購物車</button>
-                        <button type="button" class="payMoney">立即結帳</button>
+                        <button type="button" class="payMoney buy-now">立即結帳</button>
                     </div>
                 </div>
                 <!-- </form> -->
@@ -489,30 +489,16 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     // });
 </script>
 <script>
+    var buy_now=$(".buy-now");
+
     var buy_btn = $('.buy-btn');
         buy_btn.click(function() {
-            var p_item = $(this).closest('.p-item');
+            let p_item = $(this).closest('.p-item');
             // var sid = p_item.attr('data-index');
-            var sid_c=my_set.camera['sid'],
+            let sid_c=my_set.camera['sid'],
                 sid_l=my_set.len['sid'],
                 sid_t=my_set.tool['sid'];
 
-            // $(".p-item figure").each(function(){
-            //     let sid=$(this).data("sid")
-            // })
-           
-            // var sidData = []
-            // for(var i=0; i< setObj.length;i++){
-            //     sidData[i] = sid;
-            // }
-
-            console.log({
-                sid_c:sid_c,
-                sid_l:sid_l,
-                sid_t:sid_t,
-                // sid: sid,
-                qty: 1,
-            });
             $.get('add_to_cart.php', {
                 sid: sid_c,
                 qty: 1,
@@ -543,5 +529,47 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             }, 'json');
 
         });
+
+
+        buy_now.click(function() {
+            let p_item = $(this).closest('.p-item');
+            // var sid = p_item.attr('data-index');
+            let sid_c=my_set.camera['sid'],
+                sid_l=my_set.len['sid'],
+                sid_t=my_set.tool['sid'];
+
+            $.get('add_to_cart.php', {
+                sid: sid_c,
+                qty: 1,
+              
+            }, function(data) {
+                calcQty(data);
+                // alert('感謝加入購物車');
+
+            }, 'json');
+            $.get('add_to_cart.php', {
+             
+                sid:sid_l,
+                qty: 1,
+              
+            }, function(data) {
+                calcQty(data);
+                // alert('感謝加入購物車');
+
+            }, 'json');
+            $.get('add_to_cart.php', {
+               
+                sid:sid_t,
+                qty:1,
+            }, function(data) {
+                calcQty(data);
+               
+
+            }, 'json');
+            window.location.href="cart.php";
+        });
+
+
+
 </script>
 <?php include __DIR__ . '/__html_end.php' ?>

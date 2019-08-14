@@ -277,10 +277,10 @@
         <div class="space"></div>
         <div class="right_text">
             <ul class="text_ul">
-                <li id="txt1" class="active">LONG SHOT</li>
-                <li id="txt2">ACTION SHOT</li>
-                <li id="txt3">CLOSE UP</li>
-                <li id="txt4">CHEST SHOT</li>
+                <li class="active">LONG SHOT</li>
+                <li>ACTION SHOT</li>
+                <li>CLOSE UP</li>
+                <li>CHEST SHOT</li>
             </ul>
         </div>
         <div class="owl-carousel owl-theme ">
@@ -360,7 +360,9 @@
 
 
     <!-- <script src="plugin/drag/dist/jquery.js"></script> -->
+  
     <script src="plugin/skrollr.min.js"></script>
+    
     <script src="plugin/drag/dist/owl.carousel.min.js"></script>
     
     <script src="plugin/wow.min.js"></script>
@@ -395,8 +397,7 @@
                 $(".header").removeClass("fixed");
             }
         });
-    </script>
-    <script>
+
         // console.log(item)    ;   
         let pic = $(".small-pic figure");
         let B_pic = $(".main_big_pic figure");
@@ -410,18 +411,28 @@
             var as = $(this).attr("data-pic");
             $(item[as]).addClass("active")
             $(item[as]).siblings().removeClass("active");
+           
+
         });
-    </script>
-    <script>
-        $(document).ready(function() {
+var item_s=$(".right_text .text_ul li")
             $('.owl-carousel').owlCarousel({
                 items: 1,
                 margin: 10,
-                autoHeight: true
+                autoHeight: true,
+                // autoplay: true,
+                loop: true,
+                autoplayTimeout: 500,
             });
-        });
-    </script>
-    <script>
+
+            $('.owl-carousel').on('changed.owl.carousel', function(event) {
+                var page =event.page.index;
+                // console.log(page)
+                $(item_s.eq([page])).addClass("active")
+                $(item_s.eq([page])).siblings().removeClass("active");
+
+
+            })
+
         $(window).width(function() {
             var x = $(window).width();
             console.log(x);

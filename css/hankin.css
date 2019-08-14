@@ -185,10 +185,15 @@
     font-size: 0.85rem;  
 }
 .my_favSpec{
-    width: 240px;
+    width: 200px;
     font-size: 0.75rem;
     color: #707070;
     line-height: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;  /*要显示的行数*/
+    -webkit-box-orient: vertical;
 }
 .my_favDate{
     width: 240px;

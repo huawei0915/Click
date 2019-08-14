@@ -5,12 +5,18 @@
 //     header('Location: ./');
 //     exit();
 // }
+$member = isset($_SESSION['loginUser']) ? intval($_SESSION['loginUser']['sid']) :0 ;
 
 
 $sid = isset($_GET['sid']) ? $_GET['sid'] : " ";
-$sql="SELECT * FROM p_products WHERE `sid` =".$_GET['sid'];
+$sql="SELECT `p_products`.*, `collection`.`member_sid`,`collection`.`p_products_sid` FROM `p_products` LEFT JOIN `collection` ON `p_products`.`sid` = `collection`.`p_products_sid` WHERE `p_products`.`sid` =".$_GET['sid'];
+
 $stmt= $pdo->query($sql);
 $row = $stmt->fetch();
+
+
+
+
 
 ?>
 
@@ -20,7 +26,7 @@ $row = $stmt->fetch();
 
 
 <div class="container">
-    <?php //foreach ($rows as $r) : ?>
+    
         <div class="prdtop p-item" data-sid="<?= $row['sid'] ?>">
 
             <div class="d-flex">
@@ -29,17 +35,16 @@ $row = $stmt->fetch();
                     <h1><?= $row['model'] ?></h1>
                     <p><?= $row['description'] ?></p>
                     <!-- <p>期待已久的EOS 5D Mark IV數位單眼相機搭載全新設計的3,040萬像素全片幅CMOS影像感測器及革命性Dual Pixel RAW，以追求更高影像品質；更配備承襲自旗艦型號EOS-1D X Mark II、全部61點自動對焦點均支援f/8光圈自動對焦的先進61點自動對焦系統及卓越的「雙像素CMOS自動對焦」技術，進一步提升攝影、錄影的自動對焦表現，同時支援DCI 4K短片拍攝，勢將拍攝錄影全面體驗進一步普及化。</p> -->
-                    <div class="prdprice d-flex">
-                        <h6>建議售價</h6>
-                        <h5>NT$<?= $row['price'] ?></h5>
-                    </div>
                 </div>
             </div>
-
+            <div class="prdprice d-flex">
+                <h6>建議售價</h6>
+                <h5>NT$<?= $row['price'] ?></h5>
+            </div>
             <div class="prd_btn d-flex">
                 <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
 
-                <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star" id="myclt"></i>收藏</button>
+                <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star <?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? 'fas' : 'far' ?>" id="myclt"></i><?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? '已收藏' : '收藏' ?></button>
                 
 
                 <div class="quantity">
@@ -50,7 +55,7 @@ $row = $stmt->fetch();
 
                 <button type="button" class="btn btn-outline-secondary prd_car buy-btn">放入購物車</button>
             </div>
-        <?php //endforeach; ?>
+        
         <div class="prd_specification d-flex">
             <div class="specification_left">
                 <ul>
@@ -78,21 +83,23 @@ $row = $stmt->fetch();
     <div class="prd_dtlspec">
         <div class="dtlspec">
             <h4>詳細規格</h4>
-            <img src="img/spec.png" alt="">
+            <img class="spec" src="img/spec.png" alt="">
+            <img class="spec768" src="img/spec768.png" alt="">
         </div>
     </div>
 
     <div class="prd_characteristic">
         <h4>產品特色</h4>
         <div class="prd_charpic">
-            <img src="img/charpic.png" alt="">
+            <img class="charpic" src="img/charpic.png" alt="">
+            <img class="charpic768" src="img/charpic768.png" alt="">
         </div>
     </div>
 
     <div class="prddown">
         <div class="annex">
             <h4>隨機附件</h4>
-            <div class="prd_annex d-flex">
+            <div class="prd_annex">
                 <img src="img/canon_annex.jpg" alt="">
                 <ul>
                     <li>EOS 5D Mark IV 數位相機</li>
@@ -111,7 +118,7 @@ $row = $stmt->fetch();
 
         <div class="prd_text">
             <h4>產品實測</h4>
-            <div class="text_cards d-flex">
+            <div class="text_cards">
                 <div class="tcs">
                     <a href="img/text_big_pic1.jpg">
                         <img src="img/prd_text_pic1.jpg" alt="">
@@ -219,43 +226,63 @@ $row = $stmt->fetch();
             input.val(max);
         }
     });
-</script>
 
-<script>
+
+    var sid = $('.buy-btn').closest('.p-item').attr('data-sid');
     var buy_btn = $('.buy-btn');
     buy_btn.click(function() {
         var p_item = $(this).closest('.p-item');
-        var sid = p_item.attr('data-sid');
+        
         var qty = p_item.find('#quantity_number').val();
-        // console.log({
-        //     sid: sid,
-        //     qty: qty
-        // });
 
         $.get('add_to_cart.php', {
             sid: sid,
             qty: qty
         }, function(data) {
             calcQty(data);
-            // alert('感謝加入購物車');
+            alert('感謝加入購物車');
 
         }, 'json');
 
 
     });
-</script>
-<script>
+
+
 $('.prd_collection').click(function(){
     var far=$("#myclt").hasClass("far");
     // var fas=$("#myclt").hasClass("fas");
+    <?php if(isset($_SESSION['loginUser'])):?>
+        
     if(far){
         $("#myclt").removeClass("far");
         $(this).html(`<i class="fas fa-star" id="myclt"></i>已收藏`);
+        like='like'
     }else{
         $("#myclt").removeClass("fas");
         $(this).html(`<i class="far fa-star" id="myclt"></i>收藏`);
+        like='dislike'
     }
+<?php else: ?>
+    alert("請先登入或註冊會員");
+<?php endif; ?>
+
+
+
+$.ajax({
+    type:'POST',
+    url:'collection_api.php',
+    data:{
+        product:sid,
+        like:like,
+    },
+    dataType:'json'}).done(function(){
+
+    })
+
 })
+
+
+
 </script>
 
 
