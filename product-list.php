@@ -372,7 +372,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                 products_container_camera.html("")
 
                 if(camera_rows==0){
-                    products_container_camera.html(`<h2>無相符合之商品</h2>`)
+                    products_container_camera.html(`<h2>無相符合之相機商品</h2>`)
                 }
 
                 for (var i = 0; i < camera_rows; i++) {
@@ -411,7 +411,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             products_container_camera.html("")
 
             if(camera_rows==0){
-                products_container_camera.html(`<h2>無相符合之商品</h2>`)
+                products_container_camera.html(`<h2>無相符合之鏡頭商品</h2>`)
             }
 
             for (var i = 0; i < camera_rows; i++) {
@@ -444,7 +444,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             products_container_lens.html("")
 
             if(lens_rows==0){
-                products_container_lens.html(`<h2>無相符合之商品</h2>`)
+                products_container_lens.html(`<h2>無相符合之配件商品</h2>`)
             }
             for (var i = 0; i < lens_rows; i++) {
                 var lens_images = data.rowsLens[i]['images']
