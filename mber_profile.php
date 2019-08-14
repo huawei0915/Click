@@ -11,7 +11,14 @@ if (empty($row)) {
     exit;
 }
 
-$list = isset($_GET['aaa']) ? 'true': 'false';
+
+$p_sql = sprintf("SELECT `p_products`.*, `collection`.`member_sid`,`collection`.`p_products_sid` FROM `p_products` JOIN `collection` ON `p_products`.`sid` = `collection`.`p_products_sid` WHERE `collection`.`member_sid`=" . $_SESSION['loginUser']['sid']);
+$p_row = $pdo->query($p_sql)->fetchAll(PDO::FETCH_ASSOC);
+
+//  json_encode($p_row, JSON_UNESCAPED_UNICODE);
+// exit;
+
+$list = isset($_GET['aaa']) ? 'true' : 'false';
 
 
 ?>
@@ -225,36 +232,41 @@ $list = isset($_GET['aaa']) ? 'true': 'false';
         <!-- 收藏 -->
         <div class="my_favorite">
             <div class="my_favWord">我的收藏 Collection</div>
+            <?php foreach ($p_row as $p) : ?>
             <div class="my_favList d-flex">
+                
+            
                 <div class="my_favImg">
-                    <img src="img/EOS5DMarkIV.png" alt="">
+                    <img src="img/product/<?= $p['images'] ?>.png" alt="">
                 </div>
                 <div class="my_favBkg">
                     <div class="my_favItem">
-                        Canon EOS 5D Mark IV
+                        <?= $p['model'] ?>
                     </div>
                     <div class="my_favSpec">
-                        (EF 24-70mm f/4L IS USM)
+                       <?= $p['description'] ?>
                     </div>
-                    <div class="my_favDate">
+                    <!-- <div class="my_favDate">
                         2019-08-20 09:30
-                    </div>
+                    </div> -->
                     <div class="my_favPrice">
-                        NT$ 169,000
+                        NT$<?= $p['price'] ?>
                     </div>
                     <div class="my_favCart">
-                        <a href="" class="cart_icon d-flex">
+                        <a href="add_to_cart.php" class="cart_icon d-flex">
                             <img src="img/cart.svg" alt="">
                             <div>加入購物車</div>
                         </a>
                     </div>
                     <div class="my_favRemove">
-                        <a href="">
+                        <a href="" class="remove-btn">
                             <i class="fas fa-times" style="font-size: 15px;"></i>
                         </a>
                     </div>
                 </div>
+                
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
@@ -400,18 +412,12 @@ $list = isset($_GET['aaa']) ? 'true': 'false';
         }
         return false;
     }
-    if(<?= $list ?>){
+    if (<?= $list ?>) {
         $(".my_profile").hide();
         $(".my_passWord").hide();
         $(".my_order").show();
         $(".my_favorite").hide();
     }
-
-
-
-
-
-
 </script>
 
 

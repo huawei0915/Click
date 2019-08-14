@@ -292,15 +292,15 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class=" delivery-main mt-2">
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="1" checked>
                                 <label class="custom-control-label" for="customRadioInline1">宅配</label>
                             </div>
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="2">
                                 <label class="custom-control-label " for="customRadioInline2">自取 <em>(10:00am~19:00pm)</em></label>
                             </div>
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="3">
                                 <label class="custom-control-label" for="customRadioInline3">超商取貨</label>
                             </div>
                         </div>

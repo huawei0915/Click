@@ -9,7 +9,8 @@ $member = isset($_SESSION['loginUser']) ? intval($_SESSION['loginUser']['sid']) 
 
 
 $sid = isset($_GET['sid']) ? $_GET['sid'] : " ";
-$sql="SELECT `p_products`.*, `collection`.`member_sid`,`collection`.`p_products_sid` FROM `p_products` JOIN `collection` ON `p_products`.`sid` = `collection`.`p_products_sid` WHERE `p_products`.`sid` =".$_GET['sid'];
+$sql="SELECT `p_products`.*, `collection`.`member_sid`,`collection`.`p_products_sid` FROM `p_products` LEFT JOIN `collection` ON `p_products`.`sid` = `collection`.`p_products_sid` WHERE `p_products`.`sid` =".$_GET['sid'];
+
 $stmt= $pdo->query($sql);
 $row = $stmt->fetch();
 
@@ -25,7 +26,7 @@ $row = $stmt->fetch();
 
 
 <div class="container">
-    <?php //foreach ($rows as $r) : ?>
+    
         <div class="prdtop p-item" data-sid="<?= $row['sid'] ?>">
 
             <div class="d-flex">
@@ -54,7 +55,7 @@ $row = $stmt->fetch();
 
                 <button type="button" class="btn btn-outline-secondary prd_car buy-btn">放入購物車</button>
             </div>
-        <?php //endforeach; ?>
+        
         <div class="prd_specification d-flex">
             <div class="specification_left">
                 <ul>
