@@ -283,7 +283,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         } else {
             $(".camera_page").val(1)
         }
-        console.log($(".camera_page").val())
+
         form_post()
     })
     $("html").on("click", '.arrow_list_camera .next', function() {
@@ -294,7 +294,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         } else {
             $(".camera_page").val(total)
         }
-        console.log($(".camera_page").val())
+
         form_post()
     })
 
@@ -306,7 +306,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         } else {
             $(".lens_page").val(1)
         }
-        console.log($(".lens_page").val())
+   
         form_post()
     })
     $("html").on("click", '.arrow_list_lens .next', function() {
@@ -317,7 +317,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         } else {
             $(".lens_page").val(total)
         }
-        console.log($(".lens_page").val())
+
         form_post()
     })
     // ---------------------配件分頁-----------------------
@@ -328,7 +328,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         } else {
             $(".tools_page").val(1)
         }
-        console.log($(".tools_page").val())
+
         form_post()
     })
     $("html").on("click", '.arrow_list_tools .next', function() {
@@ -340,7 +340,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         } else {
             $(".tools_page").val(total)
         }
-        console.log($(".tools_page").val())
+
         form_post()
     })
     // ----------------------
@@ -495,9 +495,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 
 
     form_post({})
-</script>
 
-<script>
     $('.flt_btn').click(function(){
         $('.prd_filter').toggle(".filte");
     })
