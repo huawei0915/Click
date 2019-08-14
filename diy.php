@@ -204,7 +204,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="d-flex pt-3 total">
                     <h6 class="">Total </h6>
-                    <p class="ml-3"> NT$ 15000</p>
+                    <p class="ml-3"> NT$ 0</p>
 
                 </div>
             </div>

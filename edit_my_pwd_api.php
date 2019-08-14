@@ -9,8 +9,12 @@ $result = [
 ];
 
 
+// echo json_encode($_SESSION['loginUser']);
+// exit;
+
 // TODO: 檢查欄位
-if(empty($_POST['sid']) or empty($_POST['password'])){
+
+if(empty($_SESSION['loginUser']) or empty($_POST['password'])){
     // 欄位只要有一個沒填, 就結束
     echo json_encode($result);
     exit;
@@ -21,7 +25,7 @@ $sql = "SELECT * FROM `members` WHERE `sid`=? AND `password`=SHA1(?)";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    $_POST['sid'],
+    $_SESSION['loginUser']['sid'],
     $_POST['password'],
 ]);
 
@@ -39,8 +43,8 @@ $sql = "UPDATE `members` SET `password`=SHA1(?) WHERE `sid`=?";
 $stmt = $pdo->prepare($sql);
 
 $stmt->execute([
-    $_POST['password'],    
-    $_POST['sid'],
+    $_POST['newpassword'],    
+    $_SESSION['loginUser']['sid'],
 ]);
 
 if($stmt->rowCount()==1){
