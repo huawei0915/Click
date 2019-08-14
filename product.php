@@ -5,12 +5,17 @@
 //     header('Location: ./');
 //     exit();
 // }
+$member = isset($_SESSION['loginUser']) ? intval($_SESSION['loginUser']['sid']) :0 ;
 
 
 $sid = isset($_GET['sid']) ? $_GET['sid'] : " ";
-$sql="SELECT * FROM p_products WHERE `sid` =".$_GET['sid'];
+$sql="SELECT `p_products`.*, `collection`.`member_sid`,`collection`.`p_products_sid` FROM `p_products` JOIN `collection` ON `p_products`.`sid` = `collection`.`p_products_sid` WHERE `p_products`.`sid` =".$_GET['sid'];
 $stmt= $pdo->query($sql);
 $row = $stmt->fetch();
+
+
+
+
 
 ?>
 
@@ -38,7 +43,7 @@ $row = $stmt->fetch();
             <div class="prd_btn d-flex">
                 <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
 
-                <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star" id="myclt"></i>收藏</button>
+                <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star <?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? 'fas' : 'far' ?>" id="myclt"></i><?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? '已收藏' : '收藏' ?></button>
                 
 
                 <div class="quantity">
@@ -220,43 +225,62 @@ $row = $stmt->fetch();
             input.val(max);
         }
     });
-</script>
 
-<script>
+
+    var sid = $('.buy-btn').closest('.p-item').attr('data-sid');
     var buy_btn = $('.buy-btn');
     buy_btn.click(function() {
         var p_item = $(this).closest('.p-item');
-        var sid = p_item.attr('data-sid');
+        
         var qty = p_item.find('#quantity_number').val();
-        // console.log({
-        //     sid: sid,
-        //     qty: qty
-        // });
-
         $.get('add_to_cart.php', {
             sid: sid,
             qty: qty
         }, function(data) {
             calcQty(data);
-            // alert('感謝加入購物車');
+            alert('感謝加入購物車');
 
         }, 'json');
 
 
     });
-</script>
-<script>
+
+
 $('.prd_collection').click(function(){
     var far=$("#myclt").hasClass("far");
     // var fas=$("#myclt").hasClass("fas");
+    <?php if(isset($_SESSION['loginUser'])):?>
+        
     if(far){
         $("#myclt").removeClass("far");
         $(this).html(`<i class="fas fa-star" id="myclt"></i>已收藏`);
+        like='like'
     }else{
         $("#myclt").removeClass("fas");
         $(this).html(`<i class="far fa-star" id="myclt"></i>收藏`);
+        like='dislike'
     }
+<?php else: ?>
+    alert("請先登入或註冊會員");
+<?php endif; ?>
+
+
+
+$.ajax({
+    type:'POST',
+    url:'collection_api.php',
+    data:{
+        product:sid,
+        like:like,
+    },
+    dataType:'json'}).done(function(){
+
+    })
+
 })
+
+
+
 </script>
 
 

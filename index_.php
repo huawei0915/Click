@@ -277,10 +277,10 @@
         <div class="space"></div>
         <div class="right_text">
             <ul class="text_ul">
-                <li id="txt1" class="active">LONG SHOT</li>
-                <li id="txt2">ACTION SHOT</li>
-                <li id="txt3">CLOSE UP</li>
-                <li id="txt4">CHEST SHOT</li>
+                <li class="active">LONG SHOT</li>
+                <li>ACTION SHOT</li>
+                <li>CLOSE UP</li>
+                <li>CHEST SHOT</li>
             </ul>
         </div>
         <div class="owl-carousel owl-theme ">
@@ -411,12 +411,10 @@
             var as = $(this).attr("data-pic");
             $(item[as]).addClass("active")
             $(item[as]).siblings().removeClass("active");
+           
 
         });
-
-
-
-        $(document).ready(function() {
+var item_s=$(".right_text .text_ul li")
             $('.owl-carousel').owlCarousel({
                 items: 1,
                 margin: 10,
@@ -425,7 +423,15 @@
                 loop: true,
                 autoplayTimeout: 500,
             });
-        });
+
+            $('.owl-carousel').on('changed.owl.carousel', function(event) {
+                var page =event.page.index;
+                // console.log(page)
+                $(item_s.eq([page])).addClass("active")
+                $(item_s.eq([page])).siblings().removeClass("active");
+
+
+            })
 
         $(window).width(function() {
             var x = $(window).width();
