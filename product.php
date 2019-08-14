@@ -234,6 +234,7 @@ $row = $stmt->fetch();
         var p_item = $(this).closest('.p-item');
         
         var qty = p_item.find('#quantity_number').val();
+
         $.get('add_to_cart.php', {
             sid: sid,
             qty: qty

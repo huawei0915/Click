@@ -20,6 +20,8 @@ $p_row = $pdo->query($p_sql)->fetchAll(PDO::FETCH_ASSOC);
 
 $list = isset($_GET['aaa']) ? 'true' : 'false';
 
+$coll = isset($_GET['ccc']) ? 'true' : 'false';
+
 
 ?>
 <?php include __DIR__ . '/__html_head.php' ?>
@@ -259,7 +261,7 @@ $list = isset($_GET['aaa']) ? 'true' : 'false';
                         </a>
                     </div>
                     <div class="my_favRemove">
-                        <a href="" class="remove-btn">
+                        <a href="mber_profile.php?ccc=3" class="remove-btn" data-sid="<?=$p['sid']?>">
                             <i class="fas fa-times" style="font-size: 15px;"></i>
                         </a>
                     </div>
@@ -364,16 +366,12 @@ $list = isset($_GET['aaa']) ? 'true' : 'false';
     var $password = $('#password');
     var $newpassword = $("#newpassword");
     var $confirmpassword = $("#confirmpassword");
-
+    // var conbtn=$("#confirmBtn");
     // var fields = [$password];
 
     function checkForm_pwd() {
-        // 先回復到原來的狀態
-
-        // fields.forEach(function(val){
-        //     val.next().text('');
-        // });
-
+     
+        console.log('11111111111111111111111111111');
 
         var isPass = true; // 表單是否有通過檢查
 
@@ -412,12 +410,35 @@ $list = isset($_GET['aaa']) ? 'true' : 'false';
         }
         return false;
     }
+    // -----------------------------------
     if (<?= $list ?>) {
         $(".my_profile").hide();
         $(".my_passWord").hide();
         $(".my_order").show();
         $(".my_favorite").hide();
     }
+
+    $('.remove-btn').click(function(){
+       let sid=$(this).attr("data-sid");
+        $.ajax({
+    type:'POST',
+    url:'collection_api.php',
+    data:{
+        product:sid,
+        like:'dislike',
+    },
+    dataType:'json'})
+
+    });
+
+
+    if (<?= $coll ?>) {
+        $(".my_profile").hide();
+        $(".my_passWord").hide();
+        $(".my_order").hide();
+        $(".my_favorite").show();
+    }
+
 </script>
 
 

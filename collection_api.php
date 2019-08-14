@@ -4,7 +4,7 @@
 
 
 if(empty($_POST['product']) or empty($_SESSION['loginUser']) or empty($_POST['like'])){
-    // echo '22222222';
+    // echo 'ERROR';
     exit;
 }
 
