@@ -29,7 +29,7 @@ $row = $stmt->fetch();
     
         <div class="prdtop p-item" data-sid="<?= $row['sid'] ?>">
 
-            <div class="d-flex">
+            <div class="picint">
                 <figure class="prdpic"><img src="./img/product/<?= $row['images'] ?>.png" alt=""></figure>
                 <div class="prd_introduct">
                     <h1><?= $row['model'] ?></h1>
@@ -41,7 +41,7 @@ $row = $stmt->fetch();
                 <h6>建議售價</h6>
                 <h5>NT$<?= $row['price'] ?></h5>
             </div>
-            <div class="prd_btn d-flex">
+            <div class="prd_btn">
                 <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
 
                 <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star <?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? 'fas' : 'far' ?>" id="myclt"></i><?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? '已收藏' : '收藏' ?></button>
@@ -56,7 +56,7 @@ $row = $stmt->fetch();
                 <button type="button" class="btn btn-outline-secondary prd_car buy-btn">放入購物車</button>
             </div>
         
-        <div class="prd_specification d-flex">
+        <div class="prd_specification">
             <div class="specification_left">
                 <ul>
                     <li>堅固可靠鎂合金機身及防塵防水滴設計</li>
