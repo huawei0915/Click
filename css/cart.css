@@ -28,8 +28,6 @@
     width: 80%;
     margin: 0 auto;
 }
-
-
 .step-1 form .form-control ,.step-1 form .custom-select,.step-2 form .form-control ,.step-2 form .custom-select{
     margin-top: 0;
     border-radius: 15px;
@@ -39,7 +37,6 @@
     text-align: center;
     /* padding-left: 40% ; */
 }
-
 .step-2 .recipient{
     display: flex;
     margin-top: 40px;
@@ -92,7 +89,6 @@ em{
 .shap_list_border{
     margin: 20px;
 }
-
 .shap_list_main {
     border: 1px solid black;
     border-radius: 20px;
@@ -102,8 +98,6 @@ em{
     padding: 0 5%;
     height: 100px;
 }
-
-
 .shap_list_main img{
     width: 85px;
     height: 85px;
@@ -215,24 +209,20 @@ em{
     position: absolute;
     bottom: 40px;
     padding:0 0 0 20px;
-    
 }
 .total_price .sm_price p.text{
     width: 100px;
 }
-
 .total_price .sm_send p.text{
     width: 100px;
 }
 .total_price .sm_total p.text{
     width: 100px;
 }
-
 .total_price p.price{
     width: 100px;
     text-align: right;
 }
-
 .total_price>div:nth-child(2){
     border-top: 2px solid #ff3535;
     position: absolute;
@@ -240,7 +230,6 @@ em{
     width: 100%;
     padding:0 0 0 20px;
 }
-
 @media screen and (max-width:1200px){
     .shap_list_main h4{
         width: 240px;
@@ -251,7 +240,6 @@ em{
         font-size: 1rem;
     }
 }
-
 @media screen and (max-width:992px){
     .shap_list_main h4{
         margin-left: 0;
@@ -385,14 +373,11 @@ em{
     padding: 0 10% ;
     margin-bottom: 40px;
 }
-
-
 .custom-control-input:checked~.custom-control-label::before{
     color: #fff;
     border-color: #ffa800;
     background-color: #ffa800;
 }
-
 .step-4 .p-time{
     display: flex;
     justify-content: flex-start;
@@ -456,7 +441,7 @@ em{
 }
 .step-4 em.send_time{
     width: 250px;
-    font-size: 1rem;
+    font-size: 0.85rem;
     text-align: right;
     position: absolute;
     right: 10%;
@@ -469,22 +454,17 @@ em{
     width: 100%;
     margin-top: 1rem;
 }
-
-
 .step-4 div.title_1{
     margin-left: -3%;
     margin-bottom: 40px;
 }
-
-
-
 .pay-style{
     margin: 0 auto;
     width: 100%;
 
 }
 .pay-style .visa{
-    border:2px solid #5d5d5d;
+    border:1px solid #5d5d5d;
     width: 60%;
     border-radius: 10px;
     margin: 40px auto ;
@@ -502,7 +482,7 @@ em{
     /* margin: 0 auto; */
     width: 100%;
     border: 1px solid black; 
-    border-radius: 40px; 
+    border-radius: 20px; 
     height: 200px;
     padding-left: 10%;
 }
@@ -523,26 +503,28 @@ em{
     width: 100%;
     padding: 5% 0;
 }
+.meber_check{
+    font-size: 0.75rem;
+    padding-top: 5px;
+}
 .end_btn{
     justify-content: flex-end;
 }
 
 @media screen and (max-width:992px){
     .radio-text label{
-        font-size: 1rem;
-    }
-    .p-time .p-time-title{
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }
 @media screen and (max-width:576px){
     .step-4 .delivery-main{
         flex-direction: column;
         height: auto;
-        flex-wrap: wrap;
         text-align: left;
         align-items: flex-start;
         padding: 0 7%;
+        border-radius: 10px;
+        margin-bottom: 20px;
     }
     .step-4 .delivery-main>div{
         margin: 5px 0;
@@ -558,6 +540,9 @@ em{
         position: relative;
         margin: 0 -20px;
     }
+    .p-time-area{
+        padding-left:2.5rem; 
+    }
     .p-time .p-time-area>div{
         margin: 5px 0;
     }
@@ -570,7 +555,14 @@ em{
     }
     .p-time .p-time-title {
         margin-right: 10px;
-        
+        font-size: 0.85rem;
+        position: absolute;
+        bottom: 110px;
+        left: 10px;
+        height: 30px;
+        line-height: 30px;
+        width: 50%;
+        padding-bottom: 2rem;
     }
     .step-4 .myself>p{
         color:#8e8e8e;
@@ -581,6 +573,10 @@ em{
         bottom: 0;
         right: 0;
     }
+    .step-4 em.send_time{
+        font-size: 0.65rem;
+        padding-right: 20%;
+    }
     .step-4 .family_711 .custom-select {
         padding-left: 1%;
     }
@@ -590,7 +586,7 @@ em{
     }
     .pay-style .visa {
         width: 100%;
-        margin: 40px auto;
+        margin: 15px auto;
     }
     .pay-style .visa p{
         color:#8e8e8e;
@@ -598,13 +594,36 @@ em{
     }
     .pay-style_1 {
         height: auto;
-        border-radius: 20px;
+        border-radius: 10px;
     }
     .personal {
         text-align: right;
-        padding: 10%;
+        padding: 5%;
+    }
+    .meber_check{
+        font-size: 0.6rem;
+        padding-top: 7px;
     }
     .end_btn{
         justify-content: center;
+    }
+    .step-4 div.title, .step-4 div.title_1{
+        margin-bottom: 15px;
+    }
+    .receiptImg, .pay_cardImg, .shippingImg{
+        width: 12%;
+    }
+    .receipt_text, .pay_card, .shipping{
+        font-size: 0.85rem;
+    }
+    .pay-style_1 .radio-text .number{
+        margin: -3px 0 0 10px;
+        border: 1px solid #8e8e8e;
+        border-radius: 5px;
+        padding: 0px 0 0 15px;
+        width: 59%;
+        font-size: 0.7rem;
+        height: 30px;
+        display: none;
     }
 }

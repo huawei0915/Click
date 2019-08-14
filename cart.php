@@ -287,8 +287,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div id="step-4" class="step-4">
                     <div class="">
-                        <div class="d-flex title"><img src="img/icon/物流.svg" alt="">
-                            <h5 class="ml-3 pt-3">物流方式</h5>
+                        <div class="d-flex title"><img src="img/icon/物流.svg" alt="" class="shippingImg">
+                            <h5 class="shipping ml-3 pt-3">物流方式</h5>
                         </div>
                         <div class=" delivery-main mt-2">
                             <div class="custom-control custom-radio  radio-text">
@@ -356,8 +356,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 
                     <div class="my-4">
-                        <div class="d-flex title_1"><img src="img/icon/付款.svg" alt="">
-                            <h5 class="ml-3 pt-3">付款方式</h5>
+                        <div class="d-flex title_1"><img src="img/icon/付款.svg" alt="" class="pay_cardImg">
+                            <h5 class="pay_card ml-3 pt-3">付款方式</h5>
                         </div>
                         <div class="pay-style ">
                             <div data-toggle="modal" data-target="#exampleModalCenter">
@@ -410,10 +410,10 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                         <div class="my-4 ">
-                            <div class="d-flex title_1"><img src="img/icon/發票.svg" alt="">
-                                <h5 class="ml-3 pt-3">發票類型</h5>
+                            <div class="d-flex title_1"><img src="img/icon/發票.svg" alt="" class="receiptImg">
+                                <h5 class="receipt_text ml-3 pt-3">發票類型</h5>
                             </div>
-                            <div class="mt-2 pay-style_1">
+                            <div class="pay-style_1">
                                 <div class="custom-control custom-radio  radio-text">
                                     <input type="radio" id="customRadioInline7" name="customRadioInline3" class="custom-control-input" checked>
                                     <label class="custom-control-label" for="customRadioInline7">二聯式 </label>
@@ -441,7 +441,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="custom-control custom-checkbox personal">
                     <input type="checkbox" class="custom-control-input" id="customCheck2" checked>
-                    <label class="custom-control-label" for="customCheck2">用上述資料直接註冊會員並同意會員責任規範及個資聲明</label>
+                    <label class="custom-control-label meber_check" for="customCheck2">用上述資料直接註冊會員並同意會員責任規範及個資聲明</label>
                 </div>
             </div>
 
