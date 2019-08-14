@@ -61,19 +61,19 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         <div class="">
                             <form class="form01" 　>
                                 <div class="form-group row ">
-                                    <label for="name" class="col-lg-2 col-sm-2 col-form-label ">姓名</label>
+                                    <label for="name" class="col-lg-2 col-sm-2 col-form-label" style="font-size: 0.85rem;">姓名</label>
                                     <div class="col-lg-4 col-sm-10">
                                         <input type="text" class="form-control" id="name" value="<?= isset($row['nickname']) ? htmlentities($row['nickname']) : "" ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="mobile" class="col-lg-2 col-sm-2 col-form-label">電話</label>
+                                    <label for="mobile" class="col-lg-2 col-sm-2 col-form-label" style="font-size: 0.85rem;">電話</label>
                                     <div class="col-lg-4 col-sm-10">
                                         <input type="text" class="form-control" id="mobile" value="<?= isset($row['mobile']) ? htmlentities($row['mobile']) : "" ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="address" class="col-md-2 col-sm-12 col-form-label ">住址</label>
+                                    <label for="address" class="col-md-2 col-sm-12 col-form-label" style="font-size: 0.85rem;">住址</label>
 
                                     <!-- <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address0">
@@ -128,19 +128,19 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         <div class="">
                             <form class="form01" 　>
                                 <div class="form-group row ">
-                                    <label for="name" class="col-sm-2 col-form-label ">姓名</label>
+                                    <label for="name" class="col-sm-2 col-form-label" style="font-size: 0.85rem;">姓名</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="name1" value="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="mobile" class="col-sm-2 col-form-label">電話</label>
+                                    <label for="mobile" class="col-sm-2 col-form-label" style="font-size: 0.85rem;">電話</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="mobile1" value="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="address" class="col-sm-2 col-form-label">住址</label>
+                                    <label for="address" class="col-sm-2 col-form-label" style="font-size: 0.85rem;">住址</label>
                                     <!-- <div class="col-sm-4 address_box">
                                         <select class="custom-select" id="address2">
                                             <option selected>選縣市</option>
@@ -182,20 +182,20 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($keys as $k) :
                                 $r = $dict[$k];
                                 ?>
-                                <div class="shap_list_main p-item mb-3" data-sid="<?= $r['sid'] ?>">
-                                    <img src="./img/product/<?= $r['images'] ?>.png" alt="">
-                                    <h4><?= $r['model'] ?></h4>
-                                    <h5 class=price data-price="<?= $r['price'] ?>"></h5>
-                                    <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
-                                        <button type="button" class="btn btn-outline-secondary down">-</button>
-                                        <input type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1">
-                                        <button type="button" class="btn btn-outline-secondary up">+</button>
-                                    </div>
-                                    <div class="money ">NT$<span class="subtotal"></span></div>
-                                   
-                                    <p class="remove-btn">X</p>
-                                
+                            <div class="shap_list_main p-item mb-3" data-sid="<?= $r['sid'] ?>">
+                                <img src="./img/product/<?= $r['images'] ?>.png" alt="">
+                                <h4><?= $r['model'] ?></h4>
+                                <h5 class=price data-price="<?= $r['price'] ?>"></h5>
+                                <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
+                                    <button type="button" class="btn btn-outline-secondary down">-</button>
+                                    <input type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1">
+                                    <button type="button" class="btn btn-outline-secondary up">+</button>
                                 </div>
+                                <div class="money ">NT$<span class="subtotal"></span></div>
+
+                                <p class="remove-btn">X</p>
+
+                            </div>
                             <?php endforeach; ?>
                         </div>
 
@@ -223,7 +223,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <!-- ------------------------------------------------ -->
 
 
-                
+
 
                 <!-- -------------------------- -->
 
@@ -520,8 +520,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
     });
 
-        var input=$('.qty').find("input");
-        btnUp = $('button.up'), //+
+    var input = $('.qty').find("input");
+    btnUp = $('button.up'), //+
         btnDown = $('button.down'); //-
 
     $('button.up').on("click", function() {
@@ -549,7 +549,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             input.val(max);
         }
     });
-
 </script>
 <script>
     $(".visa").click(function() {
@@ -570,8 +569,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     p_items.each(function() {
         var price = $(this).find('.price').attr('data-price');
         var qty = $(this).find('.qty').attr('data-qty');
-        $(this).find('.subtotal').text( dallorCommas(price * qty));
-        $(this).find('.price').text( dallorCommas(price));
+        $(this).find('.subtotal').text(dallorCommas(price * qty));
+        $(this).find('.price').text(dallorCommas(price));
 
         // select element
         $(this).find('.qty').val(qty);
@@ -600,7 +599,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             qty: qty
         }, function(data) {
             calcQty(data);
-            tr.find('.subtotal').text( dallorCommas(price * qty) );
+            tr.find('.subtotal').text(dallorCommas(price * qty));
             calcTotalPrice();
         }, 'json');
     });
@@ -613,13 +612,10 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
             t += price * qty;
         });
-        
-        $('#total_price').text( dallorCommas(t) );
+
+        $('#total_price').text(dallorCommas(t));
     }
     calcTotalPrice();
-
-
-
 </script>
 
 

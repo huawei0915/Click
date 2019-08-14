@@ -369,6 +369,10 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
     // var conbtn=$("#confirmBtn");
     // var fields = [$password];
 
+// $('#confirmBtn').click(function(){
+//     $('#pwdform').submit()
+// })
+
     function checkForm_pwd() {
      
         console.log('11111111111111111111111111111');
@@ -377,12 +381,12 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
 
         if ($password.val().length < 6) {
             isPass = false;
-            $password.next().text('請輸入六個以上的字元');
+           alert('請輸入六個以上的字元');
         }
 
-        if ($newpassword !== $confirmpassword) {
+        if ($newpassword.val() != $confirmpassword.val()) {
             isPass = false;
-            $newpassword.next().text('確認密碼錯誤');
+            alert('確認密碼錯誤');
         }
 
         if (isPass) {

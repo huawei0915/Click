@@ -29,7 +29,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
 </style>
 <?php require __DIR__ . '/__nav.php' ?>
 
-<div class="login-body">
+<div class="login-body" style="background: url(./img/6482.jpg)no-repeat center fixed;background-size: cover;/*! */background-position: 30% 100%;">
   <ul class="nav">
     <li onclick="showLogin()">登入</li>
     <li onclick="showSignup()">註冊</li>
@@ -57,15 +57,15 @@ if (empty($_SERVER['HTTP_REFERER'])) {
           <h2>登入</h2>
           <form id="myform" method="post" onsubmit="return checkForm()">
             <div class="field-wrapper">
-              <input type="text" name="email" id="email" placeholder="username">
+              <input type="text" name="email" id="email" placeholder="username" style="font-size: 0.8rem;line-height: 1rem;">
               <label>使用者名稱</label>
             </div>
             <div class="field-wrapper">
-              <input type="password" name="password" id="password" placeholder="password" autocomplete="new-password">
+              <input type="password" name="password" id="password" placeholder="password" autocomplete="new-password" style="font-size: 0.8rem;line-height: 1rem;">
               <label>密碼</label>
             </div>
             <div class="field-wrapper">
-              <input type="submit" value="登入">
+              <input type="submit" value="登入" style="font-size: 0.85rem;line-height: 1rem;">
             </div>
             <span class="psw" onclick="showForgotPassword()">忘記密碼? </span>
             <span class="signup" onclick="showSignup()">尚未成為我們的會員, 按此前往註冊</span>
@@ -82,7 +82,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
               <label>e-mail</label>
             </div>
             <div class="field-wrapper">
-              <input class="A-submit" type="submit" onclick="showThankYou()" value="送出">
+              <input class="A-submit" type="submit" onclick="showThankYou()" value="送出" style="line-height: 1rem;">
             </div>
           </form>
         </div>
@@ -108,7 +108,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
               <label>再次輸入密碼</label>
             </div>
             <div class="field-wrapper">
-              <input class="A-submit" type="submit" value="註冊">
+              <input class="A-submit" type="submit" value="註冊" style="font-size: 0.85rem;line-height: 1rem;" >
             </div>
             <span class="singin" onclick="showLogin()">已經是我們的會員 , 請前往登入</span>
           </form>
@@ -117,7 +117,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
       <div class="face face-top">
         <div class="content">
           <div class="thank-you-msg">
-          註冊成功
+            註冊成功
           </div>
         </div>
       </div>
@@ -130,6 +130,7 @@ if (empty($_SERVER['HTTP_REFERER'])) {
       </div>
     </div>
   </div>
+  <!-- <img class="login_background" src="img/iPhonexIMGL6482.jpg" alt=""> -->
 </div>
 <?php require __DIR__ . '/__footer.php' ?>
 <?php require __DIR__ . '/__script.php' ?>
