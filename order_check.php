@@ -128,8 +128,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     function check() {
         if( <?= !empty($_SESSION['loginUser']) ? 'true' : 'false' ?> ){
             window.location("mber_profile.php?aaa=3");
-        }else{
-            
+        }else{ 
             alert("請先登入會註冊會員");
             window.location("A_login.php");
         }
