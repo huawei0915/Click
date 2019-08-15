@@ -272,13 +272,11 @@ nav.active{
     width: 90vw;
 }
 
-<<<<<<< HEAD
 .sticky-top{
     background: rgba(28, 28, 28, 0.5);
-=======
+}
 #my_nickname{
     color: white;
->>>>>>> 90cfce13cab7716b36f246ca2e182163faafbc02
 }
 
 @media screen and (max-width:992px){
