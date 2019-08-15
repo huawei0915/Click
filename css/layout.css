@@ -362,6 +362,13 @@ nav.active{
         width: 12%;
         margin-right: 5%;
     }
+    .member_CCC{
+        margin-left: 5%;
+    }
+    .member_CCC img{
+        width: 28%;
+        margin-right: 5%;
+    }
 }
 @media screen and (min-width:578px){
     .show_mobile{
