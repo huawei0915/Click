@@ -72,8 +72,20 @@
     background: #1C1C1C;
     border-radius: 0 0 15px 15px;
 }
+.cl1{
+    color: #5c5c5c;
+}
 .cl{
     color: #5c5c5c;
+    position: relative;
+}
+.cl:hover::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 40%;
+    border-bottom:2px solid #FFA800;
 }
 /* --會員List RWD-- */
 @media screen and (max-width:578px){
@@ -318,27 +330,28 @@
 .my_passBackground .confirmBtn{
     font-size: 1.2rem;
     text-align: center;
-    line-height: 30px;
+    line-height: 35px;
     width: 130px;
     color: #1C1C1C;
     border: 3px solid #FFA800;
     border-radius: 15px;
     position: absolute;
     left: 320px;
-    top: 430px;
+    top: 428px;
+    background-color: white;
 }
-.alert{
+.al_password{
     position: absolute;
-    left: 25px;
-    top: 430px;
-    width: 250px;
+    left: 12%;
+    top: 428px;
+    width: 200px;
     color: #1C1C1C;
     background-color: #F3F3F3;
     border-radius: 10px;
     margin: 0 auto;
     text-align: center;
     font-size: 1.2rem;
-    line-height: 20px;
+    line-height: 40px;
 }
 /* ---------Password RWD-------- */
 @media screen and (max-width:578px){
@@ -368,17 +381,16 @@
         position: absolute;
         width: 100px;
         text-align: center;
-        line-height: 20px;
-        left: 190px;
-        top: 335px;
+        line-height: 30px;
+        left: 60%;
+        top: 85%;
     }
-    .alert{
+    .al_password{
         position: absolute;
-        left: 20px;
-        top: 335px;
-        width: 150px;
-        height: 38px;
-        line-height: 19px;
+        left: 10%;
+        top: 85%;
+        width: 40%;
+        line-height: 40px;
     }
 }
 /* ----------profile area---------- */
@@ -408,8 +420,8 @@
     }
     .my_profileFont .my_profileBimg{
         position: absolute;
-        left: 3vh;
-        top: 11vh;
+        left: 5.5vh;
+        top: 12vh;
     }
     .my_profileFont .my_profileIcon{
         width: 5%;
@@ -417,20 +429,21 @@
         border-radius: 50%;
         border: 1px solid #707070;
         position: absolute;
-        left: 11vh;
+        left: 14vh;
         top: 20vh;
     }
     .my_profileFont .my_profileIcon .pro_icon{
-        width: 65%;
+        width: 70%;
         padding-bottom: 3px;
     }
     .my_profile .my_profileBackground .my_card_body{
-        width: 60%;
+        width: 15%;
         color: white;
-        margin: 0 35%;
+        margin: 0 36%;
     }
     .my_profile .my_profileBackground .my_proForm{
         margin-bottom: 0.5rem;
+        width: 280px;
     }
     .my_profile .my_profileBackground .my_label{
         margin: 0;
@@ -448,7 +461,7 @@
         width: 15px;
         height: 15px;
         padding: 3px;
-        margin-right: 5px;
+        margin-right: 10px;
         background-clip: content-box;
         border: 1px solid #bbbbbb;
         background-color: #e7e6e7;
@@ -456,7 +469,7 @@
     }
     input[type="radio"]:checked + label:before {
         background-color: #FFC200;
-    }
+    } 
     *:before,*:after {
         box-sizing: border-box;
     }
@@ -464,16 +477,14 @@
         display: inline-flex;
         align-items: center;
     }
-    button{
+    .btn_save{
         background: white ;
         margin: 0;
         padding: 0;
-        width: 15vh;
-    }
-    .btn{
+        width: 14vh;
         border: 3px solid #FFA800;
         border-radius: 16px;
-        line-height: 1.4rem;
+        line-height: 35px;
         position: absolute;
         left: 35vh;
         top: 62vh;
@@ -486,7 +497,7 @@
             position: relative;
         }
         .my_profile .my_profileBackground{
-            min-height: 95vh;
+            min-height: 97vh;
         }
         .my_profile .my_profileFont .my_fh6{
             font-size: 0.85rem;
@@ -507,15 +518,18 @@
         }
         .my_profile .my_profileBackground .my_card_body{
             width: 90%;
-            margin: 25% auto;
+            margin: 22% auto;
+        }
+        .my_profile .my_profileBackground .my_sexcheck{
+            padding-left: 20%;
         }
         .my_profile .my_profileBackground .my_proForm{
             margin-bottom: 0.65rem;
         }
-        .btn{
+        .btn_save{
             position: absolute;
             left: 32vh;
-            top: 98vh;
+            top: 100vh;
         }
     }
 /* ----------order area---------- */
@@ -533,10 +547,452 @@
     padding: 25px 0 0 20px;
     border-radius: 27px 27px 0 0;
 }
+.ordr_icongroup{
+    height: 10vh;
+}
 .order_icon{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 2.5rem;
 }
 .order_icon img{
-    width: 4rem;
+    width: 3.5rem;
 }
+.order_line{
+    width: 420px;
+    margin: 0 auto;
+    padding-top:2rem; 
+}
+.order_userInfo, .order_listBuy, .order_payInfo{
+    border: 1px solid #707070;
+    border-radius: 27px;
+    width: 95%;
+    margin: 20px auto;
+    padding: 0.65rem 1rem;
+}
+.order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
+    font-size:1.2rem; 
+    color: #707070;
+}
+.order_fh6{
+    color: #707070;
+}
+.userinfomation{
+    padding-left: 1.5rem;
+}
+ .userinfo_user label{
+    margin-left: 3rem;
+}
+.userinfo_mobile label, .userinfo_address label{
+    margin-left: 4rem;
+}
+.order_buyList{
+    display: flex;
+}
+.order_buyList figure{
+    width: 55px;
+    height: 55px;
+}
+.order_count_price{
+    padding-left: 3rem;
+}
+.order_listBuy .order_buyList img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.order_infoBuy{
+    padding: 0;
+    margin: 0;
+    margin-left: 2rem;
+}
+.order_send, .order_date, .odrder_total{
+    padding-left: 1.5rem;
+}
+ .order_send label, .order_date label{
+    margin-left: 4rem;
+}
+.odrder_total label{
+    margin-left: 3rem;
+}
+@media screen and (max-width:578px){
+    .my_order{
+        width: 90%;
+        margin: 40px auto 40px auto;
+        position: relative;
+    }
+    .order_line{
+        width: 100%;
+    }
+    .order_userInfo, .order_listBuy, .order_payInfo{
+        width: 95%;
+    }
+    .order_userInfo{
+        margin-top: 3rem;
+    }
+    .order_userInfo h4, .order_listBuy h4, .order_payInfo h4{
+        font-size:1rem; 
+    }
+    .userinfomation{
+        padding-left: 0.25rem;
+    }
+    .userinfo_address{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .userinfo_address label{
+        /* padding-left: 6rem; */
+        margin: 0;
+    }
+    .order_listBuy .order_buyList img{
+        width: 120%;
+        height: 120%;
+        object-fit: contain;
+    }
+    .order_infoBuy{
+        display: flex;
+        flex-wrap: wrap;
+        color: #7D7D7D;
+    }
+    .order_buyList figure{
+        width: 60px;
+        height: 60px;
+    }
+    .order_name_spec, .order_count_price{
+        padding: 0 5%;
+        margin: 0;
+        font-size: 1rem;
+    }
+    .order_infoBuy{
+        margin-left: 1rem; 
+    }
+    .order_send label, .order_date label{
+        margin-left: 2rem;
+    }
+    .odrder_total label{
+        margin-left: 1rem;
+    }
+}
+/* ----------profile_share----------   */
+
+/* ------share banner ---- */
+.profileBG{
+    background: #FEFDF9;
+    width: 100%;
+    min-height: 280vh;
+    position: relative;
+}
+.art_text{
+    color: #404040;
+}
+.art_text .new_article{
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1.5rem 0 0.9rem 0;
+}
+.art_text .article_date{
+    font-size: 1rem;
+    padding: 0 0 0.15rem 0;
+}
+.art_text .article_info{
+    font-size: 0.9rem;
+    padding: 0;
+}
+.share_bigImg{
+    background: url("../img/s0.jpg") no-repeat center;
+    width: 100%;
+    height: 550px;
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top:17vh;
+}
+.share_word{
+    color:white;
+    width: 50%;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    position: absolute;
+    top: 38vh;
+    padding-left: 1%;
+    z-index: 1;
+}
+.share_more{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 48vh;
+    right: 22%;
+    font-weight: bold;
+    z-index: 2;
+}
+.share_filter{
+    background: black;
+    width: 100%;
+    height: 180px;
+    opacity:0.6;
+    position: absolute;
+    top: 35vh;
+}
+.share_author{
+    font-size: 0.85rem;
+    position: absolute;
+    right: 22%;
+    padding-top:1%;
+}
+@media screen and (max-width:578px){
+    .profileBG{
+        min-height: 500vh;
+    }
+    .share_bigImg{
+        height: 260px;
+        object-fit: contain;
+        background-size: 900px;
+        top:22vh;
+    }
+    .art_text .new_article{
+        font-size: 1.1rem;
+        padding: 1.2rem 0 0.25rem 0;
+    }
+    .art_text .article_date{
+        font-size: 0.85rem;
+    }
+    .art_text .article_info{
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+    }
+    .share_word{
+        color:#1C1C1C;
+        width: 90%;
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+        top: 48vh;
+    }
+    .share_filter{
+     display: none;
+    }
+    .share_author{
+        font-size: 0.7rem;
+        position: absolute;
+        right: 8%;
+        padding-top:2%;
+    }
+    .share_more{
+        color: #1C1C1C;
+        font-size: 0.85rem;
+        position: absolute;
+        top: 86vh;
+        right: 10%;
+    }
+}
+/* ------share img group Up---- */
+.share_pimgesUp{
+    position: absolute;
+    top: 90vh;
+}
+.share_pimgesUp .pimges_left, .pimges_right{
+    width:50%;   
+}
+.share_pimgesUp .pimges_black_right{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 33%;
+    color: white;
+}
+.pimges_black_right .pimges_bigtext{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  3.5%;
+    padding-left: 39%;
+}
+.pimges_black_right .pimges_smalltext{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 48%;
+    padding-top: 1%;
+}
+.pimges_black_overlay{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.pimges_black_overlay:hover{
+    opacity: 0.3;
+}
+.share_pimgesUp .pimges_black_left{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+.pimges_black_left .pimges_bigtext_left{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  4%;
+    padding-left: 3.5%;
+}
+.pimges_black_left .pimges_smalltext_left{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 4%;
+    padding-top: 1%;
+}
+.pimges_black_overlay1{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top:34%;
+    transition: 0.5s;
+}
+.pimges_black_overlay1:hover{
+    opacity: 0.3;
+}
+.share_pimgesUp .s_sh, .share_pimgesdown .s_sh{
+    box-shadow: 2px 2px 5px #1C1C1C;
+}
+/* ------share img group down---- */
+.share_pimgesdown{
+    position: absolute;
+    top: 178.6vh;
+}
+.pimges_black_right_down{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 33%;
+    color: white;
+}
+.pimges_black_overlay2{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    left:0;
+    top:0;
+    transition: 0.5s;
+}
+.pimges_black_overlay2:hover{
+    opacity: 0.3;
+}
+.pimges_black_left_down{
+    width:50%;
+    height: 110px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+.pimges_black_right_down .pimges_bigtext_down{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  4%;
+    padding-left: 70%;
+}
+.pimges_black_right_down .pimges_smalltext_down{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 52%;
+}
+.pimges_black_left_down .pimges_bigtext_left_down{
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding-top:  4%;
+    padding-left: 4%;
+}
+.pimges_black_left_down .pimges_smalltext_left_down{
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding-left: 4.5%;
+}
+.pimges_black_overlay3{
+    width: 50%;
+    height: 55%;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    left:50%;
+    top:33%;
+    transition: 0.5s;
+}
+.pimges_black_overlay3:hover{
+    opacity: 0.3;
+}
+@media screen and (max-width:578px){
+    .share_pimgesUp{
+        top: 120vh;
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+    }
+    .pimgesUp_Bimg{
+        width: 100%;
+    }
+    .pimges_black_right .pimges_bigtext{
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        padding-top:  3.5%;
+        padding-left: 39%;
+    }
+    .pimges_black_right .pimges_smalltext{
+        font-size: 0.75rem;
+        font-weight: 300;
+        padding-left: 48%;
+        padding-top: 1%;
+    }
+  
+    .share_pimgesUp .pimges_black_left{
+        width:50%;
+        height: 110px;
+        background: black;
+        position: absolute;
+        bottom: 0;
+        color: white;
+    }
+    .pimges_black_left .pimges_bigtext_left{
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        padding-top:  4%;
+        padding-left: 3.5%;
+    }
+    .pimges_black_left .pimges_smalltext_left{
+        font-size: 0.75rem;
+        font-weight: 300;
+        padding-left: 4%;
+        padding-top: 1%;
+    }
+    .share_pimgesUp .s_sh, .share_pimgesdown .s_sh{
+        box-shadow: 2px 2px 5px #1C1C1C;
+    }
+    /* --------------------- */
+    .share_pimgesdown{
+        top: 300vh;
+    }
+    .pimges_black_overlay, .pimges_black_overlay1, .pimges_black_overlay2, .pimges_black_overlay3{
+        display: none;
+    }
+}
+
+

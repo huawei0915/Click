@@ -7,6 +7,7 @@
 html,body{
     background-color: #1C1C1C;
     height: calc(100% - 123px);
+    /* height: 100%; */
 }
 li{
     list-style-type: none;
@@ -125,6 +126,16 @@ header.active{
   }
 /* ----------------------------------   */
 
+  .cart{
+      position: relative;
+  }
+    .cart>span{
+        position: absolute;
+        right: 5px;
+        top: -5px;
+    }
+
+
   .transition{
     transition: 0.4s;
   }
@@ -141,7 +152,7 @@ header.active{
   }
   .menu ul{
     position: absolute;
-    right: -20px;
+    right: -40px;
     top:56px;
     background:#1C1C1C;
     width:150px;
@@ -258,6 +269,9 @@ nav.active{
     background:transparent;
     width: 90vw;
 }
+
+
+
 @media screen and (max-width:992px){
     .deskshow{
         display: none;
@@ -281,6 +295,9 @@ nav.active{
     }
     .features .shop{
         height: 21px;
+    }
+    .mber{
+        margin-top: 25px;
     }
     .features .menu{
         /* padding-top: 20px; */
@@ -325,6 +342,17 @@ nav.active{
         height: 60px;
     }
     
+    .cart>span{
+        position: absolute;
+        right: -5px;
+        top: 15px;
+        width: 20px;
+        height: 20px;
+        line-height: 15px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
 }
 @media screen and (min-width:578px){
     .show_mobile{
@@ -455,3 +483,158 @@ footer .container{
         order:-1;
     }
 }
+
+.remove-btn{
+    cursor: pointer;
+}
+
+
+/* ----------------------------- */
+.WY-warning-wrap{
+    display: none;
+}
+
+.WY-warning-wrap.active{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+.WY-warning-bg{
+    width: 100%;
+    height: 100%;
+    background: #7373737e;
+    /* opacity: .5; */
+}
+
+.WY-Warning-confirm{
+    display: none;
+}
+
+.WY-Warning-confirm.active{
+    padding:60px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    background: #ffffff;
+    text-align: center;
+    display: block;
+    /* box-shadow: 1px 2px 2px #aaaaaa; */
+    /* border: 1px solid #aaa; */
+}
+
+.WY-Warning-confirm .WY-title{
+    margin-bottom: 30px;
+}
+
+.WY-Warning-confirm .WY-title img{
+    width: 3.5rem;
+    vertical-align: bottom;
+}
+
+.WY-Warning-confirm .WY-title h3{
+    display: inline-block;
+    margin-left: 1.2rem;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 10px;
+    line-height: 4rem;
+}
+
+.WY-confirm-btn{
+    padding-left: 12px; 
+    color: #ffffff;
+    
+}
+
+.WY-confirm-btn a{
+    display: inline-block;
+    width: 100px;
+    height: 2.3rem;
+    margin: 15px;
+    background: #AD5C5C;
+    font-weight: 300;
+    color: inherit;
+    line-height: 2.2rem;
+    letter-spacing: 12px;
+    padding-left: 12px;
+    border: 1px solid rgb(0,0,0,0.15);
+    /* border: 1px solid transparent; */
+}
+
+.WY-confirm-btn a.WY-login_c{
+    border:1px solid #aaa;
+    background: #ffffff;
+    color: #333333;
+    }
+
+.WY-confirm-btn a:hover{
+    background: rgb(209, 137, 137);
+    border: 1px solid rgb(0,0,0,0.15);
+    text-decoration: none;
+    /* box-shadow: 3px 2px 5px #aaa; */
+}
+
+/* .WY-confirm-btn a:first-child:hover{ */
+    /* color: #333333; */
+    /* background: #cccccc; */
+    /* } */
+
+
+.WY-confirm-btn .WY-errorCheck{
+    width: 120px;
+    letter-spacing: 4px;
+}
+
+
+@media screen and (max-width:600px){
+    .WY-Warning-confirm.active{
+        width: 80%;
+    }
+
+    .WY-Warning-confirm .WY-title img{
+        width: 2.8rem;
+        vertical-align: middle;
+    }
+    
+    .WY-Warning-confirm .WY-title h3{
+        letter-spacing: 5px;
+        line-height: 3rem;
+    }
+
+    .WY-confirm-btn{
+        padding-left: 0px; 
+    }
+    
+    
+}
+@media screen and (max-width:474px){
+    .WY-Warning-confirm.active{
+        padding: 30px;
+    }
+    .WY-Warning-confirm .WY-title{
+        margin-bottom: 20px;
+    }
+    .WY-Warning-confirm .WY-title h3{
+        font-size: 1.3rem;
+        margin-top: 20px;
+        margin-bottom:20px;
+        margin-right: 1.2rem;
+    }
+
+    .WY-confirm-btn a{
+        width: 40%;
+        margin: 15px 4%;
+    }
+}
+
+
+
+/* ------------------------------- */

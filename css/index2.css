@@ -54,28 +54,35 @@
     position: absolute;
 }
 .mondel_text{
-    width: 75%;
-    height: 400px;
-    border:1px solid white;
+    width: 70%;
+    height: 350px;
+    /* border:1px solid white; */
+    background-image: url(../img/border.svg);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
     position: absolute;
-    top:475px;
-    left: 20%;
+    top:330px;
+    left: 25%;
 }
 .mondel_text ul{
-    width: 45%;
+    width: 42%;
     text-align: right;
+    line-height: 50px;
+    margin-top: 30px;
 }
 .mondel_text ul li{
-    font-size: 60px;
+    font-size: 40px;
     color: rgba(255,255,255,.5);
 }
 .mondel_text ul li.active{
-    font-size:80px;
-    color: #fff;
+    font-size:70px;
+    color: rgba(255,255,255,.7);
 }
 @media screen and (max-width:1641px){
     .mondel_text{
         height: 350px;
+        width: 80%;
+        left: 20%;
     }
     .mondel_text ul li{
         font-size: 50px;
@@ -89,6 +96,9 @@
 @media screen and (max-width:1440px){
     .mondel_text{
         height: 300px;
+        width: 80%;
+        left: 20%;
+        background-size: cover;
     }
     .mondel_text ul li{
         font-size: 40px;
@@ -104,7 +114,7 @@
 }
 @media screen and (max-width:1236px){
     .mondel_text{
-        height: 250px;
+        /* height: 250px; */
     }
     .mondel_text ul li{
         font-size: 30px;
@@ -186,6 +196,7 @@ main h3{
 main .main_bg{
     background-color: #404040;
     height: 680px;
+    box-shadow: 0 0 20px black;
 }
 main .main_bg .corner{
     width: 1000px;
@@ -200,14 +211,16 @@ main .main_bg .corner figure{
 }
 main .main_bg .corner figure:nth-child(1){
     position: absolute;
+    z-index: 5;
 }
 main .main_bg .corner figure:nth-child(2){
     position: absolute;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     right: 0;
     top: 0;
+    z-index: 5;
 }
-main .main_bg .corner figure:nth-child(3){
+/* main .main_bg .corner figure:nth-child(3){
     position: absolute;
     transform: rotate(180deg);
     right: 0;
@@ -216,11 +229,11 @@ main .main_bg .corner figure:nth-child(3){
 }
 main .main_bg .corner figure:nth-child(4){
     position: absolute;
-    transform: rotate(270deg);
+    transform: rotate(0deg);
     left: 0;
     bottom: 0;
     z-index: 5;
-}
+} */
 
 main .main_bg .corner .diy_map img:nth-child(1){
     position: absolute;
@@ -269,7 +282,7 @@ main .main_bg .corner .diy_map img:nth-child(3){
     background-image:url('../img/three-bg.jpg');
     background-repeat: no-repeat;
     height: 130vh;
-    margin-top: -150px;
+    margin-top: -50px;
     overflow: hidden;
     position: relative;
     background-size: cover;
@@ -290,17 +303,17 @@ main .main_bg .corner .diy_map img:nth-child(3){
 .brand_map_bg .brand_map figure:nth-child(1) img:nth-child(2){
     position: absolute;
     top:2%;
-    left: 8%;
+    left: 13%;
 }
 .brand_map_bg .brand_map figure:nth-child(2) img:nth-child(1){
     position: absolute;
     top: 30%;
-    right: 10%;
+    right: 20%;
 }
 .brand_map_bg .brand_map figure:nth-child(2) img:nth-child(2){
     position: absolute;
     top: 33%;
-    right: 12%;
+    right: 33%;
 }
 .brand_map_bg .brand_map figure:nth-child(3) img:nth-child(1){
     position: absolute;
@@ -309,15 +322,15 @@ main .main_bg .corner .diy_map img:nth-child(3){
 }
 .brand_map_bg .brand_map figure:nth-child(3) img:nth-child(2){
     position: absolute;
-    top: 60%;
-    left: 8%;
+    top: 57%;
+    left: 18%;
 }
 .brand_map_bg  .line_yellow{
     position: absolute;
     height: 120vh;
     border-right: 2px solid #FFB11B;
     border-bottom:2px solid #FFB11B;
-    width: 95vw;
+    width: 85vw;
     top: 0;
 }
 
@@ -353,6 +366,8 @@ main .main_bg .corner .diy_map img:nth-child(3){
 .four_bg{
     background: #404040;
     height: 400px;
+    box-shadow: 0 0 20px black;
+    margin-top: 100px;
 }
 .four_bg .container{
     align-items: center;
@@ -370,6 +385,8 @@ main .main_bg .corner .diy_map img:nth-child(3){
     cursor: pointer;
     transition: .5s;
 }
+
+
 /* .botton_bg{
     height: 340px;
     overflow: hidden;
@@ -389,14 +406,14 @@ main .main_bg .corner .diy_map img:nth-child(3){
     text-align: center;
     padding: 10px 0;
     transition: .5s;
-    
 }
 .four_bg div:hover > p{
     display: block;
     opacity: 1;
 }
-.four_bg div:hover > img{
+.four_bg a:hover > img{
     filter: brightness(30%);
+    box-shadow: 0 1px 5px black;
 }
 
 @media screen and (max-width:860px){
@@ -470,8 +487,9 @@ main .main_bg .corner .diy_map img:nth-child(3){
     width: 50%;
     height: 50%;
     transition: .5s;
-
 }
+
+
 .four img{
     width: 100%;
     height: 100%;

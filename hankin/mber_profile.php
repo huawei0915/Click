@@ -18,7 +18,7 @@
                     <div class="acc_data mx-3 mt-3 mb-3 py-3 d-flex flex-column justify-content-end">
                         <div class="acc_name">Taoyuan GD</div>
                         <div class="acc_mod">
-                            <a class="cl" href="mber_profile.php">
+                            <a class="cl1" href="mber_profile.php">
                                 <img src="img/edit.svg" alt="">編輯個人資料
                             </a>
                         </div>
@@ -68,40 +68,38 @@
                 <div class="my_card_body">
                     <form action="">
                         <div class="form-group my_proForm">
-                            <label class="my_label" for="email">Email</label>
+                            <label class="my_label py-1" for="email">信箱</label>
                             <input type="text" class="form-control my_proControl" id="email" name="email" placeholder="請輸入E-mail">
                             <small class="form-text"></small>
                         </div>
                         <div class="form-group my_proForm">
-                            <label for="mobile">Mobile</label>
+                            <label class="py-1" for="mobile">手機</label>
                             <input type="text" class="form-control" id="mobile" name="mobile" placeholder="請輸入手機號碼">
                             <small class="form-text"></small>
                         </div>
                         <div class="form-group my_proForm">
-                            <label for="nickname">暱稱</label>
+                            <label class="py-1" for="nickname">暱稱</label>
                             <input type="text" class="form-control" id="nickname" name="nickname" placeholder="請輸入暱稱">
                             <small class="form-text"></small>
                         </div>
-                        <div class="form-check form-check-inline active py-1">
+                        <div class="form-check form-check-inline py-2">
                             <input class="form-check-input" type="radio" name="sex" id="inlineRadio1" value="1">
-                            <label class="form-check-label my_sexcheck" for="inlineRadio1">男</label>
-                        </div>
-                        <div class="form-check form-check-inline py-1">
+                            <label class="form-check-label my_sexcheck text-nowrap" for="inlineRadio1">男</label>
                             <input class="form-check-input" type="radio" name="sex" id="inlineRadio2" value="2">
-                            <label class="form-check-label my_sexcheck" for="inlineRadio2">女</label>
+                            <label class="form-check-label my_sexcheck text-nowrap ml-4" for="inlineRadio2">女</label>
                         </div>
                         <div class="form-group my_proForm">
-                            <label for="birthday">生日</label>
+                            <label class="py-1" for="birthday">生日</label>
                             <input type="text" class="form-control" id="birthday" name="birthday" placeholder="YYYY-MM-DD">
                         </div>
                         <div class="form-group my_proForm">
-                            <label for="address">地址</label>
+                            <label class="py-1" for="address">地址</label>
                             <input type="text" class="form-control" id="address" name="address" placeholder="輸入詳細地址">
                             <small class="form-text"></small>
                         </div>
                 </div>
             </div>
-            <button class="btn">儲存</button>
+            <button class="btn_save">儲存</button>
             </form>
         </div>
     </div>

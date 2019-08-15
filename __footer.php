@@ -1,3 +1,6 @@
+
+
+
 <footer>
         <div class="container">
             <div class="foot-l show_desk">
@@ -32,3 +35,34 @@
             </div>
         </div>
     </footer>
+
+
+
+    <div class="WY-warning-wrap ">
+            <div class="WY-warning-bg"></div>
+            <div class="WY-Warning-confirm" id="WY-loginWarning">
+                <div class="WY-title">
+                    <!-- <img src="img/warning-sign.jpg" alt="warning"> -->
+                    <h3>請先登入會員</h3>
+                </div>
+                <div class="WY-confirm-btn">
+                    <a class="WY-login_c WY-closeW">取消</a>
+                    <a href="A_login.php" >登入</a>
+                </div>
+            </div>
+            <div class="WY-Warning-confirm" id="WY-errorWarning">
+                <div class="WY-title">
+                    <!-- <img src="img/warning-sign.jpg" alt="warning"> -->
+                    <h3></h3>
+                </div>
+                <div class="WY-confirm-btn">
+                    <a href="#" class="WY-errorCheck WY-closeW text-center">了解</a>
+                </div>
+            </div>
+            <div class="WY-Warning-confirm" id="WY-successMsg">
+                <div class="WY-title mb-0">
+                    <!-- <img src="img/success-sign.svg" alt="success"> -->
+                    <h3></h3>
+                </div>
+            </div>
+        </div>

@@ -4,7 +4,7 @@ require __DIR__. '/__db_connect.php';
 $result = [
     'success' => false,
     'code' => 0,
-    'info' => '資料欄位不足',
+    // 'info' => '資料欄位不足',
     'post' => $_POST,
 ];
 
@@ -33,11 +33,7 @@ if( $stmt->rowCount()>=1 ){
 $hash = sha1($_POST['email']. uniqid(). rand()); // 產生一個不容易相同的字串
 
 $stmt = $pdo->prepare("INSERT INTO `members`
-(
-    `email`, `password`, `nickname`, `created_at`
- ) VALUES (
-     ?, SHA1(?), ?,  NOW()
- )");
+(`email`, `password`, `nickname` ) VALUES (?, SHA1(?),?)");
 
 $stmt->execute([
     $_POST['email'],

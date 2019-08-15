@@ -18,7 +18,7 @@
                     <div class="acc_data mx-3 mt-3 mb-3 py-3 d-flex flex-column justify-content-end">
                         <div class="acc_name">Taoyuan GD</div>
                         <div class="acc_mod">
-                            <a class="cl" href="mber_profile.php">
+                            <a class="cl1" href="mber_profile.php">
                                 <img src="img/edit.svg" alt="">編輯個人資料
                             </a>
                         </div>
@@ -69,28 +69,23 @@
                         </div>
                     </form>
                 </div>
-                <a href="" class="btn success confirmBtn" data-btn="success">確認</a>
-                <div class="alert">修改完成</div>
+                <button class="confirmBtn" id="confirmBtn">確認</button>
+                <div class="al_password">修改完成</div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- <script>
-    function validateBtn() {
-        var $this = $(this);
-        var value = $this.data("btn");
-        $(".alert").addClass("active" + value).text(value);
-
-        setTimeout(function() {
-            $(".alert").removeClass("active" + value);
-        }, 2000);
-    };
-    $(function() {
-        $(".btn").click(validateBtn);
-    });
-</script> -->
-
 <?php include __DIR__ . '/__footer.php' ?>
 <?php include __DIR__ . '/__script.php' ?>
+
+<script>
+    $('.al_password').hide();
+    $("#confirmBtn").click(function() {
+        console.log('confirmBtn');
+        $('.al_password').slideToggle("fast");
+
+    });
+</script>
+
 <?php include __DIR__ . '/__html_end.php' ?>
