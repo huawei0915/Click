@@ -6,10 +6,6 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 ?>
 
 <?php include __DIR__ . '/__html_head.php' ?>
-
-
-
-
 <?php include __DIR__ . '/__nav.php' ?>
 
 <!-- PRODUCT FILTER -->
@@ -222,7 +218,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                         <li><%= description %></li>
                     </ul>
                     </a>
-                    <p>NT$<%= price %></p>
+                    <p class="pri">NT$<%= price %></p>
                     <a href="comparison.php">
                     <div class="compare">比較</div>
                     </a>
@@ -411,7 +407,8 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             products_container_camera.html("")
 
             if(camera_rows==0){
-                products_container_camera.html(`<h2>無相符合之鏡頭商品</h2>`)
+                products_container_camera.html(`<h2>無相符合之相機商品</h2>`)
+                // $('.prd_list').eq(0).remove();
             }
 
             for (var i = 0; i < camera_rows; i++) {
@@ -444,7 +441,8 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             products_container_lens.html("")
 
             if(lens_rows==0){
-                products_container_lens.html(`<h2>無相符合之配件商品</h2>`)
+                products_container_lens.html(`<h2>無相符合之鏡頭商品</h2>`)
+                // $('.prd_list').eq(1).remove();
             }
             for (var i = 0; i < lens_rows; i++) {
                 var lens_images = data.rowsLens[i]['images']
@@ -474,7 +472,8 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             products_container_tools.html("")
 
             if(tools_rows==0){
-                products_container_tools.html(`<h2>無相符合之商品</h2>`)
+                products_container_tools.html(`<h2>無相符合之配件商品</h2>`)
+                // $('.prd_list').eq(2).remove();
             }
             for (var i = 0; i < tools_rows; i++) {
                 var tools_images = data.rowsTools[i]['images']
@@ -498,7 +497,23 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 
     $('.flt_btn').click(function(){
         $('.prd_filter').toggle(".filte");
+    });
+
+
+    var dallorCommas = function(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    };
+
+
+    var plt=$('.prd_cards')
+     
+    plt.each(function(){
+        var  price=$(this).find('.pri').text();
+        console.log(price);
+        $(this).find('.pri').text(dallorCommas(price));
     })
+
+
 </script>
 
 
