@@ -42,7 +42,7 @@ $row = $stmt->fetch();
                 <h5>NT$<?= $row['price'] ?></h5>
             </div>
             <div class="prd_btn">
-                <button type="button" class="btn btn-outline-secondary prd_comparison">商品比較</button>
+                <a type="button" class="btn btn-outline-secondary prd_comparison" href="comparison.php">商品比較</a>
 
                 <button type="button" class="btn btn-outline-secondary prd_collection" ><i class="far fa-star <?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? 'fas' : 'far' ?>" id="myclt"></i><?= $row['sid']==$row['p_products_sid'] && $row['member_sid'] == $member ? '已收藏' : '收藏' ?></button>
                 
@@ -180,21 +180,6 @@ $row = $stmt->fetch();
 <?php include __DIR__ . '/__script.php' ?>
 
 <script>
-// function myFunction() {
-//   var x = document.getElementById("myclt");
-//       x.classList.toggle("far fa-star");
-      
-//   if (x.innerHTML === "A") {
-//     x.innerHTML = "B";
-//     x.classList.toggle("fas fa-star");
-//   } else {
-//     x.innerHTML = "A";
-//     x.classList.toggle("far fa-star");
-//   }
-// }
-</script>
-
-<script>
     var input = $('#quantity_number'),
         btnUp = $('button.up'),
         btnDown = $('button.down');
@@ -240,8 +225,7 @@ $row = $stmt->fetch();
             qty: qty
         }, function(data) {
             calcQty(data);
-            alert('感謝加入購物車');
-
+            show_msg($('#WY-errorWarning'),'已成功加入購物車');
         }, 'json');
 
 
@@ -256,6 +240,7 @@ $('.prd_collection').click(function(){
     if(far){
         $("#myclt").removeClass("far");
         $(this).html(`<i class="fas fa-star" id="myclt"></i>已收藏`);
+        show_msg($('#WY-errorWarning'),'已加入收藏清單');
         like='like'
     }else{
         $("#myclt").removeClass("fas");
@@ -263,7 +248,7 @@ $('.prd_collection').click(function(){
         like='dislike'
     }
 <?php else: ?>
-    alert("請先登入或註冊會員");
+        show_warning($('#WY-loginWarning'),"請先登入或註冊會員");
 <?php endif; ?>
 
 

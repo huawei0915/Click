@@ -20,7 +20,8 @@ if (!empty($_SESSION['cart'])) {
     // print_r($keys);
     // exit;
 } else {
-    header('Location: product-list.php'); //頁面跳轉 產品清單
+    echo "<script>alert('尚無加入任何商品')</script>";
+    header('Refresh:0;url=product-list.php'); //頁面跳轉 產品清單
     exit;
 }
 
@@ -458,19 +459,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 <?php require __DIR__ . '/__script.php' ?>
 <script src="plugin/jquery.payment.js"></script>
 <script>
-    // function show(step) {
-    //     for(var i = 1; i <= 4; i++) {
-    //         $('.step-'+ i).css('display', 'none');    
-    //         $('.cart-header li a').removeClass('active');
-    //     }
-
-    //     $('.step-'+step).css('display', 'block');
-    //     $('.cart-header li a').eq(step-1).addClass('active');
-
-    //     setTimeout(() => {
-    //         $('html, body').scrollTop(0);  
-    //     }, 10);
-    // }
 
     $("#customRadioInline1").click(function() {
         $(".house").show();
@@ -495,8 +483,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     $("#customRadioInline8").click(function() {
         $(".pay-style_1 .radio-text .number").css("display", "block");
     })
-</script>
-<script>
+
     jQuery(function($) {
         $('[data-numeric]').payment('restrictNumeric');
         $('.cc-number').payment('formatCardNumber');
@@ -552,16 +539,14 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             input.val(max);
         }
     });
-</script>
-<script>
+
     $(".visa").click(function() {
         $(".visa_card").show();
     });
     $(function() {
         $('[data-toggle="popover"]').popover()
     })
-</script>
-<script>
+
     var p_items = $('.p-item');
     var remove_btns = $('.remove-btn');
 
@@ -638,6 +623,19 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
               location.href="order_check.php?";
             }
         }
+
+$('#customRadioInline0').on('click',function(){
+    var name=$("#name").val();
+    console.log(name);
+    var tel=$("#mobile").val();
+    var address=$("#address").val()
+
+    $("#name1").val(name);
+    $("#mobile1").val(tel);
+    $("#address4").val(address);
+})
+
+
 
 </script>
 

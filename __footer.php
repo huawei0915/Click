@@ -47,7 +47,7 @@
                 </div>
                 <div class="WY-confirm-btn">
                     <a class="WY-login_c WY-closeW">取消</a>
-                    <a href="login.php" >登入</a>
+                    <a href="A_login.php" >登入</a>
                 </div>
             </div>
             <div class="WY-Warning-confirm" id="WY-errorWarning">
