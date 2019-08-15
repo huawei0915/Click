@@ -107,7 +107,7 @@
                             <li><a href="leica.php" class="eng" style="letter-spacing:1px;">LEICA</a></li>
                             <li><a href="product-list.php">產品列表</a></li>
                             <li><a href="diy.php">首選推薦</a></li>
-                            <li><a href="">攝影分享</a></li>
+                            <li><a href="profile_share.php">攝影分享</a></li>
                         </ul>
                     </div>
                     <div class="col-3 ">
