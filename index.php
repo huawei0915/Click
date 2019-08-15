@@ -96,7 +96,7 @@
             </div>
 
         </div>
-        <div class="header ">
+        <div class="header sticky-top">
             <div class="container">
                 <div class="row index_nav align-items-end">
                     <div class="col-9 ">
@@ -131,6 +131,7 @@
             </div>
         </div>
     </div>
+    <div style="height:180px;"></div>
     <main>
         <h2>Click 首選推薦</h2>
         <h3>快速選配符合自己所需</h3>
@@ -387,16 +388,16 @@
             $(this).toggleClass('active');
         });
 
-        var headerTop = $(".header").offset().top;
+        // var headerTop = $(".header").offset().top;
 
-        $(window).scroll(function() {
-            var scrollTop = $(this).scrollTop();
-            if (scrollTop >= headerTop) {
-                $(".header").addClass("fixed");
-            } else {
-                $(".header").removeClass("fixed");
-            }
-        });
+        // $(window).scroll(function() {
+        //     var scrollTop = $(this).scrollTop();
+        //     if (scrollTop >= headerTop) {
+        //         $(".header").addClass("fixed");
+        //     } else {
+        //         $(".header").removeClass("fixed");
+        //     }
+        // });
 
         // console.log(item)    ;   
         let pic = $(".small-pic figure");
@@ -433,13 +434,13 @@ var item_s=$(".right_text .text_ul li")
 
             })
 
-        $(window).width(function() {
-            var x = $(window).width();
-            console.log(x);
-            if (x < 960) {
+        // $(window).width(function() {
+        //     var x = $(window).width();
+        //     console.log(x);
+        //     if (x < 960) {
              
-            }
-        });
+        //     }
+        // });
     </script>
 
     <?php include __DIR__ . '/__html_end.php' ?>

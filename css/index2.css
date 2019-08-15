@@ -134,7 +134,7 @@
     overflow: hidden;
     position: absolute;
     transition: .5s;
-    filter: blur(2px) brightness(.7);
+    filter: brightness(.5);
     background: linear-gradient(to top,black,black);
     /* border-radius: 50%; */
 }

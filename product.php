@@ -240,7 +240,10 @@ $('.prd_collection').click(function(){
     if(far){
         $("#myclt").removeClass("far");
         $(this).html(`<i class="fas fa-star" id="myclt"></i>已收藏`);
-        show_msg($('#WY-errorWarning'),'已加入收藏清單');
+        // show_msg($('#WY-errorWarning'),'已加入收藏清單');
+        show_msg($('#WY-successMsg'),'已加入收藏清單YA');
+
+
         like='like'
     }else{
         $("#myclt").removeClass("fas");

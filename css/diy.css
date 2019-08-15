@@ -57,24 +57,26 @@
 }
 /* --------------------------------------- */
 .camera_BP{
-    width: 230px;
-    height: 230px;
+    width: 180px;
+    height: 180px;
     /* padding: 30px; */
     /* background-color: pink; */
     position: absolute;
-    top: 10px;
+    top: 50px;
     left: 100px;
 }
 .camera_Intro{
-    width: 280px;
+    width: 290px;
     height: 140px;
     /* background-color: orange; */
     position: absolute;
-    top: 50px;
+    top: 65px;
     left: 350px;
 }
 .camera_Intro h5{
     color: white;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 .camera_Intro h6{
     width: 250px;
@@ -83,45 +85,63 @@
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    color: #C1C1C1;
+    font-size: .6rem;
+    margin-bottom: 1px;
+    line-height: 20px;
+}
+.camera_Intro p{
+    font-size: .8rem;
+    color: #FFB11B;
+    margin-bottom: 0;
+
 }
 .camera_Intro p,.lens_Intro p,.tools1_Intro p{
     font-weight: 600;
 }
 .lens_BP{
-    width: 165px;
-    height: 165px;
+    width: 140px;
+    height: 140px;
     /* background-color:pink; */
     position: absolute;
-    top: 250px;
-    left: 60px;
+    top: 230px;
+    left: 50px;
 }
 
 .lens_Intro{
-    width: 170px;
+    width: 150px;
     height: 100px;
     /* background-color: orange; */
     position: absolute;
-    top:280px;
-    left:230px;
+    top:250px;
+    left:210px;
     z-index: 2;
 }
 .lens_Intro h6{
     color:white;
     width: 170px;
+    font-size: .8rem;
+    margin-bottom: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+.lens_Intro p{
+    font-size: .8rem;
+    color: #FFB11B;
+    margin-bottom: 0;
+
+}
 
 .tools1_BP{
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     /* background-color:pink; */
     position: absolute;
-    top: 270px;
-    left:395px;
+    top: 240px;
+    left:375px;
     z-index: 1;
 }
 .tools1_Intro{
@@ -129,17 +149,24 @@
     height: 100px;
     /* background-color:orange; */
     position: absolute;
-    top:280px;
-    left:535px;
+    top:247px;
+    left:500px;
 }
 .tools1_Intro h6{
     color:white;
     width: 160px;
+    font-size: .8rem;
+    margin-bottom: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+.tools1_Intro p{
+    font-size: .8rem;
+    color: #FFB11B;
+    margin-bottom: 0;
 }
 .redo i{
     color:white;
@@ -220,6 +247,17 @@
 }
 
 /* ----------- */
+
+.choose h4{
+    font-size: 1rem;
+    margin-top: 2px;
+}
+.choose .step span{
+    font-size: 1rem;
+}
+
+
+
 .diy_show_mobile{
     
     /* min-height: calc(100vh - 130px); */
@@ -253,18 +291,29 @@
 }
 
 /* --------------------- */
+
 .table-r{
     position: absolute;
     width: 300px;
     height: 420px;
-    background-color: #F1F1F1;
+    /* background-color: #F1F1F1; */
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1)30%, rgba(200, 200, 200, 1)30%); 
     border-radius: 10px;
     top: 0;
     right: 0;
 }
+.tr-line{
+    font-size:5px;
+    /* position: relative;
+    top: 70px; */
+}
 .table-r .comm,.table-r .comm1,.table-r .comm2{
     width: 100%;
-    margin: 20px 5px;
+    margin:0;
+    padding: 0 20px;
+}
+.table-r .comm{
+    margin-top: 20px;
 }
 .table-r .comm figure,.table-r .comm1 figure,.table-r .comm2 figure{
     width: 20%;
@@ -280,6 +329,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: .8rem;
 }
 .table-r .comm p,.table-r .comm1 p,.table-r .comm2 p{
     border: 1px solid #C1C1C1;
@@ -299,18 +349,20 @@
     position: absolute;
     align-items:flex-end;
     height: 60px;
-    padding-left: 40px;
-    bottom: 70px;
+    left: 100px;
+    bottom: 80px;
 }
-
+.totalMoney h6{
+    font-size: .8rem;
+}
 
 .totalMoney input{
     border: 0;
     border-bottom: 1px solid #ccc;
     background-color: transparent;
     line-height: 1.2rem;
-    font-size: 1.2rem;
-    width: 60%;
+    font-size: .8rem;
+    width: 40%;
     padding:0 10px 0 0;
     margin-bottom: .35rem;
     text-align: right;
@@ -320,33 +372,45 @@
     justify-content: space-evenly;
     align-items:flex-end;
     height: 60px;
-    bottom: 25px;
+    bottom: 40px;
     width: 100%;
     
 }
 .diyBtn .enterCar{
+    background-color: #F1F1F1;
     color:black;
-    font-size: 1rem;
+    font-size: .8rem;
     padding:4px 10px;
-    border: 1px solid #E1E1E1;
-    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    /* border: 1px solid #E1E1E1; */
+    box-shadow: 0 2px 3px rgba(0,0,0,.3);
     border-radius: 5px;
+    transition:all .3s;
     /* margin: 0 10px; */
 }
 .diyBtn .payMoney{
+    background-color: #F1F1F1;
     color:black;
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 4px 18px;
-    border: 1px solid #E1E1E1;
-    box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    /* border: 1px solid #E1E1E1; */
+    box-shadow: 0 2px 3px rgba(0,0,0,.3);
     border-radius: 5px;
+    transition:all .3s;
     /* margin: 0 10px; */
 }
-.diyBtn a:hover{
-    color:white;
-    background-color: #FFA800;
-    font-weight: 700;
+.diyBtn .enterCar:hover{
+    box-shadow: 0 3px 4px rgba(0,0,0,.5);
+    transform: translate(0,-1px);
+    background-color: #dddddd;
+    font-weight: 400;
 }
+.diyBtn .payMoney:hover{
+    box-shadow: 0 3px 4px rgba(0,0,0,.5);
+    transform: translate(0,-1px);
+    background-color: #dddddd;
+    font-weight: 400;
+}
+
 
 input[type="number"]{
     border: 0;
@@ -419,7 +483,7 @@ input[type="number"]{
 
 /* ------------------------------------ */
 section.container{
-    width: 840px;
+    width: 815px;
     color: white;
     font-size: 1.5rem;
 }
@@ -536,8 +600,6 @@ section .choose .step{
     transition: .5s;
     transform: translateX(0px) translateY(-895px);
 }
-
-
 /* -------------------------- */
 .choose_m{
     display: flex;

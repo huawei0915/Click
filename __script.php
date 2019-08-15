@@ -197,8 +197,7 @@ function show_msg(msg, text){
     msg.find('h3').text(text);
     setTimeout(function(){
         close_warning(msg);
-    },1000)
-   
+    },1000) 
 }
 
 </script>

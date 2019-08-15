@@ -43,7 +43,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         <div class="table-l">
 
             <div class="table" id="table">
-                <img src="img/table_bg.jpg" alt="">
+                <img src="img/drybox.jpg" alt="">
                 <ul class="grade">
                     <li><a id="pro">專業<i class="fas fa-caret-right fa-sm"></i></a></li>
                     <li><a id="intel">進階<i class="fas fa-caret-right fa-sm"></i></a></li>
@@ -91,6 +91,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="d-flex justify-content-around align-items-center comm2">
                     </div>
+                    <hr class="tr-line">
                     <div class="d-flex totalMoney">
                         <h6>Total : NT $ </h6>
                         <input type="text" class="calcMoney" readonly value="">
@@ -113,7 +114,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
         <div class="arrow">
-            <span onclick="showLeft();" id="left"><i class="fas fa-chevron-left fa-3x"></i></span>
+            <span onclick="showLeft();" id="left"><i class="fas fa-chevron-left fa-2x"></i></span>
             <div class="flow">
                 <div class="overflow-wrapper-y">
                     <div class=" thumbnail overflow-wrapper-x show-step1 show-item1" id="step1">
@@ -174,7 +175,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
-            <span onclick="showRight();" id="right"><i class="fas fa-chevron-right fa-3x"></i></span>
+            <span onclick="showRight();" id="right"><i class="fas fa-chevron-right fa-2x"></i></span>
 
         </div>
     </section>
