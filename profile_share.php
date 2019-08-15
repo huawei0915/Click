@@ -1,3 +1,10 @@
+<?php include __DIR__ . '/__db_connect.php';
+
+$page_name = 'profile_share';
+
+
+?>
+
 <?php include __DIR__ . '/__html_head.php' ?>
 <?php include __DIR__ . '/__nav.php' ?>
 

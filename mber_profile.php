@@ -102,17 +102,17 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                     <form action="" id="myeditform" method="post" onsubmit="return checkForm_my()">
                         <div class="form-group my_proForm">
                             <input type="hidden" name="sid" value="<?= $row['sid'] ?>">
-                            <label class="my_label py-1" for="email">信箱</label>
+                            <label class="my_label py-1 p_email" for="email">信箱</label>
                             <input type="text" class="form-control my_proControl" id="email" name="email" value="<?= htmlentities($row['email']) ?>" disabled>
                             <small class="form-text"></small>
                         </div>
                         <div class="form-group my_proForm">
-                            <label class="py-1" for="mobile">手機</label>
-                            <input type="text" class="form-control" id="mobile" name="mobile" value="<?= htmlentities($row['mobile']) ?>">
+                            <label class="py-1 p_mobile" for="mobile">手機</label>
+                            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="0900-000-000" value="<?= htmlentities($row['mobile']) ?>">
                             <small class="form-text"></small>
                         </div>
                         <div class="form-group my_proForm">
-                            <label class="py-1" for="nickname">暱稱</label>
+                            <label class="py-1 p_nickname" for="nickname">暱稱</label>
                             <input type="text" class="form-control" id="nickname" name="nickname" value="<?= htmlentities($row['nickname']) ?>">
                             <small class="form-text"></small>
                         </div>
@@ -123,11 +123,11 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                             <label class="form-check-label my_sexcheck text-nowrap ml-4" for="inlineRadio2">女</label>
                         </div>
                         <div class="form-group my_proForm">
-                            <label class="py-1" for="birthday">生日</label>
+                            <label class="py-1 p_birthday" for="birthday">生日</label>
                             <input type="date" class="form-control" id="birthday" name="birthday" value="<?= htmlentities($row['birthday']) ?>">
                         </div>
                         <div class="form-group my_proForm">
-                            <label class="py-1" for="address">地址</label>
+                            <label class="py-1 p_address" for="address">地址</label>
                             <input type="text" class="form-control" id="address" name="address" value="<?= htmlentities($row['address']) ?>">
                             <small class="form-text"></small>
                         </div>
@@ -168,7 +168,7 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
         <div class="my_order">
             <div class="my_orderWord py-2">
                 訂單查詢 Order Tracking
-                <h6 class="my_fh6 py-1 mx-3">訂單編號：000000</h6>
+                <h6 class="my_fh6 py-1 mx-3">訂單編號：190820001</h6>
             </div>
             <div class="ordr_icongroup">
                 <div class="order_line">
@@ -214,6 +214,36 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                         </div>
                     </div>
                 </div>
+                <div class="order_buyList">
+                    <figure>
+                        <img src="img/product/camera/CN-11.png" alt="">
+                    </figure>
+                    <div class="order_infoBuy d-flex">
+                        <div class="order_name_spec">
+                            <div>Nikon Z7</div>
+                            <div>4,575 萬像素全片幅 CM..</div>
+                        </div>
+                        <div class="order_count_price">
+                            <div>x 1</div>
+                            <div>NT$ 102,980</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order_buyList">
+                    <figure>
+                        <img src="img/product/camera/CL-05.png" alt="">
+                    </figure>
+                    <div class="order_infoBuy d-flex">
+                        <div class="order_name_spec">
+                            <div>Leica Q2</div>
+                            <div>全片幅 CMOS 感光元件..</div>
+                        </div>
+                        <div class="order_count_price">
+                            <div>x 1</div>
+                            <div>NT$ 183,160</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="order_payInfo">
                 <h4>付款資訊</h4>
@@ -226,7 +256,7 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                     <div class="order_payinfocount">
                         <label for="">宅配-NT $100</label>
                         <label for="">2019-08-20</label>
-                        <label for="">NT$ 169,000</label>
+                        <label for="">NT$ ‭455,140‬</label>
                     </div>
                 </div>
             </div>

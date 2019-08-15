@@ -269,6 +269,12 @@ $.ajax({
 
 })
 
+var dallorCommas = function(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    };
+
+    var ss= $('.prdprice h5').text();
+    $('.prdprice h5').text(dallorCommas(ss));
 
 
 </script>

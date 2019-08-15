@@ -1,6 +1,8 @@
 <?php include __DIR__ . '/__db_connect.php';
 
 $page_name = 'product-list';
+$data = isset($_GET['search']) ? $_GET['search'] : 0;
+
 ?>
 
 <?php include __DIR__ . '/__html_head.php' ?>
@@ -11,14 +13,17 @@ $page_name = 'product-list';
 <?php include __DIR__ . '/__nav.php' ?>
 
 <!-- PRODUCT FILTER -->
+<div class="container flt_btn">
+    <button type="button" class="btn btn-outline-secondary fltbtn">篩選列表</button>
+</div>
 <div class="prd_filter">
-    <div class="container">
+    <div class="container fltcon">
         <form action="" method="post" class="product_form">
             <div class="filte">
 
                 <div class="prd_price">
-                    <div class="form-group">
-                        <label for="formControlRange">篩選列表</label>
+                    <div class="prdfil">
+                        <label class="" for="formControlRange">篩選列表</label>
                         <!-- <input type="range" class="form-control-range prbar" id="formControlRange"> -->
                     </div>
                     <div>
@@ -41,7 +46,7 @@ $page_name = 'product-list';
                         <label class="custom-control-label" for="br_canon">CANON</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="br_nikon" value="2" name="brand[]">
+                        <input type="checkbox" class="custom-control-input" id="br_nikon" value="2" name="brand[]" >
                         <label class="custom-control-label" for="br_nikon">NIKON</label>
                     </div>
                     <div class="custom-control custom-checkbox">
@@ -218,8 +223,9 @@ $page_name = 'product-list';
                     </ul>
                     </a>
                     <p>NT$<%= price %></p>
+                    <a href="comparison.php">
                     <div class="compare">比較</div>
-                    
+                    </a>
                 </div>
                 `;
     var p_item_fn_camera = _.template(p_item_str_camera);
@@ -241,7 +247,9 @@ $page_name = 'product-list';
                     </ul>
 
                     <p>NT$<%= price %></p>
+                    <a href="comparison.php">
                     <div class="compare">比較</div>
+                    </a>
                 </div>`;
     var p_item_fn_lens = _.template(p_item_str_lens);
     // ----------------------------
@@ -275,7 +283,7 @@ $page_name = 'product-list';
         } else {
             $(".camera_page").val(1)
         }
-        console.log($(".camera_page").val())
+
         form_post()
     })
     $("html").on("click", '.arrow_list_camera .next', function() {
@@ -286,7 +294,7 @@ $page_name = 'product-list';
         } else {
             $(".camera_page").val(total)
         }
-        console.log($(".camera_page").val())
+
         form_post()
     })
 
@@ -298,7 +306,7 @@ $page_name = 'product-list';
         } else {
             $(".lens_page").val(1)
         }
-        console.log($(".lens_page").val())
+   
         form_post()
     })
     $("html").on("click", '.arrow_list_lens .next', function() {
@@ -309,7 +317,7 @@ $page_name = 'product-list';
         } else {
             $(".lens_page").val(total)
         }
-        console.log($(".lens_page").val())
+
         form_post()
     })
     // ---------------------配件分頁-----------------------
@@ -320,7 +328,7 @@ $page_name = 'product-list';
         } else {
             $(".tools_page").val(1)
         }
-        console.log($(".tools_page").val())
+
         form_post()
     })
     $("html").on("click", '.arrow_list_tools .next', function() {
@@ -332,13 +340,12 @@ $page_name = 'product-list';
         } else {
             $(".tools_page").val(total)
         }
-        console.log($(".tools_page").val())
+
         form_post()
     })
     // ----------------------
 
     $(".product_form input").change(function() {
-
         form_post()
     })
     $(".product_form").change(function() {
@@ -346,9 +353,51 @@ $page_name = 'product-list';
         form_post()
     })
 
-    function form_post() {
-        $.post("product-list-api.php", $(".product_form").serialize(), function(data) {
 
+    function form_post(){
+        if(<?= !empty($data) ? 'true' : 'false' ?>){
+            obj = '<?= $data ?>'
+
+            $.post("product-list-api.php", {'search':obj}, function(data){
+                // console.log(data)
+                var camera_page_array = {
+                    'camera_page': data.camera_page,
+                    'camera_totalPage': data.totalPage_camera,
+                }
+
+                pagination_camera.html("")
+
+
+                var camera_rows = data.rowsCamera.length
+                products_container_camera.html("")
+
+                if(camera_rows==0){
+                    products_container_camera.html(`<h2>無相符合之相機商品</h2>`)
+                }
+
+                for (var i = 0; i < camera_rows; i++) {
+                    var camera_sid=data.rowsCamera[i]['sid']
+                    var camera_images = data.rowsCamera[i]['images']
+                    var camera_model = data.rowsCamera[i]['model']
+                    var camera_description = data.rowsCamera[i]['description']
+                    var camera_price = data.rowsCamera[i]['price']
+                    var camera_array = {
+                        'sid': camera_sid,
+                        'images': camera_images,
+                        'model': camera_model,
+                        'description': camera_description,
+                        'price': camera_price,
+                    }
+                    products_container_camera.append(p_item_fn_camera(camera_array));
+                }
+            },"json")
+                $(".prd_list").eq(1).hide();
+                $(".prd_list").eq(2).hide();
+                
+
+
+        }else{
+            $.post("product-list-api.php", $(".product_form").serialize(), function(data) {
             var camera_page_array = {
                 'camera_page': data.camera_page,
                 'camera_totalPage': data.totalPage_camera,
@@ -360,6 +409,11 @@ $page_name = 'product-list';
 
             var camera_rows = data.rowsCamera.length
             products_container_camera.html("")
+
+            if(camera_rows==0){
+                products_container_camera.html(`<h2>無相符合之鏡頭商品</h2>`)
+            }
+
             for (var i = 0; i < camera_rows; i++) {
                 var camera_sid=data.rowsCamera[i]['sid']
                 var camera_images = data.rowsCamera[i]['images']
@@ -389,6 +443,9 @@ $page_name = 'product-list';
             var lens_rows = data.rowsLens.length
             products_container_lens.html("")
 
+            if(lens_rows==0){
+                products_container_lens.html(`<h2>無相符合之配件商品</h2>`)
+            }
             for (var i = 0; i < lens_rows; i++) {
                 var lens_images = data.rowsLens[i]['images']
                 var lens_model = data.rowsLens[i]['model']
@@ -408,16 +465,18 @@ $page_name = 'product-list';
                 'tools_page': data.tools_page,
                 'tools_totalPage': data.totalPage_tools,
             }
-            console.log(data.totalPage_tools);
 
             pagination_tools.html("")
             pagination_tools.append(pagination_item_fn_tools(tools_page_array));
 
 
             var tools_rows = data.rowsTools.length
-            console.log(tools_rows);
             products_container_tools.html("")
 
+            if(tools_rows==0){
+                // products_container_tools.html(`<h2>無相符合之商品</h2>`)
+                $('.prd_list').eq(2).remove();
+            }
             for (var i = 0; i < tools_rows; i++) {
                 var tools_images = data.rowsTools[i]['images']
                 var tools_model = data.rowsTools[i]['model']
@@ -431,14 +490,17 @@ $page_name = 'product-list';
                 }
                 products_container_tools.append(p_item_fn_tools(tools_array));
             }
-        }, "json")
+        }, "json")}
     }
 
 
 
     form_post({})
-</script>
 
+    $('.flt_btn').click(function(){
+        $('.prd_filter').toggle(".filte");
+    })
+</script>
 
 
 

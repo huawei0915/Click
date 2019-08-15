@@ -97,7 +97,8 @@ header.active{
     background-color: transparent;
     margin-top: 2px;
     transition: width 1s ease-in-out, border-radius 1.5s ease-in-out;
-  }
+    margin-right: 3%;
+}
   
   #mag::placeholder {
     color: #999;
@@ -116,7 +117,7 @@ header.active{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 122px;
+    right: 164px;
     top: 71%;
     /* z-index: -1; */
     transform: rotate(135deg);
@@ -210,6 +211,7 @@ header.active{
     filter: white;
     margin-top:4px ;
     height: 26px;
+    width: 75px;
 }
 .features .shop{
     height: 30px;
@@ -270,8 +272,13 @@ nav.active{
     width: 90vw;
 }
 
+<<<<<<< HEAD
 .sticky-top{
     background: rgba(28, 28, 28, 0.5);
+=======
+#my_nickname{
+    color: white;
+>>>>>>> 90cfce13cab7716b36f246ca2e182163faafbc02
 }
 
 @media screen and (max-width:992px){
@@ -300,6 +307,7 @@ nav.active{
     }
     .mber{
         margin-top: 25px;
+        padding: 0 0.35rem 0 0.5rem;
     }
     .features .menu{
         /* padding-top: 20px; */
@@ -346,14 +354,25 @@ nav.active{
     
     .cart>span{
         position: absolute;
-        right: -5px;
-        top: 15px;
-        width: 20px;
+        right: 10px;
+        top: 11px;
+        width: 24px;
         height: 20px;
         line-height: 15px;
         text-align: center;
         display: flex;
         justify-content: center;
+    }
+    .member_CC img{
+        width: 12%;
+        margin-right: 5%;
+    }
+    .member_CCC{
+        margin-left: 5%;
+    }
+    .member_CCC img{
+        width: 28%;
+        margin-right: 5%;
     }
 }
 @media screen and (min-width:578px){

@@ -200,8 +200,8 @@ em{
 }
 .total_price{
     width: 30%;
-    border: 1px solid black;
-    border-radius: 35px;
+    /* border: 1px solid black;
+    border-radius: 35px; */
     margin-left: 20px;
     position: relative;
 }
@@ -231,6 +231,9 @@ em{
     padding:0 0 0 20px;
 }
 @media screen and (max-width:1200px){
+    .step-1 h2, .step-2 h2{
+        font-size: 0.85rem;
+    }
     .shap_list_main h4{
         width: 240px;
         font-size: 1.2rem;
@@ -266,6 +269,7 @@ em{
     .cart-header h6{
         justify-content: center;
         margin: 0 auto;
+        font-size: 0.85rem;
     }
     .step-1 .form01, .step-2 .form01{
         border: none;
@@ -274,9 +278,11 @@ em{
     }
     .step-2 .recipient h2{
         margin: 0;
+        margin-left: 5%;
     }
     .step-2 .recipient .radio-text{
         margin-bottom: 0;
+        margin-left:5%;
     }
     .form01{
         text-align: left;
@@ -348,9 +354,11 @@ em{
         margin-left: 0;
   }
   .add_shop_only .add_shop_only_text{
-        width: 70%;
+        width: 60%;
         margin: 0 auto;
-        font-size: 1rem;
+        font-size: 0.85rem;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
 }
 .step-4{
