@@ -80,10 +80,10 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
                     <div class="pro_pic_info card camera_com">
 
                         <figure>
-                            <img src="img/product/<?= $totalRows_camera_model[1]['images'] ?>.png" alt="" id="cameraPic">
+                            <img src="img/product/<?= $totalRows_camera_model[0]['images'] ?>.png" alt="" id="cameraPic">
                         </figure>
-                        <h6><?= $totalRows_camera_model[1]['product_name'] ?></h6>
-                        <h5>NT$<?= $totalRows_camera_model[1]['price'] ?></h5>
+                        <h6><?= $totalRows_camera_model[0]['product_name'] ?></h6>
+                        <h5>NT$<?= $totalRows_camera_model[0]['price'] ?></h5>
 
                     </div>
                 </div>
@@ -99,10 +99,10 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
                     <div class="pro_pic_info card camera_com">
 
                         <figure>
-                            <img src="img/product/<?= $totalRows_camera_model[2]['images'] ?>.png" alt="" id="cameraPic">
+                            <img src="img/product/<?= $totalRows_camera_model[0]['images'] ?>.png" alt="" id="cameraPic">
                         </figure>
-                        <h6><?= $totalRows_camera_model[2]['product_name'] ?></h6>
-                        <h5>NT$<?= $totalRows_camera_model[2]['price'] ?></h5>
+                        <h6><?= $totalRows_camera_model[0]['product_name'] ?></h6>
+                        <h5>NT$<?= $totalRows_camera_model[0]['price'] ?></h5>
 
                     </div>
                 </div>
