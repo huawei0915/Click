@@ -20,7 +20,7 @@
                     </a>
 
                     <?php if (isset($_SESSION['loginUser'])) : ?>
-                    <div style="width:43px;" class="mber">
+                    <div style="width:80px;" class="mber">
                         <a id="my_nickname" href="mber_profile.php"><?= $_SESSION['loginUser']['nickname'] ?></a>
                     </div>
 

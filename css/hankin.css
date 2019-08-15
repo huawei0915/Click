@@ -469,6 +469,9 @@
         color: white;
         margin: 0 33%;
     }
+    .p_email, .p_mobile, .p_nickname, .p_birthday, .p_address{
+        margin: 0; 
+    }
     .my_profile .my_profileBackground .my_proForm{
         margin-bottom: 0.2rem;
         width: 300px;
@@ -596,6 +599,9 @@
     justify-content: space-evenly;
     position: relative;
     bottom: 2.3rem;
+}
+.order_icon:nth-child(4):active{
+    color: #FFA800;
 }
 .order_icon img{
     width: 3rem;

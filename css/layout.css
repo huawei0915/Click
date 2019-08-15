@@ -116,7 +116,7 @@ header.active{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 122px;
+    right: 158px;
     top: 71%;
     /* z-index: -1; */
     transform: rotate(135deg);
@@ -298,6 +298,7 @@ nav.active{
     }
     .mber{
         margin-top: 25px;
+        padding: 0 0.35rem 0 0.5rem;
     }
     .features .menu{
         /* padding-top: 20px; */
@@ -345,8 +346,8 @@ nav.active{
     .cart>span{
         position: absolute;
         right: -5px;
-        top: 15px;
-        width: 20px;
+        top: 11px;
+        width: 24px;
         height: 20px;
         line-height: 15px;
         text-align: center;
