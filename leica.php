@@ -474,7 +474,8 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             products_container_tools.html("")
 
             if(tools_rows==0){
-                products_container_tools.html(`<h2>無相符合之商品</h2>`)
+                // products_container_tools.html(`<h2>無相符合之商品</h2>`)
+                $('.prd_list').eq(2).remove();
             }
             for (var i = 0; i < tools_rows; i++) {
                 var tools_images = data.rowsTools[i]['images']
