@@ -558,7 +558,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         var price = $(this).find('.price').attr('data-price');
         var qty = $(this).find('.qty').attr('data-qty');
         $(this).find('.subtotal').text(dallorCommas(price * qty));
-        $(this).find('.price').text(dallorCommas(price));
+        $(this).find('.price').text('NT$'+dallorCommas(price));
 
         // select element
         $(this).find('.qty').val(qty);
@@ -606,7 +606,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
            var fright= $(".freight_price").text()
                 ts = t + parseInt(fright);
                 console.log(ts)
-                $("#total_price3").text(ts);
+                $("#total_price3").text(dallorCommas(ts));
         })
 
         $('#total_price').text(dallorCommas(t));
