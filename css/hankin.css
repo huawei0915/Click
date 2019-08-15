@@ -98,7 +98,7 @@
 @media screen and (max-width:578px){
     .bg_mber{
         flex-direction: column;
-        height:1300px;
+        height:1350px;
     }
     .acc_box{
      width:100%;
@@ -248,6 +248,7 @@
 @media screen and (max-width:578px){
     .my_favorite{
         width: 94%;
+        height: 500px;
         margin: 40px auto 40px auto;
         position: relative;
     }
@@ -451,7 +452,7 @@
         top: 19%;
     }
     .my_profileFont .my_profileIcon{
-        width: 5%;
+        width: 6%;
         background-color: white;
         border-radius: 50%;
         border: 1px solid #707070;
@@ -460,9 +461,10 @@
         top:30%;
     }
     .my_profileFont .my_profileIcon .pro_icon{
-        width:75%;
+        width:70%;
         padding-bottom: 3px;
-        padding-left: 4px;
+        padding-left: 6px;
+        margin-left: 8%;
     }
     .my_profile .my_profileBackground .my_card_body{
         width: 15%;
@@ -574,7 +576,7 @@
 /* ----------order area---------- */
 .my_order{
     width:50%;
-    height: 630px;
+    height: 780px;
     border: 3px solid #1C1C1C;
     margin: 143px 100px 120px 0;
     border-radius: 35px 35px 27px 27px;
@@ -690,7 +692,7 @@
 @media screen and (max-width:578px){
     .my_order{
         width: 94%;
-        height: 650px;
+        height: 820px;
         margin: 40px auto 40px auto;
         position: relative;
     }

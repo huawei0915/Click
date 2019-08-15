@@ -168,7 +168,7 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
         <div class="my_order">
             <div class="my_orderWord py-2">
                 訂單查詢 Order Tracking
-                <h6 class="my_fh6 py-1 mx-3">訂單編號：000000</h6>
+                <h6 class="my_fh6 py-1 mx-3">訂單編號：190820001</h6>
             </div>
             <div class="ordr_icongroup">
                 <div class="order_line">
@@ -214,6 +214,36 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                         </div>
                     </div>
                 </div>
+                <div class="order_buyList">
+                    <figure>
+                        <img src="img/product/camera/CN-11.png" alt="">
+                    </figure>
+                    <div class="order_infoBuy d-flex">
+                        <div class="order_name_spec">
+                            <div>Nikon Z7</div>
+                            <div>4,575 萬像素全片幅 CM..</div>
+                        </div>
+                        <div class="order_count_price">
+                            <div>x 1</div>
+                            <div>NT$ 102,980</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order_buyList">
+                    <figure>
+                        <img src="img/product/camera/CL-05.png" alt="">
+                    </figure>
+                    <div class="order_infoBuy d-flex">
+                        <div class="order_name_spec">
+                            <div>Leica Q2</div>
+                            <div>全片幅 CMOS 感光元件..</div>
+                        </div>
+                        <div class="order_count_price">
+                            <div>x 1</div>
+                            <div>NT$ 183,160</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="order_payInfo">
                 <h4>付款資訊</h4>
@@ -226,7 +256,7 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                     <div class="order_payinfocount">
                         <label for="">宅配-NT $100</label>
                         <label for="">2019-08-20</label>
-                        <label for="">NT$ 169,000</label>
+                        <label for="">NT$ ‭455,140‬</label>
                     </div>
                 </div>
             </div>
