@@ -231,6 +231,9 @@ em{
     padding:0 0 0 20px;
 }
 @media screen and (max-width:1200px){
+    .step-1 h2, .step-2 h2{
+        font-size: 0.85rem;
+    }
     .shap_list_main h4{
         width: 240px;
         font-size: 1.2rem;

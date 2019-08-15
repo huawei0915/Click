@@ -13,8 +13,8 @@
     }
 
     #arm {
-        right: 118px;
-        top: 71%;
+        right: 123px;
+        top: 75%;
     }
 
     @media screen and (max-width:1030px) {

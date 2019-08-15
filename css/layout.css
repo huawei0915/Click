@@ -97,7 +97,8 @@ header.active{
     background-color: transparent;
     margin-top: 2px;
     transition: width 1s ease-in-out, border-radius 1.5s ease-in-out;
-  }
+    margin-right: 3%;
+}
   
   #mag::placeholder {
     color: #999;
@@ -116,7 +117,7 @@ header.active{
   #arm {
     height: 0.5rem;
     position: absolute;
-    right: 158px;
+    right: 164px;
     top: 71%;
     /* z-index: -1; */
     transform: rotate(135deg);
@@ -210,6 +211,7 @@ header.active{
     filter: white;
     margin-top:4px ;
     height: 26px;
+    width: 75px;
 }
 .features .shop{
     height: 30px;
@@ -347,7 +349,7 @@ nav.active{
     
     .cart>span{
         position: absolute;
-        right: -5px;
+        right: 10px;
         top: 11px;
         width: 24px;
         height: 20px;
@@ -355,6 +357,10 @@ nav.active{
         text-align: center;
         display: flex;
         justify-content: center;
+    }
+    .member_CC img{
+        width: 12%;
+        margin-right: 5%;
     }
 }
 @media screen and (min-width:578px){

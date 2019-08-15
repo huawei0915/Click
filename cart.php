@@ -58,7 +58,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                 <div id="step-1" class="step-1">
                     <div class="">
-                        <h2 class=""><img src="img/icon/會員圈.svg" alt=""> 個人資料(訂購人)</h2>
+                        <h2 class="member_CC" ><img src="img/icon/會員圈.svg" alt=""> 個人資料(訂購人)</h2>
                         <div class="">
                             <form class="form01" 　>
                                 <div class="form-group row ">
@@ -120,7 +120,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <div id="step-2" class="step-2">
                     <div class="">
                         <div class="recipient">
-                            <h2 class=""><img src="img/icon/會員圈.svg" alt=""> 收件人資料</h2>
+                            <h2 class="member_CC"><img src="img/icon/會員圈.svg" alt=""> 收件人資料</h2>
                             <div class="custom-control custom-radio custom-control-inline radio-text">
                                 <input type="radio" id="customRadioInline0" name="customRadioInline0" class="custom-control-input">
                                 <label class="custom-control-label people" for="customRadioInline0">同訂購人</label>
