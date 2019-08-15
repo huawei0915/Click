@@ -15,19 +15,16 @@ if (!empty($_SESSION['cart'])) {
     foreach ($rows as $r) {
         $dict[$r['sid']] = $r;
     }
-    // header('Content-Type: text/plain');
-    // print_r($dict);
-    // print_r($keys);
+    $_SESSION['order']=$_SESSION['cart'];
+    // print_r( $_SESSION['order']);
     // exit;
+unset ($_SESSION['cart']);
+
 } else {
     header('Location: product-list.php'); //頁面跳轉 產品清單
     exit;
 }
 
-// if (!empty($_SESSION['loginUser']['sid'])) {
-//     $sql = "SELECT * FROM `members` WHERE `sid`=" . intval($_SESSION['loginUser']['sid']);
-//     $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-// }
 
 
 $p_tool = sprintf("SELECT * FROM `p_products` WHERE `category_sid` =7");
@@ -46,20 +43,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- ----products_list----- -->
         <div class="container ">
-            <!-- <div class="order_checkProducts d-flex">
-            <div class="productsImg">
-                <img class="productsphoto" src="img/EOS5DMarkIV.png" alt="">
-            </div>
-            <div class="productsName">
-                EOS 5D Mark IV
-            </div>
-            <div class="productsCount">
-                x1
-            </div>
-            <div class="productsPrice">
-                NT $ 169,000
-            </div>
-        </div> -->
+
             <?php foreach ($keys as $k) :
                 $r = $dict[$k];
                 ?>
@@ -67,9 +51,9 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 <img src="./img/product/<?= $r['images'] ?>.png" alt="">
                 <h4 class="productsName"><?= $r['model'] ?></h4>
                 <h5 class="productsPrice price" data-price="<?= $r['price'] ?>"></h5>
-                <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
+                <div class="quantity qty" data-qty="<?= $_SESSION['order'][$k] ?>">
                     <!-- <button type="button" class="btn btn-outline-secondary down">-</button> -->
-                    <input class="mx-1" type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1" readonly>
+                    <input class="mx-1" type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['order'][$k] ?>" min="1" max="10" data-num="1" readonly>
                     <!-- <button type="button" class="btn btn-outline-secondary up">+</button> -->
                 </div>
                 <div class="money productsPrice">NT$<span class="subtotal productsPrice"></span></div>
@@ -77,45 +61,11 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <?php endforeach; ?>
         </div>
-        <!-- <div class="order_underline"></div> -->
-        <!-- <div class="container">
-        <div class="order_checkProducts d-flex">
-            <div class="productsImg">
-                <img class="productsphoto" src="img/EOS5DMarkIV.png" alt="">
-            </div>
-            <div class="productsName">
-                EOS 5D Mark IV
-            </div>
-            <div class="productsCount">
-                x1
-            </div>
-            <div class="productsPrice">
-                NT $ 169,000
-            </div>
-        </div>
-    </div>
-    <div class="order_underline"></div>
-    <div class="container">
-        <div class="order_checkProducts d-flex">
-            <div class="productsImg">
-                <img class="productsphoto" src="img/EOS5DMarkIV.png" alt="">
-            </div>
-            <div class="productsName">
-                EOS 5D Mark IV
-            </div>
-            <div class="productsCount">
-                x1
-            </div>
-            <div class="productsPrice">
-                NT $ 169,000
-            </div>
-        </div>
-    </div>
-    <div class="order_underline"></div> -->
+       
         <!-- -----BackHome & orderlist----- -->
         <div class="container">
             <div class="order_checkButton d-flex">
-                <a href="mber_profile.php?aaa=3" class="checkbutton_orderlist">訂單查詢</a>
+                <a onclick="check();" class="checkbutton_orderlist">訂單查詢</a>
                 <a href="index.php" class="checkbutton_backhome">回首頁</a>
             </div>
         </div>
@@ -127,6 +77,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
 
 <script>
+  
+
     var p_items = $('.p-item');
     // var remove_btns = $('.remove-btn');
 
@@ -142,19 +94,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
         // select element
         $(this).find('.qty').val(qty);
-    });
-
-    remove_btns.click(function() {
-        var tr = $(this).closest('.p-item');
-        var sid = tr.attr('data-sid');
-
-        $.get('add_to_cart.php', {
-            sid: sid
-        }, function(data) {
-            calcQty(data);
-            tr.remove();
-            calcTotalPrice();
-        }, 'json');
     });
 
     $('.qty button').on('click', function() {
@@ -185,6 +124,20 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $('#total_price').text(dallorCommas(t));
     }
     calcTotalPrice();
+
+    function check() {
+        if( <?= !empty($_SESSION['loginUser']) ? 'true' : 'false' ?> ){
+            window.location("mber_profile.php?aaa=3");
+        }else{
+            
+            alert("請先登入會註冊會員");
+            window.location("A_login.php");
+        }
+    }
+
+    
+    
+
 </script>
 
 

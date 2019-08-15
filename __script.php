@@ -10,19 +10,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
         <script src="plugin/lodash2.js"></script>
-        <!-- <script>
-        var form = document.querySelector(".form");
-        var signIn = document.getElementById("signIn");
-        var signUp = document.getElementById("signUp");
 
-        signUp.addEventListener("click", function() {
-            form.classList.add("translate");
-        });
-        signIn.addEventListener("click", function() {
-            form.classList.remove("translate");
-        });
-//登入切換動畫
-    </script>     -->
             
       <script>
    $(".menu").click(function(){
@@ -42,8 +30,7 @@
         });
 //選單出現
     
-  </script>
-    <script>
+
       let prism = document.querySelector(".rec-prism");
 
       function showSignup(){
@@ -67,12 +54,6 @@
       function showThankYou(){
         prism.style.transform = "translateZ(-100px) rotateX( 90deg)";
       }
-
-
-
-          
-  </script>
-  <script>
     var $email2 = $('#email2');
     var $nickname=$("#nickname");
     var $password2 = $('#password2');
@@ -142,11 +123,6 @@
         }
         return false;
     }
-</script>
-
-
-
-<script>
 
     var $email = $('#email');
     var $password = $('#password');
@@ -163,10 +139,7 @@
         fields.forEach(function(val){
             val.next().text('');
         });
-        // alertInfo.hide();
-        // submitBtn.hide();
-
-        var isPass = true; // 表單是否有通過檢查
+         var isPass = true; // 表單是否有通過檢查
 
         if(! validateEmail($email.val())) {
             isPass = false;
@@ -181,40 +154,51 @@
         if(isPass){
 
             $.post('login_api.php', $('#myform').serialize(), function(data){
-                console.log(data);
-                // alert(data.info);
                 if(data.success){
-                    //location.href = 'data_list.php';
-                    // alertInfo.removeClass('alert-danger');
-                    // alertInfo.addClass('alert-success');
                     showThankYou();
                     setTimeout(function (){
-                      // location.href = history.back();
-                      // location.href = backToUrl;
                       location.href = "product-list.php";
                     }, 1000);
                 } else {
-                    // alertInfo.removeClass('alert-success');
-                    // alertInfo.addClass('alert-danger');
-                    // submitBtn.show();
-                    // alert("帳號或密碼錯誤");
                     showContactUs();
                     setTimeout(function (){
                       location.href = "A_login.php";
                     }, 3000);
                 }
-                // alertInfo.text(data.info);
-                // alertInfo.show();
 
             }, 'json');
         }
         return false;
     }
 
+//跳出提醒小視窗
+//comfirm視窗>>$('#WY-loginWarning')
+//alert視窗>>$('#WY-errorWarning')
+function show_warning(warning, text){
+    $('.WY-warning-wrap').addClass('active');
+    warning.addClass('active');
+    warning.find('h3').text(text);
+    $('.WY-closeW').click(function(){
+        close_warning(warning);
+    })
+}
 
+//關閉提醒小視窗
+function close_warning(warning){
+    $('.WY-warning-wrap').removeClass('active');
+    warning.removeClass('active');
+}
 
-
-
-
+//跳出成功訊息並於1秒後關閉
+//成功視窗>>$('#WY-successMsg')
+function show_msg(msg, text){
+    $('.WY-warning-wrap').addClass('active');
+    msg.addClass('active');
+    msg.find('h3').text(text);
+    setTimeout(function(){
+        close_warning(msg);
+    },1000)
+   
+}
 
 </script>

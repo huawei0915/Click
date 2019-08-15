@@ -20,13 +20,13 @@
                     </a>
 
                     <?php if (isset($_SESSION['loginUser'])) : ?>
-                        <div style="width:43px;" class="mber">
-                            <a id="my_nickname" href="mber_profile.php"><?= $_SESSION['loginUser']['nickname'] ?></a>
-                        </div>
+                    <div style="width:43px;" class="mber">
+                        <a id="my_nickname" href="mber_profile.php"><?= $_SESSION['loginUser']['nickname'] ?></a>
+                    </div>
 
                     <?php else : ?>
 
-                        <a href="A_login.php"><img src="img/icon/會員.svg" alt="會員中心" class="px-2"></a>
+                    <a href="A_login.php"><img src="img/icon/會員.svg" alt="會員中心" class="px-2"></a>
 
                     <?php endif ?>
 
@@ -81,9 +81,16 @@
             for (let s in cart_data) {
                 sum += cart_data[s];
             }
-      
-            $('.cart-qty').text(sum);
+            // var cartQty=$('.cart-qty').text();
+            if (cart_data == '') {
+                $('.cart-qty').hide();
+                // console.log('0000000000')
+            } else {
+                $('.cart-qty').show();
+                // console.log('11111111111')
 
+                $('.cart-qty').text(sum);
+            }
         }
 
 
@@ -99,12 +106,14 @@
         // if(cartNum.innerText =0){
         //     $(".cart-qty").hide();
         // }
-        
+
         $("#mag").keypress(function(event) {
             if (event.keyCode == 13) {
                 var data = $("#mag").val()
-                location.href = 'product-list.php?search='+data;
+                location.href = 'product-list.php?search=' + data;
             }
         })
-       
+
+
+
     </script>

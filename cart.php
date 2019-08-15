@@ -272,7 +272,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <div class="d-flex sm_send">
                                 <p class="text">運費:</p>
                                 <p>NT$</p>
-                                <p class="price">0</p>
+                                <p class="price freight_price">0</p>
                             </div>
                         </div>
                         <div>
@@ -292,15 +292,15 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class=" delivery-main mt-2">
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="1" checked>
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input money" value="1" >
                                 <label class="custom-control-label" for="customRadioInline1">宅配</label>
                             </div>
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="2">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input money" value="2" >
                                 <label class="custom-control-label " for="customRadioInline2">自取 <em>(10:00am~19:00pm)</em></label>
                             </div>
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="3">
+                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input money" value="3">
                                 <label class="custom-control-label" for="customRadioInline3">超商取貨</label>
                             </div>
                         </div>
@@ -435,8 +435,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
                 <div class="d-flex end_btn mt-4">
-                    <a href="" class="btn btn-secondary mx-2 px-4">繼續購物</a>
-                    <a href="order_check.php" class="btn btn-danger mx-2 px-4">結 帳</a>
+                    <a href="product-list.php" class="btn btn-secondary mx-2 px-4">繼續購物</a>
+                    <a onclick="end();" class="btn btn-danger mx-2 px-4" id="ckeckout">結 帳</a>
                 </div>
 
                 <div class="custom-control custom-checkbox personal">
@@ -476,17 +476,20 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         $(".house").show();
         $(".myself").hide();
         $(".family_711").hide();
+        $(".freight_price").text('100');
     })
 
     $("#customRadioInline2").click(function() {
         $(".house").hide();
         $(".myself").show();
         $(".family_711").hide();
+        $(".freight_price").text('0');
     })
     $("#customRadioInline3").click(function() {
         $(".house").hide();
         $(".myself").hide();
         $(".family_711").show();
+        $(".freight_price").text('60');
     })
 
     $("#customRadioInline8").click(function() {
@@ -606,16 +609,36 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
     function calcTotalPrice() {
         var t = 0;
+        var ts =0;
         $('.p-item').each(function() {
             var price = $(this).find('.price').attr('data-price');
             var qty = $(this).find("input").val();
-
+            
+            
             t += price * qty;
         });
+        $('.delivery-main').on("change",function(){
+           var fright= $(".freight_price").text()
+                ts = t + parseInt(fright);
+                console.log(ts)
+                $("#total_price3").text(ts);
+        })
 
         $('#total_price').text(dallorCommas(t));
+       
     }
     calcTotalPrice();
+
+        function end(){
+            var frs=$(".money:checked").val();
+            console.log(frs)
+            if(frs==undefined){
+                show_warning($('#WY-errorWarning'),'請選擇物流方式');
+            }else{
+              location.href="order_check.php?";
+            }
+        }
+
 </script>
 
 
