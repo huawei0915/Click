@@ -44,8 +44,8 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 <?php require __DIR__ . '/__nav.php' ?>
-<div style="background-color:white; height:20px;"></div>
-<div style="background-color:white;">
+<div style="background-color:#FFFEF9; height:20px;"></div>
+<div style="background-color:#FFFEF9;">
     <div class="cart-header">
         <div class="container">
             <h6>購物車結帳流程</h6>
@@ -58,7 +58,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
                 <div id="step-1" class="step-1">
                     <div class="">
-                        <h2 class="member_CC" ><img src="img/icon/會員圈.svg" alt=""> 個人資料(訂購人)</h2>
+                        <h2 class="member_CC"><img src="img/icon/會員圈.svg" alt=""> 個人資料(訂購人)</h2>
                         <div class="">
                             <form class="form01" 　>
                                 <div class="form-group row ">
@@ -183,24 +183,24 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                             <?php foreach ($keys as $k) :
                                 $r = $dict[$k];
                                 ?>
-                            <div class="shap_list_main p-item mb-3" data-sid="<?= $r['sid'] ?>">
+                            <div class="shap_list_main p-item mb-4" data-sid="<?= $r['sid'] ?>">
                                 <img src="./img/product/<?= $r['images'] ?>.png" alt="">
-                                <h4><?= $r['model'] ?></h4>
-                                <h5 class=price data-price="<?= $r['price'] ?>"></h5>
+                                <h4 style="font-size: 0.85rem;"><?= $r['model'] ?></h4>
+                                <h5 style="font-size: 0.85rem;margin: 0;" class=price data-price="<?= $r['price'] ?>"></h5>
                                 <div class="quantity qty" data-qty="<?= $_SESSION['cart'][$k] ?>">
                                     <button type="button" class="btn btn-outline-secondary down">-</button>
                                     <input type="text" name="quantity_input" id="quantity_number1" value="<?= $_SESSION['cart'][$k] ?>" min="1" max="10" data-num="1">
                                     <button type="button" class="btn btn-outline-secondary up">+</button>
                                 </div>
-                                <div class="money ">NT$<span class="subtotal"></span></div>
-
+                                <div class="money" style="font-size: 0.85rem;">
+                                    NT$
+                                    <span class="subtotal" style="font-size: 0.85rem;">
+                                    </span>
+                                </div>
                                 <p class="remove-btn">X</p>
-
                             </div>
                             <?php endforeach; ?>
                         </div>
-
-
                     </div>
                     <!-- ------------------------- -->
                     <!-- <div class="add_shop">加購商品</div>
@@ -234,31 +234,31 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         <div class="d-flex justify-content-center flex-wrap detail">
                             <div class="add_shop_only_once">
                                 <img src="./img/product/<?= $rowsTool[0]['images'] ?>.png" alt="">
-                                <h6><?= $rowsTool[0]['model'] ?></h6>
-                                <h6>NT$<?= $rowsTool[0]['price'] ?></h6>
+                                <h6 style="font-size: 0.85rem;"><?= $rowsTool[0]['model'] ?></h6>
+                                <h6 style="font-size: 0.85rem;">NT$<?= $rowsTool[0]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
 
                             <div class="add_shop_only_once">
                                 <img src="./img/product/<?= $rowsTool[1]['images'] ?>.png" alt="">
-                                <h6><?= $rowsTool[1]['model'] ?></h6>
-                                <h6>NT$<?= $rowsTool[1]['price'] ?></h6>
+                                <h6 style="font-size: 0.85rem;"><?= $rowsTool[1]['model'] ?></h6>
+                                <h6 style="font-size: 0.85rem;">NT$<?= $rowsTool[1]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
 
 
                             <div class="add_shop_only_once">
                                 <img src="./img/product/<?= $rowsTool[2]['images'] ?>.png" alt="">
-                                <h6><?= $rowsTool[2]['model'] ?></h6>
-                                <h6>NT$<?= $rowsTool[2]['price'] ?></h6>
+                                <h6 style="font-size: 0.85rem;"><?= $rowsTool[2]['model'] ?></h6>
+                                <h6 style="font-size: 0.85rem;">NT$<?= $rowsTool[2]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
 
 
                             <div class="add_shop_only_once">
                                 <img src="./img/product/<?= $rowsTool[3]['images'] ?>.png" alt="">
-                                <h6><?= $rowsTool[3]['model'] ?></h6>
-                                <h6>NT$<?= $rowsTool[3]['price'] ?></h6>
+                                <h6 style="font-size: 0.85rem;"><?= $rowsTool[3]['model'] ?></h6>
+                                <h6 style="font-size: 0.85rem;">NT$<?= $rowsTool[3]['price'] ?></h6>
                                 <a href="#">加購</a>
                             </div>
                         </div>
@@ -267,19 +267,19 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         <div>
                             <div class="d-flex sm_price">
                                 <p class="text">商品小計:</p>
-                                <p>NT$</p>
+                                <p class="p_nt">NT$</p>
                                 <p class="price" id="total_price"></p>
                             </div>
                             <div class="d-flex sm_send">
                                 <p class="text">運費:</p>
-                                <p>NT$</p>
+                                <p class="p_nt">NT$</p>
                                 <p class="price freight_price">0</p>
                             </div>
                         </div>
                         <div>
                             <div class="d-flex sm_total">
                                 <p class="text">總計:</p>
-                                <p>NT$</p>
+                                <p class="p_nt">NT$</p>
                                 <p class="price" id="total_price3"></p>
 
                             </div>
@@ -293,11 +293,11 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class=" delivery-main mt-2">
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input money" value="1" >
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input money" value="1">
                                 <label class="custom-control-label" for="customRadioInline1">宅配</label>
                             </div>
                             <div class="custom-control custom-radio  radio-text">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input money" value="2" >
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input money" value="2">
                                 <label class="custom-control-label " for="customRadioInline2">自取 <em>(10:00am~19:00pm)</em></label>
                             </div>
                             <div class="custom-control custom-radio  radio-text">
@@ -423,7 +423,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="d-flex">
                                         <input type="radio" id="customRadioInline8" name="customRadioInline3" class="custom-control-input">
 
-                                        <label class="custom-control-label" for="customRadioInline8">開立統編</label>
+                                        <label class="custom-control-label" for="customRadioInline8">三聯式</label>
                                         <input type="text" class="number" placeholder="輸入統一編號">
                                     </div>
                                 </div>
@@ -437,7 +437,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="d-flex end_btn mt-4">
                     <a href="product-list.php" class="btn btn-secondary mx-2 px-4">繼續購物</a>
-                    <a onclick="end();" class="btn btn-danger mx-2 px-4" id="ckeckout">結 帳</a>
+                    <a onclick="end();" class="btn btn-danger mx-2 px-4" id="ckeckout" style="color: white;">結 帳</a>
                 </div>
 
                 <div class="custom-control custom-checkbox personal">
@@ -459,7 +459,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 <?php require __DIR__ . '/__script.php' ?>
 <script src="plugin/jquery.payment.js"></script>
 <script>
-
     $("#customRadioInline1").click(function() {
         $(".house").show();
         $(".myself").hide();
@@ -558,7 +557,7 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
         var price = $(this).find('.price').attr('data-price');
         var qty = $(this).find('.qty').attr('data-qty');
         $(this).find('.subtotal').text(dallorCommas(price * qty));
-        $(this).find('.price').text('NT$'+dallorCommas(price));
+        $(this).find('.price').text('NT$' + dallorCommas(price));
 
         // select element
         $(this).find('.qty').val(qty);
@@ -594,49 +593,46 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
 
     function calcTotalPrice() {
         var t = 0;
-        var ts =0;
+        var ts = 0;
         $('.p-item').each(function() {
             var price = $(this).find('.price').attr('data-price');
             var qty = $(this).find("input").val();
-            
-            
+
+
             t += price * qty;
         });
-        $('.delivery-main').on("change",function(){
-           var fright= $(".freight_price").text()
-                ts = t + parseInt(fright);
-                console.log(ts)
-                $("#total_price3").text(dallorCommas(ts));
+        $('.delivery-main').on("change", function() {
+            var fright = $(".freight_price").text()
+            ts = t + parseInt(fright);
+            console.log(ts)
+            $("#total_price3").text(dallorCommas(ts));
         })
 
         $('#total_price').text(dallorCommas(t));
-       
+
     }
     calcTotalPrice();
 
-        function end(){
-            var frs=$(".money:checked").val();
-            console.log(frs)
-            if(frs==undefined){
-                show_warning($('#WY-errorWarning'),'請選擇物流方式');
-            }else{
-              location.href="order_check.php?";
-            }
+    function end() {
+        var frs = $(".money:checked").val();
+        console.log(frs)
+        if (frs == undefined) {
+            show_warning($('#WY-errorWarning'), '請選擇物流方式');
+        } else {
+            location.href = "order_check.php?";
         }
+    }
 
-$('#customRadioInline0').on('click',function(){
-    var name=$("#name").val();
-    console.log(name);
-    var tel=$("#mobile").val();
-    var address=$("#address").val()
+    $('#customRadioInline0').on('click', function() {
+        var name = $("#name").val();
+        console.log(name);
+        var tel = $("#mobile").val();
+        var address = $("#address").val()
 
-    $("#name1").val(name);
-    $("#mobile1").val(tel);
-    $("#address4").val(address);
-})
-
-
-
+        $("#name1").val(name);
+        $("#mobile1").val(tel);
+        $("#address4").val(address);
+    })
 </script>
 
 

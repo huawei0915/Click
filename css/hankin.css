@@ -1185,14 +1185,14 @@
 } */
 .shap_list_main {
     border: 1px solid black;
-    border-radius: 25px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 0 5%;
     height: 100px;
     margin: 0 2rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .shap_list_main h4 {
     width: 220px;

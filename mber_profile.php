@@ -210,7 +210,7 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                         </div>
                         <div class="order_count_price">
                             <div>x 1</div>
-                            <div>NT$ 169,000</div>
+                            <div>NT$ 117,000</div>
                         </div>
                     </div>
                 </div>
@@ -256,7 +256,7 @@ $coll = isset($_GET['ccc']) ? 'true' : 'false';
                     <div class="order_payinfocount">
                         <label for="">宅配-NT $100</label>
                         <label for="">2019-08-20</label>
-                        <label for="">NT$ ‭455,140‬</label>
+                        <label style="color:red;" for="">NT$ 403,240‬‬‬</label>
                     </div>
                 </div>
             </div>
