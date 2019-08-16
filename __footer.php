@@ -43,7 +43,7 @@
             <div class="WY-Warning-confirm" id="WY-loginWarning">
                 <div class="WY-title">
                     <!-- <img src="img/warning-sign.jpg" alt="warning"> -->
-                    <h3>請先登入會員</h3>
+                    <h6>請先登入會員</h6>
                 </div>
                 <div class="WY-confirm-btn">
                     <a class="WY-login_c WY-closeW">取消</a>
@@ -53,16 +53,16 @@
             <div class="WY-Warning-confirm" id="WY-errorWarning">
                 <div class="WY-title">
                     <!-- <img src="img/warning-sign.jpg" alt="warning"> -->
-                    <h3></h3>
+                    <h6></h6>
                 </div>
                 <div class="WY-confirm-btn">
-                    <a href="#" class="WY-errorCheck WY-closeW text-center">了解</a>
+                    <a href="#" class="WY-errorCheck WY-closeW text-center">OK</a>
                 </div>
             </div>
             <div class="WY-Warning-confirm" id="WY-successMsg">
                 <div class="WY-title mb-0">
                     <!-- <img src="img/success-sign.svg" alt="success"> -->
-                    <h3></h3>
+                    <h6></h6>
                 </div>
             </div>
         </div>

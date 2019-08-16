@@ -247,6 +247,10 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
     });
 </script> -->
 <script>
+    var dallorCommas = function(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    };
+
     let camera_data = <?= json_encode($totalRows_camera_model, JSON_UNESCAPED_UNICODE) ?>;
     let len_data = <?= json_encode($totalRows_lens_model, JSON_UNESCAPED_UNICODE) ?>;
 
@@ -321,10 +325,22 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
                     <img src="img/product/${selectedItem['images']}.png" alt="" >
                 </figure>
                         <h6>${selectedItem['product_name']}</h6>
-                        <h5>NT$${selectedItem['price']}</h5>`;
+                        <h5>${selectedItem['price']}</h5>`;
         // console.log(ind)
         $('.camera_com').eq(ind).html(s);
+
+
+     
     });
+
+    var pic=$('.camera_com');
+    console.log(pic);
+        pic.each(function(){
+             var  price=$(this).find('h5').text();
+             console.log(price);
+           $(this).find('h5').text(dallorCommas(price));
+         })
+
 
 
     if($('.len_list').click()){
@@ -358,6 +374,16 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
         // console.log(ind)
         $('.len_com').eq(ind).html(s);
     });
+
+    var pic_l=$('.len_com');
+    console.log(pic);
+    pic_l.each(function(){
+             var  price=$(this).find('h5').text();
+             console.log(price);
+           $(this).find('h5').text(dallorCommas(price));
+         })
+
+
 
 }
 
