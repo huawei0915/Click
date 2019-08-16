@@ -509,6 +509,12 @@ footer .container{
 
 
 /* ----------------------------- */
+.WY-warning-wrap a{
+    font-size: .8rem;
+}
+.WY-warning-wrap h6{
+    font-size: .8rem;
+}
 .WY-warning-wrap{
     display: none;
 }
@@ -526,7 +532,7 @@ footer .container{
 .WY-warning-bg{
     width: 100%;
     height: 100%;
-    background: #7373737e;
+    background: rgba(0,0,0,.5);
     /* opacity: .5; */
 }
 
@@ -535,8 +541,8 @@ footer .container{
 }
 
 .WY-Warning-confirm.active{
-    padding:60px;
-    width: 500px;
+    padding:20px 0;
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -544,12 +550,14 @@ footer .container{
     background: #ffffff;
     text-align: center;
     display: block;
+    border-radius: 10px;
     /* box-shadow: 1px 2px 2px #aaaaaa; */
     /* border: 1px solid #aaa; */
 }
 
 .WY-Warning-confirm .WY-title{
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    margin-top: 10px;
 }
 
 .WY-Warning-confirm .WY-title img{
@@ -568,36 +576,41 @@ footer .container{
 }
 
 .WY-confirm-btn{
-    padding-left: 12px; 
+    /* padding-left: 12px;  */
     color: #ffffff;
     
 }
 
 .WY-confirm-btn a{
     display: inline-block;
-    width: 100px;
-    height: 2.3rem;
+    width: 80px;
+    height: 2.2rem;
     margin: 15px;
-    background: #AD5C5C;
+    padding-bottom: 10px;
+    background: #ddd;
     font-weight: 300;
     color: inherit;
     line-height: 2.2rem;
     letter-spacing: 12px;
     padding-left: 12px;
     border: 1px solid rgb(0,0,0,0.15);
+    border-radius: 10px;
+    color:black;
     /* border: 1px solid transparent; */
 }
 
 .WY-confirm-btn a.WY-login_c{
     border:1px solid #aaa;
     background: #ffffff;
-    color: #333333;
+    color: black;
+    border-radius: 10px;
     }
 
 .WY-confirm-btn a:hover{
-    background: rgb(209, 137, 137);
+    background: #777;
     border: 1px solid rgb(0,0,0,0.15);
     text-decoration: none;
+    color:#fff;
     /* box-shadow: 3px 2px 5px #aaa; */
 }
 

@@ -236,9 +236,10 @@ main .main_bg .corner figure:nth-child(4){
 } */
 
 main .main_bg .corner .diy_map img:nth-child(1){
+    width: 60%;
     position: absolute;
-    bottom: 110px;
-    left: calc(50% - 300px);
+    bottom: 100px;
+    left: calc(50% - 280px);
     
 }
 main .main_bg .corner .diy_map img:nth-child(2){

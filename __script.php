@@ -177,7 +177,7 @@
 function show_warning(warning, text){
     $('.WY-warning-wrap').addClass('active');
     warning.addClass('active');
-    warning.find('h3').text(text);
+    warning.find('h6').text(text);
     $('.WY-closeW').click(function(){
         close_warning(warning);
     })
@@ -194,7 +194,7 @@ function close_warning(warning){
 function show_msg(msg, text){
     $('.WY-warning-wrap').addClass('active');
     msg.addClass('active');
-    msg.find('h3').text(text);
+    msg.find('h6').text(text);
     setTimeout(function(){
         close_warning(msg);
     },1000) 

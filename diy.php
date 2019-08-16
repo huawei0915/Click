@@ -91,7 +91,6 @@ $rowsTool = $stmt_tool->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="d-flex justify-content-around align-items-center comm2">
                     </div>
-                    <hr class="tr-line">
                     <div class="d-flex totalMoney">
                         <h6>Total : NT $ </h6>
                         <input type="text" class="calcMoney" readonly value="">
