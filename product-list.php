@@ -242,7 +242,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                         <li>焦距 : <%= description %></li>
                     </ul>
 
-                    <p>NT$<%= price %></p>
+                    <p class="pri">NT$<%= price %></p>
                     <a href="comparison.php">
                     <div class="compare">比較</div>
                     </a>
@@ -265,7 +265,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                         <li><%= description %></li>
                     </ul>
 
-                    <p>NT$<%= price %></p>
+                    <p class="pri">NT$<%= price %></p>
                 </div>`;
     var p_item_fn_tools = _.template(p_item_str_tools);
 
@@ -387,6 +387,10 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                     products_container_camera.append(p_item_fn_camera(camera_array));
                 }
             },"json")
+
+
+
+
                 $(".prd_list").eq(1).hide();
                 $(".prd_list").eq(2).hide();
                 
@@ -427,6 +431,15 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                 products_container_camera.append(p_item_fn_camera(camera_array));
             }
 
+            
+            var plt=$('.prd_cards')
+             plt.each(function(){
+             var  price=$(this).find('.pri').text();
+           $(this).find('.pri').text(dallorCommas(price));
+         })
+
+
+
 
             var lens_page_array = {
                 'lens_page': data.lens_page,
@@ -457,6 +470,11 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                 }
                 products_container_lens.append(p_item_fn_lens(lens_array));
             }
+            var plt=$('.prd_cards')
+             plt.each(function(){
+             var  price=$(this).find('.pri').text();
+           $(this).find('.pri').text(dallorCommas(price));
+         })
 
 
             var tools_page_array = {
@@ -488,6 +506,13 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                 }
                 products_container_tools.append(p_item_fn_tools(tools_array));
             }
+
+            var plt=$('.prd_cards')
+             plt.each(function(){
+             var  price=$(this).find('.pri').text();
+           $(this).find('.pri').text(dallorCommas(price));
+         })
+
         }, "json")}
     }
 
@@ -505,13 +530,14 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
     };
 
 
-    var plt=$('.prd_cards')
-     
-    plt.each(function(){
-        var  price=$(this).find('.pri').text();
-        console.log(price);
-        $(this).find('.pri').text(dallorCommas(price));
-    })
+    // var plt=$('.prd_cards')
+    // console.log($('.prd_cards'));
+    // console.log(plt);
+    // plt.each(function(){
+    //     var  price=$(this).find('.pri').text();
+    //     console.log(price);
+    //     $(this).find('.pri').text(dallorCommas(price));
+    // })
 
 
 </script>
