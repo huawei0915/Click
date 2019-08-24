@@ -15,7 +15,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 <div class="prd_filter">
     <div class="container fltcon">
         <form action="" method="post" class="product_form">
-            <div class="filte">
+            <div class="filte" >
 
                 <div class="prd_price">
                     <div class="prdfil">
@@ -199,16 +199,16 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
             updateView.call(this);
         });
     });
-
-    var pagination_camera = $('.arrow_list_camera');
-    var products_container_camera = $('.camera_box');
+// --------------------------------------------------------------------------
+    var pagination_camera = $('.arrow_list_camera');  //相機的上下頁外層
+    var products_container_camera = $('.camera_box'); //放相機資料的外層
     var pagination_item_str_camera = `<a class="mr-3 prev">
                 <i class="fas fa-caret-left"></i>
                 上一頁</a>         
                 <a class="ml-3 next" data-total="<%= camera_totalPage %>">下一頁
                     <i class="fas fa-caret-right"></i>
                 </a>`;
-    var pagination_item_fn_camera = _.template(pagination_item_str_camera);
+    var pagination_item_fn_camera = _.template(pagination_item_str_camera);     //用lodash的方式把資料結構放入
     var p_item_str_camera = `<div class="prd_cards" style="background-color: #fff;">
                     <a href="product.php?sid=<%= sid %>" style="color:black;">
                     <input type="hidden" value="1">
@@ -224,17 +224,17 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                     </a>
                 </div>
                 `;
-    var p_item_fn_camera = _.template(p_item_str_camera);
+    var p_item_fn_camera = _.template(p_item_str_camera);    //用lodash的方式把資料結構放入
 
-    var pagination_lens = $('.arrow_list_lens');
-    var products_container_lens = $('.lens_box');
+    var pagination_lens = $('.arrow_list_lens');        //鏡頭的上下頁外層
+    var products_container_lens = $('.lens_box');       //放鏡頭資料的外層
     var pagination_item_str_lens = `<a class="mr-3 prev">
                 <i class="fas fa-caret-left"></i>
                 上一頁</a>         
                 <a class="ml-3 next" data-total="<%= lens_totalPage %>">下一頁
                     <i class="fas fa-caret-right"></i>
                 </a>`;
-    var pagination_item_fn_lens = _.template(pagination_item_str_lens);
+    var pagination_item_fn_lens = _.template(pagination_item_str_lens);         //用lodash的方式把資料結構放入
     var p_item_str_lens = `<div class="prd_cards" style="background-color: #fff;">
                     <figure class="prd_pic"><img src="./img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
@@ -247,17 +247,17 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                     <div class="compare">比較</div>
                     </a>
                 </div>`;
-    var p_item_fn_lens = _.template(p_item_str_lens);
+    var p_item_fn_lens = _.template(p_item_str_lens);       //用lodash的方式把資料結構放入
     // ----------------------------
-    var pagination_tools = $('.arrow_list_tools');
-    var products_container_tools = $('.tools_box');
+    var pagination_tools = $('.arrow_list_tools');          //配件的上下頁外層
+    var products_container_tools = $('.tools_box');         //放配件資料的外層
     var pagination_item_str_tools = `<a class="mr-3 prev">
                 <i class="fas fa-caret-left"></i>
                 上一頁</a>         
                 <a class="ml-3 next" data-total="<%= tools_totalPage %>">下一頁
                     <i class="fas fa-caret-right"></i>
                 </a>`;
-    var pagination_item_fn_tools = _.template(pagination_item_str_tools);
+    var pagination_item_fn_tools = _.template(pagination_item_str_tools);       //用lodash的方式把資料結構放入
     var p_item_str_tools = `<div class="prd_cards" style="background-color: #fff;">
                     <figure class="prd_pic"><img src="./img/product/<%= images %>.png" alt=""></figure>
                     <h6><%= model %></h6>
@@ -267,7 +267,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 
                     <p class="pri">NT$<%= price %></p>
                 </div>`;
-    var p_item_fn_tools = _.template(p_item_str_tools);
+    var p_item_fn_tools = _.template(p_item_str_tools);     //用lodash的方式把資料結構放入
 
 
     // -----------------------相機分頁----------------
@@ -339,7 +339,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 
         form_post()
     })
-    // ----------------------
+    // ----------------------篩選器動作就發送api去拿資料------
 
     $(".product_form input").change(function() {
         form_post()
@@ -348,9 +348,11 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
         $(".camera_page").val(1);
         form_post()
     })
-
+// -------------------------------------
 
     function form_post(){
+
+        // --------------------------------有收尋欄位有值做以下的事情----------------
         if(<?= !empty($data) ? 'true' : 'false' ?>){
             obj = '<?= $data ?>'
 
@@ -384,7 +386,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                         'description': camera_description,
                         'price': camera_price,
                     }
-                    products_container_camera.append(p_item_fn_camera(camera_array));
+                    products_container_camera.append(p_item_fn_camera(camera_array));    //把要顯示的值 放回lodash ((p_item_fn_camera) 的結構中
                 }
             },"json")
 
@@ -394,7 +396,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                 $(".prd_list").eq(1).hide();
                 $(".prd_list").eq(2).hide();
                 
-
+// -------------------------------------------------------------------------
 
         }else{
             $.post("product-list-api.php", $(".product_form").serialize(), function(data) {
@@ -408,7 +410,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
 
 
             var camera_rows = data.rowsCamera.length
-            products_container_camera.html("")
+            products_container_camera.html("")                  //因為是用append的方式把值放入標籤內的 在執行前 先清空
 
             if(camera_rows==0){
                 products_container_camera.html(`<h2>無相符合之相機商品</h2>`)
@@ -428,7 +430,7 @@ $data = isset($_GET['search']) ? $_GET['search'] : 0;
                     'description': camera_description,
                     'price': camera_price,
                 }
-                products_container_camera.append(p_item_fn_camera(camera_array));
+                products_container_camera.append(p_item_fn_camera(camera_array));   //把要顯示的值 放回lodash ((p_item_fn_camera) 的結構中
             }
 
             

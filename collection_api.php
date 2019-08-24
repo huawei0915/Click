@@ -1,9 +1,7 @@
 <?php require __DIR__ . '/__db_connect.php';
+//收藏的api
 
-
-
-
-if(empty($_POST['product']) or empty($_SESSION['loginUser']) or empty($_POST['like'])){
+if(empty($_POST['product']) or empty($_SESSION['loginUser']) or empty($_POST['like'])){         //要收藏一定要有登入user 
     // echo 'ERROR';
     exit;
 }
@@ -18,6 +16,8 @@ $stmt->execute([
     $member,
     $product
 ]);
+
+
 echo json_encode("add to like");
 }else if($like='dislike'){
 

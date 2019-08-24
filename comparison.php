@@ -281,7 +281,7 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
 
 
 
-    for (let col_c of cols_camera) { //顯示欄位名稱  cols帶入   col 筆數
+    for (let col_c of cols_camera) { //顯示欄位名稱  cols帶入   col 筆數 將單筆資料拿出
         let s = `<tr data-col="${col_c}">
     <th style="width:12%;">${col_c}</th>   
     <td style="width:29%;">${camera_dict[1][col_c]}</td><td style="width:29%;">${camera_dict[1][col_c]}</td><td style="width:29%;">${camera_dict[1][col_c]}</td>
@@ -290,7 +290,7 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
         showCamera.append(s);
     }
 
-    for (let col_l of cols_len) { //顯示欄位名稱  cols帶入   col 筆數
+    for (let col_l of cols_len) { //顯示欄位名稱  cols帶入   col 筆數 將單筆資料拿出
         let l = `<tr data-col="${col_l}">
     <th style="width:12%;">${col_l}</th>   
     <td style="width:29%;">${len_dict[1][col_l]}</td><td style="width:29%;">${len_dict[1][col_l]}</td><td style="width:29%;">${len_dict[1][col_l]}</td>
@@ -317,8 +317,6 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
         trs.each(function() {
             let col = $(this).attr('data-col');
             $(this).find('td').eq(ind).text(selectedItem[col]);
-
-
         });
 
         let s = `<figure>
@@ -328,16 +326,11 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
                         <h5>${selectedItem['price']}</h5>`;
         // console.log(ind)
         $('.camera_com').eq(ind).html(s);
-
-
-     
     });
 
     var pic=$('.camera_com');
-    console.log(pic);
         pic.each(function(){
              var  price=$(this).find('h5').text();
-             console.log(price);
            $(this).find('h5').text(dallorCommas(price));
          })
 
@@ -357,13 +350,10 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
         let ind = map_data[id]; //選到下拉選地的單筆id
 
         let selectedItem = len_dict[$(this).val()];
-        // console.log(len_dict[$(this).val()]);
 
         trs.each(function() {
             let col = $(this).attr('data-col');
             $(this).find('td').eq(ind).text(selectedItem[col]);
-
-
         });
 
         let s = `<figure>
@@ -371,15 +361,12 @@ $totalRows_lens_model = $pdo->query($sql_lens)->fetchAll();  //取得鏡頭型�
             </figure>
                     <h6>${selectedItem['model']}</h6>
                     <h5>NT$${selectedItem['price']}</h5>`;
-        // console.log(ind)
         $('.len_com').eq(ind).html(s);
     });
 
     var pic_l=$('.len_com');
-    console.log(pic);
     pic_l.each(function(){
              var  price=$(this).find('h5').text();
-             console.log(price);
            $(this).find('h5').text(dallorCommas(price));
          })
 
